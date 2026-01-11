@@ -4,7 +4,7 @@ import { ScrollArea } from './ui/scroll-area';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 import * as Icons from 'lucide-react';
-import { wikiSections } from '../mock.js';
+import { wikiSections } from '../mock';
 
 export const WikiContent = () => {
   const [activeSection, setActiveSection] = useState('bienvenida');
@@ -46,7 +46,8 @@ export const WikiContent = () => {
       'shopping-cart': Icons.ShoppingCart,
       'shopping-bag': Icons.ShoppingBag,
       'info': Icons.Info,
-      'alert-circle': Icons.AlertCircle
+      'alert-circle': Icons.AlertCircle,
+      'biceps': Icons.BicepsFlexed,      
     };
     const IconComponent = iconMap[iconName] || Icons.BookOpen;
     return <IconComponent className="section-icon" size={20} />;
@@ -81,6 +82,155 @@ export const WikiContent = () => {
     if (section.id === 'bienvenida') {
       return renderWelcomeContent(section.content);
     }
+    
+    // Render Crear Personaje
+    if (section.id === 'crear-personaje') {
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          <div className="content-text">
+            <p>{section.content.text}</p>
+          </div>
+        </div>
+      );
+    }
+    
+    // Render Razas with tables
+    if (section.id === 'razas') {
+      // Helper function to get cell class based on value
+      const getCellClass = (cell, cellIdx) => {
+        if (cellIdx === 0) return ''; // First column (race name) no color
+        if (cell === '0') return 'neutral-value';
+        if (cell.startsWith('+')) return 'positive-value';
+        if (cell.startsWith('-')) return 'negative-value';
+        return '';
+      };
+      
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          
+          <div className="races-list">
+            <h3>Razas disponibles:</h3>
+            <div className="races-grid">
+              {section.content.races.map((race, idx) => (
+                <div key={idx} className="race-card">
+                  <div className="race-icon">👤</div>
+                  <h4 className="race-name">{race}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <p className="content-text">{section.content.text}</p>
+          
+          {/* Attributes Table */}
+          <div className="table-container">
+            <h3 className="table-title">{section.content.attributesTable.title}</h3>
+            <p className="table-subtitle">{section.content.attributesTable.subtitle}</p>
+            <div className="table-scroll">
+              <table className="wiki-table">
+                <thead>
+                  <tr>
+                    {section.content.attributesTable.headers.map((header, idx) => (
+                      <th key={idx}>{header}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.content.attributesTable.rows.map((row, idx) => (
+                    <tr key={idx}>
+                      {row.map((cell, cellIdx) => (
+                        <td key={cellIdx} className={getCellClass(cell, cellIdx)}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          {/* Combat Table */}
+          <div className="table-container">
+            <h3 className="table-title">{section.content.combatTable.title}</h3>
+            <p className="table-subtitle">{section.content.combatTable.subtitle}</p>
+            <div className="table-scroll">
+              <table className="wiki-table">
+                <thead>
+                  <tr>
+                    {section.content.combatTable.headers.map((header, idx) => (
+                      <th key={idx}>{header}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.content.combatTable.rows.map((row, idx) => (
+                    <tr key={idx}>
+                      {row.map((cell, cellIdx) => (
+                        <td key={cellIdx} className={getCellClass(cell, cellIdx)}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
+    // Render Atributos
+    if (section.id === 'atributos') {
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          <div className="content-text">
+            <p>{section.content.intro}</p>
+          </div>
+          
+          <div className="attributes-section">
+            <h3 className="subsection-title">Tipos de Atributos</h3>
+            <p className="content-text">Cada personaje tiene 5 tipos de atributos que son:</p>
+            <ul className="styled-list">
+              {section.content.attributes.map((attr, idx) => (
+                <li key={idx}>{attr.name}</li>
+              ))}
+            </ul>
+            
+            <div className="attributes-details">
+              {section.content.attributes.map((attr, idx) => (
+                <div key={idx} className="attribute-card">
+                  <h4 className="attribute-name">{attr.name}</h4>
+                  <p className="attribute-description">{attr.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
+    // Render Clases
+    if (section.id === 'clases') {
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          <div className="content-text">
+            <p>{section.content.text}</p>
+          </div>
+          
+          <div className="classes-grid">
+            {section.content.classes.map((className, idx) => (
+              <div key={idx} className="class-card">
+                <div className="class-icon">⚔️</div>
+                <h4 className="class-name">{className}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    
     return (
       <div className="section-content">
         <p className="section-description">{section.content.description}</p>
