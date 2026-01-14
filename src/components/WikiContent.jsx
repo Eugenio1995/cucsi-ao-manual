@@ -9,6 +9,7 @@ import { wikiSections } from '../mock';
 export const WikiContent = () => {
   const [activeSection, setActiveSection] = useState('bienvenida');
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [selectedClass, setSelectedClass] = useState(null);
 
   const getIcon = (iconName) => {
     const iconMap = {
@@ -46,8 +47,7 @@ export const WikiContent = () => {
       'shopping-cart': Icons.ShoppingCart,
       'shopping-bag': Icons.ShoppingBag,
       'info': Icons.Info,
-      'alert-circle': Icons.AlertCircle,
-      'biceps': Icons.BicepsFlexed,      
+      'alert-circle': Icons.AlertCircle
     };
     const IconComponent = iconMap[iconName] || Icons.BookOpen;
     return <IconComponent className="section-icon" size={20} />;
@@ -212,6 +212,102 @@ export const WikiContent = () => {
     
     // Render Clases
     if (section.id === 'clases') {
+      if (selectedClass) {
+        // Render detailed class view
+        const classData = section.content.classes.find(c => c.name === selectedClass);
+        return (
+          <div className="section-content">
+            <button 
+              className="back-button"
+              onClick={() => setSelectedClass(null)}
+            >
+              ← Volver a Clases
+            </button>
+            
+            <h2 className="class-detail-title">{classData.name}</h2>
+            
+            <div className="class-description">
+              {classData.description.split('\n').map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
+            </div>
+            
+            {/* Modifiers Table */}
+            <div className="table-container">
+              <h3 className="table-title">Modificadores de Clase</h3>
+              <div className="table-scroll">
+                <table className="wiki-table modifiers-table">
+                  <thead>
+                    <tr>
+                      {classData.modifiers.subHeaders.map((header, idx) => (
+                        <th key={idx}>{header}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      {classData.modifiers.values.map((value, idx) => (
+                        <td key={idx}>{value}</td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            {classData.special && (
+              <div className="special-info">
+                <p>{classData.special}</p>
+              </div>
+            )}
+            
+            {/* Points per Level Table */}
+            <div className="table-container">
+              <h3 className="table-title">Puntos ganados por nivel</h3>
+              <div className="table-scroll">
+                <table className="wiki-table">
+                  <thead>
+                    <tr>
+                      {classData.pointsPerLevel.headers.map((header, idx) => (
+                        <th key={idx}>{header}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {classData.pointsPerLevel.rows.map((row, idx) => (
+                      <tr key={idx}>
+                        {row.map((cell, cellIdx) => (
+                          <td key={cellIdx}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="table-note">
+                Aclaración: Los puntos de maná y vida representan los valores con los máximos dados (20).
+                Cada personaje varia mucho según su raza.
+              </p>
+            </div>
+            
+            {/* Abilities */}
+            {classData.abilities && classData.abilities.length > 0 && (
+              <div className="abilities-section">
+                {classData.abilities.map((ability, idx) => (
+                  <div key={idx} className="ability-card">
+                    <h4 className="ability-title">{ability.title}</h4>
+                    {ability.description.split('\n').map((paragraph, pIdx) => (
+                      <p key={pIdx} className="ability-description">{paragraph}</p>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      }
+      
+      // Render classes grid
       return (
         <div className="section-content">
           <p className="section-description">{section.content.description}</p>
@@ -220,10 +316,14 @@ export const WikiContent = () => {
           </div>
           
           <div className="classes-grid">
-            {section.content.classes.map((className, idx) => (
-              <div key={idx} className="class-card">
+            {section.content.classes.map((classData, idx) => (
+              <div 
+                key={idx} 
+                className="class-card"
+                onClick={() => setSelectedClass(classData.name)}
+              >
                 <div className="class-icon">⚔️</div>
-                <h4 className="class-name">{className}</h4>
+                <h4 className="class-name">{classData.name}</h4>
               </div>
             ))}
           </div>
@@ -268,6 +368,7 @@ export const WikiContent = () => {
                   key={section.id}
                   onClick={() => {
                     setActiveSection(section.id);
+                    setSelectedClass(null); // Reset selected class when changing sections
                     // Close sidebar on mobile after selection
                     if (window.innerWidth < 768) {
                       setSidebarOpen(false);

@@ -98,7 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://thumbs.dreamstime.com/b/epic-fantasy-library-tree-k-wallpaper-art-background-381213461.jpg?w=992');
+  background-image: url('https://images.pexels.com/photos/3428289/pexels-photo-3428289.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -644,6 +644,128 @@
 
 .class-card:hover .class-name {
   color: var(--parchment-light);
+}
+
+/* Class Detail View */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-brown);
+  color: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  background-color: var(--accent-gold);
+  color: var(--text-primary);
+  transform: translateX(-4px);
+}
+
+.class-detail-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  font-family: 'Cinzel', serif;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.class-description {
+  background-color: var(--parchment-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.class-description p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.class-description p:last-child {
+  margin-bottom: 0;
+}
+
+.modifiers-table {
+  font-size: 0.9rem;
+}
+
+.modifiers-table thead th {
+  font-size: 0.85rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.modifiers-table tbody td {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  font-weight: 600;
+}
+
+.special-info {
+  background-color: var(--parchment-dark);
+  border-left: 4px solid var(--accent-gold);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+.special-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.table-note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--parchment-dark);
+  border-radius: 6px;
+}
+
+.abilities-section {
+  margin-top: 2.5rem;
+}
+
+.ability-card {
+  background-color: var(--parchment-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ability-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  font-family: 'Cinzel', serif;
+  margin-bottom: 1rem;
+}
+
+.ability-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.ability-description:last-child {
+  margin-bottom: 0;
 }
 
 .placeholder-box {

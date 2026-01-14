@@ -32,6 +32,256 @@ export const wikiSections = [
     }
   },
   {
+    id: 'clases',
+    title: 'Clases',
+    icon: 'shield',
+    content: {
+      description: 'Al iniciar tu aventura elegirás que clase quieres ser, esto definirá tus características.',
+      text: 'Al iniciar tu aventura eligiras que clase quieres ser, esto definirá tu características tales como el daño físico que infligirás, tu mana, tu vida, tu evasión, tu chance de acierto, tu equipamiento, entre otras cosas. Cada clase posee características propias de si mismo, y se diferencian siempre las unas de las otras.',
+      classes: [
+        {
+          name: 'Asesino',
+          description: 'Las clase asesino son capaces de encontrar el punto débil a todos sus oponentes convirtiéndose en la clase más habilidosa al momento de apuñalar a sus enemigos. Sus golpes pueden parecer débiles pero cuidado, pueden derribar a los más resistentes y derrotar adversarios de un solo golpe.\n\nEsta clase posee una excelente preparación para el combate físico resultando en una gran evasión y muy buen manejo de armas cuerpo a cuerpo. Puede utilizar conjuros mágicos como complemento a sus tácticas ofensivas y defensivas con precaución de su limitada cantidad de maná.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.85', '0.76', '0.7', '0.6', '0.4', '0.4', '0.9', '1', '1%']
+          },
+          special: 'Multiplicador de Apuñalar: 1,7 Frente y costados, 1,8 por la espalda. Probabilidad de Apuñalar: 26% Frente y costados, +10% por la espalda.',
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '6 a 8', '6 a 9', '7 a 9', '7 a 10', '8 a 11', '9 a 11'],
+              ['Mana', '25', '23', '21', '19', '13', '12'],
+              ['Golpe', '3', '3', '3', '3', '3', '3'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          },
+          abilities: [
+            {
+              title: 'Ocultarse',
+              description: 'El Asesino podrá ocultarse y caminar entre las sombras sin ser visto. Este efecto es cancelado si el personaje ataca cuerpo a cuerpo (con o sin arma) o habla. La chance de éxito dependerá de los puntos de habilidad que tengas en ocultar.'
+            }
+          ]
+        },
+        {
+          name: 'Bardo',
+          description: 'Los Bardos son capaces de desconcertar al oponente con sus melodías induciéndolos a lanzar una ofensiva imprecisa, facilitándole la predicción del mismo y esquivarlos sin dificultad, por eso es la clase con mas evasión. Sus místicos instrumentos le otorgan gran concentración permitiéndole lanzar hechizos mas precisos, provocando gran daño mágico. Tienen un leve entrenamiento en combate físico, concediéndole el uso de algunas armas, escudos y cascos.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.7', '0.72', '0.7', '0.7', '0.4', '0.4', '0.97', '0.87', '2%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '6 a 8', '6 a 9', '7 a 9', '7 a 10', '7 a 11', '8 a 11'],
+              ['Mana', '50', '46', '42', '38', '26', '24'],
+              ['Golpe', '2', '2', '2', '2', '2', '2'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          }
+        },
+        {
+          name: 'Cazador',
+          description: 'Nacidos en los bosques, los cazadores son expertos únicos en el combate a distancia, con una fuerza y puntería digna de envidiar. Gracias a su gran entrenamiento en el arte de la guerra, tienen buenas propiedades a la hora de ocultarse entre las sombras y poseen una moderada evasión. Esta clase no utiliza mana ni hechizos.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.8', '0.72', '0.96', '1.02', '0.5', '0.4', '0.8', '0.75', '0%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '7 a 10', '8 a 10', '9 a 10', '9 a 11', '9 a 12', '10 a 12'],
+              ['Mana', '0', '0', '0', '0', '0', '0'],
+              ['Golpe', '3', '3', '3', '3', '3', '3'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          }
+        },
+        {
+          name: 'Clérigo',
+          description: 'Gracias a su inspiradora fe, sea a un Dios malévolo o benévolo, el Clérigo puede combinar ataques de daño decente con hechizos de una variedad y poder mágico muy interesantes. Tal vez sea una de las Clases más versátiles del todo el juego, donde la destreza será necesaria para hacer relucir sus atributos. Ésta particularidad los convierte en una clase elegida por cualquier raza aunque tienden a abundar humanos y elfos oscuros cuyas habilidades innatas se encuentran en sintonía con el modo de combate de los clérigos.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.75', '0.72', '0.7', '0.5', '0.4', '0.4', '0.7', '0.72', '2%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '6 a 8', '6 a 9', '7 a 9', '7 a 10', '8 a 11', '9 a 11'],
+              ['Mana', '50', '46', '42', '38', '26', '24'],
+              ['Golpe', '2', '2', '2', '2', '2', '2'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          }
+        },
+        {
+          name: 'Druida',
+          description: 'Los druidas son seres sumamente sabios, poseen una gran conexión con la naturaleza permitiéndole invocar criaturas que acudan en su ayuda. Gracias a su gran conocimiento son expertos en el uso de hechizos con un buen poder y resistencia mágica, aunque se ha visto a algunos con un arma en su mano. Son tambien expertos en la doma de criaturas.\n\nBonidifación Ahorro de Mana: Utilizando el ítem Flauta Élfica el cual le concederá una reducción del 20% para los hechizos invocación.\n\nBonidifación Domar Animales: Utilizando el ítem Flauta Mágica tendrás 20% más de poder de domación.\n\nHabilidad Única: Extracción de raíces para la creación de pociones.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.65', '0.68', '0.83', '0.65', '0.4', '0.4', '0.5', '0.5', '4%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '5 a 8', '5 a 9', '6 a 9', '7 a 9', '7 a 11', '8 a 11'],
+              ['Mana', '62', '58', '52', '48', '32', '30'],
+              ['Golpe', '2', '2', '2', '2', '2', '2'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          },
+          abilities: [
+            {
+              title: 'Domar',
+              description: 'El Druida se caracteriza por poseer la habilidad de domar poderosas criaturas que otras clases no podrán.'
+            },
+            {
+              title: 'Botánica y Alquimia',
+              description: 'El Druida también se caracteriza por poseer la habilidad de crear pociones con caracteristicas especiales que ninguna otra clase podrá: Botánica - Extracción de Raíces, Alquimia - Creación de Pociones'
+            }
+          ]
+        },
+        {
+          name: 'Guerrero',
+          description: 'Los guerreros son expertos únicos en el combate cuerpo a cuerpo y a distancia, con una fuerza extraordinaria capaces de derribar a sus enemigos con pocos golpes. Su gran fuerza le permite cargar con pesadas armaduras y junto a su destacada vitalidad, ser una de las clases mas resistentes. Gracias a su gran entrenamiento en el arte de la guerra, también son hábiles arqueros, causan un gran daño a distancia y también pueden apuñalar. Esta clase no utiliza mana ni hechizos.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['1.05', '0.72', '0.87', '0.7', '0.4', '0.6', '0.78', '0.85', '0%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '8 a 10', '8 a 11', '9 a 11', '10 a 11', '10 a 12', '11 a 12'],
+              ['Mana', '0', '0', '0', '0', '0', '0'],
+              ['Golpe', '4', '4', '4', '4', '4', '4'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          }
+        },
+        {
+          name: 'Ladrón',
+          description: 'Los ladrones son astutos rivales, pueden robar gran cantidad de objetos y oro al enemigo casi sin ser detectado. Dominan el arte del sigilo, al igual que los bandidos pueden caminar oculto entre las sombras sin ser detectado. No tienen conocimientos en la magia, por lo que no usan hechizos ni mana. Su daño está abocado al golpe físico cuerpo a cuerpo utilizando guantes, arcos y cuchillas.\n\nBonificación Guantes de Lucha: Utilizando el objeto Guantes de Lucha y sin arma equipada, cuando acertemos un golpe, tendremos una chance de paralizar al objetivo como así de desarmarlo. (Desequipa el Arma / Solo funciona a USUARIOS)',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.8', '0.69', '0.8', '0.75', '0.8', '0.72', '0.9', '0.75', '2%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '6 a 9', '7 a 9', '8 a 10', '8 a 11', '9 a 11', '9 a 12'],
+              ['Mana', '0', '0', '0', '0', '0', '0'],
+              ['Golpe', '3', '3', '3', '3', '3', '3'],
+              ['Stamina', '18', '18', '18', '18', '18', '18']
+            ]
+          },
+          abilities: [
+            {
+              title: 'Robar',
+              description: 'La habilidad especial del Ladrón, es el robo. Presionando *R + Click* (por defecto), podrás robarle a una víctima, pero ten cuidado, que te convertirás en criminal si lo haces.\n\nChances de Robo: 67% ORO, 33% ITEMS.\n\nRobar Oro: Cuando robes oro, tendrás cierto porcentaje de acierto al robar, por ejemplo, con 100 skills, el porcentaje de acierto en robo es 60%. Si logras robar oro, la formula que determina la cantidad de monedas a robar es la siguiente: Oro Robado: Minimo a Robar (Nivel del Ladrón x25) y Maximo a Robar (Nivel del Ladrón x50). Ejemplo: Si tu Ladrón es Nivel 24, robará entre 600 a 1.200 monedas de oro. Bonificación: Si utilizamos Guantes de Hurto robaremos el doble de monedas de oro. (x2)\n\nRobar Items: Cuando robes al usuario, tendrás cierto porcentaje de acierto al robar objetos: 30% de chances de robar un objeto, 1% a 8% de cantidad robada por objeto.'
+            },
+            {
+              title: 'Ocultarse',
+              description: 'El Ladrón podrá ocultarse y caminar entre las sombras sin ser visto. Este efecto es cancelado si el personaje ataca cuerpo a cuerpo (con o sin arma) o habla. La chance de éxito dependerá de los puntos de habilidad que tengas en ocultar.'
+            },
+            {
+              title: 'Combate Sin Armas',
+              description: 'Pueden optar por el combate sin armas, dando fuertes golpes si se usa guante de lucha y guante de hurto, que le brindarán un mayor daño. También podrá paralizar a su rival atacando con Wrestling (combate sin armas) y equipado el ítem Guantes de Hurto. Mientras más skilles posea en Wrestling mayor será el porcentaje de paralizarlo. (No deberá de poseer arma equipada para poder paralizar al rival)'
+            },
+            {
+              title: 'Cuchillas',
+              description: 'Las Cuchicllas poseen las siguientes habilidades especiales en nuestra clase Ladrón: Desarmar le des-equipa el arma al personaje enemigo dándole al Ladrón la oportunidad de robársela para neutralizarlo. Con Guantes de Hurto tenemos una chance de paralizar al enemigo. Acuchillar nos permite lograr un daño superior al normal. Cuando un Ladrón acierta un golpe con cuchillas estas tienen un 20% de posibilidad de hacer un 20% de daño aumentado.'
+            }
+          ]
+        },
+        {
+          name: 'Mago',
+          description: 'Los magos son poderosos seres con un gran conocimiento en la hechicería. Su inteligencia única y característica les permite usar poderosos conjuros e invocar viles criaturas para acudir en su ayuda. Este atributo les permite lanzar el doble o incluso el triple de hechizo que el resto de las clases con un poder mágico tan devastador que excede con creces la capacidad de cualquiera. Así mismo son seres débiles al enfrentamiento cuerpo a cuerpo y torpes en el uso de armas, por lo que su posicionamiento en combate será exclusivamente el uso de hechizos evitando el enfrentamiento frontal.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.5', '0.4', '0.5', '0.5', '0.3', '0.4', '0.3', '0', '6%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '4 a 8', '5 a 8', '5 a 9', '6 a 9', '6 a 10', '7 a 10'],
+              ['Mana', '75', '69', '63', '57', '39', '36'],
+              ['Golpe', '1', '1', '1', '1', '1', '1'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          }
+        },
+        {
+          name: 'Paladín',
+          description: 'Los paladines poseen un amplio conocimiento en el combate, pueden utilizar una gran variedad de armas, armaduras, cascos y escudos. Su medida inteligencia es suficiente para aprender una gran mayoría de hechizos tanto ofensivos como defensivos, dándole al paladín una combinación entre golpes y hechizo. Está abocado al combate físico cuerpo a cuerpo, es una clase resistente, puede soportar gran cantidad de golpes pudiendo hacerle frente a cualquier amenaza.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.9', '0.81', '0.75', '0.85', '0.4', '0.4', '0.8', '0.9', '1%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '7 a 9', '7 a 10', '8 a 10', '9 a 10', '9 a 11', '10 a 11'],
+              ['Mana', '25', '23', '21', '19', '13', '12'],
+              ['Golpe', '3', '3', '3', '3', '3', '3'],
+              ['Stamina', '15', '15', '15', '15', '15', '15']
+            ]
+          }
+        },
+        {
+          name: 'Pirata',
+          description: 'Los piratas son expertos navegantes, desde muy temprano aprenden a recorrer los mares y usar los navíos más sofisticados.\n\nHabilidad Especial:\n• Bonificación en skills para navegar, requiere: Barca: 40, Galera: 45 y Galeón: 50\n• Puede acceder a cualquier Dungeon sin requerimientos de nivel.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.8', '0.69', '0.8', '0.8', '0.5', '0.4', '0.9', '0.6', '2%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '6 a 9', '7 a 9', '7 a 10', '8 a 10', '8 a 11', '9 a 11'],
+              ['Mana', '0', '0', '0', '0', '0', '0'],
+              ['Golpe', '3', '3', '3', '3', '3', '3'],
+              ['Stamina', '20', '20', '20', '20', '20', '20']
+            ]
+          }
+        },
+        {
+          name: 'Trabajador',
+          description: 'Los trabajadores son fieles servidores capaces de elaborar artesanías con un poder extraordinario, son dedicados exclusivamente a la extracción de materia prima y creación de objetos de gran valor. Son expertos en actividades tales como la pesca, minería, tala, herrería y carpintería. No conocen la hechicería y son torpes en el uso de armas, por lo que harán un daño menor que una clase experta.',
+          modifiers: {
+            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
+            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
+            values: ['0.8', '0.67', '0.7', '0.7', '0.5', '0.4', '0.5', '0.5', '2%']
+          },
+          pointsPerLevel: {
+            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
+            rows: [
+              ['Vida', '6 a 7', '8 a 10', '9 a 10', '9 a 11', '9 a 11', '10 a 11'],
+              ['Mana', '0', '0', '0', '0', '0', '0'],
+              ['Golpe', '2', '2', '2', '2', '2', '2'],
+              ['Stamina', '20', '20', '20', '20', '20', '20']
+            ]
+          },
+          abilities: [
+            {
+              title: 'Tipos de Trabajos',
+              description: 'Los trabajos que se pueden realizar son: Pesca, Tala, Botanica, Alquimia, Herreria, Mineria, Esquilación, Sastreria y Carpintería.\n\nPara más información ingrear a la sección de Trabajo.'
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: 'razas',
     title: 'Razas',
     icon: 'users',
@@ -70,7 +320,7 @@ export const wikiSections = [
   {
     id: 'atributos',
     title: 'Atributos',
-    icon: 'biceps',
+    icon: 'trending-up',
     content: {
       description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
       intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
@@ -97,29 +347,7 @@ export const wikiSections = [
         }
       ]
     }
-  },
-  {
-    id: 'clases',
-    title: 'Clases',
-    icon: 'swords',
-    content: {
-      description: 'Al iniciar tu aventura elegirás que clase quieres ser, esto definirá tus características.',
-      text: 'Al iniciar tu aventura eligiras que clase quieres ser, esto definirá tu características tales como el daño físico que infligirás, tu mana, tu vida, tu evasión, tu chance de acierto, tu equipamiento, entre otras cosas. Cada clase posee características propias de si mismo, y se diferencian siempre las unas de las otras.',
-      classes: [
-        'Asesino',
-        'Bardo',
-        'Cazador',
-        'Clérigo',
-        'Druida',
-        'Guerrero',
-        'Ladrón',
-        'Mago',
-        'Paladín',
-        'Pirata',
-        'Trabajador'
-      ]
-    }
-  },
+  },  
   {
     id: 'trabajo',
     title: 'Trabajo',
