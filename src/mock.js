@@ -13,7 +13,7 @@ export const wikiSections = [
       mapInfo: 'El mapa del mundo de Cucsi, fue basado en el mapa oficial de Argentum Online, respetando las principales ciudades, como "Ullatorphe", "Nix", "Banderbill", entre otras, y usando los dungeons originales con pequeñas modificaciones, tales como "Marabel", "Verill", "Dragon", etc. Fue agregado también el tan usado "Barco", cuya idea original fue obtenida de Cucsifae AO'
     }
   },
-  /* {
+  {
     id: 'cuenta',
     title: 'Crear Cuenta, Habilitar Cuenta y Sistema de Referidos',
     icon: 'user-plus',
@@ -21,8 +21,8 @@ export const wikiSections = [
       description: 'Información sobre cómo crear tu cuenta, habilitarla y beneficiarte del sistema de referidos.',
       placeholder: 'Contenido detallado sobre el proceso de creación de cuenta vendrá aquí...'
     }
-  }, */
-  /* {
+  },
+  {
     id: 'crear-personaje',
     title: 'Crear Personaje',
     icon: 'user-plus',
@@ -30,7 +30,7 @@ export const wikiSections = [
       description: 'Proceso de creación de tu personaje en CucsiAO.',
       text: 'Para crear personajes debemos haber iniciado sesión con nuestra Cuenta y seleccionar la opción "Crear". Podremos crear hasta ocho personajes en una misma Cuenta. Es aconsejable leer Información de personajes para entender respecto a sus características antes de la creación del mismo. Esto permitirá comenzar con la mayor ventaja posible, además las características elegidas no podrán cambiarse una vez terminada la creación del personaje.'
     }
-  }, */
+  },
   {
     id: 'razas',
     title: 'Razas',
@@ -355,7 +355,7 @@ export const wikiSections = [
       ]
     }
   },
-  /* {
+  {
     id: 'trabajo',
     title: 'Trabajo',
     icon: 'briefcase',
@@ -363,8 +363,8 @@ export const wikiSections = [
       description: 'Aprende sobre los diferentes trabajos y oficios disponibles.',
       placeholder: 'Detalles sobre trabajos, recompensas y progresión...'
     }
-  }, */
-  /* {
+  },
+  {
     id: 'entrenamiento',
     title: 'Guía de Entrenamiento',
     icon: 'target',
@@ -372,8 +372,8 @@ export const wikiSections = [
       description: 'Métodos y estrategias para entrenar a tu personaje eficientemente.',
       placeholder: 'Guías de entrenamiento por nivel y clase...'
     }
-  }, */
-  /* {
+  },
+  {
     id: 'experiencia',
     title: 'EXP. x Nivel y Skills Naturales',
     icon: 'trending-up',
@@ -381,7 +381,7 @@ export const wikiSections = [
       description: 'Tablas de experiencia requerida y skills naturales por nivel.',
       placeholder: 'Tablas de progresión y habilidades naturales...'
     }
-  }, */
+  },
   {
     id: 'mapa',
     title: 'Mapa',
@@ -406,7 +406,100 @@ export const wikiSections = [
     icon: 'bug',
     content: {
       description: 'Bestiario completo de las criaturas de CucsiAO.',
-      placeholder: 'Lista de criaturas, niveles, drops y ubicaciones...'
+      creatures: [
+        { name: 'Gallo Salvaje', vida: 15, danoFisico: '1/1', defensa: '-', defMagica: '-', podAtaque: 5, evasion: 5, magia: '-', exp: 15, oro: 1, drop: '90% - Pollo', ubicacion: '8 - 9 - 14 - 16' },
+        { name: 'Rata Salvaje', vida: 15, danoFisico: '2/4', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 20, magia: '-', exp: 15, oro: 0, drop: '-', ubicacion: '2 - 9' },
+        { name: 'Murciélago', vida: 15, danoFisico: '1/4', defensa: '-', defMagica: '3', podAtaque: 30, evasion: 10, magia: '-', exp: 15, oro: 1, drop: '-', ubicacion: '2 - 5 - 14 - 16 - 17' },
+        { name: 'Serpiente', vida: 22, danoFisico: '1/1', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 0, magia: '-', exp: 22, oro: 2, drop: '-', ubicacion: '2 - 3 - 5 - 8 - 14 - 16 - 17 - 20 - 21 - 23 - 24' },
+        { name: 'Escorpión', vida: 32, danoFisico: '1/3', defensa: '-', defMagica: '3', podAtaque: 30, evasion: 10, magia: '-', exp: 32, oro: 1, drop: '-', ubicacion: '20 - 21' },
+        { name: 'Esqueleto', vida: 50, danoFisico: '1/8', defensa: '10', defMagica: '-', podAtaque: 30, evasion: 30, magia: '-', exp: 70, oro: 5, drop: '-', ubicacion: '3 - 4 -18' },
+        { name: 'Pequeña Araña', vida: 125, danoFisico: '3/8', defensa: '4', defMagica: '5', podAtaque: 20, evasion: 20, magia: '-', exp: 175, oro: 1, drop: '-', ubicacion: '12' },
+        { name: 'Goblin', vida: 110, danoFisico: '2/12', defensa: '15', defMagica: '-', podAtaque: 60, evasion: 40, magia: '-', exp: 165, oro: 11, drop: '-', ubicacion: '3 - 25' },
+        { name: 'Lobo', vida: 75, danoFisico: '1/18', defensa: '8', defMagica: '-', podAtaque: 80, evasion: 25, magia: '-', exp: 150, oro: 79, drop: '100% - Piel de Lobo, 5% - Chuleta, 5% - Casco de Lobo', ubicacion: '2 - 3 - 7 - 17' },
+        { name: 'Zombie', vida: 250, danoFisico: '4/12', defensa: '20', defMagica: '-', podAtaque: 100, evasion: 20, magia: '-', exp: 300, oro: 90, drop: '10% - Ropa de Clan', ubicacion: '4 - 18' },
+        { name: 'Orco', vida: 350, danoFisico: '5/35', defensa: '10', defMagica: '-', podAtaque: 60, evasion: 45, magia: '-', exp: 700, oro: 45, drop: '70% - Hacha', ubicacion: '9 - 28' },
+        { name: 'Tortuga Gigante', vida: 315, danoFisico: '35/55', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 45, magia: '-', exp: 504, oro: 150, drop: '100% - Escudo de Tortuga', ubicacion: '6 - 16 - 31' },
+        { name: 'Bandido', vida: 200, danoFisico: '15/39', defensa: '-', defMagica: '-', podAtaque: 70, evasion: 50, magia: '-', exp: 360, oro: 100, drop: '40% - Ropa de Pordiosero', ubicacion: '3' },
+        { name: 'Araña de Los Rincones', vida: 650, danoFisico: '15/55', defensa: '-', defMagica: '-', podAtaque: 30, evasion: 40, magia: '-', exp: 700, oro: 5, drop: '-', ubicacion: '12' },
+        { name: 'Oso Pardo', vida: 625, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-', exp: 1250, oro: 175, drop: '100% - Piel de Oso Pardo', ubicacion: '6 - 12' },
+        { name: 'Oso Polar', vida: 1700, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-', exp: 1400, oro: 480, drop: '100% - Piel de Oso Polar', ubicacion: '59 - 78' },
+        { name: 'Araña', vida: 1000, danoFisico: '40/65', defensa: '-', defMagica: '-', podAtaque: 50, evasion: 20, magia: '-', exp: 2500, oro: 250, drop: '20% - 5 Pociones Violeta', ubicacion: '12' },
+        { name: 'Araña Gigante', vida: 1100, danoFisico: '30/90', defensa: '-', defMagica: '-', podAtaque: 80, evasion: 60, magia: '-', exp: 2373, oro: 220, drop: '5% - Martillo de Guerra, 5% - Armadura de Cuero, 5% - Armadura de Cuero (E/G)', ubicacion: '8 - 9 - 20 - 21 - 23 - 24' },
+        { name: 'Asesino', vida: 1100, danoFisico: '10/100', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 100, magia: '-', exp: 2900, oro: 275, drop: '5% - Armadura de las Sombras, 5% - Armadura de las Sombras (E/G)', ubicacion: '26' },
+        { name: 'Mago Malvado', vida: 1400, danoFisico: '40/80', defensa: '30', defMagica: '-', podAtaque: 100, evasion: 70, magia: 'Lanza Paralizar, Núcleo Plasma y Tormenta de Fuego', exp: 3000, oro: 700, drop: '15% - Gema Azul (1 Pto de User), 5% - Bastón Nudoso, 5% - Túnica de Mago, 5% - Túnica de Mago (E/G), 1% - Espada Helada +1, 1% - Arco de Oro', ubicacion: '59 - 69 - 71 - 89 - 125 - 126' },
+        { name: 'Lord Orco', vida: 1500, danoFisico: '110/170', defensa: '10', defMagica: '10', podAtaque: 120, evasion: 100, magia: '-', exp: 3200, oro: 600, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '59 - 69 - 71' },
+        { name: 'Liche', vida: 1300, danoFisico: '50/140', defensa: '10', defMagica: '10', podAtaque: 120, evasion: 90, magia: '-', exp: 3760, oro: 640, drop: '15% - Gema Azul (1 Pto de User), 1% - Espada Vikinga +1, 1% - Daga +3', ubicacion: '59 - 68 - 70 - 71 - 72' },
+        { name: 'Orco Brujo', vida: 1500, danoFisico: '70/115', defensa: '10', defMagica: '10', podAtaque: 120, evasion: 100, magia: 'Lanza Núcleo Plasma', exp: 3900, oro: 800, drop: '-', ubicacion: '59 - 68 - 69 - 71 - 72' },
+        { name: 'Ogro', vida: 1800, danoFisico: '55/140', defensa: '10', defMagica: '10', podAtaque: 100, evasion: 60, magia: '-', exp: 4561, oro: 720, drop: '100% - Garrote, 15% - Gema Azul (1 Pto de User)', ubicacion: '28' },
+        { name: 'Beholder', vida: 1250, danoFisico: '25/135', defensa: '-', defMagica: '10', podAtaque: 110, evasion: 60, magia: '-', exp: 3500, oro: 650, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '59 - 68 - 125' },
+        { name: 'Serpiente de Anthares', vida: 1400, danoFisico: '10/45', defensa: '-', defMagica: '-', podAtaque: 30, evasion: 50, magia: '-', exp: 4010, oro: 510, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '126' },
+        { name: 'Liche Infernal', vida: 4100, danoFisico: '60/160', defensa: '10', defMagica: '100', podAtaque: 100, evasion: 70, magia: 'Lanza Tormenta de Fuego', exp: 12700, oro: 1500, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 5% - Hechizo: Núcleo Plasma, 5% - Túnica de Monje, 5% - Túnica de Monje (E/G)', ubicacion: '59 - 68 - 125 - 126' },
+        { name: 'Leviatan', vida: 7000, danoFisico: '90/200', defensa: '-', defMagica: '-', podAtaque: 140, evasion: 100, magia: '-', exp: 18200, oro: 1750, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 5% - Casco de Hierro Completo, 5% - Escudo Imperial', ubicacion: '59 - 37 - 60 - 61 - 62 - 102 - 126' },
+        { name: 'Enano de las Profundidades', vida: 2300, danoFisico: '30/60', defensa: '-', defMagica: '-', podAtaque: 40, evasion: 60, magia: '-', exp: 5000, oro: 350, drop: '15% - Gema Azul (1 Pto de User), 5% - Cotas de Mallas, 5% - Cotas de Mallas (E/G)', ubicacion: '125' },
+        { name: 'Dinosaurio', vida: 3000, danoFisico: '60/200', defensa: '-', defMagica: '10', podAtaque: 100, evasion: 80, magia: '-', exp: 9290, oro: 600, drop: '15% - Gema Azul (1 Pto de User), 5% - Casco de Hierro Completo, 5% - Escudo Imperial', ubicacion: '125 - 49 - 76' },
+        { name: 'Dragón Rojo', vida: 3000, danoFisico: '100/150', defensa: '15', defMagica: '15', podAtaque: 120, evasion: 90, magia: '-', exp: 9900, oro: 200, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '125 - 77' },
+        { name: 'Bruja', vida: 4000, danoFisico: '65/120', defensa: '10', defMagica: '10', podAtaque: 100, evasion: 80, magia: 'Lanza Núcleo Plasma y Tormenta de Fuego', exp: 12000, oro: 1200, drop: '20% - Gema Azul (1 Pto de User), 15% - Gema Naranja (3 Ptos de User), 10% - Sombrero de Mago', ubicacion: '125 - 70 - 71 - 76' },
+        { name: 'Medusa', vida: 5000, danoFisico: '95/155', defensa: '10', defMagica: '10', podAtaque: 135, evasion: 95, magia: 'Lanza Paralizar, Tormenta de Fuego y Descarga Electrica', exp: 23000, oro: 1100, drop: '15% - Gema Azul (1 Pto de User), 5% - Gema Naranja (3 Ptos de User), 5% - Cota de Mallas, 5% - Cota de Mallas (Mujer), 5% - Cota de Mallas (E/G), 0.1% - Gema Verde (1)', ubicacion: '48 - 70 - 72 - 74 - 76 - 126' },
+        { name: 'Demonio', vida: 8000, danoFisico: '100/250', defensa: '15', defMagica: '15', podAtaque: 160, evasion: 120, magia: '-', exp: 23000, oro: 3000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 5% - Armadura de Cazador, 5% - Armadura de Cazador (E/G), 0.5% - Gema Violeta', ubicacion: '125 - 102 - 72 - 69' },
+        { name: 'Piraña', vida: 400, danoFisico: '15/60', defensa: '5', defMagica: '5', podAtaque: 80, evasion: 40, magia: '-', exp: 1150, oro: 100, drop: '-', ubicacion: '33 - 49 - 134 - 135 - 136' },
+        { name: 'Sirena', vida: 1000, danoFisico: '40/90', defensa: '10', defMagica: '10', podAtaque: 50, evasion: 50, magia: 'Lanza Paralizar', exp: 2730, oro: 100, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '33 - 134 - 135 - 136' },
+        { name: 'Lutra', vida: 1300, danoFisico: '60/115', defensa: '15', defMagica: '15', podAtaque: 70, evasion: 60, magia: '-', exp: 4410, oro: 125, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '33' },
+        { name: 'Tiburón', vida: 1700, danoFisico: '70/135', defensa: '20', defMagica: '20', podAtaque: 100, evasion: 80, magia: '-', exp: 5500, oro: 150, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '33 - 49' },
+        { name: 'Pirata', vida: 2250, danoFisico: '60/130', defensa: '20', defMagica: '20', podAtaque: 90, evasion: 70, magia: '-', exp: 6670, oro: 600, drop: '15% - Gema Azul (1 Pto de User)', ubicacion: '33' },
+        { name: 'Capitán Pirata', vida: 2500, danoFisico: '90/170', defensa: '25', defMagica: '25', podAtaque: 110, evasion: 90, magia: '-', exp: 7790, oro: 800, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User)', ubicacion: '33' },
+        { name: 'Golem de Piedra', vida: 30000, danoFisico: '130/265', defensa: '15', defMagica: '15', podAtaque: 130, evasion: 20, magia: '-', exp: 50000, oro: 12000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 5% - 200 Lingotes de Hierro', ubicacion: '102 - 69 - 72 - 70 - 74 - 76' },
+        { name: 'Pingüino', vida: 600, danoFisico: '20/60', defensa: '-', defMagica: '-', podAtaque: 50, evasion: 25, magia: '-', exp: 300, oro: 1200, drop: '15% - Gema Azul (1 Pto de User), Piedra pinguino (600 monedas)', ubicacion: '78 - 138' },
+        { name: 'Lobo Polar', vida: 800, danoFisico: '60/80', defensa: '-', defMagica: '-', podAtaque: 80, evasion: 35, magia: '-', exp: 500, oro: 1600, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), Piedra lobo polar (800 monedas)', ubicacion: '78 - 138' },
+        { name: 'Hombre de las Nieves', vida: 1500, danoFisico: '80/120', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 25, magia: '-', exp: 1000, oro: 3000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), Piedra hombre de las nieves (1500 monedas)', ubicacion: '138' },
+        { name: 'Beholder Polar', vida: 2000, danoFisico: '65/140', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 45, magia: '-', exp: 1250, oro: 4000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), Piedra beholder polar (2000 monedas)', ubicacion: '138' },
+        { name: 'Gorila Polar', vida: 2500, danoFisico: '30/180', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 55, magia: '-', exp: 1500, oro: 5000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), Piedra gorila polar (2500 monedas)', ubicacion: '138' },
+        { name: 'Golem Junior de Hielo', vida: 3000, danoFisico: '90/150', defensa: '-', defMagica: '-', podAtaque: 90, evasion: 50, magia: '-', exp: 4000, oro: 6000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 0.5% - Gema Azul, Piedra Golem Jr (3000 monedas)', ubicacion: '78' },
+        { name: 'Rey Golem de Polo', vida: 4500, danoFisico: '110/220', defensa: '-', defMagica: '-', podAtaque: 160, evasion: 50, magia: '-', exp: 5000, oro: 8500, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 3% - Túnica Invernal (Hombre), 3% - Túnica Invernal (Mujer), 3% - Túnica Invernal (Bajos), 0.5% - Gema Celeste, Piedra Rey golem (4500 monedas)', ubicacion: '78 - 138' },
+        { name: 'Arquero del Castillo', vida: 1200, danoFisico: '25/50', defensa: '5', defMagica: '5', podAtaque: 40, evasion: 40, magia: 'Lanza Flechazos a Distancia', exp: 4600, oro: 600, drop: '15% - Gema Azul (1 Pto de User), 2% - Armadura De Piel de Golem Alado (G/E)', ubicacion: '81 - 84' },
+        { name: 'Plebello del Castillo', vida: 1650, danoFisico: '40/60', defensa: '5', defMagica: '5', podAtaque: 50, evasion: 50, magia: '-', exp: 5550, oro: 720, drop: '15% - Gema Azul (1 Pto de User), 2% - Armadura De La Daga Sangrienta (G/E)', ubicacion: '81' },
+        { name: 'Mago del Castillo', vida: 2060, danoFisico: '40/80', defensa: '10', defMagica: '10', podAtaque: 80, evasion: 50, magia: 'Lanza Núcleo de Plasma', exp: 7710, oro: 520, drop: '15% - Gema Azul (1 Pto de User), 2% - Túnica Del Dios Thaos (G/E)', ubicacion: '82 - 83' },
+        { name: 'Guerrero Armado del Castillo', vida: 2450, danoFisico: '60/140', defensa: '15', defMagica: '15', podAtaque: 100, evasion: 70, magia: '-', exp: 8700, oro: 563, drop: '15% - Gema Azul (1 Pto de User), 2% - Armadura De Piel de Golem Alado', ubicacion: '82 - 83 - 84' },
+        { name: 'Archimago del Castillo', vida: 3150, danoFisico: '55/100', defensa: '20', defMagica: '20', podAtaque: 80, evasion: 60, magia: 'Lanza Tormenta de Fuego', exp: 10200, oro: 1500, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 2% - Túnica Del Dios Thaos', ubicacion: '83 - 84' },
+        { name: 'Paladin del Castillo', vida: 3630, danoFisico: '100/130', defensa: '20', defMagica: '20', podAtaque: 100, evasion: 80, magia: 'Lanza Descarga Electrica', exp: 12250, oro: 1650, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 2% - Armadura De La Daga Sangrienta', ubicacion: '83 - 84' },
+        { name: 'Arcangel Armado del Castillo', vida: 4770, danoFisico: '120/180', defensa: '30', defMagica: '30', podAtaque: 120, evasion: 100, magia: 'Lanza Paralizar y Descarga Electrica', exp: 17500, oro: 1950, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 1% - Armadura De La Daga Sangrienta, 1% - Armadura De Piel de Golem Alado (G/E), 1% - Armadura De La Daga Sangrienta (G/E), 1% - Túnica Del Dios Thaos (G/E), 1% - Armadura De Piel de Golem Alado y 1% - Túnica Del Dios Thaos', ubicacion: '83 - 84' },
+        { name: 'Balrog de fuego', vida: 30000, danoFisico: '100/260', defensa: '50', defMagica: '50', podAtaque: 180, evasion: 140, magia: 'Imparalizable - Lanza Drenar y Tormenta de Fuego', exp: 23000, oro: 2000, drop: '25% - Gema de Clan (2), 15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 5% - Armadura de Placas Completa, 5% - Armadura de Placas Completa (E/G), 5% - Armadura de Placas Rojas (Mujer), 5% - Hacha Guerrera de Dos Filos', ubicacion: '8' },
+        { name: 'Galeón Pirata', vida: 4000, danoFisico: '250/200', defensa: '0', defMagica: '0', podAtaque: 200, evasion: 150, magia: '-', exp: 12000, oro: 2015, drop: '1% - Flecha +3, 1% - Cimitarra, 1% - Bastón Nudoso', ubicacion: '134 - 135 - 136' },
+        { name: 'Galeón Fantasmal', vida: 7000, danoFisico: '350/150', defensa: '12', defMagica: '12', podAtaque: 300, evasion: 200, magia: '-', exp: 17000, oro: 250, drop: '1% - Laúd Mágico, 1% - Flauta Mágica', ubicacion: '134 - 135 - 136' },
+        { name: 'Leviatan II', vida: 8000, danoFisico: '250/90', defensa: '-', defMagica: '-', podAtaque: 220, evasion: 180, magia: '-', exp: 26000, oro: 1750, drop: '1% - Casco Incompleto, 1% - Escudo Espada Helada', ubicacion: '134 - 135 - 136' },
+        { name: 'Kraken', vida: 6250, danoFisico: '220/95', defensa: '15', defMagica: '15', podAtaque: 220, evasion: 170, magia: 'Lanza Paralizar', exp: 24000, oro: 1000, drop: '1% - Rompe Cascos, 1% - Casco de Plata, 1% - Armadura de Placas Azul (H/E/EO-M)', ubicacion: '134 - 135 - 136' },
+        { name: 'Golem Dorado', vida: 15000, danoFisico: '145/275', defensa: '30', defMagica: '30', podAtaque: 140, evasion: 60, magia: '-', exp: 50000, oro: 5000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 3% - 1000 Minerales de Oro, 0.5% - Gema Lila (1)', ubicacion: '126 - 74 - 76' },
+        { name: 'Golem Alado', vida: 25000, danoFisico: '155/290', defensa: '45', defMagica: '45', podAtaque: 150, evasion: 40, magia: '-', exp: 80000, oro: 8000, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 5% - Armadura de Placas Completa , 5% - Armadura de Placas Completa (E/G), 0.5% - Gema Lila (1)', ubicacion: '126 - 74 - 76' },
+        { name: 'Gran Dragón Rojo', vida: 25000, danoFisico: '100/180', defensa: '50', defMagica: '50', podAtaque: 200, evasion: 190, magia: 'Paralizable - Lanza Tormenta de Fuego y Apocalipsis', exp: 71000, oro: 1900, drop: '15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User), 5% - Gema Verde (5 Ptos de User), 5% - Armadura de Placas Completa, 5% - Armadura de Placas Completa (Mujer), 5% - Armadura de Placas Completa (E/G)', ubicacion: '77' },
+        { name: 'Golem de Bronce', vida: 1700, danoFisico: '40/100', defensa: '5', defMagica: '5', podAtaque: 60, evasion: 20, magia: '-', exp: 3000, oro: 50, drop: '100% - Yacimientos de Bronce (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '45' },
+        { name: 'Golem de Plata', vida: 2100, danoFisico: '50/110', defensa: '10', defMagica: '10', podAtaque: 70, evasion: 30, magia: '-', exp: 4200, oro: 100, drop: '100% - Yacimientos de Plata (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '44' },
+        { name: 'Golem de Oro', vida: 2500, danoFisico: '60/120', defensa: '15', defMagica: '15', podAtaque: 80, evasion: 40, magia: '-', exp: 5000, oro: 150, drop: '100% - Yacimientos de Oro (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '75' },
+        { name: 'Momia de Lana de Oveja', vida: 1700, danoFisico: '40/100', defensa: '5', defMagica: '5', podAtaque: 60, evasion: 20, magia: '-', exp: 3000, oro: 75, drop: '100% - Lana de oveja (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '93' },
+        { name: 'Momia de Lana de Cabra', vida: 2100, danoFisico: '50/110', defensa: '10', defMagica: '10', podAtaque: 70, evasion: 30, magia: '-', exp: 4200, oro: 100, drop: '100% - Lana de cabra (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '160' },
+        { name: 'Momia de Lana de Llama', vida: 2500, danoFisico: '60/120', defensa: '15', defMagica: '15', podAtaque: 80, evasion: 40, magia: '-', exp: 5000, oro: 150, drop: '100% - Lana de llama (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '140' },
+        { name: 'Ent', vida: 2500, danoFisico: '60/120', defensa: '15', defMagica: '15', podAtaque: 80, evasion: 40, magia: '-', exp: 5000, oro: 150, drop: '100% - Leña (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '79' },
+        { name: 'Licántropo', vida: 1500, danoFisico: '15/35', defensa: '-', defMagica: '-', podAtaque: 25, evasion: 15, magia: '-', exp: 2000, oro: 50, drop: '35% - Leña (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '101' },
+        { name: 'Ave de las Profundidades', vida: 2500, danoFisico: '30/60', defensa: '-', defMagica: '-', podAtaque: 30, evasion: 40, magia: '-', exp: 2000, oro: 50, drop: '35% - Yacimientos de Hierro (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '101' },
+        { name: 'Arpia', vida: 1500, danoFisico: '20/40', defensa: '-', defMagica: '-', podAtaque: 30, evasion: 40, magia: '-', exp: 2000, oro: 50, drop: '35% - Lana de Oveja (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '101' },
+        { name: 'Momia', vida: 1500, danoFisico: '30/50', defensa: '-', defMagica: '-', podAtaque: 40, evasion: 20, magia: '-', exp: 2000, oro: 50, drop: '35% - Yacimientos de Plata (250),15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User)', ubicacion: '101' },
+        { name: 'Hada Oscura', vida: 1500, danoFisico: '40/60', defensa: '-', defMagica: '-', podAtaque: 45, evasion: 40, magia: '-', exp: 2000, oro: 50, drop: '35% - Lana de Cabra (250),15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User)', ubicacion: '101' },
+        { name: 'Rey Scroll', vida: 1500, danoFisico: '55/80', defensa: '-', defMagica: '-', podAtaque: 55, evasion: 60, magia: '-', exp: 2000, oro: 50, drop: '35% - Raíz (250), 15% - Gema Azul (1 Pto de User), 10% - Gema Naranja (3 Ptos de User)', ubicacion: '101' },
+        { name: 'Abominación Élfica', vida: 2500, danoFisico: '60/120', defensa: '15', defMagica: '15', podAtaque: 120, evasion: 40, magia: '-', exp: 5000, oro: 150, drop: '100% - Leña Elfica (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '145' },
+        { name: 'Planta Carnivora', vida: 2500, danoFisico: '60/120', defensa: '15', defMagica: '15', podAtaque: 80, evasion: 40, magia: '-', exp: 5000, oro: 150, drop: '100% - Raíz (250), 15% - Gema Azul (1 Pto de User)', ubicacion: '89' },
+        { name: 'Paria', vida: 1000, danoFisico: '10/50', defensa: '1', defMagica: '1', podAtaque: 15, evasion: 15, magia: '-', exp: 940, oro: 35, drop: '10% - Pocion Roja (250), 10% - Pocion Azul (100), 10% - Pocion Verde (30), 10% - Pocion Amarillas (30)', ubicacion: '-' },
+        { name: 'Vampiresa', vida: 3700, danoFisico: '50/135', defensa: '5', defMagica: '5', podAtaque: 65, evasion: 65, magia: 'Lanza Paralizar', exp: 12400, oro: 100, drop: '5% - Túnica Maléfica [DefCorp], 5% - Túnica Maléfica [DefCorp] (E/G), 5% - Corona, 7% - Cimitarra, 5% - Vara de Mago, 5% - Laúd Élfico, 5% - Flauta Élfica, 5% - Sable de Pirata', ubicacion: '-' },
+        { name: 'Ciclope', vida: 4100, danoFisico: '90/110', defensa: '7', defMagica: '7', podAtaque: 80, evasion: 95, magia: 'Tormenta de Fuego (+2)', exp: 13500, oro: 125, drop: '5% - Armadura De Placas De Gala Dorada [DefCorp], 5% - Armadura Mercenario [DefCorp], 7% - Hacha de Barbaro, 7% - Espada Helada, 7% - Espada de Plata, 5% - Escudo de Plata, 7% - Puñal, 5% - Casco de Plata', ubicacion: '-' },
+        { name: 'Aparicion', vida: 4600, danoFisico: '70/130', defensa: '10', defMagica: '10', podAtaque: 110, evasion: 135, magia: 'Descarga Electrica (+1)', exp: 14900, oro: 150, drop: '5% - Túnica Maléfica [DefMag], 5% - Túnica Maléfica [DefMag] (E/G), 5% - Corona, 7% - Cimitarra, 5% - Vara de Mago, 5% - Laúd Élfico, 5% - Flauta Élfica, 5% - Sable de Pirata', ubicacion: '-' },
+        { name: 'Djinn de Viento', vida: 5100, danoFisico: '150/150', defensa: '10', defMagica: '10', podAtaque: 100, evasion: 115, magia: 'Descarga Electrica (+1)', exp: 16400, oro: 170, drop: '5% - Vestimenta de la Oscuridad, 5% - Vestimenta de la Oscuridad (E/G), 5% - Ballesta, 7% - Flecha +3 (1.000), 5% - Escudo Rustico, 5% - Rodela de Madera Reforzada, 5% - Casco del Gran Maestre, 5% - Casco de Gran Maestre Oscuro', ubicacion: '-' },
+        { name: 'Bestia Guerrera', vida: 5400, danoFisico: '100/180', defensa: '10', defMagica: '10', podAtaque: 135, evasion: 135, magia: '-', exp: 18200, oro: 180, drop: '5% - Vestimenta de la Oscuridad, 5% - Vestimenta de la Oscuridad (E/G), 5% - Ballesta, 7% - Flecha +3 (1.000), 5% - Escudo Rustico, 5% - Rodela de Madera Reforzada, 5% - Casco del Gran Maestre, 5% - Casco de Gran Maestre Oscuro', ubicacion: '-' },
+        { name: 'Elemental de Tierra Errante', vida: 5950, danoFisico: '100/180', defensa: '10', defMagica: '10', podAtaque: 150, evasion: 100, magia: 'Inmovilizar', exp: 20400, oro: 200, drop: '5% - Armadura De Placas De Gala Dorada [DefCorp], 5% - Armadura Mercenario [DefCorp], 7% - Hacha de Barbaro, 7% - Espada Helada, 7% - Espada de Plata, 5% - Escudo de Plata, 7% - Puñal, 5% - Casco de Plata', ubicacion: '-' },
+        { name: 'Elemental de Agua Errante', vida: 5950, danoFisico: '100/180', defensa: '10', defMagica: '10', podAtaque: 150, evasion: 100, magia: 'Descarga Electrica (+1)', exp: 20400, oro: 200, drop: '5% - Túnica Maléfica [DefMag], 5% - Túnica Maléfica [DefMag] (E/G), 5% - Túnica Maléfica [DefCorp], 5% - Túnica Maléfica [DefCorp] (E/G), 5% - Corona, 7% - Cimitarra, 5% - Vara de Mago, 5% - Laúd Élfico, 5% - Flauta Élfica, 5% - Sable de Pirata', ubicacion: '-' },
+        { name: 'Elemental de Fuego Errante', vida: 5950, danoFisico: '100/180', defensa: '10', defMagica: '10', podAtaque: 150, evasion: 100, magia: 'Tormenta de Fuego (+2)', exp: 20400, oro: 200, drop: '5% - Vestimenta de la Oscuridad, 5% - Vestimenta de la Oscuridad (E/G), 5% - Ballesta, 7% - Flecha +3 (1.000), 5% - Escudo Rustico, 5% - Rodela de Madera Reforzada, 5% - Casco del Gran Maestre, 5% - Casco de Gran Maestre Oscuro', ubicacion: '-' },
+        { name: 'Inferno', vida: 6475, danoFisico: '70/150', defensa: '15', defMagica: '15', podAtaque: 115, evasion: 100, magia: 'Tormenta de Fuego (+2)', exp: 24000, oro: 225, drop: '5% - Armadura de Omega [DefCorp], 5% - Armadura de Caballero [DefCorp], 5% - Armadura de Epsilon [DefCorp], 5% - Armadura de Omega (G/E) [DefCorp], 5% - Armadura de Tawnos (G/E) [DefCorp], 5% - Armadura de Tawnos Dorada (G/E) [DefCorp], 5% - Daga Dhanab, 7% - Rompe Cascos, 5% - Rompe Cascos Superior, 5% - Escudo del Gran Imperio, 5% - Escudo Oscuro, 5% - Casco de Caballero, 7% - Casco Incompleto', ubicacion: '-' },
+        { name: 'Devastador', vida: 6950, danoFisico: '100/200', defensa: '20', defMagica: '20', podAtaque: 110, evasion: 125, magia: 'Descarga Electrica (+1)', exp: 29400, oro: 250, drop: '5% - Armadura de Omega [DefMag], 5% - Armadura de Caballero [DefMag], 5% - Armadura de Epsilon [DefMag], 5% - Armadura de Omega (G/E) [DefMag], 5% - Armadura de Tawnos (G/E) [DefMag], 5% - Armadura de Tawnos Dorada (G/E) [DefMag], 5% - Daga Dhanab, 7% - Rompe Cascos, 5% - Rompe Cascos Superior, 5% - Escudo del Gran Imperio, 5% - Escudo Oscuro, 5% - Casco de Caballero, 7% - Casco Incompleto', ubicacion: '-' },
+        { name: 'Lord Belithuz', vida: 17345, danoFisico: '250/350', defensa: '40', defMagica: '40', podAtaque: 230, evasion: 175, magia: 'Imparalizable - Maldecir, Sombra de la Muerte', exp: 80000, oro: 500, drop: '5% - Armadura de Dragón (Hombre) [DefCorp], 5% - Armadura de Dragón (Mujer) [DefCorp], 5% - Armadura de Dragón (G/E) [DefCorp], 5% - Daga De la Oscuridad, 5% - Maza Oscura, 5% - Martillo Sagrado, 5% - Espada Argentum, 5% - Excalibur II, 5% - Casco de Guerrero Completo, 5% - Casco MAESTRE Dorado, 5% - Casco Oscuro, 5% - Escudo de Tres Puntas, 5% - Escudo del Gran Imperio +1, 5% - Escudo de Caballero, 5% - Casco de Caballero, 7% - Casco Incompleto, 5% - Corona, 5% - Vara de Mago, 5% - Laúd Élfico, 5% - Flauta Élfica, 5% - Sable de Pirata', ubicacion: '-' },
+        { name: 'Gran Dragón Negro', vida: 25000, danoFisico: '130/210', defensa: '25', defMagica: '25', podAtaque: 150, evasion: 150, magia: 'Imparalizable - Llamarada, Apocalipsis', exp: 100000, oro: 3000, drop: '5% - Armadura de Dragón (Hombre) [DefCorp], 5% - Armadura de Dragón (Mujer) [DefCorp], 5% - Armadura de Dragón (G/E) [DefCorp], 5% -Daga Dhanab, 7% - Rompe Cascos, 5% - Rompe Cascos Superior, 5% - Escudo del Gran Imperio, 5% - Escudo Oscuro, 5% - Casco de Caballero, 7% - Casco Incompleto', ubicacion: '-' },
+        { name: 'Gran Dragón Plateado', vida: 25000, danoFisico: '200/250', defensa: '30', defMagica: '30', podAtaque: 200, evasion: 180, magia: 'Imparalizable - Rafaga Ardiente, Apocalipsis', exp: 100000, oro: 3000, drop: '5% - Armadura de Dragón (Hombre) [DefCorp], 5% - Armadura de Dragón (Mujer) [DefCorp], 5% - Armadura de Dragón (G/E) [DefCorp], 5% -Ballesta, 7% - Flecha +3 (1.000), 5% - Escudo Rustico, 5% - Rodela de Madera Reforzada, 5% - Casco del Gran Maestre, 5% - Casco de Gran Maestre Oscuro, 5% - Daga Dhanab, 7% - Rompe Cascos, 5% - Rompe Cascos Superior, 5% - Escudo del Gran Imperio, 5% - Escudo Oscuro, 5% - Casco de Caballero, 7% - Casco Incompleto', ubicacion: '-' }
+      ]
     }
   },
   {
@@ -445,7 +538,7 @@ export const wikiSections = [
       placeholder: 'Base de datos de items con stats y ubicaciones...'
     }
   },
-  /* {
+  {
     id: 'clanes',
     title: 'Clanes',
     icon: 'flag',
@@ -489,8 +582,8 @@ export const wikiSections = [
       description: 'Las diferentes facciones del mundo y sus conflictos.',
       placeholder: 'Información sobre facciones disponibles...'
     }
-  }, */
-  /* {
+  },
+  {
     id: 'poder-cypher',
     title: 'Poder de Cypher',
     icon: 'crown',
@@ -534,8 +627,8 @@ export const wikiSections = [
       description: 'Guía completa del sistema de crafteo.',
       placeholder: 'Recetas, materiales y habilidades de artesano...'
     }
-  }, */
-  /* {
+  },
+  {
     id: 'cofres',
     title: 'Cofres',
     icon: 'box',
@@ -570,8 +663,8 @@ export const wikiSections = [
       description: 'Moneda premium del juego.',
       placeholder: 'Cómo obtener y gastar Cucsi Puntos...'
     }
-  }, */
-  /* {
+  },
+  {
     id: 'apariciones',
     title: 'Apariciones de Cypher',
     icon: 'eye',
@@ -588,8 +681,8 @@ export const wikiSections = [
       description: 'Calendario de eventos automáticos del servidor.',
       placeholder: 'Lista de eventos programados y recompensas...'
     }
-  }, */
-  /* {
+  },
+  {
     id: 'entrenador',
     title: 'Entrenador en Ullathorpe',
     icon: 'graduation-cap',
@@ -642,7 +735,7 @@ export const wikiSections = [
       description: 'Soluciones a problemas comunes del juego.',
       placeholder: 'Guía de troubleshooting...'
     }
-  } */
+  }
 ];
 
 export const socialLinks = [

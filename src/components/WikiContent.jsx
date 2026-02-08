@@ -10,6 +10,10 @@ export const WikiContent = () => {
   const [activeSection, setActiveSection] = useState('bienvenida');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedClass, setSelectedClass] = useState(null);
+  
+  // States for creatures table
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortConfig, setSortConfig] = useState({ key: 'exp', direction: 'desc' });
 
   const getIcon = (iconName) => {
     const iconMap = {
@@ -51,6 +55,65 @@ export const WikiContent = () => {
     };
     const IconComponent = iconMap[iconName] || Icons.BookOpen;
     return <IconComponent className="section-icon" size={20} />;
+  };
+
+  // Calculate EXP/Vida ratio
+  const calculateRatio = (exp, vida) => {
+    return (exp / vida).toFixed(2);
+  };
+
+  // Get ratio chip class
+  const getRatioClass = (ratio) => {
+    const numRatio = parseFloat(ratio);
+    if (numRatio < 1.0) return 'ratio-chip-gray';
+    if (numRatio >= 1.0 && numRatio < 1.5) return 'ratio-chip-white';
+    return 'ratio-chip-gold';
+  };
+
+  // Sort creatures
+  const sortCreatures = (creatures) => {
+    if (!sortConfig.key) return creatures;
+    
+    return [...creatures].sort((a, b) => {
+      let aValue = a[sortConfig.key];
+      let bValue = b[sortConfig.key];
+      
+      // Handle numeric sorting
+      if (sortConfig.key === 'vida' || sortConfig.key === 'exp' || sortConfig.key === 'oro' || 
+          sortConfig.key === 'podAtaque' || sortConfig.key === 'evasion') {
+        aValue = Number(aValue);
+        bValue = Number(bValue);
+      }
+      
+      if (aValue < bValue) {
+        return sortConfig.direction === 'asc' ? -1 : 1;
+      }
+      if (aValue > bValue) {
+        return sortConfig.direction === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  };
+
+  // Handle sort
+  const handleSort = (key) => {
+    setSortConfig({
+      key,
+      direction: sortConfig.key === key && sortConfig.direction === 'asc' ? 'desc' : 'asc'
+    });
+  };
+
+  // Filter and sort creatures
+  const getFilteredAndSortedCreatures = (creatures) => {
+    let filtered = creatures;
+    
+    if (searchTerm) {
+      filtered = creatures.filter(creature => 
+        creature.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    
+    return sortCreatures(filtered);
   };
 
   const renderWelcomeContent = (content) => {
@@ -331,6 +394,118 @@ export const WikiContent = () => {
               </div>
             ))}
           </div>
+        </div>
+      );
+    }
+    
+    // Render Criaturas (Bestiary)
+    if (section.id === 'criaturas') {
+      const filteredCreatures = getFilteredAndSortedCreatures(section.content.creatures);
+      
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          
+          {/* Search Bar */}
+          <div className="bestiary-search">
+            <Icons.Search className="search-icon" size={20} />
+            <input
+              type="text"
+              placeholder="Buscar criatura..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="search-input"
+            />
+            {searchTerm && (
+              <button 
+                onClick={() => setSearchTerm('')}
+                className="clear-search"
+              >
+                <Icons.X size={16} />
+              </button>
+            )}
+          </div>
+          
+          {/* Creatures Table */}
+          <div className="table-container">
+            <div className="table-scroll">
+              <table className="wiki-table bestiary-table">
+                <thead>
+                  <tr>
+                    <th onClick={() => handleSort('name')} className="sortable-header">
+                      Criatura {sortConfig.key === 'name' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th onClick={() => handleSort('vida')} className="sortable-header">
+                      Vida {sortConfig.key === 'vida' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th>Daño Físico</th>
+                    <th>Defensa</th>
+                    <th>Def. Mágica</th>
+                    <th onClick={() => handleSort('podAtaque')} className="sortable-header">
+                      Pod. Ataque {sortConfig.key === 'podAtaque' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th onClick={() => handleSort('evasion')} className="sortable-header">
+                      Evasión {sortConfig.key === 'evasion' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th>Magia</th>
+                    <th onClick={() => handleSort('exp')} className="sortable-header">
+                      EXP {sortConfig.key === 'exp' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th onClick={() => handleSort('oro')} className="sortable-header">
+                      ORO {sortConfig.key === 'oro' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                    </th>
+                    <th>Drop</th>
+                    <th>Ubicación</th>
+                    <th>Ratio EXP/Vida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredCreatures.map((creature, idx) => {
+                    const ratio = calculateRatio(creature.exp, creature.vida);
+                    return (
+                      <tr key={idx}>
+                        <td className="creature-name">{creature.name}</td>
+                        <td>{creature.vida}</td>
+                        <td>{creature.danoFisico}</td>
+                        <td>{creature.defensa}</td>
+                        <td>{creature.defMagica}</td>
+                        <td>{creature.podAtaque}</td>
+                        <td>{creature.evasion}</td>
+                        <td className="magic-cell">{creature.magia}</td>
+                        <td>{creature.exp.toLocaleString()}</td>
+                        <td>{creature.oro}</td>
+                        <td className="drop-cell">{creature.drop}</td>
+                        <td className="location-cell">{creature.ubicacion}</td>
+                        <td>
+                          <span className={`ratio-chip ${getRatioClass(ratio)}`}>
+                            {ratio}
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          {/* <div className="bestiary-legend">
+            <h4>Leyenda de Ratio EXP/Vida:</h4>
+            <div className="legend-items">
+              <div className="legend-item">
+                <span className="ratio-chip ratio-chip-gray">{'< 1.0'}</span>
+                <span>Bajo</span>
+              </div>
+              <div className="legend-item">
+                <span className="ratio-chip ratio-chip-white">1.0 - 1.5</span>
+                <span>Normal</span>
+              </div>
+              <div className="legend-item">
+                <span className="ratio-chip ratio-chip-gold">≥ 1.5</span>
+                <span>Alto</span>
+              </div>
+            </div>
+          </div> */}
         </div>
       );
     }
