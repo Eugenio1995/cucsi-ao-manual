@@ -115,6 +115,7 @@ export const wikiSections = [
       classes: [
         {
           name: 'Asesino',
+          image: 'https://manual.alkononline.com.ar/images/c/c5/Asesin.jpg',
           description: 'Las clase asesino son capaces de encontrar el punto débil a todos sus oponentes convirtiéndose en la clase más habilidosa al momento de apuñalar a sus enemigos. Sus golpes pueden parecer débiles pero cuidado, pueden derribar a los más resistentes y derrotar adversarios de un solo golpe.\n\nEsta clase posee una excelente preparación para el combate físico resultando en una gran evasión y muy buen manejo de armas cuerpo a cuerpo. Puede utilizar conjuros mágicos como complemento a sus tácticas ofensivas y defensivas con precaución de su limitada cantidad de maná.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -140,6 +141,7 @@ export const wikiSections = [
         },
         {
           name: 'Bardo',
+          image: 'https://manual.alkononline.com.ar/images/e/ee/Bard.jpg',
           description: 'Los Bardos son capaces de desconcertar al oponente con sus melodías induciéndolos a lanzar una ofensiva imprecisa, facilitándole la predicción del mismo y esquivarlos sin dificultad, por eso es la clase con mas evasión. Sus místicos instrumentos le otorgan gran concentración permitiéndole lanzar hechizos mas precisos, provocando gran daño mágico. Tienen un leve entrenamiento en combate físico, concediéndole el uso de algunas armas, escudos y cascos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -158,6 +160,7 @@ export const wikiSections = [
         },
         {
           name: 'Cazador',
+          image: 'https://manual.alkononline.com.ar/images/b/b6/Cazador.jpg',
           description: 'Nacidos en los bosques, los cazadores son expertos únicos en el combate a distancia, con una fuerza y puntería digna de envidiar. Gracias a su gran entrenamiento en el arte de la guerra, tienen buenas propiedades a la hora de ocultarse entre las sombras y poseen una moderada evasión. Esta clase no utiliza mana ni hechizos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -176,6 +179,7 @@ export const wikiSections = [
         },
         {
           name: 'Clérigo',
+          image: 'https://manual.alkononline.com.ar/images/a/a2/Clerig.jpg',
           description: 'Gracias a su inspiradora fe, sea a un Dios malévolo o benévolo, el Clérigo puede combinar ataques de daño decente con hechizos de una variedad y poder mágico muy interesantes. Tal vez sea una de las Clases más versátiles del todo el juego, donde la destreza será necesaria para hacer relucir sus atributos. Ésta particularidad los convierte en una clase elegida por cualquier raza aunque tienden a abundar humanos y elfos oscuros cuyas habilidades innatas se encuentran en sintonía con el modo de combate de los clérigos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -194,6 +198,7 @@ export const wikiSections = [
         },
         {
           name: 'Druida',
+          image: 'https://manual.alkononline.com.ar/images/f/f0/Druid.jpg',
           description: 'Los druidas son seres sumamente sabios, poseen una gran conexión con la naturaleza permitiéndole invocar criaturas que acudan en su ayuda. Gracias a su gran conocimiento son expertos en el uso de hechizos con un buen poder y resistencia mágica, aunque se ha visto a algunos con un arma en su mano. Son tambien expertos en la doma de criaturas.\n\nBonidifación Ahorro de Mana: Utilizando el ítem Flauta Élfica el cual le concederá una reducción del 20% para los hechizos invocación.\n\nBonidifación Domar Animales: Utilizando el ítem Flauta Mágica tendrás 20% más de poder de domación.\n\nHabilidad Única: Extracción de raíces para la creación de pociones.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -222,6 +227,7 @@ export const wikiSections = [
         },
         {
           name: 'Guerrero',
+          image: 'https://manual.alkononline.com.ar/images/0/01/Guerrer.jpg',
           description: 'Los guerreros son expertos únicos en el combate cuerpo a cuerpo y a distancia, con una fuerza extraordinaria capaces de derribar a sus enemigos con pocos golpes. Su gran fuerza le permite cargar con pesadas armaduras y junto a su destacada vitalidad, ser una de las clases mas resistentes. Gracias a su gran entrenamiento en el arte de la guerra, también son hábiles arqueros, causan un gran daño a distancia y también pueden apuñalar. Esta clase no utiliza mana ni hechizos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -240,6 +246,7 @@ export const wikiSections = [
         },
         {
           name: 'Ladrón',
+          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu3NHMkt4J_ibUP7RIzI4wER1Q8EwjjAEbpQ&s',
           description: 'Los ladrones son astutos rivales, pueden robar gran cantidad de objetos y oro al enemigo casi sin ser detectado. Dominan el arte del sigilo, al igual que los bandidos pueden caminar oculto entre las sombras sin ser detectado. No tienen conocimientos en la magia, por lo que no usan hechizos ni mana. Su daño está abocado al golpe físico cuerpo a cuerpo utilizando guantes, arcos y cuchillas.\n\nBonificación Guantes de Lucha: Utilizando el objeto Guantes de Lucha y sin arma equipada, cuando acertemos un golpe, tendremos una chance de paralizar al objetivo como así de desarmarlo. (Desequipa el Arma / Solo funciona a USUARIOS)',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -276,6 +283,7 @@ export const wikiSections = [
         },
         {
           name: 'Mago',
+          image: 'https://manual.alkononline.com.ar/images/e/e5/Mag.jpg',
           description: 'Los magos son poderosos seres con un gran conocimiento en la hechicería. Su inteligencia única y característica les permite usar poderosos conjuros e invocar viles criaturas para acudir en su ayuda. Este atributo les permite lanzar el doble o incluso el triple de hechizo que el resto de las clases con un poder mágico tan devastador que excede con creces la capacidad de cualquiera. Así mismo son seres débiles al enfrentamiento cuerpo a cuerpo y torpes en el uso de armas, por lo que su posicionamiento en combate será exclusivamente el uso de hechizos evitando el enfrentamiento frontal.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -294,6 +302,7 @@ export const wikiSections = [
         },
         {
           name: 'Paladín',
+          image: 'https://manual.alkononline.com.ar/images/f/f6/Paladi.jpg',
           description: 'Los paladines poseen un amplio conocimiento en el combate, pueden utilizar una gran variedad de armas, armaduras, cascos y escudos. Su medida inteligencia es suficiente para aprender una gran mayoría de hechizos tanto ofensivos como defensivos, dándole al paladín una combinación entre golpes y hechizo. Está abocado al combate físico cuerpo a cuerpo, es una clase resistente, puede soportar gran cantidad de golpes pudiendo hacerle frente a cualquier amenaza.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -312,6 +321,7 @@ export const wikiSections = [
         },
         {
           name: 'Pirata',
+          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQvR_MOFAQ6RetdbPWgQ9_nEPSRZhBNdKgow&s',
           description: 'Los piratas son expertos navegantes, desde muy temprano aprenden a recorrer los mares y usar los navíos más sofisticados.\n\nHabilidad Especial:\n• Bonificación en skills para navegar, requiere: Barca: 40, Galera: 45 y Galeón: 50\n• Puede acceder a cualquier Dungeon sin requerimientos de nivel.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -327,30 +337,6 @@ export const wikiSections = [
               ['Stamina', '20', '20', '20', '20', '20', '20']
             ]
           }
-        },
-        {
-          name: 'Trabajador',
-          description: 'Los trabajadores son fieles servidores capaces de elaborar artesanías con un poder extraordinario, son dedicados exclusivamente a la extracción de materia prima y creación de objetos de gran valor. Son expertos en actividades tales como la pesca, minería, tala, herrería y carpintería. No conocen la hechicería y son torpes en el uso de armas, por lo que harán un daño menor que una clase experta.',
-          modifiers: {
-            headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
-            subHeaders: ['Acierto', 'Daño', 'Acierto', 'Daño', 'Acierto', 'Daño', 'Evasión', 'Escudo', 'Defensa mágica'],
-            values: ['0.8', '0.67', '0.7', '0.7', '0.5', '0.4', '0.5', '0.5', '2%']
-          },
-          pointsPerLevel: {
-            headers: ['Punto/Raza', 'Gnomo', 'Elfo', 'Elfo Oscuro', 'Humano', 'Enano', 'Orco'],
-            rows: [
-              ['Vida', '6 a 7', '8 a 10', '9 a 10', '9 a 11', '9 a 11', '10 a 11'],
-              ['Mana', '0', '0', '0', '0', '0', '0'],
-              ['Golpe', '2', '2', '2', '2', '2', '2'],
-              ['Stamina', '20', '20', '20', '20', '20', '20']
-            ]
-          },
-          abilities: [
-            {
-              title: 'Tipos de Trabajos',
-              description: 'Los trabajos que se pueden realizar son: Pesca, Tala, Botanica, Alquimia, Herreria, Mineria, Esquilación, Sastreria y Carpintería.\n\nPara más información ingrear a la sección de Trabajo.'
-            }
-          ]
         }
       ]
     }
@@ -749,8 +735,647 @@ export const wikiSections = [
     title: 'Items',
     icon: 'package',
     content: {
-      description: 'Catálogo completo de items, armas y armaduras.',
-      placeholder: 'Base de datos de items con stats y ubicaciones...'
+      description: 'Catálogo completo de items, armas y armaduras de CucsiAO.',
+      categories: [
+        {
+          id: 'herreria',
+          title: '1 - Herrería | Comerciante y Creación',
+          icon: 'hammer',
+          subcategories: [
+            { id: '1.1', title: 'Armas de Comerciante' },
+            { id: '1.2', title: 'Armaduras, Escudos y Cascos de Comerciante' },
+            { id: '1.3', title: 'Armaduras de Herrero' },
+            { id: '1.4', title: 'Armas de Herrero' },
+            { id: '1.5', title: 'Escudos y Cascos de Herrero' }
+          ]
+        },
+        {
+          id: 'carpinteria',
+          title: '2 - Carpintería | Comerciante y Creación',
+          icon: 'axe',
+          subcategories: [
+            { id: '2.1', title: 'Carpintería de Comerciante' },
+            { id: '2.2', title: 'Carpintería de Creación (Trabajador)' }
+          ]
+        },
+        {
+          id: 'sastreria',
+          title: '3 - Sastrería | Comerciante y Creación',
+          icon: 'shirt',
+          subcategories: [
+            { id: '3.1', title: 'Vestimentas y Túnicas de Comerciante' },
+            { id: '3.2', title: 'Vestimentas y Túnicas de Sastrería (Trabajador)' }
+          ]
+        },
+        {
+          id: 'otros',
+          title: '4 - Otros',
+          icon: 'box',
+          subcategories: [
+            { id: '4.1', title: 'Items de Entrenamiento' },
+            { id: '4.2', title: 'Sombreros y Báculos' },
+            { id: '4.3', title: 'Items de Alquimia' },
+            { id: '4.4', title: 'Items Únicos' },
+            { id: '4.5', title: 'Items de Torneo/Canje' },
+            { id: '4.6', title: 'Sets de Nobleza' },
+            { id: '4.7', title: 'Reutilización de Recursos' }
+          ]
+        }
+      ],
+      subsections: {
+        '1.1': {
+          title: 'Armas de Comerciante',
+          intro: 'Las armas permiten a los personajes infligir más daño son sus ataques y pueden alterar la modalidad con la que estos combaten variando los modificadores a contemplar ya sean de combate sin armas, combate cuerpo a cuerpo o combate a distancia. Algunas armas poseen funciones especiales como brindar la posibilidad de apuñalar, daño mágico entre otras características.',
+          note: 'Las armas de comerciantes son aquellos items que podrán adquirir en cualquiera de los comerciantes (NPCs) de las Tierras Cucsi y dado a que son items que se comercializan NO podrán ser forjados por la clase HERRERO.',
+          tables: [
+            {
+              title: 'Armas Cuerpo a Cuerpo',
+              description: 'Las armas cuerpo a cuerpo requieren que nuestro personaje este al lado de su objetivo. Para atacar con armas de este tipo deberemos de tenerla equipada y utilizar la tecla Control por defecto.',
+              headers: ['Item', 'Daño', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Espada Larga', '10/18', 'Asesino, Guerrero, Bandido, Paladin, Cazador, Clerigo y Trabajador', '2.000'],
+                ['Martillo de Guerra', '22/30', 'Todos menos MAGO, DRUIDA, LADRON y BARDO', '20.000'],
+                ['Hacha de Guerra Dos Filos', '34/42', 'Guerrero, Bandido, Paladin y Clerigo', '40.000']
+              ]
+            },
+            {
+              title: 'Dagas',
+              description: 'Estas armas poseen la posibilidad de apuñalar a su objetivo al acertar el golpe inicial a la víctima (cuerpo a cuerpo). El daño producido con apuñalar es superior a cualquier otro daño provocado con un arma simple.',
+              headers: ['Item', 'Daño', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Daga', '1/3', 'Todas', '100'],
+                ['Daga +1', '2/4', 'Todas menos MAGO', '490'],
+                ['Daga +2', '5/11', 'Todas menos MAGO', '2.000'],
+                ['Daga +3', '14/18', 'Todas menos MAGO', '20.000'],
+                ['Daga +4', '21/25', 'Todas menos MAGO', '40.000']
+              ]
+            },
+            {
+              title: 'Báculo Mago',
+              description: 'Son objetos exclusivos para la Clase Mago las cuales le aumentan el daño a las magias.',
+              headers: ['Item', 'Daño', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Vara de Fresno', '1/1', 'Mago', '2.000'],
+                ['Bastón Nudoso', '1/1', 'Mago', '20.000'],
+                ['Báculo Rúnico', '1/1', 'Mago', '40.000']
+              ]
+            },
+            {
+              title: 'Items Específicos',
+              description: 'Son objetos exclusivos para las Clases Druida, Bardo y Clérigo las cuales le aumentan el daño a las magias y al clérigo le deja tirar hechizos mas potentes.',
+              headers: ['Item', 'Daño', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Flauta Mágica Gastada', '1/1', 'Druida', '20.000'],
+                ['Laúd Mágico Gastado', '1/1', 'Bardo', '20.000'],
+                ['Crucifijo', '1/1', 'Clerigo', '20.000']
+              ]
+            },
+            {
+              title: 'Arcos y Cuchillas',
+              description: 'Son armas para combate a distancia permitiendo atacar a cualquier objetivo dentro del campo visual (pantalla del juego). Los arcos son caracterizados por ser armas de DOS manos y utilizar munición.',
+              headers: ['Item', 'Daño', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Arco Simple (Dos Manos)', '10/18', 'Todas menos MAGO y DRUIDA', '2.000'],
+                ['Arco Compuesto (Dos Manos)', '22/30', 'Todas menos MAGO, DRUIDA y PIRATA', '20.000'],
+                ['Arco de Oro (Dos Manos)', '34/42', 'Todas menos MAGO, DRUIDA y PIRATA', '40.000'],
+                ['Flecha', '1/3', 'Todas menos MAGO y DRUIDA', '6'],
+                ['Flecha +1', '2/4', 'Todas menos MAGO y DRUIDA', '10'],
+                ['Cuchillas', '7/16', 'Ladron', '50']
+              ]
+            },
+            {
+              title: 'Guantes',
+              description: 'Son objetos exclusivos para las Clases Bandido y Ladrón las cuales habilitan habilidades especiales o aumentan el daño producido en combate sin armas.',
+              headers: ['Item', 'Daño', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Guantes de Hurto', '1/2', 'Ladron y Bandido', '5.000'],
+                ['Guantes de Lucha', '2/5', 'Ladron y Bandido', '10.000']
+              ]
+            }
+          ]
+        },
+        '1.2': {
+          title: 'Armaduras, Escudos y Cascos de Comerciante',
+          intro: 'Las armaduras son objetos que al equiparse en un personaje nos proporcionaran defensa física y/o defensa mágica contra los ataques recibidos. Las armaduras que un personaje puede utilizar dependerán según su clase, raza o género.',
+          note: 'Las armaduras de comerciantes son aquellos items que podrán adquirir en cualquiera de los comerciantes (NPCs) de las Tierras Cucsi y dado a que son items que se comercializan NO podrán ser forjados por la clase HERRERO.',
+          references: ['(M) - Estos items solo podrán utilizarlos el Género MUJER.', '(E/G) - Estos items solo podrán utilizarlos la Raza Enano o Gnomo.'],
+          tables: [
+            {
+              title: 'Armaduras',
+              headers: ['Item', 'Defensa', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Armadura de Cuero', '6/9', 'Todas menos MAGO', '2.000'],
+                ['Armadura de Cuero (G/E)', '6/9', 'Todas menos MAGO', '2.000'],
+                ['Cotas de Malla', '9/14', 'Todas menos MAGO y DRUIDA', '7.000'],
+                ['Cotas de Malla (E/G)', '9/14', 'Todas menos MAGO y DRUIDA', '7.000'],
+                ['Armadura de las Sombras', '13/17', 'Asesino', '15.000'],
+                ['Armadura de las Sombras (E/G)', '13/17', 'Asesino', '15.000'],
+                ['Armadura de Cazador', '13/17', 'Cazador', '15.000'],
+                ['Armadura de Cazador (E/G)', '13/17', 'Cazador', '15.000'],
+                ['Armadura de Placas Completa', '14/18', 'Guerrero, Paladin, Cazador y Clerigo', '15.000'],
+                ['Armadura de Placas Completa (E/G)', '14/18', 'Guerrero, Paladin, Cazador y Clerigo', '15.000']
+              ]
+            },
+            {
+              title: 'Escudos',
+              description: 'Los escudos son objetos que al equiparse en un personaje nos proporcionan la chance de bloquear los ataques físicos y también reducen el daño infligido por los golpes recibidos.',
+              headers: ['Item', 'Defensa', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Escudo de Tortuga', '1/3', 'Todas menos MAGO, LADRON y PIRATA', '2.000'],
+                ['Escudo de Hierro', '4/6', 'Druida, Guerrero, Bandido, Paladin, Clerigo', '4.000'],
+                ['Escudo Imperial', '4/7', 'Todas menos MAGO, DRUIDA, LADRON y PIRATA', '5.000']
+              ]
+            },
+            {
+              title: 'Cascos',
+              description: 'Los cascos son objetos que al equiparse en un personaje nos proporcionaran defensa contra los ataques físicos recibidos en la cabeza y en algunos casos defensa contra los ataques mágicos.',
+              headers: ['Item', 'Defensa', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Casco de Hierro', '2/4', 'Todas menos MAGO, DRUIDA y PIRATA', '2.000'],
+                ['Casco de Hierro Completo', '5/8', 'Todas menos MAGO, DRUIDA, LADRON, BARDO y PIRATA', '5.000'],
+                ['Casco de lobo', '4/6 y 2/4 rm', 'DRUIDA y BARDO', '5.000']
+              ]
+            }
+          ]
+        },
+        '1.3': {
+          title: 'Armaduras de Herrero',
+          intro: 'Las armaduras de herrero son los items que podrás adquirir forjándolos a través de una clase Trabajadora (Trabajador) pero para poder realizar los mismos deberán de poseer los skiles necesarios en herrería como así también los recursos que se informan a continuación para crearlos:',
+          tables: [
+            {
+              title: 'Armaduras Forjables',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases', 'L. Hierro', 'L. Plata', 'L. Oro', 'Skills'],
+              rows: [
+                ['Armadura de Placas de Gala Dorada', '17/21', '5/8', 'Asesino, Cazador y Clerigo', '343', '160', '0', '98'],
+                ['Armadura de Epsilon', '20/24', '3/5', 'Guerrero y Paladin', '343', '160', '0', '100'],
+                ['Armadura de Caballero', '21/26', '9/14', 'Asesino, Cazador y Clerigo', '514', '270', '154', '97'],
+                ['Armadura de Omega', '23/27', '5/11', 'Paladin', '514', '270', '154', '100'],
+                ['Armadura de Dragón', '25/29', '4/6', 'Guerrero', '514', '270', '154', '100']
+              ]
+            }
+          ]
+        },
+        '1.4': {
+          title: 'Armas de Herrero',
+          intro: 'Las armas de herrero son los items que podrás adquirir forjándolos a través de una clase Trabajadora (Trabajador) pero para poder realizar los mismos deberán de poseer los skiles necesarios en herrería como así también los recursos que se informan a continuación para crearlos:',
+          tables: [
+            {
+              title: 'Armas de Una Mano',
+              description: 'Las armas de Una Mano nos brindan la posibilidad de equiparnos un Escudo para así aumentar nuestra defensa física.',
+              headers: ['Item', 'Daño', 'Clases', 'L. Hierro', 'L. Plata', 'L. Oro', 'Skills', 'Nivel'],
+              rows: [
+                ['Espada Helada', '46/54', 'Guerrero, Paladin y Clerigo', '343', '160', '0', '85', '-'],
+                ['Rompe Cascos Superior', '58/66', 'Clerigo', '514', '270', '154', '100', '40'],
+                ['Excalibur II', '58/66', 'Paladin', '514', '270', '154', '100', '40'],
+                ['Espada Argentum', '58/66', 'Guerrero', '514', '270', '154', '100', '40']
+              ]
+            },
+            {
+              title: 'Armas de Dos Manos',
+              description: 'Al contrario de las armas de una mano no podremos equiparnos Escudos pero obtendremos el beneficio de infligir un mayor daño a la víctima.',
+              headers: ['Item', 'Daño', 'Clases', 'L. Hierro', 'L. Plata', 'L. Oro', 'Skills', 'Nivel'],
+              rows: [
+                ['Maza Oscura (Dos Manos) (1)', '2/5', 'Guerrero', '514', '270', '154', '100', '40'],
+                ['Martillo Sagrado (Dos Manos) (1)', '3/6', 'Paladin', '514', '270', '154', '100', '40'],
+                ['Espada Mata Dragones (Dos Manos) (2)', '1000/1000', 'Todos menos MAGO, DRUIDA, LADRON Y BARDO. Nivel 40+', '750', '500', '250', '100', '40'],
+                ['Espada Extermina Dragones (Dos Manos) (2)', '1000/1000', 'GUERRERO Y CAZADOR (No se quema). Nivel 45+', '2500', '1400', '750', '100', '45'],
+                ['Báculo Mata Dragones (Dos Manos) (3)', '1000/1000', 'MAGO, DRUIDA Y BARDO. Nivel 40+', '750', '500', '250', '100', '40']
+              ],
+              notes: [
+                '(1) - Poderosas armas con la habilidad especial de realizar un DOBLE GOLPE, de acertar el primer golpe infligiremos instantáneamente un segundo golpe (75% de chance) a la víctima.',
+                '(2) - Con esta arma podremos infligir un daño letal por golpe a las criaturas DRAGONES la cual de acertar el último golpe matando a la criatura instantáneamente la espada se romperá desapareciéndola de tu inventario (Quemar).',
+                '(3) - Con esta arma podremos infligir un daño letal por golpe a las criaturas DRAGONES la cual de acertar el último hechizo matando a la criatura instantáneamente el báculo se romperá (Quemar).'
+              ]
+            },
+            {
+              title: 'Dagas',
+              description: 'Estas armas poseen la posibilidad de apuñalar a su objetivo al acertar el golpe inicial a la víctima (cuerpo a cuerpo).',
+              headers: ['Item', 'Daño', 'Clases', 'L. Hierro', 'L. Plata', 'L. Oro', 'Skills', 'Nivel'],
+              rows: [
+                ['Daga', '1/3', 'Todas', '10', '-', '-', '10', '-'],
+                ['Daga Gris', '27/30', 'Asesino, Bardo y Druida', '343', '160', '0', '85', '-'],
+                ['Daga De la Oscuridad', '31/34', 'Asesino (No usa raza orco, enano)', '514', '270', '154', '100', '40']
+              ]
+            }
+          ]
+        },
+        '1.5': {
+          title: 'Escudos y Cascos de Herrero',
+          intro: 'Los Escudos y Cascos de herrero son los items que podrás adquirir forjándolos a través de una clase Trabajadora (Trabajador) pero para poder realizar los mismos deberán de poseer los skiles necesarios en herrería como así también los recursos que se informan a continuación para crearlos:',
+          tables: [
+            {
+              title: 'Escudos',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases', 'L. Hierro', 'L. Plata', 'L. Oro', 'Skills'],
+              rows: [
+                ['Escudo de Plata', '9/12', '-', 'Guerrero, Paladin y Clerigo', '171', '80', '0', '98'],
+                ['Escudo de Leon', '8/11', '-', 'Clerigo, Asesino, Bardo y Druida', '171', '80', '0', '98'],
+                ['Rodela de Madera Reforzada', '11/13', '-', 'Druida', '257', '135', '77', '73'],
+                ['Escudo Rustico', '12/14', '-', 'Bardo', '257', '135', '77', '80'],
+                ['Escudo Oscuro', '12/14', '-', 'Asesino', '257', '135', '77', '97'],
+                ['Escudo del Gran Imperio', '12/14', '-', 'Clerigo', '257', '135', '77', '99'],
+                ['Escudo del Gran Imperio +1', '13/16', '-', 'Guerrero y Cazador', '257', '135', '77', '100'],
+                ['Escudo de Caballero', '12/15', '-', 'Paladin', '257', '135', '77', '100']
+              ]
+            },
+            {
+              title: 'Cascos',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases', 'L. Hierro', 'L. Plata', 'L. Oro', 'Skills'],
+              rows: [
+                ['Casco de Gran Maestre', '12/15', '-', 'Paladin y Cazador', '171', '80', '0', '99'],
+                ['Casco Oscuro', '10/13', '-', 'Asesino, Cazador y Clerigo', '171', '80', '0', '97'],
+                ['Corona de baja calidad', '7/10', '4/5', 'Bardo', '171', '80', '0', '100'],
+                ['Corona de bardo', '11/14', '5/7', 'Bardo', '257', '135', '77', '100'],
+                ['Casco de Caballero', '13/15', '-', 'Cazador y Clerigo', '257', '135', '77', '97'],
+                ['Casco de Gran Maestre Oscuro', '13/15', '-', 'Asesino', '257', '135', '77', '97'],
+                ['Casco de Guerrero Completo', '18/22', '-', 'Guerrero', '257', '135', '77', '98'],
+                ['Casco MAESTRE Dorado', '16/18', '-', 'Paladin', '257', '135', '77', '100'],
+                ['Corona', '9/12', '10/12', 'Mago', '257', '135', '77', '100']
+              ]
+            }
+          ]
+        },
+        '2.1': {
+          title: 'Carpintería de Comerciante',
+          intro: 'Las objetos de Carpintería de comerciantes son aquellos items que podrán adquirir en cualquiera de los comerciantes (NPCs) de las Tierras Cucsi y dado a que son items que se comercializan NO podrán ser forjados por la clase CARPINTERO.',
+          tables: [
+            {
+              title: 'Items de Comerciante',
+              headers: ['Item', 'Observación', 'Precio'],
+              rows: [
+                ['Cuchara', 'Adorno', '6'],
+                ['Mueble Rustico', 'Adorno', '6'],
+                ['Silla', 'Adorno', '6'],
+                ['Flecha', 'Munición', '6']
+              ]
+            }
+          ]
+        },
+        '2.2': {
+          title: 'Carpintería de Creación (Trabajador)',
+          intro: 'Los objetos de Carpintero son los items que podrás adquirir creándolos a través de una clase Trabajadora (Trabajador) pero para poder realizar los mismos deberán de poseer los skiles necesarios en carpintería como así también los recursos que se informan a continuación para crearlos:',
+          tables: [
+            {
+              title: 'Items de Carpintería',
+              headers: ['Item', 'Leña', 'Leña Élfica', 'Skills', 'Clases / Observación'],
+              rows: [
+                ['Cuchara', '3', '-', '5', 'Adorno'],
+                ['Tambor', '800', '-', '75', 'Adorno'],
+                ['Flauta', '800', '-', '75', 'Adorno'],
+                ['Caña de Pescar', '70', '-', '12', 'Todas'],
+                ['Flecha', '1', '-', '20', 'Todas menos MAGO y DRUIDA'],
+                ['Flecha +1', '3', '-', '40', 'Guerrero y Cazador'],
+                ['Flecha +2', '5', '-', '60', 'Guerrero y Cazador'],
+                ['Flecha +3', '7', '-', '90', 'Guerrero y Cazador'],
+                ['Barca', '10.000', '-', '30', 'Todas / +5% de Velocidad Navegando'],
+                ['Galera', '45.000', '25.000', '60', 'Todas / +10% de Velocidad Navegando'],
+                ['Galeón', '90.000', '50.000', '100', 'Todas / +15% de Velocidad Navegando'],
+                ['Arco de Perla Azul (46/52)', '8.000', '0', '90', 'Guerrero y Cazador'],
+                ['Ballesta (54/60)', '12.000', '6.000', '100', 'Requiere Nivel 40 / Cazador'],
+                ['Báculo Engarzado', '8.000', '-', '100', 'Mago - Bonificación de Daño Mágico en 7%'],
+                ['Vara de Mago', '12.000', '6.000', '100', 'Mago - Bonificación de Daño Mágico en 10%'],
+                ['Flauta Mágica', '4.000', '0', '100', 'Druida - Bonificación Daño Mágico 3% y 20% más chances en Domar'],
+                ['Laúd Mágico', '4.000', '0', '100', 'Bardo - Bonificación Daño Mágico en 3%'],
+                ['Flauta Élfico', '6.000', '3.000', '100', 'Druida - Bonificación Daño Mágico 5%, Ahorro Mana 40% en Mimetismo'],
+                ['Laúd Élfico', '6.000', '3.000', '100', 'Bardo - Bonificación de Daño Mágico en 5%']
+              ]
+            }
+          ]
+        },
+        '3.1': {
+          title: 'Vestimentas y Túnicas de Comerciante',
+          intro: 'Las Vestimentas y Túnicas son objetos que al equiparse en un personaje nos proporcionaran defensa física y/o defensa mágica contra los ataques recibidos. Las Vestimentas y Túnicas que un personaje puede utilizar dependerán según su clase, raza o género.',
+          note: 'Las Vestimentas y Túnicas de comerciantes son aquellos items que podrán adquirir en cualquiera de los comerciantes (NPCs) de las Tierras Cucsi y dado a que son items que se comercializan NO podrán ser forjados por la clase SASTRERIA. Las túnicas invernales solo pueden ser adquiridas en el comerciante de vestimentas de Lindos (Mapa 54).',
+          tables: [
+            {
+              title: 'Altos',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Vestimentas Comunes', '0/0', '-', 'Todas', '50'],
+                ['Túnica Roja', '5/8', '-', 'Bardo, Druida y Mago', '2.000'],
+                ['Túnica de Monje', '8/12', '2/5', 'Bardo, Druida y Mago', '7.000'],
+                ['Túnica infernal', '12/15', '5/7', 'Bardo, Druida y Mago', '15.000'],
+                ['Túnica Invernal', '10/10', '-', 'Todas', '80.000']
+              ]
+            },
+            {
+              title: 'Bajos',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases Permitidas', 'Precio'],
+              rows: [
+                ['Vestimentas Comunes', '0/0', '-', 'Todas', '50'],
+                ['Túnica Roja', '5/8', '-', 'Bardo, Druida y Mago', '2.000'],
+                ['Túnica de Monje', '8/12', '2/5', 'Bardo, Druida y Mago', '7.000'],
+                ['Túnica infernal', '12/15', '5/7', 'Bardo, Druida y Mago', '15.000'],
+                ['Túnica Invernal', '10/10', '-', 'Todas', '80.000']
+              ]
+            }
+          ]
+        },
+        '3.2': {
+          title: 'Vestimentas y Túnicas de Sastrería (Trabajador)',
+          intro: 'Las Vestimentas y Túnicas de Trabajador son los items que podrás adquirir forjándolos a través de una clase Trabajadora (Trabajador) pero para poder realizar los mismos deberán de poseer los skiles necesarios en sastrería como así también los recursos que se informan a continuación para crearlos:',
+          references: ['(M) - Estos items solo podrán utilizarlos el Género MUJER.', '(E/G) - Estos items solo podrán utilizarlos la Raza Enano o Gnomo.', '(E/G-M) - Estos items solo podrán utilizarlos el Género MUJER y la Raza Enano o Gnomo.'],
+          tables: [
+            {
+              title: 'Vestimentas y Túnicas',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases', 'O. Oveja', 'O. Cabra', 'O. Llama', 'Skills'],
+              rows: [
+                ['Vestimentas Comunes', '0/0', '0/0', 'Todas', '10', '-', '-', '10'],
+                ['Ropa de Enano (E/G)', '0/0', '0/0', 'Todas', '10', '-', '-', '10'],
+                ['Túnica Invernal', '10/10', '0/0', 'Todas', '200', '50', '-', '30'],
+                ['Túnica Invernal (M)', '10/10', '0/0', 'Todas', '200', '50', '-', '30'],
+                ['Túnica Invernal (E/G)', '10/10', '0/0', 'Todas', '200', '50', '-', '30'],
+                ['Túnica Legendaria', '15/19', '7/12', 'Mago/Bardo/Druida', '343', '160', '0', '50'],
+                ['Túnica de Dragon', '20/24', '12/18', 'Bardo', '514', '270', '154', '80'],
+                ['Túnica de Druida', '19/23', '14/20', 'Druida', '514', '270', '154', '80'],
+                ['Túnica Maléfica', '19/21', '16/22', 'Mago', '514', '270', '154', '90'],
+                ['Vestimenta de la Oscuridad (1)', '1/1', '0/0', 'Guerrero/Cazador', '343', '160', '0', '100'],
+                ['Vestimenta de la Oscuridad (G/E) (1)', '1/1', '0/0', 'Guerrero/Cazador', '343', '160', '0', '100'],
+                ['Sombrero mágico azul', '6/8', '6/8', 'Mago', '171', '90', '0', '90'],
+                ['Casco de oso', '6/8', '4/6', 'Druida', '171', '90', '0', '90'],
+                ['Casco de tigre', '9/12', '8/10', 'Druida', '257', '135', '77', '90']
+              ],
+              notes: ['(1) - Solo las Clases Guerrero y Cazador caminarán ocultos con esta vestimenta.']
+            }
+          ]
+        },
+        '4.1': {
+          title: 'Items de Entrenamiento',
+          intro: 'Los Items de Entrenamiento son aquellos que recibiremos únicamente como recompensas a través de nuestro Sistema de Quest. La particularidad de estos objetos es que NO SE CAERÁN al morir pero DESAPARECERÁN en Nivel 26 incluyendo de las Mágias.',
+          tables: [
+            {
+              title: 'Equipo',
+              headers: ['Item', 'Daño', 'Def. Corporal', 'Def. Mágica', 'Clases Permitidas'],
+              rows: [
+                ['Espada de Entrenamiento', '3/7', '-', '-', 'Todas MENOS Mago, Bardo, Druida, Pirata y Trabajador'],
+                ['Espada Corta de Entrenamiento', '1/5', '-', '-', 'Todas'],
+                ['Vara de Entrenamiento', '16%', '-', '-', 'Mago'],
+                ['Arco de Entrenamiento (Dos Manos)', '1/3', '-', '-', 'Todas MENOS Mago, Bardo, Druida, Pirata y Trabajador'],
+                ['Flecha de Entrenamiento', '1/2', '-', '-', 'Todas MENOS Mago, Bardo, Druida, Pirata y Trabajador'],
+                ['Cota de Entrenamiento', '-', '4/7', '-', 'Todas MENOS Mago, Bardo, Druida, Pirata y Trabajador'],
+                ['Cota de Entrenamiento (E/G)', '-', '4/7', '-', 'Todas MENOS Mago, Bardo, Druida, Pirata y Trabajador'],
+                ['Túnica de Entrenamiento', '-', '3/5', '-', 'Mago, Bardo y Druida'],
+                ['Túnica de Entrenamiento (E/G)', '-', '3/5', '-', 'Mago, Bardo y Druida'],
+                ['Escudo de Entrenamiento', '-', '1/3', '-', 'Todas MENOS Mago, Bardo, Druida, Pirata y Trabajador'],
+                ['Escudo de Entrenamiento', '-', '1/2', '-', 'Bardo y Druida'],
+                ['Casco de Entrenamiento', '-', '1/3', '-', 'Todas MENOS Mago, Bardo, Druida, Pirata y Trabajador'],
+                ['Sombrero de Entrenamiento', '-', '1/1', '1/1', 'Mago, Bardo y Druida']
+              ]
+            },
+            {
+              title: 'Pociones',
+              headers: ['Item', 'Bonificación', 'Modificación'],
+              rows: [
+                ['Poción Roja de Entrenamiento', 'Recupera Vida', '10-25'],
+                ['Poción de Energía de Entrenamiento', 'Recupera Energía', '15-35'],
+                ['Poción Azul de Entrenamiento', 'Recupera Mana', '20-40'],
+                ['Poción Amarilla de Entrenamiento', 'Aumenta la Agilidad', '2-4'],
+                ['Poción Verde de Entrenamiento', 'Aumenta la Fuerza', '2-4']
+              ]
+            },
+            {
+              title: 'Magias',
+              headers: ['Hechizo', 'Skill', 'Mana', 'Energía', 'Clases', 'Descripción'],
+              rows: [
+                ['Mascota de Entrenamiento', '38', '220', '50', 'Paladín, Clérigo, Asesino, Bandido, Bardo, Druida y Mago', 'Invoca Tortugas de Entrenamiento. Requiere Nivel 13+'],
+                ['Mascota de Entrenamiento', '-', '-', '200', 'Pirata, Cazador, Guerrero, Trabajador y Ladron', 'Invoca Osos de Entrenamiento. Requiere Nivel 13+'],
+                ['Meteoro', '38', '50', '15', 'Paladín, Clérigo, Asesino, Bandido, Bardo, Druida y Mago', 'Causa 35-55 daño a criaturas. Solo NPCs. Nivel 13+'],
+                ['Primeros Auxilios', '38', '40', '20', 'Paladín, Clérigo, Asesino, Bandido, Bardo, Druida y Mago', 'Cura entre 10-20 de salud. Nivel 13+'],
+                ['Conjuro del estupor', '90*', '0', '475', 'Cazador y Guerrero', 'Encanta el arma para inmovilizar criaturas con el siguiente golpe']
+              ],
+              notes: ['*Te recomendamos subir los skills naturalmente utilizando "Mascota de entrenamiento" para no tener que asignarlos en "Magia".']
+            }
+          ]
+        },
+        '4.2': {
+          title: 'Sombreros y Báculos',
+          intro: 'Los siguientes artículos podrán ser adquiridos a través del comerciante de Magia (NPCs) de las Tierras Cucsi. Los báculos son poderosas armas de los magos que brindan una bonificación mágica y los Sombreros son ítems cuales nos proporcionarán tanto defensa física como defensa mágica:',
+          note: 'El Sombrero de Mago solo podrá ser adquirido en el comerciante Mago de Nueva Esperanza (Mapa 58).',
+          tables: [
+            {
+              title: 'Sombreros y Báculos',
+              headers: ['Item', 'Daño', 'Def. Corporal', 'Def. Mágica', 'Clases', 'Precio'],
+              rows: [
+                ['Sombrero de Aprendiz', '-', '2/4', '2/3', 'Mago y Druida', '6.000'],
+                ['Sombrero de Mago', '-', '4/6', '3/6', 'Mago', '12.000'],
+                ['Vara de Fresno', '0%', '-', '-', 'Mago', '2.000'],
+                ['Bastón Nudoso', '2%', '-', '-', 'Mago', '7.000'],
+                ['Báculo Rúnico', '4%', '-', '-', 'Mago', '15.000'],
+                ['Flauta mágica gastada', '2%', '-', '-', 'Druida', '7.000'],
+                ['Laud mágico gastado', '2%', '-', '-', 'Bardo', '7.000'],
+                ['Crucifijo', '0%', '-', '-', 'Clerigo', '7.000']
+              ]
+            }
+          ]
+        },
+        '4.3': {
+          title: 'Items de Alquimia',
+          intro: 'La alquimia es el arte para elaborar pociones las cuales surgirán efecto en nuestro personaje. Para poder elaborarlas deberemos de poseer una clase Druida ya que este arte es exclusivo de la misma y contar con los skiles necesarios en botánica como así también los recursos que se informan a continuación para crearlos:',
+          tables: [
+            {
+              title: 'Pociones de Alquimia',
+              headers: ['Item', 'Estado', 'Bonificación', 'Raíces', 'Skills'],
+              rows: [
+                ['Poción Violeta (Druida)', 'Cura el veneno', '-', '10', '10'],
+                ['Poción Roja', 'Recupera Vida', '25-29', '14', '10'],
+                ['Poción de Energía', 'Recupera energía', '25-50', '50', '30'],
+                ['Poción de Energía (Druida)', 'Recupera más energía', '50-100', '100', '30'],
+                ['Poción Azul (Druida)', 'Recupera más mana', '100-150', '200', '50'],
+                ['Poción Azul', 'Recupera mana', '50-75', '14', '60'],
+                ['Poción Amarilla', 'Aumenta la agilidad', '4-6', '14', '60'],
+                ['Poción Verde', 'Aumenta la fuerza', '4-6', '14', '60'],
+                ['Poción Roja (Druida)', 'Recupera más vida', '29-33', '100', '60'],
+                ['Poción Amarilla (Druida)', 'Aumenta más la agilidad', '8-10', '250', '70'],
+                ['Poción Verde (Druida)', 'Aumenta más la fuerza', '8-10', '300', '80'],
+                ['Poción Anti Ceguera', 'Devuelve la visión', '-', '2.000', '100'],
+                ['Poción Anti Estupidez', 'Vuelve a la normalidad', '-', '2.000', '100'],
+                ['Poción Anti Parálisis', 'Remueve la parálisis', '-', '4.000', '100']
+              ]
+            }
+          ]
+        },
+        '4.4': {
+          title: 'Items Únicos',
+          intro: 'Los items Únicos son items exclusivos por DROP lo que significa que para poder adquirirlos solamente lo podremos realizar con la matanza de criaturas. La particularidad de estos items es que al morir no los perderemos (No se caen). Para poder hacernos de ellos deberemos de dirigirnos a Dungeon Castillo:',
+          references: ['(G/E) - Estos items solo podrán utilizarlos la Raza Gnomo o Enano.'],
+          tables: [
+            {
+              title: 'Items Únicos por Drop',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases', '¿Cómo se Consigue?'],
+              rows: [
+                ['Túnica del Dios de Thaos', '2/4', '-', 'Mago, Druida y Bardo', 'Archimago del Castillo (2%) - Arcangel Armado (1%)'],
+                ['Túnica Del Dios Thaos (G/E)', '2/4', '-', 'Mago, Druida y Bardo', 'Mago del Castillo (2%) - Arcangel Armado (1%)'],
+                ['Armadura De Piel de Golem Alado', '2/4', '-', 'Paladín, Guerrero y Cazador', 'Guerrero Armado del Castillo (2%) - Arcangel Armado (1%)'],
+                ['Armadura De Piel de Golem Alado (G/E)', '2/4', '-', 'Paladín, Guerrero y Cazador', 'Arquero del Castillo (2%) - Arcangel Armado (1%)'],
+                ['Armadura De La Daga Sangrienta', '2/4', '-', 'Clérigo y Asesino', 'Paladin del Castillo (2%) - Arcangel Armado (1%)'],
+                ['Armadura De La Daga Sangrienta (G/E)', '2/4', '-', 'Clérigo y Asesino', 'Plebello del Castillo (2%) - Arcangel Armado (1%)']
+              ]
+            }
+          ]
+        },
+        '4.5': {
+          title: 'Items de Torneo/Canje',
+          intro: 'Los items de Canje o Torneo son los Segundos objetos más poderosos de toda la tierra Cucsi, los Primeros son los items de Nobleza. Los objetos de Canje NO podrán ser forjados por un herrero o ser conseguidos a través de drop. Para poder hacerse con ellos deberán de ser canjeados a través de nuestro sistema de canje.',
+          note: 'IMPORTANTE: Todos los items que se informan a continuación SE CAEN a excepción de las Medallas, los Trofeos y los Espíritus. ACCESO: MENU > CANJE',
+          tables: [
+            {
+              title: 'Trofeos',
+              headers: ['Item', 'T. Bronce', 'T. Plata', 'T. Oro', 'M. Oro', 'M. Plata', 'Ptos Usuario', 'Beneficio'],
+              rows: [
+                ['Trofeo de Oro', '-', '3', '-', '-', '-', '-', 'Objeto de Canje'],
+                ['Trofeo de Plata', '3', '-', '-', '-', '-', '-', 'Objeto de Canje'],
+                ['Trofeo de Oro', '-', '-', '-', '3', '-', '-', 'Objeto de Canje'],
+                ['Trofeo de Plata', '-', '-', '-', '-', '3', '-', 'Objeto de Canje'],
+                ['Trofeo de Bronce', '-', '-', '-', '-', '-', '100', 'Objeto de Canje']
+              ]
+            },
+            {
+              title: 'Armaduras de Canje',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases', 'T. Oro', 'Ptos Usuario'],
+              rows: [
+                ['Armadura Clerigal', '24/28', '12/19', 'Clerigo', '10', '2500'],
+                ['Túnica Bardal', '22/27', '17/25', 'Bardo', '10', '2500'],
+                ['Armadura de las Tinieblas', '24/29', '12/19', 'Asesino', '10', '2500'],
+                ['Armadura Sagrada', '27/32', '9/15', 'Paladin', '10', '2500'],
+                ['Armadura del Rey', '28/33', '6/9', 'Guerrero y Cazador', '10', '2500'],
+                ['Túnica Archimago', '20/24', '19/27', 'Mago y Druida', '10', '2500']
+              ]
+            },
+            {
+              title: 'Escudos de Canje',
+              headers: ['Item', 'Def. Corporal', 'Clases', 'T. Oro', 'Ptos Usuario'],
+              rows: [
+                ['Escudo Maldito', '15/19', 'Guerrero, Paladin y Cazador', '5', '2000'],
+                ['Escudo de la Oscuridad', '14/16', 'Asesino y Clerigo', '5', '2000'],
+                ['Escudo Sagrado', '13/15', 'Bardo y Druida', '5', '2000']
+              ]
+            },
+            {
+              title: 'Cascos de Canje',
+              headers: ['Item', 'Def. Corporal', 'Def. Mágica', 'Clases', 'T. Oro', 'Ptos Usuario'],
+              rows: [
+                ['Corona Oscura', '13/17', '10/12', 'Bardo y Druida', '5', '2000'],
+                ['Corona Sagrada', '11/14', '13/15', 'Mago', '5', '2000'],
+                ['Casco Sagrado', '21/24', '-', 'Guerrero, Paladin y Cazador', '5', '2000'],
+                ['Gran Maestre de las Tinieblas', '16/19', '-', 'Asesino y Clerigo', '5', '2000']
+              ]
+            },
+            {
+              title: 'Armas de Canje',
+              headers: ['Item', 'Daño', 'Clases', 'T. Oro', 'Ptos Usuario'],
+              rows: [
+                ['Arco Argentum (Dos Manos)', '58/64', 'Cazador', '5', '2000'],
+                ['Báculo Luminozo (12% Bonif.)', '10/10', 'Mago', '5', '2000'],
+                ['Espada de la Luz', '64/72', 'Guerrero', '5', '2000'],
+                ['Daga Sangrienta', '33/36', 'Asesino', '5', '2000'],
+                ['Hacha Sombria', '64/72', 'Clerigo', '5', '2000'],
+                ['Daga Bardal', '29/32', 'Bardo y Druida', '5', '2000'],
+                ['Excalibur de Oro', '64/72', 'Paladin', '5', '2000']
+              ]
+            },
+            {
+              title: 'Espíritus (Teletransporte)',
+              headers: ['Item', 'Efecto', 'Ptos Usuario'],
+              rows: [
+                ['Espíritu Cementerio', 'Te teletransporta a Cementerio/Mausoleo (Mapa 79)', '2500'],
+                ['Espíritu Marabel', 'Te teletransporta a Dungeon Marabel (Mapa 28)', '2500'],
+                ['Espíritu Castillo', 'Te teletransporta a Dungeon Castillo (Mapa 62)', '2500'],
+                ['Espíritu Verill', 'Te teletransporta a Dungeon Verill (Mapa 39)', '3500'],
+                ['Espíritu Dragón', 'Te teletransporta a Dungeon Dragón (Mapa 47)', '4500']
+              ]
+            }
+          ]
+        },
+        '4.6': {
+          title: 'Sets de Nobleza',
+          intro: 'Los equipos que mencionaremos a continuación son los mejores de las Tierras Cucsi con su beneficio exclusivo de que NO SE CAEN al morir.',
+          classes: [
+            {
+              className: 'Mago',
+              items: [
+                { item: 'Baculo Noble de Mago', dano: '33% Bonificación Mágica', defFisica: '-', defMagica: '-' },
+                { item: 'Corona Noble de Mago', dano: '-', defFisica: '15/19', defMagica: '3/5' },
+                { item: 'Tunica Noble de Mago (Alto)', dano: '-', defFisica: '8/10', defMagica: '19/24' },
+                { item: 'Tunica Noble de Mago (Bajos)', dano: '-', defFisica: '8/10', defMagica: '19/24' }
+              ]
+            },
+            {
+              className: 'Druida',
+              items: [
+                { item: 'Espada Noble de Druida', dano: '8/13', defFisica: '-', defMagica: '-' },
+                { item: 'Casco Noble de Druida', dano: '-', defFisica: '17/21', defMagica: '4/6' },
+                { item: 'Escudo Noble de Druida', dano: '-', defFisica: '8/13', defMagica: '-' },
+                { item: 'Tunica Noble de Druida (Alto)', dano: '-', defFisica: '8/10', defMagica: '19/24' },
+                { item: 'Tunica Noble de Druida (Bajos)', dano: '-', defFisica: '8/10', defMagica: '19/24' }
+              ]
+            },
+            {
+              className: 'Bardo',
+              items: [
+                { item: 'Espada Noble de Bardo', dano: '7/13', defFisica: '-', defMagica: '-' },
+                { item: 'Corona Noble de Bardo', dano: '-', defFisica: '17/21', defMagica: '4/6' },
+                { item: 'Escudo Noble de Bardo', dano: '-', defFisica: '10/15', defMagica: '-' },
+                { item: 'Tunica Noble de Bardo (Alto)', dano: '-', defFisica: '8/10', defMagica: '19/24' },
+                { item: 'Tunica Noble de Bardo (Bajos)', dano: '-', defFisica: '8/10', defMagica: '19/24' }
+              ]
+            },
+            {
+              className: 'Asesino',
+              items: [
+                { item: 'Daga Noble de Asesino', dano: '8/9', defFisica: '-', defMagica: '-' },
+                { item: 'Casco Noble de Asesino', dano: '-', defFisica: '25/30', defMagica: '-' },
+                { item: 'Escudo Noble de Asesino', dano: '-', defFisica: '13/16', defMagica: '-' },
+                { item: 'Tunica Noble de Asesino (Alto)', dano: '-', defFisica: '12/15', defMagica: '6/13' },
+                { item: 'Tunica Noble de Asesino (Bajos)', dano: '-', defFisica: '12/15', defMagica: '6/13' }
+              ]
+            },
+            {
+              className: 'Clerigo',
+              items: [
+                { item: 'Hacha Noble de Clerigo', dano: '14/18', defFisica: '-', defMagica: '-' },
+                { item: 'Casco Noble de Clerigo', dano: '-', defFisica: '16/24', defMagica: '-' },
+                { item: 'Escudo Noble de Clerigo', dano: '-', defFisica: '13/16', defMagica: '-' },
+                { item: 'Tunica Noble de Clerigo (Alto)', dano: '-', defFisica: '12/15', defMagica: '6/13' },
+                { item: 'Tunica Noble de Clerigo (Bajos)', dano: '-', defFisica: '12/15', defMagica: '6/13' }
+              ]
+            },
+            {
+              className: 'Paladin',
+              items: [
+                { item: 'Espada Noble de Paladin', dano: '15/22', defFisica: '-', defMagica: '-' },
+                { item: 'Casco Noble de Paladin', dano: '-', defFisica: '30/45', defMagica: '-' },
+                { item: 'Escudo Noble de Paladin', dano: '-', defFisica: '14/19', defMagica: '-' },
+                { item: 'Tunica Noble de Paladin (Alto)', dano: '-', defFisica: '15/20', defMagica: '7/15' },
+                { item: 'Tunica Noble de Paladin (Bajos)', dano: '-', defFisica: '15/20', defMagica: '7/15' }
+              ]
+            },
+            {
+              className: 'Guerrero',
+              items: [
+                { item: 'Espada Noble de Guerrero', dano: '21/35', defFisica: '-', defMagica: '-' },
+                { item: 'Casco Noble de Guerrero', dano: '-', defFisica: '30/45', defMagica: '-' },
+                { item: 'Escudo Noble de Guerrero', dano: '-', defFisica: '14/19', defMagica: '-' },
+                { item: 'Tunica Noble de Guerrero (Alto)', dano: '-', defFisica: '25/29', defMagica: '5/10' },
+                { item: 'Tunica Noble de Guerrero (Bajos)', dano: '-', defFisica: '25/29', defMagica: '5/10' }
+              ]
+            },
+            {
+              className: 'Cazador',
+              items: [
+                { item: 'Arco Noble de Cazador', dano: '6/11', defFisica: '-', defMagica: '-' },
+                { item: 'Casco Noble de Cazador', dano: '-', defFisica: '30/45', defMagica: '-' },
+                { item: 'Escudo Noble de Cazador', dano: '-', defFisica: '14/19', defMagica: '-' },
+                { item: 'Tunica Noble de Cazador (Alto)', dano: '-', defFisica: '21/25', defMagica: '6/12' },
+                { item: 'Tunica Noble de Cazador (Bajos)', dano: '-', defFisica: '21/25', defMagica: '6/12' }
+              ]
+            }
+          ]
+        },
+        '4.7': {
+          title: 'Reutilización de Recursos',
+          intro: 'Sistema de reciclaje de items para recuperar recursos.',
+          placeholder: 'Información sobre Fundir - Desmantelar - Deshilachar objetos próximamente...'
+        }
+      }
     }
   },
   {

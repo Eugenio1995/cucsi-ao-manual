@@ -618,37 +618,69 @@
 }
 
 .class-card {
-  background-color: var(--parchment-bg);
+  position: relative;
   border: 2px solid var(--border-color);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 0;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
+  min-height: 140px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.class-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  backdrop-filter: blur(1px);
+  transition: all 0.3s ease;
 }
 
 .class-card:hover {
-  background-color: var(--accent-gold);
-  border-color: var(--accent-brown);
+  border-color: var(--accent-gold);
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px var(--shadow);
+  box-shadow: 0 8px 24px var(--shadow);
 }
 
-.class-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
+.class-card:hover .class-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(201, 169, 97, 0.1) 0%,
+    rgba(201, 169, 97, 0.3) 50%,
+    rgba(139, 90, 43, 0.85) 100%
+  );
 }
 
 .class-name {
+  position: relative;
+  z-index: 1;
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #fff;
   font-family: 'Cinzel', serif;
   margin: 0;
+  padding: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .class-card:hover .class-name {
   color: var(--parchment-light);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 /* Class Detail View */
@@ -1915,5 +1947,244 @@
   
   .nota-final-box {
     flex-direction: column;
+  }
+}
+
+/* ==========================================
+   ITEMS SECTION STYLES
+   ========================================== */
+
+/* Items Categories */
+.items-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.items-category-card {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.items-category-header {
+  background: linear-gradient(135deg, var(--accent-brown) 0%, var(--accent-gold) 100%);
+  color: var(--parchment-light);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.items-category-header h3 {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+}
+
+.items-subcategories {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.items-subcategory-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.items-subcategory-btn:hover {
+  background: var(--parchment-dark);
+  transform: translateX(4px);
+}
+
+.items-subcategory-btn .sub-id {
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  color: var(--accent-gold);
+  min-width: 35px;
+}
+
+.items-subcategory-btn .sub-title {
+  flex: 1;
+  color: var(--text-primary);
+}
+
+.items-subcategory-btn svg {
+  color: var(--accent-brown);
+}
+
+/* Items Subsection */
+.items-subsection-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--accent-brown);
+  margin: 1rem 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.items-note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(201, 169, 97, 0.15);
+  border: 1px solid var(--accent-gold);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.items-note-box svg {
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  margin-top: 2px;
+}
+
+.items-note-box p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.items-references {
+  background: var(--parchment-light);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.items-references h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-brown);
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.items-references ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.items-references li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Items Table */
+.items-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.items-table th,
+.items-table td {
+  border-right: 1px solid var(--border-color);
+  padding: 0.6rem 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.items-table th:last-child,
+.items-table td:last-child {
+  border-right: none;
+}
+
+.items-table .item-name {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.table-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem 0;
+  font-style: italic;
+}
+
+.table-notes {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: var(--parchment-light);
+  border-radius: 6px;
+}
+
+.table-notes .table-note {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.table-notes .table-note:last-child {
+  margin-bottom: 0;
+}
+
+/* Nobility Sets */
+.nobility-sets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.nobility-class-card {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.nobility-class-name {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brown) 100%);
+  color: var(--parchment-light);
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.nobility-table {
+  margin: 0;
+}
+
+.nobility-table th,
+.nobility-table td {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Responsive for Items */
+@media (max-width: 768px) {
+  .items-table th,
+  .items-table td {
+    padding: 0.4rem 0.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .nobility-sets {
+    grid-template-columns: 1fr;
+  }
+  
+  .items-subcategory-btn {
+    padding: 0.6rem 0.75rem;
   }
 }

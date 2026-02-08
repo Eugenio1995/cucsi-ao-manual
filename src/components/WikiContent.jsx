@@ -24,6 +24,9 @@ export const WikiContent = () => {
   const [spellSearchTerm, setSpellSearchTerm] = useState('');
   const [spellSortConfig, setSpellSortConfig] = useState({ key: 'precio', direction: 'asc' }); // Default: menor a mayor precio
   const [expandedSpellDescs, setExpandedSpellDescs] = useState(new Set());
+  
+  // States for items section
+  const [selectedItemSubsection, setSelectedItemSubsection] = useState(null);
 
   const getIcon = (iconName) => {
     const iconMap = {
@@ -61,7 +64,9 @@ export const WikiContent = () => {
       'shopping-cart': Icons.ShoppingCart,
       'shopping-bag': Icons.ShoppingBag,
       'info': Icons.Info,
-      'alert-circle': Icons.AlertCircle
+      'alert-circle': Icons.AlertCircle,
+      'axe': Icons.Axe,
+      'shirt': Icons.Shirt
     };
     const IconComponent = iconMap[iconName] || Icons.BookOpen;
     return <IconComponent className="section-icon" size={20} />;
@@ -417,8 +422,11 @@ export const WikiContent = () => {
                 key={idx} 
                 className="class-card"
                 onClick={() => setSelectedClass(classData.name)}
+                style={{
+                  backgroundImage: classData.image ? `url(${classData.image})` : 'none'
+                }}
               >
-                <div className="class-icon">⚔️</div>
+                <div className="class-card-overlay"></div>
                 <h4 className="class-name">{classData.name}</h4>
               </div>
             ))}
@@ -977,6 +985,190 @@ export const WikiContent = () => {
       );
     }
     
+    // Render Items
+    if (section.id === 'items') {
+      // If viewing a subsection
+      if (selectedItemSubsection) {
+        const subsection = section.content.subsections[selectedItemSubsection];
+        
+        // Special rendering for nobility sets (4.6)
+        if (selectedItemSubsection === '4.6' && subsection.classes) {
+          return (
+            <div className="section-content">
+              <button 
+                className="back-button"
+                onClick={() => setSelectedItemSubsection(null)}
+              >
+                ← Volver a Items
+              </button>
+              
+              <h2 className="items-subsection-title">{subsection.title}</h2>
+              <div className="content-text">
+                <p>{subsection.intro}</p>
+              </div>
+              
+              <div className="nobility-sets">
+                {subsection.classes.map((classSet, idx) => (
+                  <div key={idx} className="nobility-class-card">
+                    <h3 className="nobility-class-name">{classSet.className}</h3>
+                    <div className="table-scroll">
+                      <table className="wiki-table nobility-table">
+                        <thead>
+                          <tr>
+                            <th>Item</th>
+                            <th>Daño</th>
+                            <th>Def. Física</th>
+                            <th>Def. Mágica</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {classSet.items.map((item, iIdx) => (
+                            <tr key={iIdx}>
+                              <td className="item-name">{item.item}</td>
+                              <td>{item.dano}</td>
+                              <td>{item.defFisica}</td>
+                              <td>{item.defMagica}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        }
+        
+        // Check if it has placeholder (4.7)
+        if (subsection.placeholder) {
+          return (
+            <div className="section-content">
+              <button 
+                className="back-button"
+                onClick={() => setSelectedItemSubsection(null)}
+              >
+                ← Volver a Items
+              </button>
+              
+              <h2 className="items-subsection-title">{subsection.title}</h2>
+              <div className="content-text">
+                <p>{subsection.intro}</p>
+              </div>
+              <div className="placeholder-box">
+                <p>{subsection.placeholder}</p>
+              </div>
+            </div>
+          );
+        }
+        
+        // Normal subsection with tables
+        return (
+          <div className="section-content">
+            <button 
+              className="back-button"
+              onClick={() => setSelectedItemSubsection(null)}
+            >
+              ← Volver a Items
+            </button>
+            
+            <h2 className="items-subsection-title">{subsection.title}</h2>
+            
+            {subsection.intro && (
+              <div className="content-text">
+                <p>{subsection.intro}</p>
+              </div>
+            )}
+            
+            {subsection.note && (
+              <div className="items-note-box">
+                <Icons.AlertCircle size={18} />
+                <p>{subsection.note}</p>
+              </div>
+            )}
+            
+            {subsection.references && (
+              <div className="items-references">
+                <h4>Referencias:</h4>
+                <ul>
+                  {subsection.references.map((ref, idx) => (
+                    <li key={idx}>{ref}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {subsection.tables && subsection.tables.map((table, tIdx) => (
+              <div key={tIdx} className="table-container">
+                <h3 className="table-title">{table.title}</h3>
+                {table.description && (
+                  <p className="table-description">{table.description}</p>
+                )}
+                <div className="table-scroll">
+                  <table className="wiki-table items-table">
+                    <thead>
+                      <tr>
+                        {table.headers.map((header, hIdx) => (
+                          <th key={hIdx}>{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {table.rows.map((row, rIdx) => (
+                        <tr key={rIdx}>
+                          {row.map((cell, cIdx) => (
+                            <td key={cIdx} className={cIdx === 0 ? 'item-name' : ''}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {table.notes && (
+                  <div className="table-notes">
+                    {table.notes.map((note, nIdx) => (
+                      <p key={nIdx} className="table-note">{note}</p>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        );
+      }
+      
+      // Show main items menu
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          
+          <div className="items-categories">
+            {section.content.categories.map((category, idx) => (
+              <div key={idx} className="items-category-card">
+                <div className="items-category-header">
+                  {getIcon(category.icon)}
+                  <h3>{category.title}</h3>
+                </div>
+                <div className="items-subcategories">
+                  {category.subcategories.map((sub, sIdx) => (
+                    <button
+                      key={sIdx}
+                      className="items-subcategory-btn"
+                      onClick={() => setSelectedItemSubsection(sub.id)}
+                    >
+                      <span className="sub-id">{sub.id}</span>
+                      <span className="sub-title">{sub.title}</span>
+                      <Icons.ChevronRight size={16} />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    
     // Render Clanes
     if (section.id === 'clanes') {
       return (
@@ -1102,6 +1294,9 @@ export const WikiContent = () => {
                   onClick={() => {
                     setActiveSection(section.id);
                     setSelectedClass(null); // Reset selected class when changing sections
+                    setSelectedItemSubsection(null); // Reset items subsection
+                    setSelectedQuestCategory(null); // Reset quest category
+                    setSelectedQuest(null); // Reset quest
                     // Close sidebar on mobile after selection
                     if (window.innerWidth < 768) {
                       setSidebarOpen(false);
