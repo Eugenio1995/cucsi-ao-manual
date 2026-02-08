@@ -712,6 +712,109 @@ export const WikiContent = () => {
       );
     }
     
+    // Render Domar Animales
+    if (section.id === 'domar') {
+      const sortedCreatures = [...section.content.creatures].sort((a, b) => a.poderDoma - b.poderDoma);
+      
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          
+          <div className="content-text">
+            <p>{section.content.intro}</p>
+          </div>
+          
+          <div className="druid-info-box">
+            <p>{section.content.druidInfo}</p>
+          </div>
+          
+          {/* Commands Section */}
+          <div className="commands-section">
+            <h3 className="subsection-title">{section.content.commands.title}</h3>
+            <p className="content-text">{section.content.commands.description}</p>
+            <div className="commands-list">
+              {section.content.commands.list.map((cmd, idx) => (
+                <div key={idx} className="command-item">
+                  <code className="command-code">{cmd.command}</code>
+                  <span className="command-desc">{cmd.description}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="content-text">
+            <p>{section.content.carismaInfo}</p>
+          </div>
+          
+          {/* Power Calculation Section */}
+          <div className="power-section">
+            <h3 className="subsection-title">{section.content.powerSection.title}</h3>
+            <p className="content-text">{section.content.powerSection.description}</p>
+            
+            <div className="formula-box">
+              <strong>{section.content.powerSection.formula}</strong>
+            </div>
+            
+            <div className="examples-list">
+              {section.content.powerSection.examples.map((example, idx) => (
+                <div key={idx} className="example-item">
+                  <span className="example-label">Ejemplo {idx + 1}:</span>
+                  <span>{example.text}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="chance-info">
+              <p>{section.content.powerSection.chance}</p>
+            </div>
+            
+            <div className="druid-bonus-box">
+              <Icons.Wand2 size={20} className="druid-icon" />
+              <p>{section.content.powerSection.druidBonus}</p>
+            </div>
+          </div>
+          
+          {/* Tameable Creatures Table */}
+          <div className="table-container">
+            <h3 className="table-title">{section.content.creaturesSection.title}</h3>
+            <p className="table-subtitle">{section.content.creaturesSection.description}</p>
+            <div className="table-scroll">
+              <table className="wiki-table taming-table">
+                <thead>
+                  <tr>
+                    <th>Criatura</th>
+                    <th>Poder de Domación</th>
+                    <th>Vida</th>
+                    <th>Daño Físico</th>
+                    <th>Defensa</th>
+                    <th>Def. Mágica</th>
+                    <th>Pod. Ataque</th>
+                    <th>Evasión</th>
+                    <th>Magia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sortedCreatures.map((creature, idx) => (
+                    <tr key={idx}>
+                      <td className="creature-name">{creature.name}</td>
+                      <td className="power-cell">{formatNumber(creature.poderDoma)}</td>
+                      <td>{formatNumber(creature.vida)}</td>
+                      <td>{creature.danoFisico}</td>
+                      <td>{creature.defensa}</td>
+                      <td>{creature.defMagica}</td>
+                      <td>{formatNumber(creature.podAtaque)}</td>
+                      <td>{formatNumber(creature.evasion)}</td>
+                      <td className="magic-cell">{creature.magia}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    
     return (
       <div className="section-content">
         <p className="section-description">{section.content.description}</p>

@@ -1419,3 +1419,191 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==========================================
+   DOMAR ANIMALES SECTION STYLES
+   ========================================== */
+
+/* Druid Info Box */
+.druid-info-box {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brown) 100%);
+  color: var(--parchment-light);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  font-style: italic;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.druid-info-box p {
+  margin: 0;
+}
+
+/* Commands Section */
+.commands-section {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.commands-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.command-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-bg);
+  border-radius: 6px;
+  border-left: 4px solid var(--accent-gold);
+}
+
+.command-code {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--accent-gold);
+  background: var(--parchment-dark);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.command-desc {
+  color: var(--text-secondary);
+}
+
+/* Power Calculation Section */
+.power-section {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.formula-box {
+  background: var(--parchment-dark);
+  border: 2px dashed var(--accent-gold);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin: 1rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.examples-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.example-item {
+  background: var(--parchment-bg);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-brown);
+}
+
+.example-label {
+  font-weight: bold;
+  color: var(--accent-brown);
+  margin-right: 0.5rem;
+}
+
+.chance-info {
+  background: var(--parchment-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.chance-info p {
+  margin: 0;
+}
+
+.druid-bonus-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--accent-brown) 0%, var(--accent-gold) 100%);
+  color: var(--parchment-light);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.druid-bonus-box .druid-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.druid-bonus-box p {
+  margin: 0;
+}
+
+/* Taming Table Styles */
+.taming-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.taming-table th,
+.taming-table td {
+  border-right: 1px solid var(--border-color);
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+}
+
+.taming-table th:last-child,
+.taming-table td:last-child {
+  border-right: none;
+}
+
+.taming-table .creature-name {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.taming-table .power-cell {
+  font-weight: bold;
+  color: var(--accent-gold);
+  background: var(--parchment-dark);
+}
+
+.taming-table .magic-cell {
+  font-style: italic;
+  color: var(--accent-brown);
+  max-width: 150px;
+}
+
+/* Responsive styles for Domar section */
+@media (max-width: 768px) {
+  .command-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .druid-bonus-box {
+    flex-direction: column;
+  }
+  
+  .taming-table th,
+  .taming-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.85rem;
+  }
+}

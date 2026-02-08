@@ -631,8 +631,49 @@ export const wikiSections = [
     title: 'Domar Animales',
     icon: 'paw-print',
     content: {
-      description: 'Aprende a domar y controlar criaturas salvajes.',
-      placeholder: 'Guía de domesticación y animales domables...'
+      description: 'La doma de criaturas puede ser utilizada por cualquier clase o raza, la misma consiste en domesticar animales salvajes para hacerlos mascotas.',
+      intro: 'Estas bestias una vez domadas son fieles compañeras de aventuras ya que los defenderán en caso de que alguien o algo los ataque. Para domar a una criatura simplemente presionen la tecla "D" + click (por defecto) sobre la criatura para intentar domarla. Hay criaturas que se dejan domar fácilmente y otras que no.',
+      druidInfo: 'Existe una clase en CucsiAO con la habilidad superiora de poder comunicarse con los animales y convencerlos para pedir por su ayuda, amistad o compañía en nuestro recorrido por el mundo. Esta clase es el Druida.',
+      commands: {
+        title: 'Comandos para Mascotas',
+        description: 'Nuestras mascotas obedecerán órdenes para lo cuál pueden clickearlas y utilizar los siguientes comandos:',
+        list: [
+          { command: '/QUIETO', description: 'La mascota se quedará en el lugar' },
+          { command: '/ACOMPAÑAR', description: 'La mascota continuará siguiéndote' },
+          { command: '/LIBERAR', description: 'Deja libre a tu mascota (también doble click sobre ella)' }
+        ]
+      },
+      carismaInfo: 'La Carisma es fundamental para la hora de Domar junto con los skilles en "Domar animales" serás capaz de domar todo tipos de criaturas las cuales te ayudaran en tu recorrido.',
+      powerSection: {
+        title: 'Poder de Domación',
+        description: 'Para poder determinar cuanto poder de domación posee el usuario deberemos de calcularlo de la siguiente manera:',
+        formula: 'Poder = Skilles en Domar Animales × Atributos en Carisma',
+        examples: [
+          { skills: 60, carisma: 22, result: 1320, text: 'Si nuestro personaje tiene 60 skilles en Domar Animales y el atributo de Carisma en 22, su poder será de 1.320 (60×22=1.320)' },
+          { skills: 100, carisma: 19, result: 1900, text: 'Si nuestro personaje tiene 100 skilles en Domar Animales y el atributo de Carisma en 19, su poder será de 1.900 (100×19=1.900)' }
+        ],
+        chance: 'Si el poder de domación es mayor al necesario para poder poseer a la criatura tendrás un 20% de chances de domarla por cada intento.',
+        druidBonus: 'La particularidad de la clase Druida es que si utiliza el objeto Flauta Mágica tendrá 20% extra de chances para domar a la criatura y su poder máximo de domación es de 2.200 o 2.640 con Flauta (con 22 en carisma).'
+      },
+      creaturesSection: {
+        title: 'Criaturas Domables',
+        description: 'A continuación te dejamos la lista de las criaturas que podrás domar, ordenadas por el poder de doma necesario para hacerlo'
+      },
+      creatures: [
+        { name: 'Rata salvaje', poderDoma: 200, vida: 15, danoFisico: '2/4', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 20, magia: '-' },
+        { name: 'Serpiente', poderDoma: 250, vida: 22, danoFisico: '1/1', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 0, magia: '-' },
+        { name: 'Goblin', poderDoma: 400, vida: 110, danoFisico: '2/12', defensa: 15, defMagica: '-', podAtaque: 60, evasion: 40, magia: '-' },
+        { name: 'Lobo', poderDoma: 800, vida: 75, danoFisico: '1/18', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 25, magia: '-' },
+        { name: 'Orco', poderDoma: 1000, vida: 350, danoFisico: '5/35', defensa: 10, defMagica: '-', podAtaque: 60, evasion: 45, magia: '-' },
+        { name: 'Tortuga', poderDoma: 1250, vida: 315, danoFisico: '35/55', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 45, magia: '-' },
+        { name: 'Oso Pardo', poderDoma: 400, vida: 625, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
+        { name: 'Lobo Polar', poderDoma: 1500, vida: 2600, danoFisico: '60/80', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 35, magia: '-' },
+        { name: 'Oso polar', poderDoma: 1750, vida: 1700, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
+        { name: 'Araña Gigante', poderDoma: 1900, vida: 1100, danoFisico: '30/90', defensa: '-', defMagica: '-', podAtaque: 80, evasion: 60, magia: '-' },
+        { name: 'Ogro', poderDoma: 2250, vida: 1800, danoFisico: '55/140', defensa: 10, defMagica: 10, podAtaque: 100, evasion: 60, magia: '-' },
+        { name: 'Lord Orco', poderDoma: 2500, vida: 1500, danoFisico: '110/170', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: '-' },
+        { name: 'Orco Brujo', poderDoma: 2500, vida: 1500, danoFisico: '70/115', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: 'Lanza Núcleo Plasma' }
+      ]
     }
   },
   {
