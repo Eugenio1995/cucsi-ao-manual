@@ -13,7 +13,7 @@ export const wikiSections = [
       mapInfo: 'El mapa del mundo de Cucsi, fue basado en el mapa oficial de Argentum Online, respetando las principales ciudades, como "Ullatorphe", "Nix", "Banderbill", entre otras, y usando los dungeons originales con pequeñas modificaciones, tales como "Marabel", "Verill", "Dragon", etc. Fue agregado también el tan usado "Barco", cuya idea original fue obtenida de Cucsifae AO'
     }
   },
-  {
+  /* {
     id: 'cuenta',
     title: 'Crear Cuenta, Habilitar Cuenta y Sistema de Referidos',
     icon: 'user-plus',
@@ -30,7 +30,7 @@ export const wikiSections = [
       description: 'Proceso de creación de tu personaje en CucsiAO.',
       text: 'Para crear personajes debemos haber iniciado sesión con nuestra Cuenta y seleccionar la opción "Crear". Podremos crear hasta ocho personajes en una misma Cuenta. Es aconsejable leer Información de personajes para entender respecto a sus características antes de la creación del mismo. Esto permitirá comenzar con la mayor ventaja posible, además las características elegidas no podrán cambiarse una vez terminada la creación del personaje.'
     }
-  },
+  }, */
   {
     id: 'razas',
     title: 'Razas',
@@ -38,11 +38,11 @@ export const wikiSections = [
     content: {
       description: 'En estos tiempos de la edad media, hasta el momento se conocen 6 diferentes razas que habitan las tierras de CucsiAO.',
       races: [
-        { name: 'Humano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/9.png' },
-        { name: 'Elfo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/2.png' },
-        { name: 'Elfo Oscuro', image: 'https://fenixao.com.ar/manual/resources/media/Heads/3.png' },
-        { name: 'Gnomo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/7.png' },
-        { name: 'Enano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/4.png' },
+        { name: 'Humano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/3.png' },
+        { name: 'Elfo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/107.png' },
+        { name: 'Elfo Oscuro', image: 'https://fenixao.com.ar/manual/resources/media/Heads/203.png' },
+        { name: 'Gnomo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/401.png' },
+        { name: 'Enano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/301.png' },
         { name: 'Orco', image: 'https://fenixao.com.ar/manual/resources/media/Heads/5.png' }
       ],
       text: 'Cada una de estas razas, tiene una característica que le da ciertas ventajas y desventajas respecto a otras razas, según la clase u oficio del personaje.',
@@ -72,37 +72,6 @@ export const wikiSections = [
           ['Orco', '0', '+0.01', '+0.08', '0', '+0.08', '+0%']
         ]
       }
-    }
-  },
-  {
-    id: 'atributos',
-    title: 'Atributos',
-    icon: 'trending-up',
-    content: {
-      description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
-      intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
-      attributes: [
-        {
-          name: 'Fuerza',
-          description: 'La fuerza de un personaje influye en el daño que es capaz de infligir con sus ataques físicos. Cuanta más fuerza tenga un personaje, mayor será el daño causado con armas cuerpo a cuerpo, a distancia o sin armas por lo que es un atributo de suma importancia para las clases que combatan con esta modalidad. Este atributo puede incrementarse temporalmente, al igual que la agilidad.'
-        },
-        {
-          name: 'Agilidad',
-          description: 'La agilidad es el atributo que afecta a la capacidad evasiva y la puntería de un personaje. En un atributo ofensivamente útil para las clases de combate físico y defensivamente favorable para todos los personajes. Este atributo puede incrementarse temporalmente, al igual que la fuerza.'
-        },
-        {
-          name: 'Inteligencia',
-          description: 'La inteligencia afecta en forma directa la cantidad de maná que ganará un personaje al subir de nivel, dependiendo también de la clase. Es un atributo muy importante para todas las clases que necesiten utilizar hechizos, marcando muchas veces el límite en la capacidad mágica de un personaje.'
-        },
-        {
-          name: 'Carisma',
-          description: 'El carisma afecta las capacidades de un personaje para la creación de una party así como su facilidad para la doma de criaturas. Cuanto mayor sea el valor de este atributo, más poderosas serán las criaturas que podrá domar un personaje.'
-        },
-        {
-          name: 'Constitución',
-          description: 'Los puntos de vida de un personaje dependen directamente de su constitución y clase. Un valor más elevado en este atributo aumenta los puntos de vida iniciales y ganados por nivel de un personaje. Sin duda es un valor importante para todos los personajes.'
-        }
-      ]
     }
   },
   {
@@ -342,48 +311,71 @@ export const wikiSections = [
     }
   },
   {
-    id: 'trabajo',
-    title: 'Trabajo',
-    icon: 'briefcase',
+    id: 'hechizos',
+    title: 'Hechizos',
+    icon: 'sparkles',
     content: {
-      description: 'Aprende sobre los diferentes trabajos y oficios disponibles.',
-      placeholder: 'Detalles sobre trabajos, recompensas y progresión...'
-    }
-  },
-  {
-    id: 'entrenamiento',
-    title: 'Guía de Entrenamiento',
-    icon: 'target',
-    content: {
-      description: 'Métodos y estrategias para entrenar a tu personaje eficientemente.',
-      placeholder: 'Guías de entrenamiento por nivel y clase...'
-    }
-  },
-  {
-    id: 'experiencia',
-    title: 'EXP. x Nivel y Skills Naturales',
-    icon: 'trending-up',
-    content: {
-      description: 'Tablas de experiencia requerida y skills naturales por nivel.',
-      placeholder: 'Tablas de progresión y habilidades naturales...'
-    }
-  },
-  {
-    id: 'mapa',
-    title: 'Mapa',
-    icon: 'map',
-    content: {
-      description: 'Explora el vasto mundo de CucsiAO y sus territorios.',
-      placeholder: 'Información sobre ciudades, dungeons y ubicaciones importantes...'
-    }
-  },
-  {
-    id: 'party',
-    title: 'Party',
-    icon: 'users',
-    content: {
-      description: 'Sistema de grupos y beneficios de jugar en party.',
-      placeholder: 'Cómo formar parties, límites y bonificaciones...'
+      description: 'Compendio de todos los hechizos disponibles en CucsiAO. Cada hechizo tiene requisitos de skills, costos de maná y stamina.',
+      spells: [
+        { nombre: 'Curar Veneno', precio: 100, skills: 10, mana: 10, stamina: 1, descripcion: 'Cura el veneno' },
+        { nombre: 'Destello Arcano', precio: 250, skills: 6, mana: 4, stamina: 1, descripcion: 'Inflinge entre 4 a 7 de Daño Magico al Objetivo' },
+        { nombre: 'Impulso Arcano', precio: 1150, skills: 12, mana: 10, stamina: 5, descripcion: 'Inflinge entre 6 a 12 de Daño Magico al Objetivo' },
+        { nombre: 'Curar Heridas Leves', precio: 250, skills: 15, mana: 10, stamina: 1, descripcion: 'Restaura la Salud del Objetivo entre 1 y 5' },
+        { nombre: 'Envenenar', precio: 475000, skills: 90, mana: 500, stamina: 100, descripcion: 'Envenena al objetivo' },
+        { nombre: 'Curar Heridas Graves', precio: 10000, skills: 50, mana: 40, stamina: 20, descripcion: 'Restaura la Salud del Objetivo entre 12 y 35' },
+        { nombre: 'Bola de Fuego', precio: 2250, skills: 22, mana: 20, stamina: 5, descripcion: 'Inflinge entre 12 a 20 de Daño Magico al Objetivo' },
+        { nombre: 'Nucleo Plasma', precio: 6000, skills: 38, mana: 50, stamina: 15, descripcion: 'Inflinge entre 30 a 35 de Daño Magico al Objetivo' },
+        { nombre: 'Paralizar', precio: 50000, skills: 60, mana: 400, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
+        { nombre: 'Paralizar (A/BAND/P)', precio: 50000, skills: 60, mana: 300, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
+        { nombre: 'Remover Paralisis', precio: 5000, skills: 45, mana: 300, stamina: 60, descripcion: 'Remueve la Paralisis al Objetivo' },
+        { nombre: 'Resucitar (Mago/Druida/Bardo) NIVEL 40', precio: 625000, skills: 100, mana: 1700, stamina: 450, descripcion: 'Resucita al Objetivo, Solo funciona en Usuarios. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Flauta Mágica, Flauta Elfica, Laud Magico o Laud Elfico. CD de 20 segundos' },
+        { nombre: 'Curacion Divina (Clerigo)', precio: 275000, skills: 80, mana: 500, stamina: 650, descripcion: 'Restaura la Salud del Objetivo entre 90 y 180' },
+        { nombre: 'Curar Heridas Mortales (Paladin)', precio: 50000, skills: 100, mana: 300, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 75' },
+        { nombre: 'Invisibilidad (Mago)', precio: 100000, skills: 87, mana: 600, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
+        { nombre: 'Relampago (Solo Criaturas)', precio: 50000, skills: 60, mana: 100, stamina: 20, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo, solo funciona en Criaturas' },
+        { nombre: 'Llamarada (Mago)', precio: 625000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 63 a 73 de Daño Magico al Objetivo' },
+        { nombre: 'Rafaga Ardiente (Bardo/Clerigo)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Rafaga Ardiente (Asesino/Paladin)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Apocalipsis (Bardo/Clerigo) NIVEL 30', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 97 a 102 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo Clase Bardo' },
+        { nombre: 'Apocalipsis (Druida)', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 98 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Rafaga Ardiente (Druida)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 94 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Tormenta de Fuego', precio: 12500, skills: 75, mana: 150, stamina: 29, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo' },
+        { nombre: 'Mimetismo SOLO DRUIDA', precio: 400000, skills: 75, mana: 800, stamina: 44, descripcion: 'Copia temporalmente la apariencia del Objetivo' },
+        { nombre: 'Provocar Hambre', precio: 100, skills: 5, mana: 20, stamina: 2, descripcion: 'Provoca la perdida de Hambre entre 20 a 50 puntos' },
+        { nombre: 'Manada Hambrienta', precio: 10000, skills: 40, mana: 120, stamina: 16, descripcion: 'Invoca 3 Lobos Salvajes que acudiran en tu ayuda' },
+        { nombre: 'Nigromancia', precio: 20000, skills: 51, mana: 400, stamina: 31, descripcion: 'Invoca 3 Zombies que acudiran en tu ayuda' },
+        { nombre: 'Torpeza', precio: 135000, skills: 20, mana: 20, stamina: 2, descripcion: 'Reduce el Atributo de Celeridad del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Celeridad Total (Clerigo)', precio: 25000, skills: 60, mana: 150, stamina: 75, descripcion: 'Aumenta el Atributo de Celeridad a 40 en si mismo. Lanzado sobre otras clases, eleva sus puntos de celeridad al maximo posible equivalente a utilizar pociones druidas amarillas segun raza, solo funciona en Usuarios' },
+        { nombre: 'Fuerza Total (Clerigo)', precio: 25000, skills: 60, mana: 150, stamina: 75, descripcion: 'Aumenta el Atributo de Fuerza a 40 en si mismo. Lanzado sobre otras clases, eleva sus puntos de Fuerza al maximo posible equivalente a utilizar pociones druidas verdes segun raza, solo funciona en Usuarios' },
+        { nombre: 'Celeridad', precio: 7500, skills: 20, mana: 40, stamina: 5, descripcion: 'Aumenta el Atributo de Celeridad del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Fuerza', precio: 7500, skills: 35, mana: 50, stamina: 6, descripcion: 'Aumenta el Atributo de Fuerza del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Vitalidad (Clerigo/Paladin)', precio: 250000, skills: 60, mana: 150, stamina: 50, descripcion: 'Recupera Estamina, Comida y Bebida sobre el Objetivo, Solo funciona en Usuarios' },
+        { nombre: 'Curar Heridas Mortales (Druida/Bardo)', precio: 50000, skills: 100, mana: 500, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 70' },
+        { nombre: 'Debilidad', precio: 70000, skills: 35, mana: 45, stamina: 6, descripcion: 'Reduce el Atributo de Fuerza del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Inmovilizar (Solo Criaturas)', precio: 10000, skills: 40, mana: 250, stamina: 25, descripcion: 'Inmoviliza al Objetivo por unos segundos, Solo funciona en Criaturas' },
+        { nombre: 'Resurrección Divina (Clerigo)', precio: 625000, skills: 99, mana: 1000, stamina: 400, descripcion: 'Resucita al Objetivo y lo Cura por 100 puntos de vida, además le deja el hambre y la sed en 20 puntos, solo funciona en Usuarios. CD de 10 segundos' },
+        { nombre: 'Invisibilidad (Bardo/Clerigo/Druida)', precio: 100000, skills: 87, mana: 500, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
+        { nombre: 'Curar Heridas Mortales (Clerigo)', precio: 50000, skills: 80, mana: 200, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 70' },
+        { nombre: 'Llamarada', precio: 575000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 70 a 80 de Daño Magico al Objetivo' },
+        { nombre: 'Sombra de la Muerte (Mago) NIVEL 40', precio: 2500000, skills: 99, mana: 2800, stamina: 250, descripcion: 'Inflinge entre 115 a 120 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Rafaga Ardiente (Mago)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 83 a 88 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Vara de Fresno, Baston Nudoso, Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Ceguera (Mago) NIVEL 40', precio: 1500000, skills: 100, mana: 2500, stamina: 300, descripcion: 'Embrujo que quita la vision al Usuario. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Maldecir (Mago)', precio: 1500000, skills: 70, mana: 500, stamina: 300, descripcion: 'Maldice al Usuario haciendo que camine erraticamente. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Apocalipsis (Mago) NIVEL 30', precio: 1250000, skills: 99, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 90 a 95 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Descarga Electrica', precio: 175000, skills: 75, mana: 400, stamina: 85, descripcion: 'Inflinge entre 55 a 65 de Daño Magico al Objetivo' },
+        { nombre: 'Elemental de Fuego (Mago/Bardo/Clerigo)', precio: 450000, skills: 100, mana: 1000, stamina: 145, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Laud Magico o Laud Elfico Solo las Clases Mago y Bardo' },
+        { nombre: 'Elemental de Fuego (Druida)', precio: 450000, skills: 100, mana: 750, stamina: 105, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Elemental de Agua (Mago/Bardo/Clerigo)', precio: 200000, skills: 100, mana: 1000, stamina: 130, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
+        { nombre: 'Elemental de Agua (Druida)', precio: 200000, skills: 100, mana: 750, stamina: 90, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
+        { nombre: 'Elemental de Tierra (Bardo/Clerigo)', precio: 300000, skills: 90, mana: 1000, stamina: 131, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo la Clase Bardo' },
+        { nombre: 'Elemental de Tierra (Druida)', precio: 300000, skills: 97, mana: 750, stamina: 120, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Invisibilidad (Paladin/Asesino)', precio: 100000, skills: 87, mana: 400, stamina: 75, descripcion: 'Vuelve invisble al Objetivo, solo funciona en Usuarios' },
+        { nombre: 'Explosion Faustica (Mago)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 97 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Explosion Faustica (Bardo)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 110 a 115 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laúd Mágico o Laúd Élfico' },
+        { nombre: 'Explosión Fáustica (Druida)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 103 a 107 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Élfica' },
+        { nombre: 'Implorar Ayuda (Druida)', precio: 600000, skills: 100, mana: 1500, stamina: 150, descripcion: 'Invoca un Fuego Fatuo que acudirá en tu ayuda, Lanza Paralizar y Descarga Eléctrica a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Invocar Tigre (Asesino/Paladin)', precio: 125000, skills: 100, mana: 600, stamina: 50, descripcion: 'Invoca 3 Tigres que acudirá en tu ayuda.' }
+      ]
     }
   },
   {
@@ -609,124 +601,6 @@ export const wikiSections = [
             { npc: 'Ilduara', repetible: true, ubicacion: 'Ciudad de Nexon | Mapa:15 X:54 Y:50', nombre: 'Mercado Negro de Lanas II', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Lana de Cabra.', criaturas: [], recompensa: 'Te entregara 504 Ovillos de Cabra (Brinda 5% extra de ovillos ya trabajados).' }
           ]
         }
-      ]
-    }
-  },
-  {
-    id: 'domar',
-    title: 'Domar Animales',
-    icon: 'paw-print',
-    content: {
-      description: 'La doma de criaturas puede ser utilizada por cualquier clase o raza, la misma consiste en domesticar animales salvajes para hacerlos mascotas.',
-      intro: 'Estas bestias una vez domadas son fieles compañeras de aventuras ya que los defenderán en caso de que alguien o algo los ataque. Para domar a una criatura simplemente presionen la tecla "D" + click (por defecto) sobre la criatura para intentar domarla. Hay criaturas que se dejan domar fácilmente y otras que no.',
-      druidInfo: 'Existe una clase en CucsiAO con la habilidad superiora de poder comunicarse con los animales y convencerlos para pedir por su ayuda, amistad o compañía en nuestro recorrido por el mundo. Esta clase es el Druida.',
-      commands: {
-        title: 'Comandos para Mascotas',
-        description: 'Nuestras mascotas obedecerán órdenes para lo cuál pueden clickearlas y utilizar los siguientes comandos:',
-        list: [
-          { command: '/QUIETO', description: 'La mascota se quedará en el lugar' },
-          { command: '/ACOMPAÑAR', description: 'La mascota continuará siguiéndote' },
-          { command: '/LIBERAR', description: 'Deja libre a tu mascota (también doble click sobre ella)' }
-        ]
-      },
-      carismaInfo: 'La Carisma es fundamental para la hora de Domar junto con los skilles en "Domar animales" serás capaz de domar todo tipos de criaturas las cuales te ayudaran en tu recorrido.',
-      powerSection: {
-        title: 'Poder de Domación',
-        description: 'Para poder determinar cuanto poder de domación posee el usuario deberemos de calcularlo de la siguiente manera:',
-        formula: 'Poder = Skilles en Domar Animales × Atributos en Carisma',
-        examples: [
-          { skills: 60, carisma: 22, result: 1320, text: 'Si nuestro personaje tiene 60 skilles en Domar Animales y el atributo de Carisma en 22, su poder será de 1.320 (60×22=1.320)' },
-          { skills: 100, carisma: 19, result: 1900, text: 'Si nuestro personaje tiene 100 skilles en Domar Animales y el atributo de Carisma en 19, su poder será de 1.900 (100×19=1.900)' }
-        ],
-        chance: 'Si el poder de domación es mayor al necesario para poder poseer a la criatura tendrás un 20% de chances de domarla por cada intento.',
-        druidBonus: 'La particularidad de la clase Druida es que si utiliza el objeto Flauta Mágica tendrá 20% extra de chances para domar a la criatura y su poder máximo de domación es de 2.200 o 2.640 con Flauta (con 22 en carisma).'
-      },
-      creaturesSection: {
-        title: 'Criaturas Domables',
-        description: 'A continuación te dejamos la lista de las criaturas que podrás domar, ordenadas por el poder de doma necesario para hacerlo'
-      },
-      creatures: [
-        { name: 'Rata salvaje', poderDoma: 200, vida: 15, danoFisico: '2/4', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 20, magia: '-' },
-        { name: 'Serpiente', poderDoma: 250, vida: 22, danoFisico: '1/1', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 0, magia: '-' },
-        { name: 'Goblin', poderDoma: 400, vida: 110, danoFisico: '2/12', defensa: 15, defMagica: '-', podAtaque: 60, evasion: 40, magia: '-' },
-        { name: 'Lobo', poderDoma: 800, vida: 75, danoFisico: '1/18', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 25, magia: '-' },
-        { name: 'Orco', poderDoma: 1000, vida: 350, danoFisico: '5/35', defensa: 10, defMagica: '-', podAtaque: 60, evasion: 45, magia: '-' },
-        { name: 'Tortuga', poderDoma: 1250, vida: 315, danoFisico: '35/55', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 45, magia: '-' },
-        { name: 'Oso Pardo', poderDoma: 400, vida: 625, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
-        { name: 'Lobo Polar', poderDoma: 1500, vida: 2600, danoFisico: '60/80', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 35, magia: '-' },
-        { name: 'Oso polar', poderDoma: 1750, vida: 1700, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
-        { name: 'Araña Gigante', poderDoma: 1900, vida: 1100, danoFisico: '30/90', defensa: '-', defMagica: '-', podAtaque: 80, evasion: 60, magia: '-' },
-        { name: 'Ogro', poderDoma: 2250, vida: 1800, danoFisico: '55/140', defensa: 10, defMagica: 10, podAtaque: 100, evasion: 60, magia: '-' },
-        { name: 'Lord Orco', poderDoma: 2500, vida: 1500, danoFisico: '110/170', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: '-' },
-        { name: 'Orco Brujo', poderDoma: 2500, vida: 1500, danoFisico: '70/115', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: 'Lanza Núcleo Plasma' }
-      ]
-    }
-  },
-  {
-    id: 'hechizos',
-    title: 'Hechizos',
-    icon: 'sparkles',
-    content: {
-      description: 'Compendio de todos los hechizos disponibles en CucsiAO. Cada hechizo tiene requisitos de skills, costos de maná y stamina.',
-      spells: [
-        { nombre: 'Curar Veneno', precio: 100, skills: 10, mana: 10, stamina: 1, descripcion: 'Cura el veneno' },
-        { nombre: 'Destello Arcano', precio: 250, skills: 6, mana: 4, stamina: 1, descripcion: 'Inflinge entre 4 a 7 de Daño Magico al Objetivo' },
-        { nombre: 'Impulso Arcano', precio: 1150, skills: 12, mana: 10, stamina: 5, descripcion: 'Inflinge entre 6 a 12 de Daño Magico al Objetivo' },
-        { nombre: 'Curar Heridas Leves', precio: 250, skills: 15, mana: 10, stamina: 1, descripcion: 'Restaura la Salud del Objetivo entre 1 y 5' },
-        { nombre: 'Envenenar', precio: 475000, skills: 90, mana: 500, stamina: 100, descripcion: 'Envenena al objetivo' },
-        { nombre: 'Curar Heridas Graves', precio: 10000, skills: 50, mana: 40, stamina: 20, descripcion: 'Restaura la Salud del Objetivo entre 12 y 35' },
-        { nombre: 'Bola de Fuego', precio: 2250, skills: 22, mana: 20, stamina: 5, descripcion: 'Inflinge entre 12 a 20 de Daño Magico al Objetivo' },
-        { nombre: 'Nucleo Plasma', precio: 6000, skills: 38, mana: 50, stamina: 15, descripcion: 'Inflinge entre 30 a 35 de Daño Magico al Objetivo' },
-        { nombre: 'Paralizar', precio: 50000, skills: 60, mana: 400, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
-        { nombre: 'Paralizar (A/BAND/P)', precio: 50000, skills: 60, mana: 300, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
-        { nombre: 'Remover Paralisis', precio: 5000, skills: 45, mana: 300, stamina: 60, descripcion: 'Remueve la Paralisis al Objetivo' },
-        { nombre: 'Resucitar (Mago/Druida/Bardo) NIVEL 40', precio: 625000, skills: 100, mana: 1700, stamina: 450, descripcion: 'Resucita al Objetivo, Solo funciona en Usuarios. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Flauta Mágica, Flauta Elfica, Laud Magico o Laud Elfico. CD de 20 segundos' },
-        { nombre: 'Curacion Divina (Clerigo)', precio: 275000, skills: 80, mana: 500, stamina: 650, descripcion: 'Restaura la Salud del Objetivo entre 90 y 180' },
-        { nombre: 'Curar Heridas Mortales (Paladin)', precio: 50000, skills: 100, mana: 300, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 75' },
-        { nombre: 'Invisibilidad (Mago)', precio: 100000, skills: 87, mana: 600, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
-        { nombre: 'Relampago (Solo Criaturas)', precio: 50000, skills: 60, mana: 100, stamina: 20, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo, solo funciona en Criaturas' },
-        { nombre: 'Llamarada (Mago)', precio: 625000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 63 a 73 de Daño Magico al Objetivo' },
-        { nombre: 'Rafaga Ardiente (Bardo/Clerigo)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
-        { nombre: 'Rafaga Ardiente (Asesino/Paladin)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
-        { nombre: 'Apocalipsis (Bardo/Clerigo) NIVEL 30', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 97 a 102 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo Clase Bardo' },
-        { nombre: 'Apocalipsis (Druida)', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 98 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Rafaga Ardiente (Druida)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 94 a 98 de Daño Magico al Objetivo' },
-        { nombre: 'Tormenta de Fuego', precio: 12500, skills: 75, mana: 150, stamina: 29, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo' },
-        { nombre: 'Mimetismo SOLO DRUIDA', precio: 400000, skills: 75, mana: 800, stamina: 44, descripcion: 'Copia temporalmente la apariencia del Objetivo' },
-        { nombre: 'Provocar Hambre', precio: 100, skills: 5, mana: 20, stamina: 2, descripcion: 'Provoca la perdida de Hambre entre 20 a 50 puntos' },
-        { nombre: 'Manada Hambrienta', precio: 10000, skills: 40, mana: 120, stamina: 16, descripcion: 'Invoca 3 Lobos Salvajes que acudiran en tu ayuda' },
-        { nombre: 'Nigromancia', precio: 20000, skills: 51, mana: 400, stamina: 31, descripcion: 'Invoca 3 Zombies que acudiran en tu ayuda' },
-        { nombre: 'Torpeza', precio: 135000, skills: 20, mana: 20, stamina: 2, descripcion: 'Reduce el Atributo de Celeridad del Objetivo entre 2 a 5, solo funciona en Usuarios' },
-        { nombre: 'Celeridad Total (Clerigo)', precio: 25000, skills: 60, mana: 150, stamina: 75, descripcion: 'Aumenta el Atributo de Celeridad a 40 en si mismo. Lanzado sobre otras clases, eleva sus puntos de celeridad al maximo posible equivalente a utilizar pociones druidas amarillas segun raza, solo funciona en Usuarios' },
-        { nombre: 'Fuerza Total (Clerigo)', precio: 25000, skills: 60, mana: 150, stamina: 75, descripcion: 'Aumenta el Atributo de Fuerza a 40 en si mismo. Lanzado sobre otras clases, eleva sus puntos de Fuerza al maximo posible equivalente a utilizar pociones druidas verdes segun raza, solo funciona en Usuarios' },
-        { nombre: 'Celeridad', precio: 7500, skills: 20, mana: 40, stamina: 5, descripcion: 'Aumenta el Atributo de Celeridad del Objetivo entre 2 a 5, solo funciona en Usuarios' },
-        { nombre: 'Fuerza', precio: 7500, skills: 35, mana: 50, stamina: 6, descripcion: 'Aumenta el Atributo de Fuerza del Objetivo entre 2 a 5, solo funciona en Usuarios' },
-        { nombre: 'Vitalidad (Clerigo/Paladin)', precio: 250000, skills: 60, mana: 150, stamina: 50, descripcion: 'Recupera Estamina, Comida y Bebida sobre el Objetivo, Solo funciona en Usuarios' },
-        { nombre: 'Curar Heridas Mortales (Druida/Bardo)', precio: 50000, skills: 100, mana: 500, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 70' },
-        { nombre: 'Debilidad', precio: 70000, skills: 35, mana: 45, stamina: 6, descripcion: 'Reduce el Atributo de Fuerza del Objetivo entre 2 a 5, solo funciona en Usuarios' },
-        { nombre: 'Inmovilizar (Solo Criaturas)', precio: 10000, skills: 40, mana: 250, stamina: 25, descripcion: 'Inmoviliza al Objetivo por unos segundos, Solo funciona en Criaturas' },
-        { nombre: 'Resurrección Divina (Clerigo)', precio: 625000, skills: 99, mana: 1000, stamina: 400, descripcion: 'Resucita al Objetivo y lo Cura por 100 puntos de vida, además le deja el hambre y la sed en 20 puntos, solo funciona en Usuarios. CD de 10 segundos' },
-        { nombre: 'Invisibilidad (Bardo/Clerigo/Druida)', precio: 100000, skills: 87, mana: 500, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
-        { nombre: 'Curar Heridas Mortales (Clerigo)', precio: 50000, skills: 80, mana: 200, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 70' },
-        { nombre: 'Llamarada', precio: 575000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 70 a 80 de Daño Magico al Objetivo' },
-        { nombre: 'Sombra de la Muerte (Mago) NIVEL 40', precio: 2500000, skills: 99, mana: 2800, stamina: 250, descripcion: 'Inflinge entre 115 a 120 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
-        { nombre: 'Rafaga Ardiente (Mago)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 83 a 88 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Vara de Fresno, Baston Nudoso, Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
-        { nombre: 'Ceguera (Mago) NIVEL 40', precio: 1500000, skills: 100, mana: 2500, stamina: 300, descripcion: 'Embrujo que quita la vision al Usuario. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
-        { nombre: 'Maldecir (Mago)', precio: 1500000, skills: 70, mana: 500, stamina: 300, descripcion: 'Maldice al Usuario haciendo que camine erraticamente. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
-        { nombre: 'Apocalipsis (Mago) NIVEL 30', precio: 1250000, skills: 99, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 90 a 95 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
-        { nombre: 'Descarga Electrica', precio: 175000, skills: 75, mana: 400, stamina: 85, descripcion: 'Inflinge entre 55 a 65 de Daño Magico al Objetivo' },
-        { nombre: 'Elemental de Fuego (Mago/Bardo/Clerigo)', precio: 450000, skills: 100, mana: 1000, stamina: 145, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Laud Magico o Laud Elfico Solo las Clases Mago y Bardo' },
-        { nombre: 'Elemental de Fuego (Druida)', precio: 450000, skills: 100, mana: 750, stamina: 105, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Elemental de Agua (Mago/Bardo/Clerigo)', precio: 200000, skills: 100, mana: 1000, stamina: 130, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
-        { nombre: 'Elemental de Agua (Druida)', precio: 200000, skills: 100, mana: 750, stamina: 90, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
-        { nombre: 'Elemental de Tierra (Bardo/Clerigo)', precio: 300000, skills: 90, mana: 1000, stamina: 131, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo la Clase Bardo' },
-        { nombre: 'Elemental de Tierra (Druida)', precio: 300000, skills: 97, mana: 750, stamina: 120, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Invisibilidad (Paladin/Asesino)', precio: 100000, skills: 87, mana: 400, stamina: 75, descripcion: 'Vuelve invisble al Objetivo, solo funciona en Usuarios' },
-        { nombre: 'Explosion Faustica (Mago)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 97 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
-        { nombre: 'Explosion Faustica (Bardo)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 110 a 115 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laúd Mágico o Laúd Élfico' },
-        { nombre: 'Explosión Fáustica (Druida)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 103 a 107 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Élfica' },
-        { nombre: 'Implorar Ayuda (Druida)', precio: 600000, skills: 100, mana: 1500, stamina: 150, descripcion: 'Invoca un Fuego Fatuo que acudirá en tu ayuda, Lanza Paralizar y Descarga Eléctrica a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Invocar Tigre (Asesino/Paladin)', precio: 125000, skills: 100, mana: 600, stamina: 50, descripcion: 'Invoca 3 Tigres que acudirá en tu ayuda.' }
       ]
     }
   },
@@ -1379,6 +1253,56 @@ export const wikiSections = [
     }
   },
   {
+    id: 'domar',
+    title: 'Domar Animales',
+    icon: 'paw-print',
+    content: {
+      description: 'La doma de criaturas puede ser utilizada por cualquier clase o raza, la misma consiste en domesticar animales salvajes para hacerlos mascotas.',
+      intro: 'Estas bestias una vez domadas son fieles compañeras de aventuras ya que los defenderán en caso de que alguien o algo los ataque. Para domar a una criatura simplemente presionen la tecla "D" + click (por defecto) sobre la criatura para intentar domarla. Hay criaturas que se dejan domar fácilmente y otras que no.',
+      druidInfo: 'Existe una clase en CucsiAO con la habilidad superiora de poder comunicarse con los animales y convencerlos para pedir por su ayuda, amistad o compañía en nuestro recorrido por el mundo. Esta clase es el Druida.',
+      commands: {
+        title: 'Comandos para Mascotas',
+        description: 'Nuestras mascotas obedecerán órdenes para lo cuál pueden clickearlas y utilizar los siguientes comandos:',
+        list: [
+          { command: '/QUIETO', description: 'La mascota se quedará en el lugar' },
+          { command: '/ACOMPAÑAR', description: 'La mascota continuará siguiéndote' },
+          { command: '/LIBERAR', description: 'Deja libre a tu mascota (también doble click sobre ella)' }
+        ]
+      },
+      carismaInfo: 'La Carisma es fundamental para la hora de Domar junto con los skilles en "Domar animales" serás capaz de domar todo tipos de criaturas las cuales te ayudaran en tu recorrido.',
+      powerSection: {
+        title: 'Poder de Domación',
+        description: 'Para poder determinar cuanto poder de domación posee el usuario deberemos de calcularlo de la siguiente manera:',
+        formula: 'Poder = Skilles en Domar Animales × Atributos en Carisma',
+        examples: [
+          { skills: 60, carisma: 22, result: 1320, text: 'Si nuestro personaje tiene 60 skilles en Domar Animales y el atributo de Carisma en 22, su poder será de 1.320 (60×22=1.320)' },
+          { skills: 100, carisma: 19, result: 1900, text: 'Si nuestro personaje tiene 100 skilles en Domar Animales y el atributo de Carisma en 19, su poder será de 1.900 (100×19=1.900)' }
+        ],
+        chance: 'Si el poder de domación es mayor al necesario para poder poseer a la criatura tendrás un 20% de chances de domarla por cada intento.',
+        druidBonus: 'La particularidad de la clase Druida es que si utiliza el objeto Flauta Mágica tendrá 20% extra de chances para domar a la criatura y su poder máximo de domación es de 2.200 o 2.640 con Flauta (con 22 en carisma).'
+      },
+      creaturesSection: {
+        title: 'Criaturas Domables',
+        description: 'A continuación te dejamos la lista de las criaturas que podrás domar, ordenadas por el poder de doma necesario para hacerlo'
+      },
+      creatures: [
+        { name: 'Rata salvaje', poderDoma: 200, vida: 15, danoFisico: '2/4', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 20, magia: '-' },
+        { name: 'Serpiente', poderDoma: 250, vida: 22, danoFisico: '1/1', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 0, magia: '-' },
+        { name: 'Goblin', poderDoma: 400, vida: 110, danoFisico: '2/12', defensa: 15, defMagica: '-', podAtaque: 60, evasion: 40, magia: '-' },
+        { name: 'Lobo', poderDoma: 800, vida: 75, danoFisico: '1/18', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 25, magia: '-' },
+        { name: 'Orco', poderDoma: 1000, vida: 350, danoFisico: '5/35', defensa: 10, defMagica: '-', podAtaque: 60, evasion: 45, magia: '-' },
+        { name: 'Tortuga', poderDoma: 1250, vida: 315, danoFisico: '35/55', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 45, magia: '-' },
+        { name: 'Oso Pardo', poderDoma: 400, vida: 625, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
+        { name: 'Lobo Polar', poderDoma: 1500, vida: 2600, danoFisico: '60/80', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 35, magia: '-' },
+        { name: 'Oso polar', poderDoma: 1750, vida: 1700, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
+        { name: 'Araña Gigante', poderDoma: 1900, vida: 1100, danoFisico: '30/90', defensa: '-', defMagica: '-', podAtaque: 80, evasion: 60, magia: '-' },
+        { name: 'Ogro', poderDoma: 2250, vida: 1800, danoFisico: '55/140', defensa: 10, defMagica: 10, podAtaque: 100, evasion: 60, magia: '-' },
+        { name: 'Lord Orco', poderDoma: 2500, vida: 1500, danoFisico: '110/170', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: '-' },
+        { name: 'Orco Brujo', poderDoma: 2500, vida: 1500, danoFisico: '70/115', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: 'Lanza Núcleo Plasma' }
+      ]
+    }
+  },
+  {
     id: 'clanes',
     title: 'Clanes',
     icon: 'flag',
@@ -1462,6 +1386,82 @@ export const wikiSections = [
     }
   },
   {
+    id: 'atributos',
+    title: 'Atributos',
+    icon: 'trending-up',
+    content: {
+      description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
+      intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
+      attributes: [
+        {
+          name: 'Fuerza',
+          description: 'La fuerza de un personaje influye en el daño que es capaz de infligir con sus ataques físicos. Cuanta más fuerza tenga un personaje, mayor será el daño causado con armas cuerpo a cuerpo, a distancia o sin armas por lo que es un atributo de suma importancia para las clases que combatan con esta modalidad. Este atributo puede incrementarse temporalmente, al igual que la agilidad.'
+        },
+        {
+          name: 'Agilidad',
+          description: 'La agilidad es el atributo que afecta a la capacidad evasiva y la puntería de un personaje. En un atributo ofensivamente útil para las clases de combate físico y defensivamente favorable para todos los personajes. Este atributo puede incrementarse temporalmente, al igual que la fuerza.'
+        },
+        {
+          name: 'Inteligencia',
+          description: 'La inteligencia afecta en forma directa la cantidad de maná que ganará un personaje al subir de nivel, dependiendo también de la clase. Es un atributo muy importante para todas las clases que necesiten utilizar hechizos, marcando muchas veces el límite en la capacidad mágica de un personaje.'
+        },
+        {
+          name: 'Carisma',
+          description: 'El carisma afecta las capacidades de un personaje para la creación de una party así como su facilidad para la doma de criaturas. Cuanto mayor sea el valor de este atributo, más poderosas serán las criaturas que podrá domar un personaje.'
+        },
+        {
+          name: 'Constitución',
+          description: 'Los puntos de vida de un personaje dependen directamente de su constitución y clase. Un valor más elevado en este atributo aumenta los puntos de vida iniciales y ganados por nivel de un personaje. Sin duda es un valor importante para todos los personajes.'
+        }
+      ]
+    }
+  },
+  /* {
+    id: 'trabajo',
+    title: 'Trabajo',
+    icon: 'briefcase',
+    content: {
+      description: 'Aprende sobre los diferentes trabajos y oficios disponibles.',
+      placeholder: 'Detalles sobre trabajos, recompensas y progresión...'
+    }
+  }, */
+  /* {
+    id: 'entrenamiento',
+    title: 'Guía de Entrenamiento',
+    icon: 'target',
+    content: {
+      description: 'Métodos y estrategias para entrenar a tu personaje eficientemente.',
+      placeholder: 'Guías de entrenamiento por nivel y clase...'
+    }
+  },
+  {
+    id: 'experiencia',
+    title: 'EXP. x Nivel y Skills Naturales',
+    icon: 'trending-up',
+    content: {
+      description: 'Tablas de experiencia requerida y skills naturales por nivel.',
+      placeholder: 'Tablas de progresión y habilidades naturales...'
+    }
+  }, */
+  {
+    id: 'mapa',
+    title: 'Mapa',
+    icon: 'map',
+    content: {
+      description: 'Explora el vasto mundo de CucsiAO y sus territorios.',
+      placeholder: 'Información sobre ciudades, dungeons y ubicaciones importantes...'
+    }
+  },
+  /* {
+    id: 'party',
+    title: 'Party',
+    icon: 'users',
+    content: {
+      description: 'Sistema de grupos y beneficios de jugar en party.',
+      placeholder: 'Cómo formar parties, límites y bonificaciones...'
+    }
+  }, */
+  /* {
     id: 'guerras',
     title: 'Guerras de Clan',
     icon: 'swords',
@@ -1649,7 +1649,7 @@ export const wikiSections = [
       description: 'Soluciones a problemas comunes del juego.',
       placeholder: 'Guía de troubleshooting...'
     }
-  }
+  } */
 ];
 
 export const socialLinks = [

@@ -10,21 +10,21 @@ export const WikiContent = () => {
   const [activeSection, setActiveSection] = useState('bienvenida');
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedClass, setSelectedClass] = useState(null);
-  
+
   // States for creatures table
   const [searchTerm, setSearchTerm] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'exp', direction: 'asc' }); // Default: menor a mayor EXP
   const [expandedDrops, setExpandedDrops] = useState(new Set());
-  
+
   // States for quests
   const [selectedQuestCategory, setSelectedQuestCategory] = useState(null);
   const [selectedQuest, setSelectedQuest] = useState(null);
-  
+
   // States for spells table
   const [spellSearchTerm, setSpellSearchTerm] = useState('');
   const [spellSortConfig, setSpellSortConfig] = useState({ key: 'precio', direction: 'asc' }); // Default: menor a mayor precio
   const [expandedSpellDescs, setExpandedSpellDescs] = useState(new Set());
-  
+
   // States for items section
   const [selectedItemSubsection, setSelectedItemSubsection] = useState(null);
 
@@ -84,7 +84,7 @@ export const WikiContent = () => {
     if (numRatio >= 1.0 && numRatio < 1.5) return 'ratio-chip-white';
     return 'ratio-chip-gold';
   };
-  
+
   // Format number with thousands separator
   const formatNumber = (num) => {
     if (typeof num === 'number') {
@@ -92,7 +92,7 @@ export const WikiContent = () => {
     }
     return num;
   };
-  
+
   // Toggle drop expansion
   const toggleDrop = (index) => {
     const newExpanded = new Set(expandedDrops);
@@ -107,18 +107,18 @@ export const WikiContent = () => {
   // Sort creatures
   const sortCreatures = (creatures) => {
     if (!sortConfig.key) return creatures;
-    
+
     return [...creatures].sort((a, b) => {
       let aValue = a[sortConfig.key];
       let bValue = b[sortConfig.key];
-      
+
       // Handle numeric sorting
-      if (sortConfig.key === 'vida' || sortConfig.key === 'exp' || sortConfig.key === 'oro' || 
-          sortConfig.key === 'podAtaque' || sortConfig.key === 'evasion') {
+      if (sortConfig.key === 'vida' || sortConfig.key === 'exp' || sortConfig.key === 'oro' ||
+        sortConfig.key === 'podAtaque' || sortConfig.key === 'evasion') {
         aValue = Number(aValue);
         bValue = Number(bValue);
       }
-      
+
       if (aValue < bValue) {
         return sortConfig.direction === 'asc' ? -1 : 1;
       }
@@ -140,13 +140,13 @@ export const WikiContent = () => {
   // Filter and sort creatures
   const getFilteredAndSortedCreatures = (creatures) => {
     let filtered = creatures;
-    
+
     if (searchTerm) {
-      filtered = creatures.filter(creature => 
+      filtered = creatures.filter(creature =>
         creature.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
-    
+
     return sortCreatures(filtered);
   };
 
@@ -179,7 +179,15 @@ export const WikiContent = () => {
     if (section.id === 'bienvenida') {
       return renderWelcomeContent(section.content);
     }
-    
+
+   /*  if (section.id === 'mapa') {
+      return (
+        <div className="section-content">
+          <img src={mapa} alt="Mapa de CucsiAO" className="map-image" />
+        </div>
+      );
+    } */
+
     // Render Crear Personaje
     if (section.id === 'crear-personaje') {
       return (
@@ -191,7 +199,7 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     // Render Razas with tables
     if (section.id === 'razas') {
       // Helper function to get cell class based on value
@@ -202,19 +210,19 @@ export const WikiContent = () => {
         if (cell.startsWith('-')) return 'negative-value';
         return '';
       };
-      
+
       return (
         <div className="section-content">
           <p className="section-description">{section.content.description}</p>
-          
+
           <div className="races-list">
             <h3>Razas disponibles:</h3>
             <div className="races-grid">
               {section.content.races.map((race, idx) => (
                 <div key={idx} className="race-card">
-                  <img 
-                    src={race.image} 
-                    alt={race.name} 
+                  <img
+                    src={race.image}
+                    alt={race.name}
                     className="race-icon-image"
                   />
                   <h4 className="race-name">{race.name}</h4>
@@ -222,9 +230,9 @@ export const WikiContent = () => {
               ))}
             </div>
           </div>
-          
+
           <p className="content-text">{section.content.text}</p>
-          
+
           {/* Attributes Table */}
           <div className="table-container">
             <h3 className="table-title">{section.content.attributesTable.title}</h3>
@@ -250,7 +258,7 @@ export const WikiContent = () => {
               </table>
             </div>
           </div>
-          
+
           {/* Combat Table */}
           <div className="table-container">
             <h3 className="table-title">{section.content.combatTable.title}</h3>
@@ -279,7 +287,7 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     // Render Atributos
     if (section.id === 'atributos') {
       return (
@@ -288,7 +296,7 @@ export const WikiContent = () => {
           <div className="content-text">
             <p>{section.content.intro}</p>
           </div>
-          
+
           <div className="attributes-section">
             <h3 className="subsection-title">Tipos de Atributos</h3>
             <p className="content-text">Cada personaje tiene 5 tipos de atributos que son:</p>
@@ -297,7 +305,7 @@ export const WikiContent = () => {
                 <li key={idx}>{attr.name}</li>
               ))}
             </ul>
-            
+
             <div className="attributes-details">
               {section.content.attributes.map((attr, idx) => (
                 <div key={idx} className="attribute-card">
@@ -310,7 +318,7 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     // Render Clases
     if (section.id === 'clases') {
       if (selectedClass) {
@@ -318,21 +326,21 @@ export const WikiContent = () => {
         const classData = section.content.classes.find(c => c.name === selectedClass);
         return (
           <div className="section-content">
-            <button 
+            <button
               className="back-button"
               onClick={() => setSelectedClass(null)}
             >
               ← Volver a Clases
             </button>
-            
+
             <h2 className="class-detail-title">{classData.name}</h2>
-            
+
             <div className="class-description">
               {classData.description.split('\n').map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
             </div>
-            
+
             {/* Modifiers Table */}
             <div className="table-container">
               <h3 className="table-title">Modificadores de Clase</h3>
@@ -355,13 +363,13 @@ export const WikiContent = () => {
                 </table>
               </div>
             </div>
-            
+
             {classData.special && (
               <div className="special-info">
                 <p>{classData.special}</p>
               </div>
             )}
-            
+
             {/* Points per Level Table */}
             <div className="table-container">
               <h3 className="table-title">Puntos ganados por nivel</h3>
@@ -390,7 +398,7 @@ export const WikiContent = () => {
                 Cada personaje varia mucho según su raza.
               </p>
             </div>
-            
+
             {/* Abilities */}
             {classData.abilities && classData.abilities.length > 0 && (
               <div className="abilities-section">
@@ -407,7 +415,7 @@ export const WikiContent = () => {
           </div>
         );
       }
-      
+
       // Render classes grid
       return (
         <div className="section-content">
@@ -415,11 +423,11 @@ export const WikiContent = () => {
           <div className="content-text">
             <p>{section.content.text}</p>
           </div>
-          
+
           <div className="classes-grid">
             {section.content.classes.map((classData, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="class-card"
                 onClick={() => setSelectedClass(classData.name)}
                 style={{
@@ -434,15 +442,15 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     // Render Criaturas (Bestiary)
     if (section.id === 'criaturas') {
       const filteredCreatures = getFilteredAndSortedCreatures(section.content.creatures);
-      
+
       return (
         <div className="section-content">
           <p className="section-description">{section.content.description}</p>
-          
+
           {/* Search Bar */}
           <div className="bestiary-search">
             <Icons.Search className="search-icon" size={20} />
@@ -454,7 +462,7 @@ export const WikiContent = () => {
               className="search-input"
             />
             {searchTerm && (
-              <button 
+              <button
                 onClick={() => setSearchTerm('')}
                 className="clear-search"
               >
@@ -462,7 +470,7 @@ export const WikiContent = () => {
               </button>
             )}
           </div>
-          
+
           {/* Creatures Table */}
           <div className="table-container">
             <div className="table-scroll">
@@ -500,7 +508,7 @@ export const WikiContent = () => {
                     const isExpanded = expandedDrops.has(idx);
                     const dropText = creature.drop;
                     const showDropdown = dropText.length > 30;
-                    
+
                     return (
                       <tr key={idx} id={`creature-${creature.name.toLowerCase().replace(/\s+/g, '-')}`}>
                         <td className="creature-name">{creature.name}</td>
@@ -514,7 +522,7 @@ export const WikiContent = () => {
                         <td className="drop-cell">
                           {showDropdown ? (
                             <div className="drop-dropdown">
-                              <button 
+                              <button
                                 className="drop-toggle"
                                 onClick={() => toggleDrop(idx)}
                               >
@@ -544,8 +552,8 @@ export const WikiContent = () => {
               </table>
             </div>
           </div>
-          
-          <div className="bestiary-legend">
+
+          {/* <div className="bestiary-legend">
             <h4>Leyenda de Ratio EXP/Vida:</h4>
             <div className="legend-items">
               <div className="legend-item">
@@ -561,11 +569,11 @@ export const WikiContent = () => {
                 <span>Alto</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       );
     }
-    
+
     // Render Quests
     if (section.id === 'quests') {
       // Function to navigate to creature
@@ -580,17 +588,17 @@ export const WikiContent = () => {
           }
         }, 100);
       };
-      
+
       // Render creature links in necesidad text
       const renderNecesidadWithLinks = (necesidad, criaturas) => {
         if (!criaturas || criaturas.length === 0) {
           return <span>{necesidad}</span>;
         }
-        
+
         let result = necesidad;
         const parts = [];
         let lastIndex = 0;
-        
+
         criaturas.forEach(creatureName => {
           const index = result.indexOf(creatureName, lastIndex);
           if (index !== -1) {
@@ -611,29 +619,29 @@ export const WikiContent = () => {
             lastIndex = index + creatureName.length;
           }
         });
-        
+
         // Add remaining text
         if (lastIndex < result.length) {
           parts.push(result.substring(lastIndex));
         }
-        
+
         return <>{parts}</>;
       };
-      
+
       // If viewing a specific quest
       if (selectedQuest) {
         const quest = selectedQuest;
         return (
           <div className="section-content">
-            <button 
+            <button
               className="back-button"
               onClick={() => setSelectedQuest(null)}
             >
               ← Volver a {selectedQuestCategory.name}
             </button>
-            
+
             <h2 className="quest-detail-title">{quest.nombre}</h2>
-            
+
             <div className="quest-detail-info">
               <div className="quest-info-row">
                 <span className="quest-label">NPC:</span>
@@ -659,25 +667,25 @@ export const WikiContent = () => {
           </div>
         );
       }
-      
+
       // If viewing a category
       if (selectedQuestCategory) {
         return (
           <div className="section-content">
-            <button 
+            <button
               className="back-button"
               onClick={() => setSelectedQuestCategory(null)}
             >
               ← Volver a Categorías
             </button>
-            
+
             <h2 className="quest-category-title">{selectedQuestCategory.name}</h2>
             <p className="quest-category-description">{selectedQuestCategory.description}</p>
-            
+
             <div className="quests-list">
               {selectedQuestCategory.quests.map((quest, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="quest-card"
                   onClick={() => setSelectedQuest(quest)}
                 >
@@ -698,7 +706,7 @@ export const WikiContent = () => {
           </div>
         );
       }
-      
+
       // Show quest categories grid
       return (
         <div className="section-content">
@@ -706,11 +714,11 @@ export const WikiContent = () => {
           <div className="quest-intro">
             <p>{section.content.intro}</p>
           </div>
-          
+
           <div className="quest-categories-grid">
             {section.content.categories.map((category, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="quest-category-card"
                 onClick={() => setSelectedQuestCategory(category)}
               >
@@ -724,23 +732,23 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     // Render Domar Animales
     if (section.id === 'domar') {
       const sortedCreatures = [...section.content.creatures].sort((a, b) => a.poderDoma - b.poderDoma);
-      
+
       return (
         <div className="section-content">
           <p className="section-description">{section.content.description}</p>
-          
+
           <div className="content-text">
             <p>{section.content.intro}</p>
           </div>
-          
+
           <div className="druid-info-box">
             <p>{section.content.druidInfo}</p>
           </div>
-          
+
           {/* Commands Section */}
           <div className="commands-section">
             <h3 className="subsection-title">{section.content.commands.title}</h3>
@@ -754,20 +762,20 @@ export const WikiContent = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="content-text">
             <p>{section.content.carismaInfo}</p>
           </div>
-          
+
           {/* Power Calculation Section */}
           <div className="power-section">
             <h3 className="subsection-title">{section.content.powerSection.title}</h3>
             <p className="content-text">{section.content.powerSection.description}</p>
-            
+
             <div className="formula-box">
               <strong>{section.content.powerSection.formula}</strong>
             </div>
-            
+
             <div className="examples-list">
               {section.content.powerSection.examples.map((example, idx) => (
                 <div key={idx} className="example-item">
@@ -776,17 +784,17 @@ export const WikiContent = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="chance-info">
               <p>{section.content.powerSection.chance}</p>
             </div>
-            
+
             <div className="druid-bonus-box">
               <Icons.Wand2 size={20} className="druid-icon" />
               <p>{section.content.powerSection.druidBonus}</p>
             </div>
           </div>
-          
+
           {/* Tameable Creatures Table */}
           <div className="table-container">
             <h3 className="table-title">{section.content.creaturesSection.title}</h3>
@@ -827,7 +835,7 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     // Render Hechizos (Spells)
     if (section.id === 'hechizos') {
       // Toggle spell description expansion
@@ -840,22 +848,22 @@ export const WikiContent = () => {
         }
         setExpandedSpellDescs(newExpanded);
       };
-      
+
       // Sort spells
       const sortSpells = (spells) => {
         if (!spellSortConfig.key) return spells;
-        
+
         return [...spells].sort((a, b) => {
           let aValue = a[spellSortConfig.key];
           let bValue = b[spellSortConfig.key];
-          
+
           // Handle numeric sorting
-          if (spellSortConfig.key === 'precio' || spellSortConfig.key === 'skills' || 
-              spellSortConfig.key === 'mana' || spellSortConfig.key === 'stamina') {
+          if (spellSortConfig.key === 'precio' || spellSortConfig.key === 'skills' ||
+            spellSortConfig.key === 'mana' || spellSortConfig.key === 'stamina') {
             aValue = Number(aValue);
             bValue = Number(bValue);
           }
-          
+
           if (aValue < bValue) {
             return spellSortConfig.direction === 'asc' ? -1 : 1;
           }
@@ -865,7 +873,7 @@ export const WikiContent = () => {
           return 0;
         });
       };
-      
+
       // Handle spell sort
       const handleSpellSort = (key) => {
         setSpellSortConfig({
@@ -873,26 +881,26 @@ export const WikiContent = () => {
           direction: spellSortConfig.key === key && spellSortConfig.direction === 'asc' ? 'desc' : 'asc'
         });
       };
-      
+
       // Filter and sort spells
       const getFilteredAndSortedSpells = (spells) => {
         let filtered = spells;
-        
+
         if (spellSearchTerm) {
-          filtered = spells.filter(spell => 
+          filtered = spells.filter(spell =>
             spell.nombre.toLowerCase().includes(spellSearchTerm.toLowerCase())
           );
         }
-        
+
         return sortSpells(filtered);
       };
-      
+
       const filteredSpells = getFilteredAndSortedSpells(section.content.spells);
-      
+
       return (
         <div className="section-content">
           <p className="section-description">{section.content.description}</p>
-          
+
           {/* Search Bar */}
           <div className="bestiary-search">
             <Icons.Search className="search-icon" size={20} />
@@ -904,7 +912,7 @@ export const WikiContent = () => {
               className="search-input"
             />
             {spellSearchTerm && (
-              <button 
+              <button
                 onClick={() => setSpellSearchTerm('')}
                 className="clear-search"
               >
@@ -912,7 +920,7 @@ export const WikiContent = () => {
               </button>
             )}
           </div>
-          
+
           {/* Spells Table */}
           <div className="table-container">
             <div className="table-scroll">
@@ -941,8 +949,8 @@ export const WikiContent = () => {
                   {filteredSpells.map((spell, idx) => {
                     const isExpanded = expandedSpellDescs.has(idx);
                     const descText = spell.descripcion;
-                    const showDropdown = descText.length > 50;
-                    
+                    const showDropdown = descText.length > 5000;
+
                     return (
                       <tr key={idx}>
                         <td className="spell-name">{spell.nombre}</td>
@@ -953,7 +961,7 @@ export const WikiContent = () => {
                         <td className="desc-cell">
                           {showDropdown ? (
                             <div className="desc-dropdown">
-                              <button 
+                              <button
                                 className="desc-toggle"
                                 onClick={() => toggleSpellDesc(idx)}
                               >
@@ -977,36 +985,36 @@ export const WikiContent = () => {
               </table>
             </div>
           </div>
-          
+
           <div className="spells-count">
             <p>Total de hechizos: <strong>{filteredSpells.length}</strong></p>
           </div>
         </div>
       );
     }
-    
+
     // Render Items
     if (section.id === 'items') {
       // If viewing a subsection
       if (selectedItemSubsection) {
         const subsection = section.content.subsections[selectedItemSubsection];
-        
+
         // Special rendering for nobility sets (4.6)
         if (selectedItemSubsection === '4.6' && subsection.classes) {
           return (
             <div className="section-content">
-              <button 
+              <button
                 className="back-button"
                 onClick={() => setSelectedItemSubsection(null)}
               >
                 ← Volver a Items
               </button>
-              
+
               <h2 className="items-subsection-title">{subsection.title}</h2>
               <div className="content-text">
                 <p>{subsection.intro}</p>
               </div>
-              
+
               <div className="nobility-sets">
                 {subsection.classes.map((classSet, idx) => (
                   <div key={idx} className="nobility-class-card">
@@ -1039,18 +1047,18 @@ export const WikiContent = () => {
             </div>
           );
         }
-        
+
         // Check if it has placeholder (4.7)
         if (subsection.placeholder) {
           return (
             <div className="section-content">
-              <button 
+              <button
                 className="back-button"
                 onClick={() => setSelectedItemSubsection(null)}
               >
                 ← Volver a Items
               </button>
-              
+
               <h2 className="items-subsection-title">{subsection.title}</h2>
               <div className="content-text">
                 <p>{subsection.intro}</p>
@@ -1061,32 +1069,32 @@ export const WikiContent = () => {
             </div>
           );
         }
-        
+
         // Normal subsection with tables
         return (
           <div className="section-content">
-            <button 
+            <button
               className="back-button"
               onClick={() => setSelectedItemSubsection(null)}
             >
               ← Volver a Items
             </button>
-            
+
             <h2 className="items-subsection-title">{subsection.title}</h2>
-            
+
             {subsection.intro && (
               <div className="content-text">
                 <p>{subsection.intro}</p>
               </div>
             )}
-            
+
             {subsection.note && (
               <div className="items-note-box">
                 <Icons.AlertCircle size={18} />
                 <p>{subsection.note}</p>
               </div>
             )}
-            
+
             {subsection.references && (
               <div className="items-references">
                 <h4>Referencias:</h4>
@@ -1097,7 +1105,7 @@ export const WikiContent = () => {
                 </ul>
               </div>
             )}
-            
+
             {subsection.tables && subsection.tables.map((table, tIdx) => (
               <div key={tIdx} className="table-container">
                 <h3 className="table-title">{table.title}</h3>
@@ -1136,12 +1144,12 @@ export const WikiContent = () => {
           </div>
         );
       }
-      
+
       // Show main items menu
       return (
         <div className="section-content">
           <p className="section-description">{section.content.description}</p>
-          
+
           <div className="items-categories">
             {section.content.categories.map((category, idx) => (
               <div key={idx} className="items-category-card">
@@ -1168,22 +1176,22 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     // Render Clanes
     if (section.id === 'clanes') {
       return (
         <div className="section-content">
           <p className="section-description">{section.content.description}</p>
-          
+
           <div className="content-text">
             <p>{section.content.intro}</p>
           </div>
-          
+
           <div className="fundacion-box">
             <code className="command-highlight">/fundarclan</code>
             <p>{section.content.fundacion}</p>
           </div>
-          
+
           {/* Tipos de Clan Table */}
           <div className="table-container">
             <h3 className="table-title">{section.content.tiposClan.title}</h3>
@@ -1206,15 +1214,15 @@ export const WikiContent = () => {
               </table>
             </div>
           </div>
-          
+
           <div className="content-text niveles-intro">
             <p>{section.content.nivelesClanIntro}</p>
           </div>
-          
+
           {/* Niveles de Clan */}
           <div className="clan-levels-section">
             <h3 className="table-title">{section.content.nivelesClan.title}</h3>
-            
+
             <div className="clan-levels-grid">
               {section.content.nivelesClan.levels.map((level, idx) => (
                 <div key={idx} className="clan-level-card">
@@ -1229,12 +1237,12 @@ export const WikiContent = () => {
                       {level.nivel === 6 && '20 miembros'}
                     </span>
                   </div>
-                  
+
                   <div className="clan-level-requisitos">
                     <h4>Requisitos:</h4>
                     <p>{level.requisitos}</p>
                   </div>
-                  
+
                   <div className="clan-level-ventajas">
                     <h4>Ventajas:</h4>
                     <ul>
@@ -1247,7 +1255,7 @@ export const WikiContent = () => {
               ))}
             </div>
           </div>
-          
+
           <div className="nota-final-box">
             <Icons.Info size={20} />
             <p>{section.content.notaFinal}</p>
@@ -1255,7 +1263,7 @@ export const WikiContent = () => {
         </div>
       );
     }
-    
+
     return (
       <div className="section-content">
         <p className="section-description">{section.content.description}</p>
