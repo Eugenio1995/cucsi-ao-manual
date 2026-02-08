@@ -13,7 +13,8 @@ export const WikiContent = () => {
   
   // States for creatures table
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortConfig, setSortConfig] = useState({ key: 'exp', direction: 'desc' });
+  const [sortConfig, setSortConfig] = useState({ key: 'exp', direction: 'asc' }); // Default: menor a mayor EXP
+  const [expandedDrops, setExpandedDrops] = useState(new Set());
 
   const getIcon = (iconName) => {
     const iconMap = {
@@ -68,6 +69,25 @@ export const WikiContent = () => {
     if (numRatio < 1.0) return 'ratio-chip-gray';
     if (numRatio >= 1.0 && numRatio < 1.5) return 'ratio-chip-white';
     return 'ratio-chip-gold';
+  };
+  
+  // Format number with thousands separator
+  const formatNumber = (num) => {
+    if (typeof num === 'number') {
+      return num.toLocaleString('es-ES');
+    }
+    return num;
+  };
+  
+  // Toggle drop expansion
+  const toggleDrop = (index) => {
+    const newExpanded = new Set(expandedDrops);
+    if (newExpanded.has(index)) {
+      newExpanded.delete(index);
+    } else {
+      newExpanded.add(index);
+    }
+    setExpandedDrops(newExpanded);
   };
 
   // Sort creatures
@@ -433,26 +453,24 @@ export const WikiContent = () => {
                 <thead>
                   <tr>
                     <th onClick={() => handleSort('name')} className="sortable-header">
-                      Criatura {sortConfig.key === 'name' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                      Criatura {sortConfig.key === 'name' ? (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
                     </th>
                     <th onClick={() => handleSort('vida')} className="sortable-header">
-                      Vida {sortConfig.key === 'vida' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                      Vida {sortConfig.key === 'vida' ? (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
                     </th>
                     <th>Daño Físico</th>
                     <th>Defensa</th>
-                    <th>Def. Mágica</th>
                     <th onClick={() => handleSort('podAtaque')} className="sortable-header">
-                      Pod. Ataque {sortConfig.key === 'podAtaque' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                      Pod. Ataque {sortConfig.key === 'podAtaque' ? (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
                     </th>
                     <th onClick={() => handleSort('evasion')} className="sortable-header">
-                      Evasión {sortConfig.key === 'evasion' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                      Evasión {sortConfig.key === 'evasion' ? (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
                     </th>
-                    <th>Magia</th>
                     <th onClick={() => handleSort('exp')} className="sortable-header">
-                      EXP {sortConfig.key === 'exp' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                      EXP {sortConfig.key === 'exp' ? (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
                     </th>
                     <th onClick={() => handleSort('oro')} className="sortable-header">
-                      ORO {sortConfig.key === 'oro' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+                      ORO {sortConfig.key === 'oro' ? (sortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
                     </th>
                     <th>Drop</th>
                     <th>Ubicación</th>
@@ -462,19 +480,40 @@ export const WikiContent = () => {
                 <tbody>
                   {filteredCreatures.map((creature, idx) => {
                     const ratio = calculateRatio(creature.exp, creature.vida);
+                    const isExpanded = expandedDrops.has(idx);
+                    const dropText = creature.drop;
+                    const showDropdown = dropText.length > 30;
+                    
                     return (
                       <tr key={idx}>
                         <td className="creature-name">{creature.name}</td>
-                        <td>{creature.vida}</td>
+                        <td>{formatNumber(creature.vida)}</td>
                         <td>{creature.danoFisico}</td>
                         <td>{creature.defensa}</td>
-                        <td>{creature.defMagica}</td>
-                        <td>{creature.podAtaque}</td>
-                        <td>{creature.evasion}</td>
-                        <td className="magic-cell">{creature.magia}</td>
-                        <td>{creature.exp.toLocaleString()}</td>
-                        <td>{creature.oro}</td>
-                        <td className="drop-cell">{creature.drop}</td>
+                        <td>{formatNumber(creature.podAtaque)}</td>
+                        <td>{formatNumber(creature.evasion)}</td>
+                        <td>{formatNumber(creature.exp)}</td>
+                        <td>{formatNumber(creature.oro)}</td>
+                        <td className="drop-cell">
+                          {showDropdown ? (
+                            <div className="drop-dropdown">
+                              <button 
+                                className="drop-toggle"
+                                onClick={() => toggleDrop(idx)}
+                              >
+                                {isExpanded ? <Icons.ChevronUp size={16} /> : <Icons.ChevronDown size={16} />}
+                                <span>{isExpanded ? 'Ver menos' : 'Ver drops'}</span>
+                              </button>
+                              {isExpanded && (
+                                <div className="drop-content">
+                                  {dropText}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            dropText
+                          )}
+                        </td>
                         <td className="location-cell">{creature.ubicacion}</td>
                         <td>
                           <span className={`ratio-chip ${getRatioClass(ratio)}`}>
@@ -489,7 +528,7 @@ export const WikiContent = () => {
             </div>
           </div>
           
-          {/* <div className="bestiary-legend">
+          <div className="bestiary-legend">
             <h4>Leyenda de Ratio EXP/Vida:</h4>
             <div className="legend-items">
               <div className="legend-item">
@@ -505,7 +544,7 @@ export const WikiContent = () => {
                 <span>Alto</span>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
       );
     }
@@ -565,7 +604,7 @@ export const WikiContent = () => {
 
         {/* Main content */}
         <main className="wiki-main-content">
-          <Card className="content-card">
+          <Card className="content-card" key={activeSection}>
             <CardHeader>
               <CardTitle className="card-title-with-icon">
                 {getIcon(currentSection.icon)}
