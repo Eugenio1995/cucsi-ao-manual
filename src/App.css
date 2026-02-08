@@ -1607,3 +1607,313 @@
     font-size: 0.85rem;
   }
 }
+
+/* ==========================================
+   HECHIZOS (SPELLS) SECTION STYLES
+   ========================================== */
+
+/* Spells Table Styles */
+.spells-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.spells-table th,
+.spells-table td {
+  border-right: 1px solid var(--border-color);
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+}
+
+.spells-table th:last-child,
+.spells-table td:last-child {
+  border-right: none;
+}
+
+.spells-table .spell-name {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 200px;
+}
+
+.spells-table .spell-price {
+  font-weight: bold;
+  color: var(--accent-gold);
+  background: var(--parchment-dark);
+  white-space: nowrap;
+}
+
+/* Description cell dropdown */
+.desc-cell {
+  text-align: left;
+  max-width: 300px;
+}
+
+.desc-dropdown {
+  position: relative;
+}
+
+.desc-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--parchment-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.desc-toggle:hover {
+  background: var(--accent-brown);
+  color: var(--parchment-light);
+}
+
+.desc-content {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: var(--parchment-light);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 400px;
+}
+
+/* Spells count */
+.spells-count {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-light);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.spells-count p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.spells-count strong {
+  color: var(--accent-gold);
+}
+
+/* Responsive styles for Spells section */
+@media (max-width: 768px) {
+  .spells-table th,
+  .spells-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.85rem;
+  }
+  
+  .spells-table .spell-name {
+    min-width: 150px;
+  }
+  
+  .desc-cell {
+    max-width: 200px;
+  }
+  
+  .desc-content {
+    max-width: 250px;
+  }
+}
+
+/* ==========================================
+   CLANES SECTION STYLES
+   ========================================== */
+
+/* Fundacion Box */
+.fundacion-box {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fundacion-box p {
+  margin: 0;
+  flex: 1;
+}
+
+.command-highlight {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--parchment-light);
+  background: var(--accent-brown);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+/* Clan Types Table */
+.clan-types-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.clan-types-table th,
+.clan-types-table td {
+  border-right: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+}
+
+.clan-types-table th:last-child,
+.clan-types-table td:last-child {
+  border-right: none;
+}
+
+.clan-type-name {
+  font-weight: bold;
+  color: var(--accent-gold);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Niveles Intro */
+.niveles-intro {
+  margin-top: 2rem;
+}
+
+/* Clan Levels Section */
+.clan-levels-section {
+  margin-top: 1.5rem;
+}
+
+.clan-levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.clan-level-card {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clan-level-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.clan-level-header {
+  background: linear-gradient(135deg, var(--accent-brown) 0%, var(--accent-gold) 100%);
+  color: var(--parchment-light);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clan-level-number {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.clan-level-members {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.clan-level-requisitos {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.clan-level-requisitos h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-brown);
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.clan-level-requisitos p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.clan-level-ventajas {
+  padding: 1rem 1.25rem;
+}
+
+.clan-level-ventajas h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-brown);
+  margin: 0 0 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.clan-level-ventajas ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.clan-level-ventajas li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.clan-level-ventajas li:last-child {
+  margin-bottom: 0;
+}
+
+/* Nota Final Box */
+.nota-final-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brown) 100%);
+  color: var(--parchment-light);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.nota-final-box svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.nota-final-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive styles for Clanes section */
+@media (max-width: 768px) {
+  .clan-levels-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fundacion-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nota-final-box {
+    flex-direction: column;
+  }
+}

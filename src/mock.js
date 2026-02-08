@@ -681,8 +681,67 @@ export const wikiSections = [
     title: 'Hechizos',
     icon: 'sparkles',
     content: {
-      description: 'Compendio de todos los hechizos disponibles.',
-      placeholder: 'Lista de hechizos por clase, efectos y requisitos...'
+      description: 'Compendio de todos los hechizos disponibles en CucsiAO. Cada hechizo tiene requisitos de skills, costos de maná y stamina.',
+      spells: [
+        { nombre: 'Curar Veneno', precio: 100, skills: 10, mana: 10, stamina: 1, descripcion: 'Cura el veneno' },
+        { nombre: 'Destello Arcano', precio: 250, skills: 6, mana: 4, stamina: 1, descripcion: 'Inflinge entre 4 a 7 de Daño Magico al Objetivo' },
+        { nombre: 'Impulso Arcano', precio: 1150, skills: 12, mana: 10, stamina: 5, descripcion: 'Inflinge entre 6 a 12 de Daño Magico al Objetivo' },
+        { nombre: 'Curar Heridas Leves', precio: 250, skills: 15, mana: 10, stamina: 1, descripcion: 'Restaura la Salud del Objetivo entre 1 y 5' },
+        { nombre: 'Envenenar', precio: 475000, skills: 90, mana: 500, stamina: 100, descripcion: 'Envenena al objetivo' },
+        { nombre: 'Curar Heridas Graves', precio: 10000, skills: 50, mana: 40, stamina: 20, descripcion: 'Restaura la Salud del Objetivo entre 12 y 35' },
+        { nombre: 'Bola de Fuego', precio: 2250, skills: 22, mana: 20, stamina: 5, descripcion: 'Inflinge entre 12 a 20 de Daño Magico al Objetivo' },
+        { nombre: 'Nucleo Plasma', precio: 6000, skills: 38, mana: 50, stamina: 15, descripcion: 'Inflinge entre 30 a 35 de Daño Magico al Objetivo' },
+        { nombre: 'Paralizar', precio: 50000, skills: 60, mana: 400, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
+        { nombre: 'Paralizar (A/BAND/P)', precio: 50000, skills: 60, mana: 300, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
+        { nombre: 'Remover Paralisis', precio: 5000, skills: 45, mana: 300, stamina: 60, descripcion: 'Remueve la Paralisis al Objetivo' },
+        { nombre: 'Resucitar (Mago/Druida/Bardo) NIVEL 40', precio: 625000, skills: 100, mana: 1700, stamina: 450, descripcion: 'Resucita al Objetivo, Solo funciona en Usuarios. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Flauta Mágica, Flauta Elfica, Laud Magico o Laud Elfico. CD de 20 segundos' },
+        { nombre: 'Curacion Divina (Clerigo)', precio: 275000, skills: 80, mana: 500, stamina: 650, descripcion: 'Restaura la Salud del Objetivo entre 90 y 180' },
+        { nombre: 'Curar Heridas Mortales (Paladin)', precio: 50000, skills: 100, mana: 300, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 75' },
+        { nombre: 'Invisibilidad (Mago)', precio: 100000, skills: 87, mana: 600, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
+        { nombre: 'Relampago (Solo Criaturas)', precio: 50000, skills: 60, mana: 100, stamina: 20, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo, solo funciona en Criaturas' },
+        { nombre: 'Llamarada (Mago)', precio: 625000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 63 a 73 de Daño Magico al Objetivo' },
+        { nombre: 'Rafaga Ardiente (Bardo/Clerigo)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Rafaga Ardiente (Asesino/Paladin)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Apocalipsis (Bardo/Clerigo) NIVEL 30', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 97 a 102 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo Clase Bardo' },
+        { nombre: 'Apocalipsis (Druida)', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 98 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Rafaga Ardiente (Druida)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 94 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Tormenta de Fuego', precio: 12500, skills: 75, mana: 150, stamina: 29, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo' },
+        { nombre: 'Mimetismo SOLO DRUIDA', precio: 400000, skills: 75, mana: 800, stamina: 44, descripcion: 'Copia temporalmente la apariencia del Objetivo' },
+        { nombre: 'Provocar Hambre', precio: 100, skills: 5, mana: 20, stamina: 2, descripcion: 'Provoca la perdida de Hambre entre 20 a 50 puntos' },
+        { nombre: 'Manada Hambrienta', precio: 10000, skills: 40, mana: 120, stamina: 16, descripcion: 'Invoca 3 Lobos Salvajes que acudiran en tu ayuda' },
+        { nombre: 'Nigromancia', precio: 20000, skills: 51, mana: 400, stamina: 31, descripcion: 'Invoca 3 Zombies que acudiran en tu ayuda' },
+        { nombre: 'Torpeza', precio: 135000, skills: 20, mana: 20, stamina: 2, descripcion: 'Reduce el Atributo de Celeridad del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Celeridad Total (Clerigo)', precio: 25000, skills: 60, mana: 150, stamina: 75, descripcion: 'Aumenta el Atributo de Celeridad a 40 en si mismo. Lanzado sobre otras clases, eleva sus puntos de celeridad al maximo posible equivalente a utilizar pociones druidas amarillas segun raza, solo funciona en Usuarios' },
+        { nombre: 'Fuerza Total (Clerigo)', precio: 25000, skills: 60, mana: 150, stamina: 75, descripcion: 'Aumenta el Atributo de Fuerza a 40 en si mismo. Lanzado sobre otras clases, eleva sus puntos de Fuerza al maximo posible equivalente a utilizar pociones druidas verdes segun raza, solo funciona en Usuarios' },
+        { nombre: 'Celeridad', precio: 7500, skills: 20, mana: 40, stamina: 5, descripcion: 'Aumenta el Atributo de Celeridad del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Fuerza', precio: 7500, skills: 35, mana: 50, stamina: 6, descripcion: 'Aumenta el Atributo de Fuerza del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Vitalidad (Clerigo/Paladin)', precio: 250000, skills: 60, mana: 150, stamina: 50, descripcion: 'Recupera Estamina, Comida y Bebida sobre el Objetivo, Solo funciona en Usuarios' },
+        { nombre: 'Curar Heridas Mortales (Druida/Bardo)', precio: 50000, skills: 100, mana: 500, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 70' },
+        { nombre: 'Debilidad', precio: 70000, skills: 35, mana: 45, stamina: 6, descripcion: 'Reduce el Atributo de Fuerza del Objetivo entre 2 a 5, solo funciona en Usuarios' },
+        { nombre: 'Inmovilizar (Solo Criaturas)', precio: 10000, skills: 40, mana: 250, stamina: 25, descripcion: 'Inmoviliza al Objetivo por unos segundos, Solo funciona en Criaturas' },
+        { nombre: 'Resurrección Divina (Clerigo)', precio: 625000, skills: 99, mana: 1000, stamina: 400, descripcion: 'Resucita al Objetivo y lo Cura por 100 puntos de vida, además le deja el hambre y la sed en 20 puntos, solo funciona en Usuarios. CD de 10 segundos' },
+        { nombre: 'Invisibilidad (Bardo/Clerigo/Druida)', precio: 100000, skills: 87, mana: 500, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
+        { nombre: 'Curar Heridas Mortales (Clerigo)', precio: 50000, skills: 80, mana: 200, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 70' },
+        { nombre: 'Llamarada', precio: 575000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 70 a 80 de Daño Magico al Objetivo' },
+        { nombre: 'Sombra de la Muerte (Mago) NIVEL 40', precio: 2500000, skills: 99, mana: 2800, stamina: 250, descripcion: 'Inflinge entre 115 a 120 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Rafaga Ardiente (Mago)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 83 a 88 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Vara de Fresno, Baston Nudoso, Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Ceguera (Mago) NIVEL 40', precio: 1500000, skills: 100, mana: 2500, stamina: 300, descripcion: 'Embrujo que quita la vision al Usuario. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Maldecir (Mago)', precio: 1500000, skills: 70, mana: 500, stamina: 300, descripcion: 'Maldice al Usuario haciendo que camine erraticamente. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Apocalipsis (Mago) NIVEL 30', precio: 1250000, skills: 99, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 90 a 95 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Descarga Electrica', precio: 175000, skills: 75, mana: 400, stamina: 85, descripcion: 'Inflinge entre 55 a 65 de Daño Magico al Objetivo' },
+        { nombre: 'Elemental de Fuego (Mago/Bardo/Clerigo)', precio: 450000, skills: 100, mana: 1000, stamina: 145, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Laud Magico o Laud Elfico Solo las Clases Mago y Bardo' },
+        { nombre: 'Elemental de Fuego (Druida)', precio: 450000, skills: 100, mana: 750, stamina: 105, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Elemental de Agua (Mago/Bardo/Clerigo)', precio: 200000, skills: 100, mana: 1000, stamina: 130, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
+        { nombre: 'Elemental de Agua (Druida)', precio: 200000, skills: 100, mana: 750, stamina: 90, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
+        { nombre: 'Elemental de Tierra (Bardo/Clerigo)', precio: 300000, skills: 90, mana: 1000, stamina: 131, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo la Clase Bardo' },
+        { nombre: 'Elemental de Tierra (Druida)', precio: 300000, skills: 97, mana: 750, stamina: 120, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Invisibilidad (Paladin/Asesino)', precio: 100000, skills: 87, mana: 400, stamina: 75, descripcion: 'Vuelve invisble al Objetivo, solo funciona en Usuarios' },
+        { nombre: 'Explosion Faustica (Mago)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 97 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
+        { nombre: 'Explosion Faustica (Bardo)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 110 a 115 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laúd Mágico o Laúd Élfico' },
+        { nombre: 'Explosión Fáustica (Druida)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 103 a 107 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Élfica' },
+        { nombre: 'Implorar Ayuda (Druida)', precio: 600000, skills: 100, mana: 1500, stamina: 150, descripcion: 'Invoca un Fuego Fatuo que acudirá en tu ayuda, Lanza Paralizar y Descarga Eléctrica a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Invocar Tigre (Asesino/Paladin)', precio: 125000, skills: 100, mana: 600, stamina: 50, descripcion: 'Invoca 3 Tigres que acudirá en tu ayuda.' }
+      ]
     }
   },
   {
@@ -699,8 +758,82 @@ export const wikiSections = [
     title: 'Clanes',
     icon: 'flag',
     content: {
-      description: 'Todo sobre el sistema de clanes y faccciones.',
-      placeholder: 'Cómo crear clanes, jerarquías y beneficios...'
+      description: 'En las tierras de CucsiAO, los clanes juegan un rol muy importante.',
+      intro: 'El objetivo de los mismos, es fomentar el juego en equipo y la confianza entre los diferentes personajes y amigos, así como también generar un sentido de pertenencia a un grupo con un objetivo común.',
+      fundacion: 'Para poder fundar un clan deberemos de tipear /fundarclan y, en CucsiAO, existen 3 tipos de clanes:',
+      tiposClan: {
+        title: 'Tipos de Clan',
+        headers: ['Tipo de Clan', 'Descripción'],
+        rows: [
+          { tipo: 'Neutral', descripcion: 'Se permiten ciudadanos y criminales, pero no miembros de la Armada Real ni la Legión Oscura' },
+          { tipo: 'Ciudadano', descripcion: 'Se permiten ciudadanos y miembros de la Armada Real' },
+          { tipo: 'Criminal', descripcion: 'Se permiten criminales y miembros de la Legión Oscura' }
+        ]
+      },
+      nivelesClanIntro: 'Además, existe un sistema de Niveles de clan, en el que aumentar uno de ellos dependerá del esfuerzo colectivo de todos los miembros, y cada nivel dará una ventaja significativa respecto al anterior que hará que todos luchen para lograrlo. A continuación detallamos los diferentes niveles que existen y las ventajas de cada uno:',
+      nivelesClan: {
+        title: 'Niveles de Clan',
+        levels: [
+          {
+            nivel: 1,
+            requisitos: 'Ser nivel 25, 100 skills en Liderazgo, 500.000 monedas de oro',
+            ventajas: [
+              'Poder tener hasta 6 (Seis) miembros en un clan',
+              'Poder ver invisible a los miembros de tu clan',
+              'Poder hablar por consola con los miembros de tu clan',
+              'Poder ingresar a los castillos',
+              'Tu clan ganará 20 puntos de usuario (que serán repartidos entre los miembros conectados) cada 30 minutos por castillo conquistado'
+            ]
+          },
+          {
+            nivel: 2,
+            requisitos: '500 puntos de usuario, 1 Gema de Clan, 1.000.000 de monedas de oro',
+            ventajas: [
+              'Poder tener hasta 8 (Ocho) miembros en un clan',
+              'Poder enviar señales de tu posición actual en el mini-mapa a los miembros de tu clan',
+              'Poder jugar guerras de clanes',
+              'Poder teletransportarte automáticamente a los castillos usando el comando /IRCASTILLO'
+            ]
+          },
+          {
+            nivel: 3,
+            requisitos: '600 puntos de usuario, 3 Gemas de Clan, 2.000.000 de monedas de oro',
+            ventajas: [
+              'Poder tener hasta 11 (Once) miembros en un clan',
+              'Poder trabajar en las catacumbas del castillo',
+              'El rey de tu castillo invocará un clérigo defensor para que lo cure cuando esté por morir'
+            ]
+          },
+          {
+            nivel: 4,
+            requisitos: '720 puntos de usuario, 5 Gemas de Clan, 3.500.000 de monedas de oro',
+            ventajas: [
+              'Poder tener hasta 13 (Trece) miembros en un clan',
+              'Poder teletransportarte automáticamente a la fortaleza de clan teniendo los 4 castillos y tipeando /FORTALEZA',
+              'El rey de tu castillo invocará unos Magos defensores cuando se sienta atacado'
+            ]
+          },
+          {
+            nivel: 5,
+            requisitos: '900 puntos de usuario, 10 Gemas de Clan, 1 Gema de BliBla, 5.000.000 de monedas de oro',
+            ventajas: [
+              'Poder tener hasta 16 (Dieciséis) miembros en un clan',
+              'Mantener un castillo reparte 30 puntos de usuario',
+              'El rey de tu castillo invocará unos arqueros defensores cuando se sienta atacado'
+            ]
+          },
+          {
+            nivel: 6,
+            requisitos: '1.700 puntos de usuario, 10 Gemas de Clan, 3 Gemas de BliBla, 10.000 lingotes de hierro, 10.000 lingotes de plata, 10.000 lingotes de oro, 10.000 ovillos de Lana de Oveja, 10.000 ovillos de lana de cabra, 10.000 ovillos de lana de llama, 10.000 maderas, 10.000 chalas, Sacrificio al Dios Cypher en el cementerio',
+            ventajas: [
+              'Poder tener hasta 20 (Veinte) miembros en un clan',
+              'Poder elegir una meditación especial para los miembros del clan de nivel mayor a 50',
+              'La experiencia y extracción de recursos (leña, minerales, peces, etc) se multiplica para todos los miembros del clan dependiendo la cantidad de castillos que posean: 1 Castillo: exp y recursos x1.1, 2 Castillos: exp y recursos x1.2, 3 Castillos: exp y recursos x1.3, 4 Castillos: exp y recursos x1.5'
+            ]
+          }
+        ]
+      },
+      notaFinal: 'No es necesario tener conquistados él/los castillos para trabajar en sus minas, solamente él clan deberá ser nivel 3 o superior para poder trabajar en ellas.'
     }
   },
   {

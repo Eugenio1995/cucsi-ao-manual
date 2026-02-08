@@ -19,6 +19,11 @@ export const WikiContent = () => {
   // States for quests
   const [selectedQuestCategory, setSelectedQuestCategory] = useState(null);
   const [selectedQuest, setSelectedQuest] = useState(null);
+  
+  // States for spells table
+  const [spellSearchTerm, setSpellSearchTerm] = useState('');
+  const [spellSortConfig, setSpellSortConfig] = useState({ key: 'precio', direction: 'asc' }); // Default: menor a mayor precio
+  const [expandedSpellDescs, setExpandedSpellDescs] = useState(new Set());
 
   const getIcon = (iconName) => {
     const iconMap = {
@@ -810,6 +815,250 @@ export const WikiContent = () => {
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+      );
+    }
+    
+    // Render Hechizos (Spells)
+    if (section.id === 'hechizos') {
+      // Toggle spell description expansion
+      const toggleSpellDesc = (index) => {
+        const newExpanded = new Set(expandedSpellDescs);
+        if (newExpanded.has(index)) {
+          newExpanded.delete(index);
+        } else {
+          newExpanded.add(index);
+        }
+        setExpandedSpellDescs(newExpanded);
+      };
+      
+      // Sort spells
+      const sortSpells = (spells) => {
+        if (!spellSortConfig.key) return spells;
+        
+        return [...spells].sort((a, b) => {
+          let aValue = a[spellSortConfig.key];
+          let bValue = b[spellSortConfig.key];
+          
+          // Handle numeric sorting
+          if (spellSortConfig.key === 'precio' || spellSortConfig.key === 'skills' || 
+              spellSortConfig.key === 'mana' || spellSortConfig.key === 'stamina') {
+            aValue = Number(aValue);
+            bValue = Number(bValue);
+          }
+          
+          if (aValue < bValue) {
+            return spellSortConfig.direction === 'asc' ? -1 : 1;
+          }
+          if (aValue > bValue) {
+            return spellSortConfig.direction === 'asc' ? 1 : -1;
+          }
+          return 0;
+        });
+      };
+      
+      // Handle spell sort
+      const handleSpellSort = (key) => {
+        setSpellSortConfig({
+          key,
+          direction: spellSortConfig.key === key && spellSortConfig.direction === 'asc' ? 'desc' : 'asc'
+        });
+      };
+      
+      // Filter and sort spells
+      const getFilteredAndSortedSpells = (spells) => {
+        let filtered = spells;
+        
+        if (spellSearchTerm) {
+          filtered = spells.filter(spell => 
+            spell.nombre.toLowerCase().includes(spellSearchTerm.toLowerCase())
+          );
+        }
+        
+        return sortSpells(filtered);
+      };
+      
+      const filteredSpells = getFilteredAndSortedSpells(section.content.spells);
+      
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          
+          {/* Search Bar */}
+          <div className="bestiary-search">
+            <Icons.Search className="search-icon" size={20} />
+            <input
+              type="text"
+              placeholder="Buscar hechizo..."
+              value={spellSearchTerm}
+              onChange={(e) => setSpellSearchTerm(e.target.value)}
+              className="search-input"
+            />
+            {spellSearchTerm && (
+              <button 
+                onClick={() => setSpellSearchTerm('')}
+                className="clear-search"
+              >
+                <Icons.X size={16} />
+              </button>
+            )}
+          </div>
+          
+          {/* Spells Table */}
+          <div className="table-container">
+            <div className="table-scroll">
+              <table className="wiki-table spells-table">
+                <thead>
+                  <tr>
+                    <th onClick={() => handleSpellSort('nombre')} className="sortable-header">
+                      Nombre {spellSortConfig.key === 'nombre' ? (spellSortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
+                    </th>
+                    <th onClick={() => handleSpellSort('precio')} className="sortable-header">
+                      Precio {spellSortConfig.key === 'precio' ? (spellSortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
+                    </th>
+                    <th onClick={() => handleSpellSort('skills')} className="sortable-header">
+                      Skills {spellSortConfig.key === 'skills' ? (spellSortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
+                    </th>
+                    <th onClick={() => handleSpellSort('mana')} className="sortable-header">
+                      Maná {spellSortConfig.key === 'mana' ? (spellSortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
+                    </th>
+                    <th onClick={() => handleSpellSort('stamina')} className="sortable-header">
+                      Stamina {spellSortConfig.key === 'stamina' ? (spellSortConfig.direction === 'asc' ? '↑' : '↓') : '↕'}
+                    </th>
+                    <th>Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredSpells.map((spell, idx) => {
+                    const isExpanded = expandedSpellDescs.has(idx);
+                    const descText = spell.descripcion;
+                    const showDropdown = descText.length > 50;
+                    
+                    return (
+                      <tr key={idx}>
+                        <td className="spell-name">{spell.nombre}</td>
+                        <td className="spell-price">{formatNumber(spell.precio)}</td>
+                        <td>{formatNumber(spell.skills)}</td>
+                        <td>{formatNumber(spell.mana)}</td>
+                        <td>{formatNumber(spell.stamina)}</td>
+                        <td className="desc-cell">
+                          {showDropdown ? (
+                            <div className="desc-dropdown">
+                              <button 
+                                className="desc-toggle"
+                                onClick={() => toggleSpellDesc(idx)}
+                              >
+                                {isExpanded ? <Icons.ChevronUp size={16} /> : <Icons.ChevronDown size={16} />}
+                                <span>{isExpanded ? 'Ver menos' : 'Ver más'}</span>
+                              </button>
+                              {isExpanded && (
+                                <div className="desc-content">
+                                  {descText}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            descText
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div className="spells-count">
+            <p>Total de hechizos: <strong>{filteredSpells.length}</strong></p>
+          </div>
+        </div>
+      );
+    }
+    
+    // Render Clanes
+    if (section.id === 'clanes') {
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          
+          <div className="content-text">
+            <p>{section.content.intro}</p>
+          </div>
+          
+          <div className="fundacion-box">
+            <code className="command-highlight">/fundarclan</code>
+            <p>{section.content.fundacion}</p>
+          </div>
+          
+          {/* Tipos de Clan Table */}
+          <div className="table-container">
+            <h3 className="table-title">{section.content.tiposClan.title}</h3>
+            <div className="table-scroll">
+              <table className="wiki-table clan-types-table">
+                <thead>
+                  <tr>
+                    <th>Tipo de Clan</th>
+                    <th>Descripción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.content.tiposClan.rows.map((row, idx) => (
+                    <tr key={idx}>
+                      <td className="clan-type-name">{row.tipo}</td>
+                      <td>{row.descripcion}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div className="content-text niveles-intro">
+            <p>{section.content.nivelesClanIntro}</p>
+          </div>
+          
+          {/* Niveles de Clan */}
+          <div className="clan-levels-section">
+            <h3 className="table-title">{section.content.nivelesClan.title}</h3>
+            
+            <div className="clan-levels-grid">
+              {section.content.nivelesClan.levels.map((level, idx) => (
+                <div key={idx} className="clan-level-card">
+                  <div className="clan-level-header">
+                    <span className="clan-level-number">Nivel {level.nivel}</span>
+                    <span className="clan-level-members">
+                      {level.nivel === 1 && '6 miembros'}
+                      {level.nivel === 2 && '8 miembros'}
+                      {level.nivel === 3 && '11 miembros'}
+                      {level.nivel === 4 && '13 miembros'}
+                      {level.nivel === 5 && '16 miembros'}
+                      {level.nivel === 6 && '20 miembros'}
+                    </span>
+                  </div>
+                  
+                  <div className="clan-level-requisitos">
+                    <h4>Requisitos:</h4>
+                    <p>{level.requisitos}</p>
+                  </div>
+                  
+                  <div className="clan-level-ventajas">
+                    <h4>Ventajas:</h4>
+                    <ul>
+                      {level.ventajas.map((ventaja, vIdx) => (
+                        <li key={vIdx}>{ventaja}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="nota-final-box">
+            <Icons.Info size={20} />
+            <p>{section.content.notaFinal}</p>
           </div>
         </div>
       );
