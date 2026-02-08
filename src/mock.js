@@ -507,8 +507,123 @@ export const wikiSections = [
     title: 'Quests & Modo Historia',
     icon: 'book-open',
     content: {
-      description: 'Misiones épicas y la historia del mundo de CucsiAO.',
-      placeholder: 'Listado de quests disponibles y modo historia...'
+      description: '¡Nuestro sistema de entrenamiento! Que tal forastero, si llegaste a este parte es porque necesitas entrenar. Al nacer en las tierras del Cucsi tendrás un teleport, en tu ciudad de origen, por el cual podrás ingresar al Dungeon Newbie (D-NW).',
+      intro: 'El nivel Máximo informado indica que hasta ese nivel inclusive podremos pedir la misión para realizarla. Los Puntos de Usuario sirven para subir el Nivel de Clan, items de Torneo o para uno de los requisitos de la Nobleza.',
+      categories: [
+        {
+          id: 'newbie',
+          name: 'Quest Newbie Dungeon',
+          icon: '🗡️',
+          description: 'Quests para niveles 1-13',
+          quests: [
+            {
+              npc: 'Randall',
+              repetible: false,
+              ubicacion: 'Newbie Dungeon | Mapa:19 X:72 Y:80',
+              nombre: 'Obteniendo Equipo Guerrero',
+              nivelMin: 1,
+              nivelMax: 13,
+              necesidad: 'Matar 5 Gallo Salvaje, 5 Serpiente y 5 Lobo.',
+              criaturas: ['Gallo Salvaje', 'Serpiente', 'Lobo'],
+              recompensa: '460 de experiencia, 40 monedas de oro y Equipo de Entrenamiento para Paladín, Clérigo, Asesino, Bandido, Ladrón, Cazador y Guerrero.'
+            },
+            {
+              npc: 'Agnes',
+              repetible: false,
+              ubicacion: 'Newbie Dungeon | Mapa:79 X:81 Y:77',
+              nombre: 'Obteniendo Equipo Mágico',
+              nivelMin: 1,
+              nivelMax: 13,
+              necesidad: 'Matar 5 Gallo Salvaje, 5 Serpiente y 5 Lobo.',
+              criaturas: ['Gallo Salvaje', 'Serpiente', 'Lobo'],
+              recompensa: '460 de experiencia, 40 monedas de oro y Equipo de Entrenamiento para Mago, Druida y Bardo.'
+            }
+          ]
+        },
+        {
+          id: 'historia',
+          name: 'Quest 13 - 54',
+          icon: '📖',
+          description: 'Quest Modo Historia - Misiones 1-42',
+          quests: [
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 1/42', nivelMin: 13, nivelMax: 54, necesidad: 'Matar 20 Esqueleto.', criaturas: ['Esqueleto'], recompensa: '700 de experiencia, 400 monedas de oro y Mascota de Entrenamiento.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 2/42', nivelMin: 14, nivelMax: 54, necesidad: 'Matar 15 Lobo.', criaturas: ['Lobo'], recompensa: '1.125 de experiencia, 525 monedas de oro y Hechizos de Entrenamiento para clases mágicas y equipo de entrenamiento para no mágicas.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 3/42', nivelMin: 15, nivelMax: 54, necesidad: 'Matar 10 Zombie.', criaturas: ['Zombie'], recompensa: '1.500 de experiencia, 450 monedas de oro y 1 Cofre de Entrenamiento I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 4/42', nivelMin: 16, nivelMax: 54, necesidad: 'Matar 15 Tortuga Gigante.', criaturas: ['Tortuga Gigante'], recompensa: '3.780 de experiencia, 1.125 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 5/42', nivelMin: 17, nivelMax: 54, necesidad: 'Matar 8 Oso Pardo.', criaturas: ['Oso Pardo'], recompensa: '5.000 de experiencia, 700 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 6/42', nivelMin: 18, nivelMax: 54, necesidad: 'Matar 20 Orco.', criaturas: ['Orco'], recompensa: '7.000 de experiencia, 1.200 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 7/42', nivelMin: 19, nivelMax: 54, necesidad: 'Matar 8 Araña Gigante.', criaturas: ['Araña Gigante'], recompensa: '10.000 de experiencia, 1.000 monedas de oro y 1 Cofre de Entrenamiento II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 8/42', nivelMin: 20, nivelMax: 54, necesidad: 'Matar 8 Asesino.', criaturas: ['Asesino'], recompensa: '11.600 de experiencia, 1.100 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 9/42', nivelMin: 21, nivelMax: 54, necesidad: 'Matar 6 Ogro.', criaturas: ['Ogro'], recompensa: '13.686 de experiencia, 2.160 monedas de oro y 1 Cofre de Materiales I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 10/42', nivelMin: 22, nivelMax: 54, necesidad: 'Matar 10 Beholder.', criaturas: ['Beholder'], recompensa: '17.500 de experiencia, 3.250 monedas de oro y 1 Cofre de Materiales I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 11/42', nivelMin: 23, nivelMax: 54, necesidad: 'Matar 10 Orco Brujo.', criaturas: ['Orco Brujo'], recompensa: '19.500 de experiencia, 4.000 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 12/42', nivelMin: 24, nivelMax: 54, necesidad: 'Matar 10 Liche.', criaturas: ['Liche'], recompensa: '18.800 de experiencia, 3.200 monedas de oro y 1 Barca.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 13/42', nivelMin: 25, nivelMax: 54, necesidad: 'Matar 10 Lord Orco.', criaturas: ['Lord Orco'], recompensa: '16.000 de experiencia, 3.000 monedas de oro y 1 Relampago para mágicos y Conjuro del estupor para no mágicas.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 14/42', nivelMin: 26, nivelMax: 54, necesidad: 'Matar 10 Mago Malvado.', criaturas: ['Mago Malvado'], recompensa: '15.000 de experiencia, 3.500 monedas de oro y 1 Cofre de Clase I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 15/42', nivelMin: 27, nivelMax: 54, necesidad: 'Matar 5 Liche Infernal.', criaturas: ['Liche Infernal'], recompensa: '31.750 de experiencia, 2.500 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 16/42', nivelMin: 28, nivelMax: 54, necesidad: 'Matar 5 Demonio.', criaturas: ['Demonio'], recompensa: '57.500 de experiencia, 5.000 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 17/42', nivelMin: 29, nivelMax: 54, necesidad: 'Matar 2 Golem de Piedra.', criaturas: ['Golem de Piedra'], recompensa: '50.000 de experiencia, 1.500 monedas de oro y 1 Cofre Winterfell I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 18/42', nivelMin: 30, nivelMax: 54, necesidad: 'Matar 15 Leviatan.', criaturas: ['Leviatan'], recompensa: '65.000 de experiencia, 13.125 monedas de oro y 1 Scroll exp (30 min).' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 19/42', nivelMin: 31, nivelMax: 54, necesidad: 'Matar 20 Dinosaurio.', criaturas: ['Dinosaurio'], recompensa: '75.000 de experiencia, 8.000 monedas de oro y 1 Cofre de Entrenamiento III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 20/42', nivelMin: 32, nivelMax: 54, necesidad: 'Matar 10 Pirata.', criaturas: ['Pirata'], recompensa: '85.000 de experiencia, 10.000 monedas de oro y 1 Cofre de Entrenamiento II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 21/42', nivelMin: 33, nivelMax: 54, necesidad: 'Matar 10 Capitán Pirata.', criaturas: ['Capitán Pirata'], recompensa: '95.000 de experiencia, 12.000 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 22/42', nivelMin: 34, nivelMax: 54, necesidad: 'Matar 15 Arquero del Castillo.', criaturas: ['Arquero del Castillo'], recompensa: '105.000 de experiencia, 12.375 monedas de oro y 1 Cofre de Clase I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 23/42', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 15 Plebello del Castillo.', criaturas: ['Plebello del Castillo'], recompensa: '111.250 de experiencia, 14.625 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 24/42', nivelMin: 36, nivelMax: 54, necesidad: 'Matar 10 Mago del Castillo.', criaturas: ['Mago del Castillo'], recompensa: '127.500 de experiencia, 18.750 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 25/42', nivelMin: 37, nivelMax: 54, necesidad: 'Matar 10 Guerrero Armado del Castillo.', criaturas: ['Guerrero Armado del Castillo'], recompensa: '135.000 de experiencia, 10.500 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 26/42', nivelMin: 38, nivelMax: 54, necesidad: 'Matar 10 Archimago del Castillo.', criaturas: ['Archimago del Castillo'], recompensa: '240.000 de experiencia, 10.000 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 27/42', nivelMin: 39, nivelMax: 54, necesidad: 'Matar 10 Paladin del Castillo.', criaturas: ['Paladin del Castillo'], recompensa: '280.000 de experiencia, 12.375 monedas de oro y 1 Scroll exp (30 min).' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 28/42', nivelMin: 40, nivelMax: 54, necesidad: 'Matar 5 Arcangel Armado del Castillo.', criaturas: ['Arcangel Armado del Castillo'], recompensa: '280.000 de experiencia, 14.625 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 29/42', nivelMin: 41, nivelMax: 54, necesidad: 'Matar 2 Rey Golem de Polo.', criaturas: ['Rey Golem de Polo'], recompensa: '25.000 de experiencia, 22.500 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 30/42', nivelMin: 42, nivelMax: 54, necesidad: 'Matar 2 Golem Junior de Hielo.', criaturas: ['Golem Junior de Hielo'], recompensa: '30.000 de experiencia, 22.500 monedas de oro y 1 Cofre Winterfell I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 31/42', nivelMin: 43, nivelMax: 54, necesidad: 'Matar 10 Sirena.', criaturas: ['Sirena'], recompensa: '500.000 de experiencia, 1.500 monedas de oro y 1 Cofre de Runas Inferiores.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 32/42', nivelMin: 44, nivelMax: 54, necesidad: 'Matar 1 Galeón Pirata.', criaturas: ['Galeón Pirata'], recompensa: '640.000 de experiencia, 8.000 monedas de oro y 1 Cofre de Runas Inferiores.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 33/42', nivelMin: 45, nivelMax: 54, necesidad: 'Matar 10 Galeón Fantasmal.', criaturas: ['Galeón Fantasmal'], recompensa: '700.000 de experiencia, 2.500 monedas de oro y 1 Cofre de Materiales III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 34/42', nivelMin: 46, nivelMax: 54, necesidad: 'Matar 10 Leviatan II.', criaturas: ['Leviatan II'], recompensa: '880.000 de experiencia, 1.875 monedas de oro y 1 Scroll exp (30 min).' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 37/42', nivelMin: 47, nivelMax: 54, necesidad: 'Matar 10 Kraken.', criaturas: ['Kraken'], recompensa: '1.060.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Quest III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 38/42', nivelMin: 48, nivelMax: 54, necesidad: 'Matar 5 Golem Dorado.', criaturas: ['Golem Dorado'], recompensa: '1.260.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Materiales III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 39/42', nivelMin: 49, nivelMax: 54, necesidad: 'Matar 3 Golem Alado.', criaturas: ['Golem Alado'], recompensa: '1.500.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Clase III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 40/42', nivelMin: 50, nivelMax: 54, necesidad: 'Matar 35 Medusa.', criaturas: ['Medusa'], recompensa: '2.000.000 de experiencia, 1.875 monedas de oro y 1 Cofre de Dragón.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 41/42', nivelMin: 51, nivelMax: 54, necesidad: 'Matar 10 Gran Dragón Rojo.', criaturas: ['Gran Dragón Rojo'], recompensa: '2.800.000 de experiencia, 19.000 monedas de oro y 1 Cofre de Quest III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 42/42', nivelMin: 52, nivelMax: 54, necesidad: 'Matar 15 Gran Dragon Rojo, 15 Dragon Rojo, 15 Golem Alado y 15 Medusa.', criaturas: ['Gran Dragon Rojo', 'Dragon Rojo', 'Golem Alado', 'Medusa'], recompensa: '6.800.000 de experiencia, 28.500 monedas de oro, 1 Scroll exp (30 min), y 1 Cofre de Clase III.' }
+          ]
+        },
+        {
+          id: 'repetibles',
+          name: 'Quest Repetibles',
+          icon: '🔄',
+          description: 'Quests que puedes repetir múltiples veces',
+          quests: [
+            { npc: 'Gael', repetible: true, ubicacion: 'Dungeon Marabel | Mapa:69 X:51 Y:87', nombre: 'Identificando a los Revoltosos', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 10 Orco Brujo, 10 Lord Orco, 10 Mago Malvado, 1 Demonio.', criaturas: ['Orco Brujo', 'Lord Orco', 'Mago Malvado', 'Demonio'], recompensa: '62.000 de experiencia, 4.360 monedas de oro, 10 puntos de usuario, 100 Pociones rojas, 60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Dylan', repetible: true, ubicacion: 'Castillo de Lindos | Mapa:62 X:40 Y:51', nombre: 'Rebeldes en el Castillo', nivelMin: 30, nivelMax: 45, necesidad: 'Matar 5 Arquero del Castillo, 5 Plebello del Castillo, 5 Mago del Castillo, 5 Guerrero Armado del Castillo, 5 Archimago del Castillo, 5 Paladin del Castillo, 1 Arcangel Armado del Castillo.', criaturas: ['Arquero del Castillo', 'Plebello del Castillo', 'Mago del Castillo', 'Guerrero Armado del Castillo', 'Archimago del Castillo', 'Paladin del Castillo', 'Arcangel Armado del Castillo'], recompensa: '133.275 de experiencia, 7.341 monedas de oro, 10 puntos de usuario, 100 Pociones rojas, 60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Lotaria', repetible: true, ubicacion: 'Nueva Esperanza | Mapa:59 X:34 Y:15', nombre: 'Reclutando a Guerreros II', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 10 Liche Infernal, 10 Leviatan.', criaturas: ['Liche Infernal', 'Leviatan'], recompensa: '154.500 de experiencia, 6.500 monedas de oro, 10 puntos de usuario, 50 Pociones rojas,30 Pociones azules, 10 Pociones amarillas, 5 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Jurian', repetible: true, ubicacion: 'Dungeon Barco Pirata | Mapa:33 X:48 Y:74', nombre: 'Lo\' Pirata VO\'', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 15 Pirata, 10 Capitán Pirata.', criaturas: ['Pirata', 'Capitán Pirata'], recompensa: '88.975 de experiencia, 2.350 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Law', repetible: true, ubicacion: 'Dungeon Barco Dinosaurio | Mapa:49 X:34 Y:16', nombre: 'La Prehistoria', nivelMin: 30, nivelMax: 40, necesidad: 'Matar 25 Dinosaurio.', criaturas: ['Dinosaurio'], recompensa: '116.125 de experiencia, 3.100 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Jehanne', repetible: true, ubicacion: 'Ciudad de Lindos | Mapa:54 X:68 Y:41', nombre: 'Protege a Lindos', nivelMin: 30, nivelMax: 45, necesidad: 'Matar 15 Leviatan.', criaturas: ['Leviatan'], recompensa: '136.500 de experiencia, 5.250 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Nahia', repetible: true, ubicacion: 'Entrada Inframundo | Mapa:66 X:48 Y:34', nombre: 'Welcome To Pain ZONE', nivelMin: 35, nivelMax: 45, necesidad: 'Matar 15 Serpiente de Anthares, 5 Leviatan, 5 Medusa, 5 Demonio, 2 Golem Dorado y 2 Golem Alado.', criaturas: ['Serpiente de Anthares', 'Leviatan', 'Medusa', 'Demonio', 'Golem Dorado', 'Golem Alado'], recompensa: '255.575 de experiencia, 5.850 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
+            { npc: 'Milo', repetible: true, ubicacion: 'Entrada Dungeon Marabel | Mapa:28 X:42 Y:48', nombre: 'Venganza', nivelMin: 35, nivelMax: 45, necesidad: 'Matar 10 Demonio, 5 Golem de Piedra.', criaturas: ['Demonio', 'Golem de Piedra'], recompensa: '240.000 de experiencia, 5.500 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas.' },
+            { npc: 'Alonso', repetible: true, ubicacion: 'Adentro del Dungeon Veril | Mapa:71 X:38 Y:27', nombre: 'Medukila', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 30 Medusa.', criaturas: ['Medusa'], recompensa: '345.000 de experiencia, 9.000 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
+            { npc: 'Braulio', repetible: true, ubicacion: 'Adentro del Dungeon Veril | Mapa:72 X:48 Y:41', nombre: 'Duro como Ferrocarril', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 5 Golem de Piedra, 5 Golem Dorado y 5 Golem Alado.', criaturas: ['Golem de Piedra', 'Golem Dorado', 'Golem Alado'], recompensa: '450.000 de experiencia, 4.500 monedas de oro y 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
+            { npc: 'Rick', repetible: true, ubicacion: 'Entrada Dungeon Dragon | Mapa:72 X:48 Y:41', nombre: 'Ala de Pollo', nivelMin: 43, nivelMax: 45, necesidad: 'Matar 15 Gran Dragon Rojo.', criaturas: ['Gran Dragon Rojo'], recompensa: '750.000 de experiencia, 7.500 monedas de oro y 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas.' },
+            { npc: 'Zdenko', repetible: true, ubicacion: 'Polo | Mapa:78 X:62 Y:22', nombre: 'Caza Golemica', nivelMin: 27, nivelMax: 54, necesidad: 'Matar 10 Golem Junior de Hielo y 5 Rey Golem de Polo.', criaturas: ['Golem Junior de Hielo', 'Rey Golem de Polo'], recompensa: '13.000 de experiencia, 25.625 monedas de oro, 10 puntos de usuario y una provisión de pociones y Piedra Caza Golemica (se vende por oro).' },
+            { npc: 'Emma', repetible: true, ubicacion: 'Laberinto Congelado Mapa:138 X:77 Y:86 | Entrada Mapa 78', nombre: 'Guardianes del Laberinto', nivelMin: 33, nivelMax: 54, necesidad: 'Matar 10 Hombre de las Nieves, 10 Beholder Polar y 10 Gorila Polar.', criaturas: ['Hombre de las Nieves', 'Beholder Polar', 'Gorila Polar'], recompensa: '7.500 de experiencia, 30.000 monedas de oro, 10 puntos de usuario, una gran provisión de pociones y Piedra Guardianes del Laberinto (se vende por oro).' },
+            { npc: 'Dorotyh', repetible: true, ubicacion: 'Dungeon Agua Mapa:135 X:47 Y:20 | Entrada Mapa 103', nombre: 'Derrotando a las Criaturas Míticas', nivelMin: 35, nivelMax: 50, necesidad: 'Matar 10 Kraken y 10 Leviatan II.', criaturas: ['Kraken', 'Leviatan II'], recompensa: '250.000 de experiencia, 8.200 monedas de oro y 10 puntos de usuario, 500 Pociones rojas, 250 Pociones azules, 60 Pociones amarillas, 40 pociones verdes, 5 jugo de frutas, 5 chuletas y Cofre de Quest III.' },
+            { npc: 'Eleuterio', repetible: true, ubicacion: 'Dungeon Agua Mapa:135 X:48 Y:83 | Entrada Mapa 103', nombre: 'Barckiller', nivelMin: 35, nivelMax: 50, necesidad: 'Matar 10 Galeón Pirata y 10 Galeón Fantasmal.', criaturas: ['Galeón Pirata', 'Galeón Fantasmal'], recompensa: '140.000 de experiencia, 6.860 monedas de oro y 10 puntos de usuario, 500 Pociones rojas, 250 Pociones azules, 60 Pociones amarillas, 40 pociones verdes, 5 jugo de frutas, 5 chuletas y Cofre de Quest II.' }
+          ]
+        },
+        {
+          id: 'recursos',
+          name: 'Quest de Recursos',
+          icon: '⛏️',
+          description: 'Quests relacionadas con recursos y materiales',
+          quests: [
+            { npc: 'Brigham', repetible: true, ubicacion: 'Ciudad de Blillinton | Mapa:95 X:47 Y:52', nombre: 'Mercado Negro de Minerales I', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Minerales de Hierro.', criaturas: [], recompensa: 'Te entregara 714 Lingotes de Hierro (Brinda 5% extra de lingotes ya fraguados).' },
+            { npc: 'Brishen', repetible: true, ubicacion: 'Ciudad de Dahl | Mapa:96 X:52 Y:28', nombre: 'Mercado Negro de Minerales II', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Minerales de Plata.', criaturas: [], recompensa: 'Te entregara 504 Lingotes de Plata (Brinda 5% extra de lingotes ya fraguados).' },
+            { npc: 'Alodia', repetible: true, ubicacion: 'Ciudad de Banderbill | Mapa:30 X:35 Y:46', nombre: 'Mercado Negro de Lanas I', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Lana de Oveja.', criaturas: [], recompensa: 'Te entregara 714 Ovillos de Oveja (Brinda 5% extra de ovillos ya trabajados).' },
+            { npc: 'Ilduara', repetible: true, ubicacion: 'Ciudad de Nexon | Mapa:15 X:54 Y:50', nombre: 'Mercado Negro de Lanas II', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Lana de Cabra.', criaturas: [], recompensa: 'Te entregara 504 Ovillos de Cabra (Brinda 5% extra de ovillos ya trabajados).' }
+          ]
+        }
+      ]
     }
   },
   {

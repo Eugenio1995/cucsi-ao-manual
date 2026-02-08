@@ -15,6 +15,10 @@ export const WikiContent = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'exp', direction: 'asc' }); // Default: menor a mayor EXP
   const [expandedDrops, setExpandedDrops] = useState(new Set());
+  
+  // States for quests
+  const [selectedQuestCategory, setSelectedQuestCategory] = useState(null);
+  const [selectedQuest, setSelectedQuest] = useState(null);
 
   const getIcon = (iconName) => {
     const iconMap = {
@@ -485,7 +489,7 @@ export const WikiContent = () => {
                     const showDropdown = dropText.length > 30;
                     
                     return (
-                      <tr key={idx}>
+                      <tr key={idx} id={`creature-${creature.name.toLowerCase().replace(/\s+/g, '-')}`}>
                         <td className="creature-name">{creature.name}</td>
                         <td>{formatNumber(creature.vida)}</td>
                         <td>{creature.danoFisico}</td>
@@ -544,6 +548,165 @@ export const WikiContent = () => {
                 <span>Alto</span>
               </div>
             </div>
+          </div>
+        </div>
+      );
+    }
+    
+    // Render Quests
+    if (section.id === 'quests') {
+      // Function to navigate to creature
+      const navigateToCreature = (creatureName) => {
+        setActiveSection('criaturas');
+        setSearchTerm(creatureName);
+        // Scroll to creature after a short delay
+        setTimeout(() => {
+          const element = document.getElementById(`creature-${creatureName.toLowerCase().replace(/\s+/g, '-')}`);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100);
+      };
+      
+      // Render creature links in necesidad text
+      const renderNecesidadWithLinks = (necesidad, criaturas) => {
+        if (!criaturas || criaturas.length === 0) {
+          return <span>{necesidad}</span>;
+        }
+        
+        let result = necesidad;
+        const parts = [];
+        let lastIndex = 0;
+        
+        criaturas.forEach(creatureName => {
+          const index = result.indexOf(creatureName, lastIndex);
+          if (index !== -1) {
+            // Add text before creature name
+            if (index > lastIndex) {
+              parts.push(result.substring(lastIndex, index));
+            }
+            // Add clickable creature link
+            parts.push(
+              <span
+                key={creatureName}
+                className="creature-link"
+                onClick={() => navigateToCreature(creatureName)}
+              >
+                {creatureName}
+              </span>
+            );
+            lastIndex = index + creatureName.length;
+          }
+        });
+        
+        // Add remaining text
+        if (lastIndex < result.length) {
+          parts.push(result.substring(lastIndex));
+        }
+        
+        return <>{parts}</>;
+      };
+      
+      // If viewing a specific quest
+      if (selectedQuest) {
+        const quest = selectedQuest;
+        return (
+          <div className="section-content">
+            <button 
+              className="back-button"
+              onClick={() => setSelectedQuest(null)}
+            >
+              ← Volver a {selectedQuestCategory.name}
+            </button>
+            
+            <h2 className="quest-detail-title">{quest.nombre}</h2>
+            
+            <div className="quest-detail-info">
+              <div className="quest-info-row">
+                <span className="quest-label">NPC:</span>
+                <span className="quest-value">{quest.npc} {quest.repetible ? '[REPETIBLE]' : '[NO REPETIBLE]'}</span>
+              </div>
+              <div className="quest-info-row">
+                <span className="quest-label">Ubicación:</span>
+                <span className="quest-value">{quest.ubicacion}</span>
+              </div>
+              <div className="quest-info-row">
+                <span className="quest-label">Nivel Requerido:</span>
+                <span className="quest-value">Mínimo {quest.nivelMin} {'<>'} Máximo {quest.nivelMax}</span>
+              </div>
+              <div className="quest-info-row">
+                <span className="quest-label">Necesidad:</span>
+                <span className="quest-value">{renderNecesidadWithLinks(quest.necesidad, quest.criaturas)}</span>
+              </div>
+              <div className="quest-info-row">
+                <span className="quest-label">Recompensa:</span>
+                <span className="quest-value">{quest.recompensa}</span>
+              </div>
+            </div>
+          </div>
+        );
+      }
+      
+      // If viewing a category
+      if (selectedQuestCategory) {
+        return (
+          <div className="section-content">
+            <button 
+              className="back-button"
+              onClick={() => setSelectedQuestCategory(null)}
+            >
+              ← Volver a Categorías
+            </button>
+            
+            <h2 className="quest-category-title">{selectedQuestCategory.name}</h2>
+            <p className="quest-category-description">{selectedQuestCategory.description}</p>
+            
+            <div className="quests-list">
+              {selectedQuestCategory.quests.map((quest, idx) => (
+                <div 
+                  key={idx} 
+                  className="quest-card"
+                  onClick={() => setSelectedQuest(quest)}
+                >
+                  <div className="quest-card-header">
+                    <h4 className="quest-card-title">{quest.nombre}</h4>
+                    <span className={`quest-badge ${quest.repetible ? 'repetible' : 'no-repetible'}`}>
+                      {quest.repetible ? 'REPETIBLE' : 'NO REPETIBLE'}
+                    </span>
+                  </div>
+                  <div className="quest-card-body">
+                    <p><strong>NPC:</strong> {quest.npc}</p>
+                    <p><strong>Nivel:</strong> {quest.nivelMin} - {quest.nivelMax}</p>
+                    <p className="quest-card-location">{quest.ubicacion}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      }
+      
+      // Show quest categories grid
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          <div className="quest-intro">
+            <p>{section.content.intro}</p>
+          </div>
+          
+          <div className="quest-categories-grid">
+            {section.content.categories.map((category, idx) => (
+              <div 
+                key={idx} 
+                className="quest-category-card"
+                onClick={() => setSelectedQuestCategory(category)}
+              >
+                <div className="quest-category-icon">{category.icon}</div>
+                <h4 className="quest-category-name">{category.name}</h4>
+                <p className="quest-category-desc">{category.description}</p>
+                <div className="quest-count">{category.quests.length} quests</div>
+              </div>
+            ))}
           </div>
         </div>
       );
