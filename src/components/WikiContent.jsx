@@ -115,8 +115,12 @@ export const WikiContent = () => {
             <div className="races-grid">
               {section.content.races.map((race, idx) => (
                 <div key={idx} className="race-card">
-                  <div className="race-icon">👤</div>
-                  <h4 className="race-name">{race}</h4>
+                  <img 
+                    src={race.image} 
+                    alt={race.name} 
+                    className="race-icon-image"
+                  />
+                  <h4 className="race-name">{race.name}</h4>
                 </div>
               ))}
             </div>

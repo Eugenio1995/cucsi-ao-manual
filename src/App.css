@@ -539,10 +539,15 @@
   box-shadow: 0 6px 16px var(--shadow);
 }
 
-.race-icon {
-  font-size: 3rem;
-  margin-bottom: 0.75rem;
-  filter: grayscale(20%);
+.race-icon-image {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.75rem;
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  border-radius: 4px;
 }
 
 .race-name {
