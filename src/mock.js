@@ -13,7 +13,7 @@ export const wikiSections = [
       mapInfo: 'El mapa del mundo de Cucsi, fue basado en el mapa oficial de Argentum Online, respetando las principales ciudades, como "Ullatorphe", "Nix", "Banderbill", entre otras, y usando los dungeons originales con pequeñas modificaciones, tales como "Marabel", "Verill", "Dragon", etc. Fue agregado también el tan usado "Barco", cuya idea original fue obtenida de Cucsifae AO'
     }
   },
-  {
+  /* {
     id: 'cuenta',
     title: 'Crear Cuenta, Habilitar Cuenta y Sistema de Referidos',
     icon: 'user-plus',
@@ -30,7 +30,7 @@ export const wikiSections = [
       description: 'Proceso de creación de tu personaje en CucsiAO.',
       text: 'Para crear personajes debemos haber iniciado sesión con nuestra Cuenta y seleccionar la opción "Crear". Podremos crear hasta ocho personajes en una misma Cuenta. Es aconsejable leer Información de personajes para entender respecto a sus características antes de la creación del mismo. Esto permitirá comenzar con la mayor ventaja posible, además las características elegidas no podrán cambiarse una vez terminada la creación del personaje.'
     }
-  },
+  }, */
   {
     id: 'razas',
     title: 'Razas',
@@ -38,11 +38,11 @@ export const wikiSections = [
     content: {
       description: 'En estos tiempos de la edad media, hasta el momento se conocen 6 diferentes razas que habitan las tierras de CucsiAO.',
       races: [
-        { name: 'Humano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/9.png' },
-        { name: 'Elfo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/2.png' },
-        { name: 'Elfo Oscuro', image: 'https://fenixao.com.ar/manual/resources/media/Heads/3.png' },
-        { name: 'Gnomo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/7.png' },
-        { name: 'Enano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/4.png' },
+        { name: 'Humano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/3.png' },
+        { name: 'Elfo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/107.png' },
+        { name: 'Elfo Oscuro', image: 'https://fenixao.com.ar/manual/resources/media/Heads/203.png' },
+        { name: 'Gnomo', image: 'https://fenixao.com.ar/manual/resources/media/Heads/401.png' },
+        { name: 'Enano', image: 'https://fenixao.com.ar/manual/resources/media/Heads/301.png' },
         { name: 'Orco', image: 'https://fenixao.com.ar/manual/resources/media/Heads/5.png' }
       ],
       text: 'Cada una de estas razas, tiene una característica que le da ciertas ventajas y desventajas respecto a otras razas, según la clase u oficio del personaje.',
@@ -73,38 +73,7 @@ export const wikiSections = [
         ]
       }
     }
-  },
-  {
-    id: 'atributos',
-    title: 'Atributos',
-    icon: 'trending-up',
-    content: {
-      description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
-      intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
-      attributes: [
-        {
-          name: 'Fuerza',
-          description: 'La fuerza de un personaje influye en el daño que es capaz de infligir con sus ataques físicos. Cuanta más fuerza tenga un personaje, mayor será el daño causado con armas cuerpo a cuerpo, a distancia o sin armas por lo que es un atributo de suma importancia para las clases que combatan con esta modalidad. Este atributo puede incrementarse temporalmente, al igual que la agilidad.'
-        },
-        {
-          name: 'Agilidad',
-          description: 'La agilidad es el atributo que afecta a la capacidad evasiva y la puntería de un personaje. En un atributo ofensivamente útil para las clases de combate físico y defensivamente favorable para todos los personajes. Este atributo puede incrementarse temporalmente, al igual que la fuerza.'
-        },
-        {
-          name: 'Inteligencia',
-          description: 'La inteligencia afecta en forma directa la cantidad de maná que ganará un personaje al subir de nivel, dependiendo también de la clase. Es un atributo muy importante para todas las clases que necesiten utilizar hechizos, marcando muchas veces el límite en la capacidad mágica de un personaje.'
-        },
-        {
-          name: 'Carisma',
-          description: 'El carisma afecta las capacidades de un personaje para la creación de una party así como su facilidad para la doma de criaturas. Cuanto mayor sea el valor de este atributo, más poderosas serán las criaturas que podrá domar un personaje.'
-        },
-        {
-          name: 'Constitución',
-          description: 'Los puntos de vida de un personaje dependen directamente de su constitución y clase. Un valor más elevado en este atributo aumenta los puntos de vida iniciales y ganados por nivel de un personaje. Sin duda es un valor importante para todos los personajes.'
-        }
-      ]
-    }
-  },
+  },  
   {
     id: 'clases',
     title: 'Clases',
@@ -346,11 +315,560 @@ export const wikiSections = [
     title: 'Trabajo',
     icon: 'briefcase',
     content: {
-      description: 'Aprende sobre los diferentes trabajos y oficios disponibles.',
-      placeholder: 'Detalles sobre trabajos, recompensas y progresión...'
+      description: 'En las tierras de CucsiAO, el trabajo es un medio muy importante para el progreso de tu personaje o de un clan en sí. Ahora vas a poder realizar todos los trabajos con tu personaje, dejó de existir la clase trabajador. Los recursos son agotables.',
+      intro: 'Estas son los diferentes trabajos que tu personaje podrá realizar:',
+      importantNote: {
+        title: 'Importante',
+        items: [
+          'Cualquier Personaje de Nivel 1 a 12 extraerán entre 1 a 5 recursos de cualquier tipo. (Leña, Minerales, Peces, Lanas, Raíces).',
+          'Ahora pueden trabajar en zona segura y van a extraer 1 a 5 recursos.',
+          'Los Personajes de Nivel 13 o superior extraerán más recursos.'
+        ]
+      },
+      trabajos: [
+        {
+          id: 'pesca',
+          nombre: 'Pesca',
+          icon: 'fish',
+          descripcion: 'El oficio de la pesca consiste en la obtención de peces. Para esto el personaje debe tener seleccionada y equipada una caña de pescar o una red de pesca (ésta última es solo equipable por el trabajador), luego buscar agua ya sea un lago, río, etc. y presionar la tecla U (por defecto o doble click sobre la herramienta) y hacer click sobre el agua.',
+          descripcion2: 'El Trabajador con el oficio en Pescar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
+          bonificacion: {
+            title: 'Bonificación',
+            items: [
+              'Con Red de Pesca en Zona Insegura extraemos más recursos por nivel.',
+              'Utilizando la embarcación Galera y Red de Pesca en Zona Insegura, tendremos la posibilidad de obtener Cofres de Pesca.'
+            ]
+          },
+          itemsTable: {
+            title: 'Items de Pesca',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Caña de Pescar', 'Item necesario para la extración de peces, se vende en el NPC "Vendedor"'],
+              ['Red de Pesca', 'Item necesario para la extración de variedad de peces, se vende en el NPC "Vendedor" (SE CAE)']
+            ]
+          },
+          resourcesTable: {
+            title: 'Tipos de Peces y Precios',
+            headers: ['Nombre', 'Precio'],
+            rows: [
+              ['Pez Dorado', '6 monedas de oro. Requiere red de pesca'],
+              ['Pez Espada', '5 monedas de oro. Requiere red de pesca'],
+              ['Merluza', '4 monedas de oro. Requiere red de pesca'],
+              ['Pescado', '2 monedas de oro']
+            ]
+          },
+          cofresNote: 'IMPORTANTE: Al abrir los cofres existe la posibilidad de conseguir hasta 3 de los objetos del cofre como también la posibilidad de que el cofre no de ningún objeto.',
+          cofresTable: {
+            title: 'Tipos de Cofres',
+            headers: ['Nombre del cofre', 'Prob. de conseguirlo', 'Objetos'],
+            rows: [
+              ['Cofre de Pesca Verde', '1,2%', '2.000 Pescados - 1.000 Pez Dorado - 500 Merluza - 250 Pez Espada - 1.000 Monedas de Oro - 2 Gema Verde (5 puntos de usuario) - 2 Gema Naranja (3 puntos de usuario) - 2 Gema Azul (1 puntos de usuario).'],
+              ['Cofre de Pesca Celeste', '0,9%', '6.000 Pescados - 5.000 Pez Dorado - 3.000 Merluza - 2.000 Pez Espada - 5.000 Monedas de Oro - 1 Cofre de Pesca Verde - 3 Gema Verde (5 puntos de usuario) - 3 Gema Naranja (3 puntos de usuario) - 3 Gema Azul (1 puntos de usuario).'],
+              ['Cofre de Pesca Violeta', '0,6%', '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 10.000 Monedas de Oro - 20 Poción Roja - 5 Gema Verde (5 puntos de usuario) - 5 Gema Naranja (3 puntos de usuario) - 5 Gema Azul (1 puntos de usuario).'],
+              ['Cofre de Pesca de Oro', '0,3%', '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 1 Cofre de Pesca Violeta - 1 Red de Pesca - 400 Pociones de Rojas - 7 Gema Verde (5 puntos de usuario) - 7 Gema Naranja (3 puntos de usuario) - 7 Gema Azul (1 puntos de usuario).']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Peces',
+            intro: 'A la hora de Pescar con nuestro trabajador lo podremos realizar en Zona Segura o en Zona Insegura. El beneficio de pescas en Zona Insegura es que recibiremos una bonificación de extracción de una mayor cantidad de recursos pero SOLO será con nuestra Red de Pesca. Para poder utilizar la Red de Pesca deberemos de estar embarcados y el tipo de embarque es indistinto ya sea Barca, Galera o Galeón dado a que la bonificación solo se aplica para la zona segura o insegura. Con Caña de Pescar extraeremos la misma cantidad de recursos estando en tierra o navegando.',
+            calculoTitle: 'Cálculo de Extracción',
+            calculoIntro: 'Para saber cuantos peces recojeremos con nuestro trabajador influirán los siguientes factores:',
+            zonas: [
+              {
+                nombre: 'Zona Segura',
+                items: [
+                  'Caña de Pesca: extraemos SIEMPRE entre 1 a 5 peces sin importar nuestro nivel.',
+                  'Red de Pesca: extraemos SIEMPRE entre 1 a 10 peces sin importar nuestro nivel.'
+                ]
+              },
+              {
+                nombre: 'Zona Insegura',
+                items: [
+                  'Caña de Pesca: (Mínimo: TuNivel -10 / Máximo: TuNivel -7). Osea si somos Nivel 20 extraemos entre 10 y 13 peces.',
+                  'Red de Pesca: (Mínimo: TuNivel -10 / Máximo: TuNivel -5). Osea si somos Nivel 20 extraemos entre 10 y 15 peces.'
+                ]
+              }
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Los PECES SE CAEN si morimos en AGUA.',
+            'La RED DE PESCA se cae como cualquier otro item de trabajador, también en agua.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'tala',
+          nombre: 'Tala',
+          icon: 'axe',
+          descripcion: 'El oficio de la tala consiste en la obtención de leños, una vez que tengas un hacha de leñador deberás equiparla con la tecla equipar (E), luego buscar un árbol, presionar la tecla Usar (U), se te activa el macro automático del servidor) y hacer click sobre el árbol. Los trabajadores pueden extraer o construir de a uno o más recursos/objetos a la vez, dependiendo de su nivel. Mientras más nivel sea, más recursos obtendrá por vez y más objetos podrá construir por vez (ver Extracción).',
+          descripcion2: 'El Trabajador con el oficio en Talar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez. Las leñas sirven para que puedas construir items de Carpintería.',
+          itemsTable: {
+            title: 'Items de Tala',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Hacha de Leñador', 'Item necesario para extraer materiales de los árboles, se vende en el NPC "Vendedor"'],
+              ['Hacha de Leña Élfica', 'Item necesario para extraer materiales de los árboles élficos, se vende en el NPC "Vendedor"'],
+              ['Leña', 'Recurso extraído desde un Árbol'],
+              ['Leña Élfica', 'Recurso extraído desde un Árbol Élfico']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Leña',
+            intro: 'Con nuestro trabajador y su herramienta de trabajo Hacha de Leñador o Hacha de Leña Élfica, dependiendo del tipo de recurso que deseamos extraer, nos dirigiremos a zona insegura para empezar nuestra tala.',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 12: extraemos entre 2 a 5 de Leña sin importar tu nivel.',
+              'Nivel 13 o Más: extraemos (Mínimo: TuNivel -10 / Máximo: TuNivel -5). Osea si somos Nivel 20 extraemos entre 10 y 15 Leña.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
+            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
+          ],
+          locationInfo: [
+            'La Leña podremos extraerla de cualquier árbol de las tierras.',
+            'En cambio para poder extraer Leña Élfica deberemos de dirigirnos al Bosque Élfico situado al Sureste de la ciudad de Nix ubicado en el Mapa 145, ya que es el único lugar de las tierras donde podremos hacernos de ella pero para llegar a dicho lugar deberemos de navegar.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'carpinteria',
+          nombre: 'Carpintería',
+          icon: 'hammer',
+          descripcion: 'El oficio de la carpintería sirve para construir objetos a base de leña. Una vez que tengas un serrucho deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en carpintería.',
+          descripcion2: 'El Trabajador con el oficio en Carpintería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Carpintería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Serrucho', 'Item necesario para la construcción con madera, se vende en el NPC "Vendedor"'],
+              ['Leña', 'Recurso extraído desde un Árbol para la elaboración de objetos'],
+              ['Leña Élfica', 'Recurso extraído desde un Árbol Élfico para la elaboración de objetos']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando el Serrucho abrimos el menú de creación.',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+          craftingTable: {
+            title: 'Lista de Objetos de Creación',
+            headers: ['Item', 'Leña', 'Leña Élfica', 'Skills', 'Defensa', 'Daño'],
+            rows: [
+              ['Cuchara', '3', '-', '5', '', ''],
+              ['Caña de Pescar', '70', '-', '12', '', ''],
+              ['Arco Simple', '42', '-', '20', '', ''],
+              ['Flecha', '1', '-', '20', '', ''],
+              ['Barca (Navegas 5% más rápido)', '10.000', '-', '80 / (60 trabajadores) / (40 piratas)', '5/10', '5/10'],
+              ['Flecha +1', '3', '-', '40', '', ''],
+              ['Galera (Navegas 10% más rápido)', '45.000', '25.000', '90 / (68 trabajadores) / (45 piratas)', '10/15', '7/15'],
+              ['Flecha +2', '5', '-', '60', '', ''],
+              ['Tambor', '800', '-', '75', '', ''],
+              ['Flauta', '800', '-', '75', '', ''],
+              ['Arco De Oro', '1.500', '-', '80', '-', '5/9'],
+              ['Bastón Nudoso', '2.500', '-', '80', '', ''],
+              ['Arco de Perla Azul', '3.500', '-', '90', '-', '8/10'],
+              ['Flecha +3', '7', '-', '90', '', ''],
+              ['Flauta Mágica', '3.000', '-', '100', '', ''],
+              ['Laúd Mágico', '3.300', '-', '100', '', ''],
+              ['Ballesta', '10.000', '1.000', '100', '-', '7/12'],
+              ['Báculo Engarzado', '8.000', '-', '100', '', ''],
+              ['Flauta Élfico', '-', '3.650', '100', '', ''],
+              ['Laúd Élfico', '-', '3.650', '100', '', ''],
+              ['Galeón (Navegas 15% más rápido)', '90.000', '50.000', '100 / (75 trabajadores) / (50 pirata)', '15/20', '10/17']
+            ]
+          },
+          desmantelacion: {
+            title: 'Desmantelación de Objetos de Carpintería',
+            descripcion: 'El oficio desmantelar consiste en la recuperación de piezas para poder a reutilizar la madera, una vez que tengas una cierta cantidad de objetos a desmantelar deberás buscar un serrucho ubicado en la casa del carpintero de cada ciudad, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre el serrucho. La desmantelación depende de la clase y los puntos ya que los objetos a desmantelar son aquellos creados mediante la Carpintería. Que requieran al menos 50 skills, se podrán desmantelar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
+            note: 'IMPORTANTE: SOLO podremos fundir los objetos del siguiente listado cuales SKILLS en CARPINTERIA deberán de ser 50 o superiores:',
+            table: {
+              headers: ['Item', 'Leña', 'Leña Élfica', 'Skills'],
+              rows: [
+                ['Galera (Navegas 10% más rápido)', '45.000', '25.000', '90 / (68 trabajadores) / (45 piratas)'],
+                ['Flecha +2', '5', '-', '60'],
+                ['Tambor', '800', '-', '75'],
+                ['Flauta', '800', '-', '75'],
+                ['Arco De Oro', '1.500', '-', '80'],
+                ['Bastón Nudoso', '2.500', '-', '80'],
+                ['Arco de Perla Azul', '3.500', '-', '90'],
+                ['Flecha +3', '7', '-', '90'],
+                ['Flauta Mágica', '3.000', '-', '100'],
+                ['Laúd Mágico', '3.000', '-', '100'],
+                ['Ballesta', '6.000', '3.000', '100'],
+                ['Báculo Engarzado', '4.500', '-', '100'],
+                ['Flauta Élfico', '-', '3.650', '100'],
+                ['Laúd Élfico', '-', '3.650', '100'],
+                ['Galeón (Navegas 15% más rápido)', '90.000', '50.000', '100 / (75 trabajadores) / (50 pirata)']
+              ]
+            }
+          }
+        },
+        {
+          id: 'botanica',
+          nombre: 'Botánica',
+          icon: 'leaf',
+          descripcion: 'La botánica es el trabajo dedicado a la extracción de los recursos de raíces de los árboles para luego poder elaborar complejas pociones de un grado superior a las que podremos encontrar en el comerciante con el arte de la Alquimia.',
+          descripcion2: 'La extracción de raíces es un arte pura y exclusivamente de la clase DRUIDA mientras que con el resto de las clases sólo podrá obtener una a la vez.',
+          bonificacion: 'BONIFICACIÓN: A partir de Nivel 45 empezaremos a extraer más recursos por nivel.',
+          itemsTable: {
+            title: 'Items de Botánica',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Tijeras', 'Item necesario para la creación de pociones, se vende en el NPC "Vendedor"'],
+              ['Raíz', 'Recurso extraído desde un Árbol']
+            ]
+          },
+          castilloNote: 'También si tienes un Clan nivel 3, puedes trabajar en las catacumbas de los castillos.',
+          extraccion: {
+            title: 'Extracción de Raíces',
+            intro: 'Con nuestro Druida y su herramienta de trabajo Tijeras nos dirigiremos a zona insegura para empezar nuestra recolección:',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 44: extraemos entre 2 a 4 Raíces sin importar tu nivel.',
+              'Nivel 45 o Más: extraemos (Mínimo: TuNivel -42 / Máximo: TuNivel -38). Osea si somos Nivel 45 extraemos entre 3 y 7 Raíces.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.',
+            importantNote: 'IMPORTANTE: Mientras más nivel tenga nuestro Druida más recursos extraerá.'
+          }
+        },
+        {
+          id: 'alquimia',
+          nombre: 'Alquimia',
+          icon: 'flask',
+          descripcion: 'El Alquimia es el Arte de las viejas brujas la cual sirve para la creación de poderosas pociones a base de raíces. Una vez que tengas una Olla deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Alquimia.',
+          descripcion2: 'El Druida con el oficio en Alquimia es quién podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Alquimia',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Olla', 'Item necesario para la construcción con raíces, se vende en el NPC "Vendedor"'],
+              ['Raíz', 'Recurso extraído desde un Árbol para elaboración de pociones']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando la Olla abrimos el menú de creación.',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+          craftingTable: {
+            title: 'Lista de Objetos de Creación',
+            headers: ['Item', 'Estado', 'Bonificación', 'Raíces', 'Skills'],
+            rows: [
+              ['Poción Violeta (Druida)', 'Cura el veneno', '-', '10', '10'],
+              ['Poción Roja', 'Recupera Vida', '28-30', '14', '10'],
+              ['Poción de Energía', 'Recupera energía', '25-50', '50', '30'],
+              ['Poción de Energía (Druida)', 'Recupera más energía', '50-100', '100', '30'],
+              ['Poción Azul (Druida)', 'Recupera más mana', '100-150', '200', '50'],
+              ['Poción Azul', 'Recupera mana', '50-75', '14', '60'],
+              ['Poción Amarilla', 'Aumenta la agilidad', '4-6', '14', '60'],
+              ['Poción Verde', 'Aumenta la fuerza', '4-6', '14', '60'],
+              ['Poción Roja (Druida)', 'Recupera más vida', '38-38', '100', '60'],
+              ['Poción Amarilla (Druida)', 'Aumenta más la agilidad', '8-10', '250', '70'],
+              ['Poción Verde (Druida)', 'Aumenta más la fuerza', '8-10', '300', '80'],
+              ['Poción Anti Ceguera', 'Devuelve la visión', '-', '2.000', '100'],
+              ['Poción Anti Estupidez', 'Vuelve a la normalidad al personaje', '-', '2.000', '100'],
+              ['Poción Anti Parálisis', 'Remueve la parálisis', '-', '4.000', '100']
+            ]
+          }
+        },
+        {
+          id: 'mineria',
+          nombre: 'Minería',
+          icon: 'pickaxe',
+          descripcion: 'La minería es una de las profesiones mejor pagas de Argentum Online debido a su alto riesgo. La extracción de minerales implica salir de la ciudad y entrar a una peligrosa mina en busca de yacimientos y hasta poderosos Dungeons. Estos deben ser trabajados con un piquete de minero, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el yacimiento.',
+          descripcion2: 'Con la minería obtendremos la extracción de minerales de hierro, plata y oro materia prima para la fundición de Lingotes y con ellos crear poderosos objetos con un Herrero. El Trabajador con el oficio de Minería puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
+          itemsTable: {
+            title: 'Items de Minería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Piquete de Minero', 'Item necesario para extraer materiales de los yacimientos, se vende en el NPC "Vendedor"'],
+              ['Mineral de Hierro', 'Recurso extraído desde un Yacimiento de Hierro'],
+              ['Mineral de Plata', 'Recurso extraído desde un Yacimiento de Plata'],
+              ['Mineral de Oro', 'Recurso extraído desde un Yacimiento de Oro']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Minerales',
+            intro: 'Con nuestro Trabajador y su herramienta de trabajo Piquete de Minero nos dirigiremos a zona insegura para empezar nuestra extracción de minerales las cuales se hallan en lo profundo de las catacumbas o dungeons.',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 12: extraemos entre 5 a 10 Minerales sin importar tu nivel.',
+              'Nivel 13 o Más: extraemos (Mínimo: TuNivel-10 / Máximo: TuNivel-5). Osea si somos Nivel 20 extraemos entre 10 y 15 Minerales.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
+            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
+          ],
+          locationInfo: [
+            'Las minas de hierro se encuentran cerca de la ciudad Blillinton.',
+            'Las minas de plata se encuentran cerca de la ciudad Dahl.',
+            'Las minas de Oro, se encuentran dentro del Dungeon Veril, donde tendrás que ser muy cuidadoso ya que es el dungeon más transcurrido de las tierras.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'lingotes',
+          nombre: 'Creación de Lingotes',
+          icon: 'box',
+          descripcion: 'La habilidad del Trabajador con el oficio en Minería es quién posee la habilidad de fundir los minerales extraídos de los yacimientos para poder convertirlos en Lingotes los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Herrero. Para poder fundir los materiales nos acercaremos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta la Fragua y, seleccionando de nuestro inventario los minerales, presionar tecla Usar (U o doble click) y clickear sobre la fragua.',
+          descripcion2: 'La fundición la podremos realizar con nuestro Trabajador con el oficio en Minería ya que es él quién podrá fundir todos los tipos de materiales como el Hierro, la Plata o el Oro. El resto de las clases sólo podrá fundir minerales de hierro.',
+          itemsTable: {
+            title: 'Items para la Fundición',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Fragua', 'Lugar donde podremos fundir nuestros minerales.'],
+              ['Mineral de Hierro', 'Recurso extraído desde un Yacimiento de Hierro'],
+              ['Mineral de Plata', 'Recurso extraído desde un Yacimiento de Plata'],
+              ['Mineral de Oro', 'Recurso extraído desde un Yacimiento de Oro']
+            ]
+          },
+          fundicion: {
+            title: 'Fundición de Minerales',
+            intro: 'Con nuestro Trabajador nos acercaremos hasta la casa del Herrero para fundir los minerales en la fragua:',
+            requisitos: [
+              'Necesitaremos 25 skills en Minería para fundir Minerales de Hierro con un Trabajador y 75 skills para el resto de las clases.',
+              'Necesitaremos 50 skills en Minería para fundir Minerales de Plata.',
+              'Necesitaremos 100 skills en Minería para fundir Minerales de Oro.'
+            ]
+          },
+          conversionTable: {
+            title: 'Cantidad de Minerales por Lingote',
+            headers: ['Minerales', 'Cantidad', 'Lingote'],
+            rows: [
+              ['Mineral de Hierro', '70', '5 Lingote de Hierro'],
+              ['Mineral de Plata', '100', '5 Lingote de Plata'],
+              ['Mineral de Oro', '175', '5 Lingote de Oro']
+            ]
+          }
+        },
+        {
+          id: 'herreria',
+          nombre: 'Herrería',
+          icon: 'hammer',
+          descripcion: 'El oficio de la Herrería sirve para la construcción de poderosas Armas, Armaduras, Cascos, Escudos e Items Mágico a base de Lingotes de Hierro, Plata y Oro. Una vez que tengas un Martillo de Herrero y nuestros Lingotes deberemos de dirigirnos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Yunque y, equipando nuestro Martillo de Herrero con la tecla (E), presionaremos la tecla Usar (U o doble click) sobre el Yunque y se nos abrirá el menú de creación.',
+          descripcion2: 'El Trabajador con el oficio en Herrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Herrería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Martillo de Herrero', 'Item necesario para la creación con Lingotes, se vende en el NPC "Vendedor".'],
+              ['Yunque', 'Lugar donde podremos crear nuestros objetos o fundirlos.'],
+              ['Lingote de Hierro', 'Recurso fundido de los Minerales de Hierro'],
+              ['Lingote de Plata', 'Recurso fundido de los Minerales de Plata'],
+              ['Lingote de Oro', 'Recurso fundido de los Minerales de Oro']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando el Martillo de Herrero y haciendo click en el Yunque abrimos el menú de creación.',
+              'Podremos seleccionar Armas o Armaduras (Armaduras/Cascos y Escudos).',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+          /* links: {
+            title: 'Lista de Objetos de Creación',
+            intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
+            items: [
+              { text: '1 - Armaduras Altos (Hombre/Mujer)', target: 'items', subsection: '1.1' },
+              { text: '2 - Armaduras Bajos (Enano/Gnomo)', target: 'items', subsection: '1.1' },
+              { text: '3 - Armas', target: 'items', subsection: '2.1' },
+              { text: '4 - Escudos y Cascos', target: 'items', subsection: '3.1' }
+            ]
+          }, */
+          fundicion: {
+            title: 'Fundir Objetos de Herrería',
+            descripcion: 'El oficio de la fundición consiste en la fundición de minerales para convertirlos en lingotes (útiles para crear armas, armaduras, etc., en la herrería), una vez que tengas una cierta cantidad de objetos a fundir deberás buscar una fragua, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre la fragua. La fundición depende de la clase y los puntos ya que los objetos a fundir son aquellos creados mediante la Herrería. Que requieran al menos 50 skills, se podrán desmantelar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
+            note: 'IMPORTANTE: SOLO podremos fundir los objetos del siguiente listado cuales SKILLS en HERRERÍA deberán de ser 50 o superiores.'
+          }
+        },
+        {
+          id: 'esquila',
+          nombre: 'Esquila',
+          icon: 'scissors',
+          descripcion: 'Cypher vio que los lobos y osos que el tanto quería, estaban siendo masacrados solo por sus pieles y decidió prohibir la caza indiscriminada. Por esto, todos los sastres entraron en huelga, y por muchos días la gente anduvo desnuda en señal de protesta. En consecuencia, el Dios Cypher autorizó la esquila de animales y trajo unos pastores especializados en el tema, que llegaron desde lejos con sus tijeras y algunas simpáticas criaturas, así y de pronto, los sastres aprendieron a esquilar y a hilar la lana obtenida, y con esta pudieron crear las ropas que tan bien vestían.',
+          descripcion2: 'Estos Trabajadores con unas Tijeras de Esquilar, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el animal. Con la Esquila obtendremos la extracción de Lanas de Oveja, Cabra y Llama materia prima la cual Hilaremos y con los ovillos creados podremos realizar poderosas Vestimentas y Túnicas con un Sastre. El Trabajador con el oficio en Esquilar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
+          itemsTable: {
+            title: 'Items de Esquila',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Tijeras de Esquila', 'Item necesario para extraer Lana de los animales, se vende en el NPC "Vendedor"'],
+              ['Lana de Oveja', 'Recurso extraído de una Oveja'],
+              ['Lana de Cabra', 'Recurso extraído de una Cabra'],
+              ['Lana de Llama', 'Recurso extraído de una Llama']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Lanas',
+            intro: 'Con nuestro Trabajador y su herramienta de trabajo Tijeras de Esquilar nos dirigiremos a zona insegura para empezar nuestra extracción de lanas:',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 12: extraemos entre 5 a 10 Lanas sin importar tu nivel.',
+              'Nivel 13 o Más: extraemos (Mínimo: TuNivel-10 / Máximo: TuNivel-5). Osea si somos Nivel 20 extraemos entre 10 y 15 Lanas.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
+            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
+          ],
+          locationInfo: [
+            'Las Ovejas se encuentran ubicadas en el Mapa 29.',
+            'Las Cabras se encuentran ubicadas en el Mapa 4.',
+            'Las Llamas se encuentran ubicadas en el Mapa 23.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'hilado',
+          nombre: 'Hilado',
+          icon: 'shirt',
+          descripcion: 'La habilidad del Trabajador con el oficio en Esquilación es quién posee la habilidad de hilar las lanas extraídas de los animales para poder convertirlos en Ovillos los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Sastre. Para poder hilar las lanas en ovillos nos acercaremos hasta la casa del comerciante Sastre los cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Telar y, seleccionando de nuestro inventario las lanas, presionar tecla Usar (U o doble click) y clickear sobre el telar.',
+          descripcion2: 'La Hilación la podremos realizar con nuestro Trabajador con el oficio en Esquilación ya que es él quién podrá hilar todos los tipos de Lanas como Oveja, Cabra y Llama. El resto de las clases sólo podrá hilar Lanas de Oveja.',
+          itemsTable: {
+            title: 'Items para Hilar',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Telar', 'Lugar donde podremos hilar nuestras lanas'],
+              ['Lana de Oveja', 'Recurso extraído de una Oveja'],
+              ['Lana de Cabra', 'Recurso extraído de una Cabra'],
+              ['Lana de Llama', 'Recurso extraído de una Llama']
+            ]
+          },
+          hilado: {
+            title: 'Convirtiendo en Ovillos',
+            intro: 'Con nuestro Trabajador nos acercaremos hasta la casa del Sastre para hilar con el telar:',
+            requisitos: [
+              'Necesitaremos 25 skills en Esquilación para hilar Ovillos de Oveja con un Trabajador y 75 skills para el resto de las clases.',
+              'Necesitaremos 50 skills en Esquilación para hilar Ovillos de Cabra.',
+              'Necesitaremos 100 skills en Esquilación para hilar Ovillos de Llama.'
+            ]
+          },
+          conversionTable: {
+            title: 'Cantidad de Lanas por Ovillo',
+            headers: ['Lanas', 'Cantidad', 'Ovillos'],
+            rows: [
+              ['Lana de Oveja', '70', '5 Ovillo de Oveja'],
+              ['Lana de Cabra', '100', '5 Ovillo de Cabra'],
+              ['Lana de Llama', '175', '5 Ovillo de Llama']
+            ]
+          }
+        },
+        {
+          id: 'sastreria',
+          nombre: 'Sastrería',
+          icon: 'shirt',
+          descripcion: 'El oficio de la Sastrería sirve para construir Vestimentas y Túnicas a base de Ovillos. Una vez que tengas un Costurero deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Sastrería.',
+          descripcion2: 'El Trabajador con el oficio en Sastrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Sastrería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Costurero', 'Item necesario para la creación con Ovillos, se vende en el NPC "Vendedor".'],
+              ['Ovillo de Oveja', 'Recurso hilado de Lana de Oveja'],
+              ['Ovillo de Cabra', 'Recurso hilado de Lana de Cabra'],
+              ['Ovillo de Llama', 'Recurso hilado de Lana de Llama']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando nuestro Costurero abrimos el menú de creación.',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+         /*  links: {
+            title: 'Lista de Objetos de Creación',
+            intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
+            items: [
+              { text: '1 - Items de Sastre (Vestimentas y Túnicas)', target: 'items', subsection: '4.1' }
+            ]
+          }, */
+          deshilachado: {
+            title: 'Deshilachado de Objetos de Sastrería',
+            descripcion: 'El oficio deshilachar consiste en la recuperación de ovillos de prendas que no utilizaremos o para poder crear unas mejores, una vez que tengas una cierta cantidad de objetos a deshilachar deberás buscar un telar ubicado en la casa del sastre de cada ciudad, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre el telar. La deshilachación depende de la clase y los puntos ya que los objetos a deshilachar son aquellos creados mediante la Sastrería. Que requieran al menos 50 skills, se podrán deshilachar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
+            note: 'IMPORTANTE: SOLO podremos deshilachar los objetos del siguiente listado cuales SKILLS en SASTRERÍA deberán de ser 50 o superiores:',
+            table: {
+              headers: ['Item', 'Defensa Corporal', 'Defensa Mágica', 'Clases Permitidas', 'Ovillos Oveja', 'Ovillos Cabra', 'Ovillos Llama', 'Skills'],
+              rows: [
+                ['Túnica Tamuzz [DefCorp]', '11/13', '0/0', 'Mago/Bardo/Druida', '350', '150', '-', '50'],
+                ['Túnica Roja (E/G) [DefCorp]', '11/13', '0/0', 'Mago/Bardo/Druida', '350', '150', '-', '50'],
+                ['Túnica Legendaria [DefCorp]', '10/15', '0/0', 'Mago/Bardo/Druida', '400', '200', '-', '50'],
+                ['Túnica Infernal [DefCorp]', '10/18', '0/0', 'Mago/Bardo/Druida', '400', '250', '-', '60'],
+                ['Túnica Infernal (G/E) [DefCorp]', '10/18', '0/0', 'Mago/Bardo/Druida', '400', '250', '-', '60'],
+                ['Túnica Gaia [DefCorp]', '13/14', '0/0', 'Mago/Bardo/Druida', '600', '450', '-', '75'],
+                ['Túnica Negra (E/G) [DefMag]', '1/1', '6/12', 'Mago/Bardo/Druida', '450', '250', '30', '75'],
+                ['Vestido de Bruja (M)', '14/16', '0/0', 'Mago/Bardo/Druida', '700', '500', '-', '80'],
+                ['Túnica de Druida [DefCorp]', '14/16', '0/0', 'Mago/Bardo/Druida', '700', '500', '-', '80'],
+                ['Túnica Roja (E/G) [DefMag]', '1/2', '10/18', 'Mago/Bardo/Druida', '800', '300', '50', '80'],
+                ['Túnica Tamuzz [DefMag]', '1/2', '10/18', 'Mago/Bardo/Druida', '800', '300', '50', '80'],
+                ['Túnica de Druida [DefMag]', '1/11', '4/17', 'Mago/Bardo/Druida', '700', '500', '60', '85'],
+                ['Túnica Maléfica [DefCorp]', '15/16', '0/0', 'Mago/Bardo/Druida', '900', '750', '-', '90'],
+                ['Túnica Maléfica (G/E) [DefCorp]', '15/16', '0/0', 'Mago/Bardo/Druida', '900', '750', '-', '90'],
+                ['Túnica Gaia [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
+                ['Túnica Marrón Combinada (E/G) [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
+                ['Túnica Verde Combinada (E/G-M) [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
+                ['Túnica Maléfica [DefMag]', '3/3', '20/25', 'Mago/Bardo/Druida', '1300', '700', '100', '100'],
+                ['Túnica Maléfica (G/E) [DefMag]', '3/3', '20/25', 'Mago/Bardo/Druida', '1300', '700', '100', '100'],
+                ['Vestimenta de la Oscuridad (1)', '1/1', '0/0', 'Guerrero/Cazador', '300', '200', '100', '100'],
+                ['Vestimenta de la Oscuridad (G/E) (1)', '1/1', '0/0', 'Guerrero/Cazador', '300', '200', '100', '100'],
+                ['Túnica Invernal', '10/10', '0/0', 'Todas las clases altas de hombres', '200', '50', '0', '100'],
+                ['Túnica Invernal (Mujer)', '10/10', '0/0', 'Todas las clases altas de mujer', '200', '50', '0', '100'],
+                ['Túnica Invernal (E/G)', '10/10', '0/0', 'Todas las clases enano o gnomo', '200', '50', '0', '100']
+              ]
+            }
+          }
+        },
+        {
+          id: 'reutilizacion',
+          nombre: 'Reutilización de Recursos',
+          icon: 'recycle',
+          descripcion: 'La reutilización de recursos consiste en recuperar materiales de objetos que ya no utilizamos. Esto incluye Fundir objetos de Herrería, Desmantelar objetos de Carpintería, y Deshilachar objetos de Sastrería.',
+          descripcion2: 'Cada proceso permite recuperar entre el 45% y 75% de los materiales originales, dependiendo del azar. Solo se pueden reutilizar objetos que requieran al menos 50 skills para su creación.',
+          sections: [
+            {
+              title: 'Fundir (Herrería)',
+              descripcion: 'Busca una fragua, selecciona el objeto, presiona U y clickea sobre la fragua.',
+              requirement: 'Requiere 50+ skills en Herrería.'
+            },
+            {
+              title: 'Desmantelar (Carpintería)',
+              descripcion: 'Busca un serrucho en la casa del carpintero, selecciona el objeto, presiona U y clickea sobre el serrucho.',
+              requirement: 'Requiere 50+ skills en Carpintería.'
+            },
+            {
+              title: 'Deshilachar (Sastrería)',
+              descripcion: 'Busca un telar en la casa del sastre, selecciona el objeto, presiona U y clickea sobre el telar.',
+              requirement: 'Requiere 50+ skills en Sastrería.'
+            }
+          ]
+        },
+        {
+          id: 'compra',
+          nombre: 'Compra de Recursos',
+          icon: 'shopping-cart',
+          descripcion: 'La compra de recursos es una alternativa para aquellos que no desean extraer los materiales por sí mismos. Puedes adquirir diversos recursos directamente de otros jugadores o NPCs comerciantes.',
+          descripcion2: 'Los precios varían según la oferta y demanda del servidor. Es una buena opción si necesitas grandes cantidades de materiales rápidamente para craftear objetos.',
+          tips: [
+            'Revisa el comercio global para encontrar las mejores ofertas.',
+            'Los precios suelen ser más bajos cuando hay muchos jugadores trabajando.',
+            'Considera comprar en grandes cantidades para obtener mejores precios.',
+            'Algunos NPCs venden recursos básicos a precios fijos.'
+          ]
+        }
+      ]
     }
   },
-  {
+  /* {
     id: 'entrenamiento',
     title: 'Guía de Entrenamiento',
     icon: 'target',
@@ -367,7 +885,7 @@ export const wikiSections = [
       description: 'Tablas de experiencia requerida y skills naturales por nivel.',
       placeholder: 'Tablas de progresión y habilidades naturales...'
     }
-  },
+  }, */
   {
     id: 'mapa',
     title: 'Mapa',
@@ -1612,6 +2130,37 @@ export const wikiSections = [
     }
   },
   {
+    id: 'atributos',
+    title: 'Atributos',
+    icon: 'trending-up',
+    content: {
+      description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
+      intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
+      attributes: [
+        {
+          name: 'Fuerza',
+          description: 'La fuerza de un personaje influye en el daño que es capaz de infligir con sus ataques físicos. Cuanta más fuerza tenga un personaje, mayor será el daño causado con armas cuerpo a cuerpo, a distancia o sin armas por lo que es un atributo de suma importancia para las clases que combatan con esta modalidad. Este atributo puede incrementarse temporalmente, al igual que la agilidad.'
+        },
+        {
+          name: 'Agilidad',
+          description: 'La agilidad es el atributo que afecta a la capacidad evasiva y la puntería de un personaje. En un atributo ofensivamente útil para las clases de combate físico y defensivamente favorable para todos los personajes. Este atributo puede incrementarse temporalmente, al igual que la fuerza.'
+        },
+        {
+          name: 'Inteligencia',
+          description: 'La inteligencia afecta en forma directa la cantidad de maná que ganará un personaje al subir de nivel, dependiendo también de la clase. Es un atributo muy importante para todas las clases que necesiten utilizar hechizos, marcando muchas veces el límite en la capacidad mágica de un personaje.'
+        },
+        {
+          name: 'Carisma',
+          description: 'El carisma afecta las capacidades de un personaje para la creación de una party así como su facilidad para la doma de criaturas. Cuanto mayor sea el valor de este atributo, más poderosas serán las criaturas que podrá domar un personaje.'
+        },
+        {
+          name: 'Constitución',
+          description: 'Los puntos de vida de un personaje dependen directamente de su constitución y clase. Un valor más elevado en este atributo aumenta los puntos de vida iniciales y ganados por nivel de un personaje. Sin duda es un valor importante para todos los personajes.'
+        }
+      ]
+    }
+  },
+  /* {
     id: 'guerras',
     title: 'Guerras de Clan',
     icon: 'swords',
@@ -1799,7 +2348,7 @@ export const wikiSections = [
       description: 'Soluciones a problemas comunes del juego.',
       placeholder: 'Guía de troubleshooting...'
     }
-  }
+  } */
 ];
 
 export const socialLinks = [

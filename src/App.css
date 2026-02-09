@@ -98,7 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://images.pexels.com/photos/3428289/pexels-photo-3428289.jpeg');
+  background-image: url('https://wallpapercave.com/wp/wp10890303.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -108,7 +108,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(61, 40, 23, 0.85) 0%, rgba(139, 111, 71, 0.75) 100%);
+  /* background: linear-gradient(135deg, rgba(61, 40, 23, 0.85) 0%, rgba(139, 111, 71, 0.75) 100%); */
 }
 
 .hero-content {
@@ -641,10 +641,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.4) 50%,
-      rgba(0, 0, 0, 0.75) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
   backdrop-filter: blur(1px);
   transition: all 0.3s ease;
 }
@@ -656,10 +658,12 @@
 }
 
 .class-card:hover .class-card-overlay {
-  background: linear-gradient(to bottom,
-      rgba(201, 169, 97, 0.1) 0%,
-      rgba(201, 169, 97, 0.3) 50%,
-      rgba(139, 90, 43, 0.85) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(201, 169, 97, 0.1) 0%,
+    rgba(201, 169, 97, 0.3) 50%,
+    rgba(139, 90, 43, 0.85) 100%
+  );
 }
 
 .class-name {
@@ -1342,7 +1346,6 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -1352,7 +1355,6 @@
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -1363,7 +1365,6 @@
     opacity: 0;
     transform: translateY(30px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1371,24 +1372,18 @@
 }
 
 @keyframes float {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-15px);
   }
 }
 
 @keyframes bounce {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-10px);
   }
@@ -1633,11 +1628,11 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
-
+  
   .druid-bonus-box {
     flex-direction: column;
   }
-
+  
   .taming-table th,
   .taming-table td {
     padding: 0.5rem 0.25rem;
@@ -1743,21 +1738,20 @@
 
 /* Responsive styles for Spells section */
 @media (max-width: 768px) {
-
   .spells-table th,
   .spells-table td {
     padding: 0.5rem 0.25rem;
     font-size: 0.85rem;
   }
-
+  
   .spells-table .spell-name {
     min-width: 150px;
   }
-
+  
   .desc-cell {
     max-width: 200px;
   }
-
+  
   .desc-content {
     max-width: 250px;
   }
@@ -1945,12 +1939,12 @@
   .clan-levels-grid {
     grid-template-columns: 1fr;
   }
-
+  
   .fundacion-box {
     flex-direction: column;
     text-align: center;
   }
-
+  
   .nota-final-box {
     flex-direction: column;
   }
@@ -2180,17 +2174,16 @@
 
 /* Responsive for Items */
 @media (max-width: 768px) {
-
   .items-table th,
   .items-table td {
     padding: 0.4rem 0.25rem;
     font-size: 0.8rem;
   }
-
+  
   .nobility-sets {
     grid-template-columns: 1fr;
   }
-
+  
   .items-subcategory-btn {
     padding: 0.6rem 0.75rem;
   }
@@ -2367,8 +2360,7 @@
    ========================================== */
 
 .map-image-placeholder {
-  background: var(--parchment-light);  
-  border-radius: 12px;  
+  border-radius: 12px;
   text-align: center;
   margin: 1.5rem 0 2rem 0;
   display: flex;
@@ -2492,14 +2484,726 @@
   .map-sections {
     grid-template-columns: 1fr;
   }
-
+  
   .party-command-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-
+  
   .map-image-placeholder {
     padding: 2rem 1rem;
+  }
+}
+
+
+/* ==========================================
+   TRABAJO SECTION STYLES
+   ========================================== */
+
+/* Trabajos Grid (similar to Classes) */
+.trabajos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.trabajo-card {
+  position: relative;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 0;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--parchment-light);
+}
+
+.trabajo-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(244, 232, 208, 0.7) 0%,
+    rgba(212, 195, 160, 0.85) 100%
+  );
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+}
+
+.dark .trabajo-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(42, 31, 21, 0.7) 0%,
+    rgba(61, 46, 32, 0.85) 100%
+  );
+}
+
+.trabajo-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.trabajo-card:hover .trabajo-card-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(201, 169, 97, 0.3) 0%,
+    rgba(139, 111, 71, 0.9) 100%
+  );
+}
+
+.trabajo-card-icon {
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.trabajo-card-icon svg {
+  color: var(--parchment-light);
+  width: 24px;
+  height: 24px;
+}
+
+.trabajo-name {
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.dark .trabajo-name {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.trabajo-card:hover .trabajo-name {
+  color: var(--parchment-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Important Box */
+.trabajo-important-box {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brown) 100%);
+  color: var(--parchment-light);
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.trabajo-important-box h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem 0;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+}
+
+.trabajo-important-box ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.trabajo-important-box li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.trabajo-important-box li:last-child {
+  margin-bottom: 0;
+}
+
+/* Trabajo Detail View */
+.trabajo-detail-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  font-family: 'Cinzel', serif;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.trabajo-description {
+  background-color: var(--parchment-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.trabajo-description p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.trabajo-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Trabajo Bonus Box */
+.trabajo-bonus-box {
+  background: linear-gradient(135deg, var(--accent-brown) 0%, var(--accent-gold) 100%);
+  color: var(--parchment-light);
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.trabajo-bonus-box h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.trabajo-bonus-box ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.trabajo-bonus-box li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Trabajo Tables */
+.trabajo-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.trabajo-table th,
+.trabajo-table td {
+  border-right: 1px solid var(--border-color);
+  padding: 0.65rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.trabajo-table th:last-child,
+.trabajo-table td:last-child {
+  border-right: none;
+}
+
+.trabajo-table .item-name {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Cofres Table */
+.cofres-table .cofre-name {
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.cofres-table .cofre-items {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+/* Crafting Table */
+.crafting-table td {
+  text-align: center;
+}
+
+.crafting-table td:first-child {
+  text-align: left;
+}
+
+/* Conversion Table */
+.conversion-table .cantidad-cell {
+  text-align: center;
+  font-weight: 700;
+  color: var(--accent-gold);
+  background: var(--parchment-dark);
+}
+
+/* Deshilachado Table */
+.deshilachado-table th,
+.deshilachado-table td {
+  padding: 0.5rem 0.4rem;
+  font-size: 0.8rem;
+}
+
+/* Note Boxes */
+.trabajo-note-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--parchment-light);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.trabajo-note-box.warning {
+  background: rgba(201, 169, 97, 0.15);
+  border-color: var(--accent-gold);
+}
+
+.trabajo-note-box svg {
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  margin-top: 2px;
+}
+
+.trabajo-note-box p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Extracción Section */
+.trabajo-extraccion-section {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.calculo-title {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-brown);
+  font-size: 1.1rem;
+  margin: 1rem 0 0.75rem 0;
+}
+
+.zonas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.zona-card {
+  background: var(--parchment-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.zona-title {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-gold);
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.zona-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.zona-card li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Formulas List */
+.formulas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.formula-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-bg);
+  border-radius: 6px;
+  border-left: 4px solid var(--accent-gold);
+}
+
+.formula-item svg {
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  margin-top: 2px;
+}
+
+.formula-item span {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.rate-note {
+  background: var(--parchment-dark);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.rate-note p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Creación Section */
+.trabajo-creacion-section {
+  margin: 1.5rem 0;
+}
+
+.creacion-steps {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.creacion-steps li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Links Section */
+.trabajo-links-section {
+  margin: 1.5rem 0;
+}
+
+.trabajo-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.trabajo-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.trabajo-link-btn:hover {
+  background: var(--accent-gold);
+  color: var(--parchment-light);
+  border-color: var(--accent-brown);
+  transform: translateX(4px);
+}
+
+.trabajo-link-btn svg {
+  flex-shrink: 0;
+  color: var(--accent-gold);
+}
+
+.trabajo-link-btn:hover svg {
+  color: var(--parchment-light);
+}
+
+/* Desmantelación Section */
+.trabajo-desmantelacion-section {
+  margin: 1.5rem 0;
+}
+
+/* Fundición Section */
+.trabajo-fundicion-section {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.requisitos-list {
+  margin: 0.75rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+.requisitos-list li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Reutilización Sections */
+.reutilizacion-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.reutilizacion-card {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.reutilizacion-card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.reutilizacion-card h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-gold);
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+}
+
+.reutilizacion-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+.requirement-badge {
+  display: inline-block;
+  background: var(--accent-brown);
+  color: var(--parchment-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Tips Section */
+.trabajo-tips-section {
+  margin: 1.5rem 0;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.tips-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-light);
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.tips-list li svg {
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  margin-top: 2px;
+}
+
+.tips-list li span {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Important Notes */
+.trabajo-important-notes {
+  background: var(--parchment-light);
+  border-left: 4px solid var(--accent-gold);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.trabajo-important-notes h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-brown);
+  margin: 0 0 0.75rem 0;
+}
+
+.trabajo-important-notes ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.trabajo-important-notes li {
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Location Info */
+.trabajo-location-info {
+  background: var(--parchment-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.trabajo-location-info h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  color: var(--accent-brown);
+  margin: 0 0 0.75rem 0;
+}
+
+.trabajo-location-info h4 svg {
+  color: var(--accent-gold);
+}
+
+.trabajo-location-info ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.trabajo-location-info li {
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+/* Castillo Note */
+.trabajo-castillo-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brown) 100%);
+  color: var(--parchment-light);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.trabajo-castillo-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.trabajo-castillo-note p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Castillo Section */
+.trabajo-castillo-section {
+  background: var(--parchment-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-top: 2rem;
+}
+
+.trabajo-castillo-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Cinzel', serif;
+  color: var(--accent-gold);
+  margin: 0 0 0.75rem 0;
+}
+
+.trabajo-castillo-section p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive for Trabajo */
+@media (max-width: 768px) {
+  .trabajos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .trabajo-card {
+    min-height: 140px;
+  }
+  
+  .trabajo-detail-title {
+    font-size: 1.8rem;
+  }
+  
+  .zonas-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .reutilizacion-sections {
+    grid-template-columns: 1fr;
+  }
+  
+  .trabajo-table th,
+  .trabajo-table td {
+    padding: 0.5rem 0.35rem;
+    font-size: 0.8rem;
+  }
+  
+  .deshilachado-table th,
+  .deshilachado-table td {
+    padding: 0.4rem 0.25rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trabajos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  .trabajo-card {
+    min-height: 120px;
+  }
+  
+  .trabajo-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .trabajo-card-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .trabajo-name {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
   }
 }

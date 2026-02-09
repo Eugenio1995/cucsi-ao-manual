@@ -28,6 +28,9 @@ export const WikiContent = () => {
   
   // States for items section
   const [selectedItemSubsection, setSelectedItemSubsection] = useState(null);
+  
+  // States for trabajo section
+  const [selectedTrabajo, setSelectedTrabajo] = useState(null);
 
   const getIcon = (iconName) => {
     const iconMap = {
@@ -67,7 +70,13 @@ export const WikiContent = () => {
       'info': Icons.Info,
       'alert-circle': Icons.AlertCircle,
       'axe': Icons.Axe,
-      'shirt': Icons.Shirt
+      'shirt': Icons.Shirt,
+      'fish': Icons.Fish,
+      'leaf': Icons.Leaf,
+      'flask': Icons.FlaskConical,
+      'pickaxe': Icons.Pickaxe,
+      'scissors': Icons.Scissors,
+      'recycle': Icons.Recycle
     };
     const IconComponent = iconMap[iconName] || Icons.BookOpen;
     return <IconComponent className="section-icon" size={20} />;
@@ -1408,6 +1417,504 @@ export const WikiContent = () => {
       );
     }
     
+    // Render Trabajo
+    if (section.id === 'trabajo') {
+      // Helper function to navigate to items section
+      const navigateToItems = (subsection) => {
+        setActiveSection('items');
+        setSelectedItemSubsection(subsection);
+      };
+      
+      // If viewing a specific trabajo
+      if (selectedTrabajo) {
+        const trabajo = section.content.trabajos.find(t => t.id === selectedTrabajo);
+        
+        return (
+          <div className="section-content">
+            <button 
+              className="back-button"
+              onClick={() => setSelectedTrabajo(null)}
+            >
+              ← Volver a Trabajos
+            </button>
+            
+            <h2 className="trabajo-detail-title">{trabajo.nombre}</h2>
+            
+            <div className="trabajo-description">
+              <p>{trabajo.descripcion}</p>
+              {trabajo.descripcion2 && <p>{trabajo.descripcion2}</p>}
+            </div>
+            
+            {/* Bonificación */}
+            {trabajo.bonificacion && (
+              <div className="trabajo-bonus-box">
+                <h4><Icons.Zap size={18} /> {trabajo.bonificacion.title || 'Bonificación'}</h4>
+                {typeof trabajo.bonificacion === 'string' ? (
+                  <p>{trabajo.bonificacion}</p>
+                ) : (
+                  <ul>
+                    {trabajo.bonificacion.items.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            )}
+            
+            {/* Items Table */}
+            {trabajo.itemsTable && (
+              <div className="table-container">
+                <h3 className="table-title">{trabajo.itemsTable.title}</h3>
+                <div className="table-scroll">
+                  <table className="wiki-table trabajo-table">
+                    <thead>
+                      <tr>
+                        {trabajo.itemsTable.headers.map((header, idx) => (
+                          <th key={idx}>{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trabajo.itemsTable.rows.map((row, idx) => (
+                        <tr key={idx}>
+                          {row.map((cell, cIdx) => (
+                            <td key={cIdx} className={cIdx === 0 ? 'item-name' : ''}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+            
+            {/* Resources Table */}
+            {trabajo.resourcesTable && (
+              <div className="table-container">
+                <h3 className="table-title">{trabajo.resourcesTable.title}</h3>
+                <div className="table-scroll">
+                  <table className="wiki-table trabajo-table">
+                    <thead>
+                      <tr>
+                        {trabajo.resourcesTable.headers.map((header, idx) => (
+                          <th key={idx}>{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trabajo.resourcesTable.rows.map((row, idx) => (
+                        <tr key={idx}>
+                          {row.map((cell, cIdx) => (
+                            <td key={cIdx} className={cIdx === 0 ? 'item-name' : ''}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+            
+            {/* Cofres Note and Table (for Pesca) */}
+            {trabajo.cofresNote && (
+              <div className="trabajo-note-box warning">
+                <Icons.AlertCircle size={18} />
+                <p>{trabajo.cofresNote}</p>
+              </div>
+            )}
+            
+            {trabajo.cofresTable && (
+              <div className="table-container">
+                <h3 className="table-title">{trabajo.cofresTable.title}</h3>
+                <div className="table-scroll">
+                  <table className="wiki-table trabajo-table cofres-table">
+                    <thead>
+                      <tr>
+                        {trabajo.cofresTable.headers.map((header, idx) => (
+                          <th key={idx}>{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trabajo.cofresTable.rows.map((row, idx) => (
+                        <tr key={idx}>
+                          {row.map((cell, cIdx) => (
+                            <td key={cIdx} className={cIdx === 0 ? 'item-name cofre-name' : cIdx === 2 ? 'cofre-items' : ''}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+            
+            {/* Extracción Section */}
+            {trabajo.extraccion && (
+              <div className="trabajo-extraccion-section">
+                <h3 className="subsection-title">{trabajo.extraccion.title}</h3>
+                <p className="content-text">{trabajo.extraccion.intro}</p>
+                
+                {trabajo.extraccion.calculoTitle && (
+                  <h4 className="calculo-title">{trabajo.extraccion.calculoTitle}</h4>
+                )}
+                
+                {trabajo.extraccion.calculoIntro && (
+                  <p className="content-text">{trabajo.extraccion.calculoIntro}</p>
+                )}
+                
+                {/* Zonas (for Pesca) */}
+                {trabajo.extraccion.zonas && (
+                  <div className="zonas-container">
+                    {trabajo.extraccion.zonas.map((zona, idx) => (
+                      <div key={idx} className="zona-card">
+                        <h5 className="zona-title">{zona.nombre}:</h5>
+                        <ul>
+                          {zona.items.map((item, iIdx) => (
+                            <li key={iIdx}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Formulas (for other trabajos) */}
+                {trabajo.extraccion.formulas && (
+                  <div className="formulas-list">
+                    {trabajo.extraccion.formulas.map((formula, idx) => (
+                      <div key={idx} className="formula-item">
+                        <Icons.Calculator size={16} />
+                        <span>{formula}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {trabajo.extraccion.rateNote && (
+                  <div className="rate-note">
+                    <p>{trabajo.extraccion.rateNote}</p>
+                  </div>
+                )}
+                
+                {trabajo.extraccion.importantNote && (
+                  <div className="trabajo-note-box">
+                    <Icons.AlertCircle size={18} />
+                    <p>{trabajo.extraccion.importantNote}</p>
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {/* Creación Section */}
+            {trabajo.creacion && (
+              <div className="trabajo-creacion-section">
+                <h3 className="subsection-title">{trabajo.creacion.title}</h3>
+                <ol className="creacion-steps">
+                  {trabajo.creacion.steps.map((step, idx) => (
+                    <li key={idx}>{step}</li>
+                  ))}
+                </ol>
+              </div>
+            )}
+            
+            {/* Crafting Table */}
+            {trabajo.craftingTable && (
+              <div className="table-container">
+                <h3 className="table-title">{trabajo.craftingTable.title}</h3>
+                <div className="table-scroll">
+                  <table className="wiki-table trabajo-table crafting-table">
+                    <thead>
+                      <tr>
+                        {trabajo.craftingTable.headers.map((header, idx) => (
+                          <th key={idx}>{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trabajo.craftingTable.rows.map((row, idx) => (
+                        <tr key={idx}>
+                          {row.map((cell, cIdx) => (
+                            <td key={cIdx} className={cIdx === 0 ? 'item-name' : ''}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+            
+            {/* Links to Items section */}
+            {trabajo.links && (
+              <div className="trabajo-links-section">
+                <h3 className="subsection-title">{trabajo.links.title}</h3>
+                <p className="content-text">{trabajo.links.intro}</p>
+                <div className="trabajo-links-grid">
+                  {trabajo.links.items.map((link, idx) => (
+                    <button
+                      key={idx}
+                      className="trabajo-link-btn"
+                      onClick={() => navigateToItems(link.subsection)}
+                    >
+                      <Icons.ExternalLink size={16} />
+                      <span>{link.text}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            {/* Desmantelación/Fundición/Deshilachado */}
+            {trabajo.desmantelacion && (
+              <div className="trabajo-desmantelacion-section">
+                <h3 className="subsection-title">{trabajo.desmantelacion.title}</h3>
+                <p className="content-text">{trabajo.desmantelacion.descripcion}</p>
+                {trabajo.desmantelacion.note && (
+                  <div className="trabajo-note-box warning">
+                    <Icons.AlertCircle size={18} />
+                    <p>{trabajo.desmantelacion.note}</p>
+                  </div>
+                )}
+                {trabajo.desmantelacion.table && (
+                  <div className="table-scroll">
+                    <table className="wiki-table trabajo-table">
+                      <thead>
+                        <tr>
+                          {trabajo.desmantelacion.table.headers.map((header, idx) => (
+                            <th key={idx}>{header}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {trabajo.desmantelacion.table.rows.map((row, idx) => (
+                          <tr key={idx}>
+                            {row.map((cell, cIdx) => (
+                              <td key={cIdx} className={cIdx === 0 ? 'item-name' : ''}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {trabajo.deshilachado && (
+              <div className="trabajo-desmantelacion-section">
+                <h3 className="subsection-title">{trabajo.deshilachado.title}</h3>
+                <p className="content-text">{trabajo.deshilachado.descripcion}</p>
+                {trabajo.deshilachado.note && (
+                  <div className="trabajo-note-box warning">
+                    <Icons.AlertCircle size={18} />
+                    <p>{trabajo.deshilachado.note}</p>
+                  </div>
+                )}
+                {trabajo.deshilachado.table && (
+                  <div className="table-scroll">
+                    <table className="wiki-table trabajo-table deshilachado-table">
+                      <thead>
+                        <tr>
+                          {trabajo.deshilachado.table.headers.map((header, idx) => (
+                            <th key={idx}>{header}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {trabajo.deshilachado.table.rows.map((row, idx) => (
+                          <tr key={idx}>
+                            {row.map((cell, cIdx) => (
+                              <td key={cIdx} className={cIdx === 0 ? 'item-name' : ''}>{cell}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {trabajo.fundicion && !trabajo.fundicion.requisitos && (
+              <div className="trabajo-desmantelacion-section">
+                <h3 className="subsection-title">{trabajo.fundicion.title}</h3>
+                <p className="content-text">{trabajo.fundicion.descripcion}</p>
+                {trabajo.fundicion.note && (
+                  <div className="trabajo-note-box warning">
+                    <Icons.AlertCircle size={18} />
+                    <p>{trabajo.fundicion.note}</p>
+                  </div>
+                )}
+              </div>
+            )}
+            
+            {/* Fundición with requisitos (for Lingotes) */}
+            {trabajo.fundicion && trabajo.fundicion.requisitos && (
+              <div className="trabajo-fundicion-section">
+                <h3 className="subsection-title">{trabajo.fundicion.title}</h3>
+                <p className="content-text">{trabajo.fundicion.intro}</p>
+                <ul className="requisitos-list">
+                  {trabajo.fundicion.requisitos.map((req, idx) => (
+                    <li key={idx}>{req}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Hilado section */}
+            {trabajo.hilado && (
+              <div className="trabajo-fundicion-section">
+                <h3 className="subsection-title">{trabajo.hilado.title}</h3>
+                <p className="content-text">{trabajo.hilado.intro}</p>
+                <ul className="requisitos-list">
+                  {trabajo.hilado.requisitos.map((req, idx) => (
+                    <li key={idx}>{req}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Conversion Table */}
+            {trabajo.conversionTable && (
+              <div className="table-container">
+                <h3 className="table-title">{trabajo.conversionTable.title}</h3>
+                <div className="table-scroll">
+                  <table className="wiki-table trabajo-table conversion-table">
+                    <thead>
+                      <tr>
+                        {trabajo.conversionTable.headers.map((header, idx) => (
+                          <th key={idx}>{header}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {trabajo.conversionTable.rows.map((row, idx) => (
+                        <tr key={idx}>
+                          {row.map((cell, cIdx) => (
+                            <td key={cIdx} className={cIdx === 0 || cIdx === 2 ? 'item-name' : 'cantidad-cell'}>{cell}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
+            
+            {/* Reutilización sections */}
+            {trabajo.sections && (
+              <div className="reutilizacion-sections">
+                {trabajo.sections.map((sec, idx) => (
+                  <div key={idx} className="reutilizacion-card">
+                    <h4>{sec.title}</h4>
+                    <p>{sec.descripcion}</p>
+                    <span className="requirement-badge">{sec.requirement}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Tips (for Compra) */}
+            {trabajo.tips && (
+              <div className="trabajo-tips-section">
+                <h3 className="subsection-title">Consejos</h3>
+                <ul className="tips-list">
+                  {trabajo.tips.map((tip, idx) => (
+                    <li key={idx}>
+                      <Icons.Lightbulb size={16} />
+                      <span>{tip}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Important Notes */}
+            {trabajo.importantNotes && (
+              <div className="trabajo-important-notes">
+                <h4>Importante:</h4>
+                <ul>
+                  {trabajo.importantNotes.map((note, idx) => (
+                    <li key={idx}>{note}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Location Info */}
+            {trabajo.locationInfo && (
+              <div className="trabajo-location-info">
+                <h4><Icons.MapPin size={18} /> Ubicaciones:</h4>
+                <ul>
+                  {trabajo.locationInfo.map((loc, idx) => (
+                    <li key={idx}>{loc}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            
+            {/* Castillo Note */}
+            {trabajo.castilloNote && (
+              <div className="trabajo-castillo-note">
+                <Icons.Castle size={18} />
+                <p>{trabajo.castilloNote}</p>
+              </div>
+            )}
+            
+            {/* Trabajo en Castillo */}
+            {trabajo.trabajoCastillo && (
+              <div className="trabajo-castillo-section">
+                <h4><Icons.Castle size={18} /> Trabajo en Castillo</h4>
+                <p>{trabajo.trabajoCastillo}</p>
+              </div>
+            )}
+          </div>
+        );
+      }
+      
+      // Show trabajos grid
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+          
+          <div className="content-text">
+            <p>{section.content.intro}</p>
+          </div>
+          
+          {/* Important Note */}
+          <div className="trabajo-important-box">
+            <h4><Icons.AlertCircle size={18} /> {section.content.importantNote.title}</h4>
+            <ul>
+              {section.content.importantNote.items.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Trabajos Grid */}
+          <div className="trabajos-grid">
+            {section.content.trabajos.map((trabajo, idx) => (
+              <div 
+                key={idx} 
+                className="trabajo-card"
+                onClick={() => setSelectedTrabajo(trabajo.id)}
+                style={{
+                  backgroundImage: trabajo.image ? `url(${trabajo.image})` : 'none'
+                }}
+              >
+                <div className="trabajo-card-overlay"></div>
+                <div className="trabajo-card-icon">
+                  {getIcon(trabajo.icon)}
+                </div>
+                <h4 className="trabajo-name">{trabajo.nombre}</h4>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    
     return (
       <div className="section-content">
         <p className="section-description">{section.content.description}</p>
@@ -1449,6 +1956,7 @@ export const WikiContent = () => {
                     setSelectedItemSubsection(null); // Reset items subsection
                     setSelectedQuestCategory(null); // Reset quest category
                     setSelectedQuest(null); // Reset quest
+                    setSelectedTrabajo(null); // Reset selected trabajo
                     // Close sidebar on mobile after selection
                     if (window.innerWidth < 768) {
                       setSidebarOpen(false);
