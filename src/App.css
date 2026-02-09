@@ -641,12 +641,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.75) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.75) 100%);
   backdrop-filter: blur(1px);
   transition: all 0.3s ease;
 }
@@ -658,12 +656,10 @@
 }
 
 .class-card:hover .class-card-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(201, 169, 97, 0.1) 0%,
-    rgba(201, 169, 97, 0.3) 50%,
-    rgba(139, 90, 43, 0.85) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(201, 169, 97, 0.1) 0%,
+      rgba(201, 169, 97, 0.3) 50%,
+      rgba(139, 90, 43, 0.85) 100%);
 }
 
 .class-name {
@@ -1346,6 +1342,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1355,6 +1352,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -1365,6 +1363,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1372,18 +1371,24 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -1611,7 +1616,7 @@
 
 .taming-table .power-cell {
   font-weight: bold;
-  color: var(--accent-gold);
+  /* color: var(--accent-gold); */
   background: var(--parchment-dark);
 }
 
@@ -1628,11 +1633,11 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .druid-bonus-box {
     flex-direction: column;
   }
-  
+
   .taming-table th,
   .taming-table td {
     padding: 0.5rem 0.25rem;
@@ -1671,7 +1676,7 @@
 
 .spells-table .spell-price {
   font-weight: bold;
-  color: var(--accent-gold);
+  /* color: var(--accent-gold); */
   background: var(--parchment-dark);
   white-space: nowrap;
 }
@@ -1738,20 +1743,21 @@
 
 /* Responsive styles for Spells section */
 @media (max-width: 768px) {
+
   .spells-table th,
   .spells-table td {
     padding: 0.5rem 0.25rem;
     font-size: 0.85rem;
   }
-  
+
   .spells-table .spell-name {
     min-width: 150px;
   }
-  
+
   .desc-cell {
     max-width: 200px;
   }
-  
+
   .desc-content {
     max-width: 250px;
   }
@@ -1939,12 +1945,12 @@
   .clan-levels-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .fundacion-box {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .nota-final-box {
     flex-direction: column;
   }
@@ -2174,16 +2180,17 @@
 
 /* Responsive for Items */
 @media (max-width: 768px) {
+
   .items-table th,
   .items-table td {
     padding: 0.4rem 0.25rem;
     font-size: 0.8rem;
   }
-  
+
   .nobility-sets {
     grid-template-columns: 1fr;
   }
-  
+
   .items-subcategory-btn {
     padding: 0.6rem 0.75rem;
   }
@@ -2484,13 +2491,13 @@
   .map-sections {
     grid-template-columns: 1fr;
   }
-  
+
   .party-command-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .map-image-placeholder {
     padding: 2rem 1rem;
   }
@@ -2535,21 +2542,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(244, 232, 208, 0.7) 0%,
-    rgba(212, 195, 160, 0.85) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(244, 232, 208, 0.7) 0%,
+      rgba(212, 195, 160, 0.85) 100%);
   backdrop-filter: blur(2px);
   transition: all 0.3s ease;
 }
 
 .dark .trabajo-card-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(42, 31, 21, 0.7) 0%,
-    rgba(61, 46, 32, 0.85) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(42, 31, 21, 0.7) 0%,
+      rgba(61, 46, 32, 0.85) 100%);
 }
 
 .trabajo-card:hover {
@@ -2559,11 +2562,9 @@
 }
 
 .trabajo-card:hover .trabajo-card-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(201, 169, 97, 0.3) 0%,
-    rgba(139, 111, 71, 0.9) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(201, 169, 97, 0.3) 0%,
+      rgba(139, 111, 71, 0.9) 100%);
 }
 
 .trabajo-card-icon {
@@ -2574,10 +2575,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-gold);
   border-radius: 50%;
   margin-bottom: 0.75rem;
-  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .trabajo-card-icon svg {
@@ -3152,29 +3151,29 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .trabajo-card {
     min-height: 140px;
   }
-  
+
   .trabajo-detail-title {
     font-size: 1.8rem;
   }
-  
+
   .zonas-container {
     grid-template-columns: 1fr;
   }
-  
+
   .reutilizacion-sections {
     grid-template-columns: 1fr;
   }
-  
+
   .trabajo-table th,
   .trabajo-table td {
     padding: 0.5rem 0.35rem;
     font-size: 0.8rem;
   }
-  
+
   .deshilachado-table th,
   .deshilachado-table td {
     padding: 0.4rem 0.25rem;
@@ -3187,21 +3186,21 @@
     grid-template-columns: 1fr 1fr;
     gap: 0.75rem;
   }
-  
+
   .trabajo-card {
     min-height: 120px;
   }
-  
+
   .trabajo-card-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .trabajo-card-icon svg {
     width: 20px;
     height: 20px;
   }
-  
+
   .trabajo-name {
     font-size: 0.85rem;
     padding: 0.4rem 0.75rem;

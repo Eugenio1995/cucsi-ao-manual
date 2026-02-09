@@ -1,5 +1,18 @@
 // Mock data for CucsiAo Wiki
 
+import redpesca from './assets/redpesca.png';
+import herreria from './assets/herreria.png';
+import tala from './assets/tala.png';
+import carpinteria from './assets/carpinteria.png';
+import mineria from './assets/mineria.png';
+import sastreria from './assets/sastreria.png';
+import botanica from './assets/botanica.png';
+import lingotes from './assets/lingotes.png';
+import alquimia from './assets/alquimia.png';
+import esquila from './assets/esquila.png';
+import hilado from './assets/hilado.png';
+import recursos from './assets/recursos.png';
+
 export const wikiSections = [
   {
     id: 'bienvenida',
@@ -73,7 +86,7 @@ export const wikiSections = [
         ]
       }
     }
-  },  
+  },
   {
     id: 'clases',
     title: 'Clases',
@@ -329,7 +342,7 @@ export const wikiSections = [
         {
           id: 'pesca',
           nombre: 'Pesca',
-          icon: 'fish',
+          icon: redpesca,
           descripcion: 'El oficio de la pesca consiste en la obtención de peces. Para esto el personaje debe tener seleccionada y equipada una caña de pescar o una red de pesca (ésta última es solo equipable por el trabajador), luego buscar agua ya sea un lago, río, etc. y presionar la tecla U (por defecto o doble click sobre la herramienta) y hacer click sobre el agua.',
           descripcion2: 'El Trabajador con el oficio en Pescar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
           bonificacion: {
@@ -400,7 +413,7 @@ export const wikiSections = [
         {
           id: 'tala',
           nombre: 'Tala',
-          icon: 'axe',
+          icon: tala,
           descripcion: 'El oficio de la tala consiste en la obtención de leños, una vez que tengas un hacha de leñador deberás equiparla con la tecla equipar (E), luego buscar un árbol, presionar la tecla Usar (U), se te activa el macro automático del servidor) y hacer click sobre el árbol. Los trabajadores pueden extraer o construir de a uno o más recursos/objetos a la vez, dependiendo de su nivel. Mientras más nivel sea, más recursos obtendrá por vez y más objetos podrá construir por vez (ver Extracción).',
           descripcion2: 'El Trabajador con el oficio en Talar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez. Las leñas sirven para que puedas construir items de Carpintería.',
           itemsTable: {
@@ -436,7 +449,7 @@ export const wikiSections = [
         {
           id: 'carpinteria',
           nombre: 'Carpintería',
-          icon: 'hammer',
+          icon: carpinteria,
           descripcion: 'El oficio de la carpintería sirve para construir objetos a base de leña. Una vez que tengas un serrucho deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en carpintería.',
           descripcion2: 'El Trabajador con el oficio en Carpintería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
           itemsTable: {
@@ -511,7 +524,7 @@ export const wikiSections = [
         {
           id: 'botanica',
           nombre: 'Botánica',
-          icon: 'leaf',
+          icon: botanica,
           descripcion: 'La botánica es el trabajo dedicado a la extracción de los recursos de raíces de los árboles para luego poder elaborar complejas pociones de un grado superior a las que podremos encontrar en el comerciante con el arte de la Alquimia.',
           descripcion2: 'La extracción de raíces es un arte pura y exclusivamente de la clase DRUIDA mientras que con el resto de las clases sólo podrá obtener una a la vez.',
           bonificacion: 'BONIFICACIÓN: A partir de Nivel 45 empezaremos a extraer más recursos por nivel.',
@@ -539,7 +552,7 @@ export const wikiSections = [
         {
           id: 'alquimia',
           nombre: 'Alquimia',
-          icon: 'flask',
+          icon: alquimia,
           descripcion: 'El Alquimia es el Arte de las viejas brujas la cual sirve para la creación de poderosas pociones a base de raíces. Una vez que tengas una Olla deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Alquimia.',
           descripcion2: 'El Druida con el oficio en Alquimia es quién podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
           itemsTable: {
@@ -581,7 +594,7 @@ export const wikiSections = [
         {
           id: 'mineria',
           nombre: 'Minería',
-          icon: 'pickaxe',
+          icon: mineria,
           descripcion: 'La minería es una de las profesiones mejor pagas de Argentum Online debido a su alto riesgo. La extracción de minerales implica salir de la ciudad y entrar a una peligrosa mina en busca de yacimientos y hasta poderosos Dungeons. Estos deben ser trabajados con un piquete de minero, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el yacimiento.',
           descripcion2: 'Con la minería obtendremos la extracción de minerales de hierro, plata y oro materia prima para la fundición de Lingotes y con ellos crear poderosos objetos con un Herrero. El Trabajador con el oficio de Minería puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
           itemsTable: {
@@ -618,7 +631,7 @@ export const wikiSections = [
         {
           id: 'lingotes',
           nombre: 'Creación de Lingotes',
-          icon: 'box',
+          icon: lingotes,
           descripcion: 'La habilidad del Trabajador con el oficio en Minería es quién posee la habilidad de fundir los minerales extraídos de los yacimientos para poder convertirlos en Lingotes los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Herrero. Para poder fundir los materiales nos acercaremos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta la Fragua y, seleccionando de nuestro inventario los minerales, presionar tecla Usar (U o doble click) y clickear sobre la fragua.',
           descripcion2: 'La fundición la podremos realizar con nuestro Trabajador con el oficio en Minería ya que es él quién podrá fundir todos los tipos de materiales como el Hierro, la Plata o el Oro. El resto de las clases sólo podrá fundir minerales de hierro.',
           itemsTable: {
@@ -653,7 +666,7 @@ export const wikiSections = [
         {
           id: 'herreria',
           nombre: 'Herrería',
-          icon: 'hammer',
+          icon: herreria,
           descripcion: 'El oficio de la Herrería sirve para la construcción de poderosas Armas, Armaduras, Cascos, Escudos e Items Mágico a base de Lingotes de Hierro, Plata y Oro. Una vez que tengas un Martillo de Herrero y nuestros Lingotes deberemos de dirigirnos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Yunque y, equipando nuestro Martillo de Herrero con la tecla (E), presionaremos la tecla Usar (U o doble click) sobre el Yunque y se nos abrirá el menú de creación.',
           descripcion2: 'El Trabajador con el oficio en Herrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
           itemsTable: {
@@ -694,7 +707,7 @@ export const wikiSections = [
         {
           id: 'esquila',
           nombre: 'Esquila',
-          icon: 'scissors',
+          icon: esquila,
           descripcion: 'Cypher vio que los lobos y osos que el tanto quería, estaban siendo masacrados solo por sus pieles y decidió prohibir la caza indiscriminada. Por esto, todos los sastres entraron en huelga, y por muchos días la gente anduvo desnuda en señal de protesta. En consecuencia, el Dios Cypher autorizó la esquila de animales y trajo unos pastores especializados en el tema, que llegaron desde lejos con sus tijeras y algunas simpáticas criaturas, así y de pronto, los sastres aprendieron a esquilar y a hilar la lana obtenida, y con esta pudieron crear las ropas que tan bien vestían.',
           descripcion2: 'Estos Trabajadores con unas Tijeras de Esquilar, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el animal. Con la Esquila obtendremos la extracción de Lanas de Oveja, Cabra y Llama materia prima la cual Hilaremos y con los ovillos creados podremos realizar poderosas Vestimentas y Túnicas con un Sastre. El Trabajador con el oficio en Esquilar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
           itemsTable: {
@@ -731,7 +744,7 @@ export const wikiSections = [
         {
           id: 'hilado',
           nombre: 'Hilado',
-          icon: 'shirt',
+          icon: hilado,
           descripcion: 'La habilidad del Trabajador con el oficio en Esquilación es quién posee la habilidad de hilar las lanas extraídas de los animales para poder convertirlos en Ovillos los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Sastre. Para poder hilar las lanas en ovillos nos acercaremos hasta la casa del comerciante Sastre los cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Telar y, seleccionando de nuestro inventario las lanas, presionar tecla Usar (U o doble click) y clickear sobre el telar.',
           descripcion2: 'La Hilación la podremos realizar con nuestro Trabajador con el oficio en Esquilación ya que es él quién podrá hilar todos los tipos de Lanas como Oveja, Cabra y Llama. El resto de las clases sólo podrá hilar Lanas de Oveja.',
           itemsTable: {
@@ -766,7 +779,7 @@ export const wikiSections = [
         {
           id: 'sastreria',
           nombre: 'Sastrería',
-          icon: 'shirt',
+          icon: sastreria,
           descripcion: 'El oficio de la Sastrería sirve para construir Vestimentas y Túnicas a base de Ovillos. Una vez que tengas un Costurero deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Sastrería.',
           descripcion2: 'El Trabajador con el oficio en Sastrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
           itemsTable: {
@@ -786,13 +799,13 @@ export const wikiSections = [
               'Seleccionamos el objeto a construir junto con su cantidad.'
             ]
           },
-         /*  links: {
-            title: 'Lista de Objetos de Creación',
-            intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
-            items: [
-              { text: '1 - Items de Sastre (Vestimentas y Túnicas)', target: 'items', subsection: '4.1' }
-            ]
-          }, */
+          /*  links: {
+             title: 'Lista de Objetos de Creación',
+             intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
+             items: [
+               { text: '1 - Items de Sastre (Vestimentas y Túnicas)', target: 'items', subsection: '4.1' }
+             ]
+           }, */
           deshilachado: {
             title: 'Deshilachado de Objetos de Sastrería',
             descripcion: 'El oficio deshilachar consiste en la recuperación de ovillos de prendas que no utilizaremos o para poder crear unas mejores, una vez que tengas una cierta cantidad de objetos a deshilachar deberás buscar un telar ubicado en la casa del sastre de cada ciudad, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre el telar. La deshilachación depende de la clase y los puntos ya que los objetos a deshilachar son aquellos creados mediante la Sastrería. Que requieran al menos 50 skills, se podrán deshilachar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
@@ -831,7 +844,7 @@ export const wikiSections = [
         {
           id: 'reutilizacion',
           nombre: 'Reutilización de Recursos',
-          icon: 'recycle',
+          icon: recursos,
           descripcion: 'La reutilización de recursos consiste en recuperar materiales de objetos que ya no utilizamos. Esto incluye Fundir objetos de Herrería, Desmantelar objetos de Carpintería, y Deshilachar objetos de Sastrería.',
           descripcion2: 'Cada proceso permite recuperar entre el 45% y 75% de los materiales originales, dependiendo del azar. Solo se pueden reutilizar objetos que requieran al menos 50 skills para su creación.',
           sections: [
@@ -852,7 +865,7 @@ export const wikiSections = [
             }
           ]
         },
-        {
+        /* {
           id: 'compra',
           nombre: 'Compra de Recursos',
           icon: 'shopping-cart',
@@ -864,7 +877,7 @@ export const wikiSections = [
             'Considera comprar en grandes cantidades para obtener mejores precios.',
             'Algunos NPCs venden recursos básicos a precios fijos.'
           ]
-        }
+        } */
       ]
     }
   },
