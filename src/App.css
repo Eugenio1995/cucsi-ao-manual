@@ -98,7 +98,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://wallpapercave.com/wp/wp10890303.jpg');
+  background-image: url('https://images.pexels.com/photos/3428289/pexels-photo-3428289.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -108,7 +108,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* background: linear-gradient(135deg, rgba(61, 40, 23, 0.85) 0%, rgba(139, 111, 71, 0.75) 100%); */
+  background: linear-gradient(135deg, rgba(61, 40, 23, 0.85) 0%, rgba(139, 111, 71, 0.75) 100%);
 }
 
 .hero-content {
@@ -163,7 +163,7 @@
 }
 
 .content-container-with-sidebar {
-  max-width: 1520px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   gap: 2rem;
@@ -641,12 +641,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.75) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.75) 100%);
   backdrop-filter: blur(1px);
   transition: all 0.3s ease;
 }
@@ -658,12 +656,10 @@
 }
 
 .class-card:hover .class-card-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(201, 169, 97, 0.1) 0%,
-    rgba(201, 169, 97, 0.3) 50%,
-    rgba(139, 90, 43, 0.85) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(201, 169, 97, 0.1) 0%,
+      rgba(201, 169, 97, 0.3) 50%,
+      rgba(139, 90, 43, 0.85) 100%);
 }
 
 .class-name {
@@ -1346,6 +1342,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -1355,6 +1352,7 @@
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -1365,6 +1363,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1372,18 +1371,24 @@
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
 }
 
 @keyframes bounce {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -1628,11 +1633,11 @@
     align-items: flex-start;
     gap: 0.5rem;
   }
-  
+
   .druid-bonus-box {
     flex-direction: column;
   }
-  
+
   .taming-table th,
   .taming-table td {
     padding: 0.5rem 0.25rem;
@@ -1738,20 +1743,21 @@
 
 /* Responsive styles for Spells section */
 @media (max-width: 768px) {
+
   .spells-table th,
   .spells-table td {
     padding: 0.5rem 0.25rem;
     font-size: 0.85rem;
   }
-  
+
   .spells-table .spell-name {
     min-width: 150px;
   }
-  
+
   .desc-cell {
     max-width: 200px;
   }
-  
+
   .desc-content {
     max-width: 250px;
   }
@@ -1939,12 +1945,12 @@
   .clan-levels-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .fundacion-box {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .nota-final-box {
     flex-direction: column;
   }
@@ -2174,17 +2180,326 @@
 
 /* Responsive for Items */
 @media (max-width: 768px) {
+
   .items-table th,
   .items-table td {
     padding: 0.4rem 0.25rem;
     font-size: 0.8rem;
   }
-  
+
   .nobility-sets {
     grid-template-columns: 1fr;
   }
-  
+
   .items-subcategory-btn {
     padding: 0.6rem 0.75rem;
+  }
+}
+
+/* ==========================================
+   PARTY SECTION STYLES
+   ========================================== */
+
+.party-section-card {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.party-section-card.highlight {
+  border-color: var(--accent-gold);
+  background: linear-gradient(135deg, var(--parchment-light) 0%, rgba(201, 169, 97, 0.1) 100%);
+}
+
+.party-section-title {
+  font-family: 'Cinzel', serif;
+  color: var(--accent-brown);
+  font-size: 1.15rem;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.party-section-title svg {
+  color: var(--accent-gold);
+}
+
+.party-section-desc {
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.party-steps {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.party-steps li {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.party-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.party-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.party-example-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--parchment-bg);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-gold);
+}
+
+.party-example-item svg {
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+.party-note {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.party-considerations {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.party-considerations li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Party Bonus Table */
+.party-bonus-table {
+  margin-bottom: 1rem;
+}
+
+.party-bonus-table .members-cell {
+  font-weight: bold;
+  text-align: center;
+}
+
+.party-bonus-table .multiplier-cell {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: var(--accent-gold);
+  text-align: center;
+}
+
+.party-bonus-table .bonus-cell {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.party-bonus-note {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brown) 100%);
+  color: var(--parchment-light);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.party-bonus-note svg {
+  flex-shrink: 0;
+}
+
+.party-bonus-note p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Party Commands */
+.party-commands {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.party-command-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-bg);
+  border-radius: 6px;
+  border-left: 4px solid var(--accent-gold);
+}
+
+.party-command-code {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--parchment-light);
+  background: var(--accent-brown);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.party-command-desc {
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+/* ==========================================
+   MAPA SECTION STYLES
+   ========================================== */
+
+.map-image-placeholder {
+  background: var(--parchment-light);  
+  border-radius: 12px;  
+  text-align: center;
+  margin: 1.5rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.map-image-placeholder img {
+  max-width: 100%;
+  height: auto;
+}
+
+.map-image-placeholder svg {
+  color: var(--accent-gold);
+  opacity: 0.6;
+}
+
+.map-image-placeholder p {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.map-placeholder-note {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.map-references-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--accent-brown);
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.map-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.map-section-card {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map-section-title {
+  background: linear-gradient(135deg, var(--accent-brown) 0%, var(--accent-gold) 100%);
+  color: var(--parchment-light);
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.map-locations {
+  padding: 0.5rem;
+}
+
+.map-location-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.map-location-item:last-child {
+  border-bottom: none;
+}
+
+.map-number {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--parchment-light);
+  background: var(--accent-brown);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.map-name {
+  flex: 1;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.map-level {
+  font-size: 0.8rem;
+  color: var(--parchment-light);
+  background: var(--accent-gold);
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.map-nota {
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 0.25rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid var(--accent-gold);
+}
+
+/* Responsive for Party & Mapa */
+@media (max-width: 768px) {
+  .map-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .party-command-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .map-image-placeholder {
+    padding: 2rem 1rem;
   }
 }
