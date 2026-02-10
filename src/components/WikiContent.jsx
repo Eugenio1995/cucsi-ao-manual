@@ -1146,6 +1146,53 @@ export const WikiContent = () => {
       );
     }
 
+    if (section.id === 'cofres') {
+
+      return (
+        <div className="section-content">
+          <p className="section-description-types">{section.content.description1}</p>
+          <p className="section-description-types">{section.content.description2}</p>
+          <p className="section-description-types">{section.content.description3}</p>
+          <p className="section-description-types">{section.content.description4}</p>
+          <p className="section-description-types">{section.content.description5}</p>
+          <p className="section-description-types">{section.content.description6}</p>
+          <p className="section-description-types">{section.content.description7}</p>
+          <p className="section-description-types">{section.content.description8}</p>
+
+          <div className="table-container">
+            <div className="table-scroll">
+              <table className="wiki-table spells-table">
+                <thead>
+                  <tr>
+                    <th>
+                      Nombre del cofre
+                    </th>
+                    <th>
+                      Prob. de conseguirlo pescando
+                    </th>
+                    <th>
+                      Objetos
+                    </th>                   
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.content.cofres.map((cofre, idx) => {                    
+                    return (
+                      <tr key={idx}>
+                        <td className="spell-name">{cofre.nombre}</td>
+                        <td className="spell-price">{cofre.probabilidad}</td>
+                        <td className="desc-cell">{cofre.objetos}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     // Render Items
     if (section.id === 'items') {
       // If viewing a subsection
@@ -1971,7 +2018,7 @@ export const WikiContent = () => {
                   <img
                     src={section.icon}
                     alt={section.title}
-                    style={{maxWidth: "40px"}}
+                    style={{ maxWidth: "40px" }}
                   />
                   <span className="sidebar-item-text">{section.title}</span>
                 </button>

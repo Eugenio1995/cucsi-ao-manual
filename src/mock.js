@@ -23,6 +23,7 @@ import domaricono from './assets/domaricono.png';
 import clanesicono from './assets/clanesicono.png';
 import bienvenidaicono from './assets/bienvenidaicono.png';
 import razasicono from './assets/razasicono.png';
+import cofreicono from './assets/cofreicono.png';
 
 
 export const wikiSections = [
@@ -37,7 +38,7 @@ export const wikiSections = [
       roleInfo: 'La base del rol en Cucsi, se encuentra en los clanes y los castillos. En el mapa se encuentran cuatro Castillos con sus respectivos reyes, los cuales tendrán que ser conquistados por clanes, obteniendo como premio "PUNTOS" que aportaran para un Ranking que será visible cuando el usuario lo desee y que será explicado a la brevedad.',
       mapInfo: 'El mapa del mundo de Cucsi, fue basado en el mapa oficial de Argentum Online, respetando las principales ciudades, como "Ullatorphe", "Nix", "Banderbill", entre otras, y usando los dungeons originales con pequeñas modificaciones, tales como "Marabel", "Verill", "Dragon", etc. Fue agregado también el tan usado "Barco", cuya idea original fue obtenida de Cucsifae AO'
     }
-  }, 
+  },
   {
     id: 'razas',
     title: 'Razas',
@@ -1361,11 +1362,11 @@ export const wikiSections = [
         { nombre: 'Invisibilidad (Mago)', precio: 100000, skills: 87, mana: 600, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
         { nombre: 'Relampago (Solo Criaturas)', precio: 50000, skills: 60, mana: 100, stamina: 20, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo, solo funciona en Criaturas' },
         { nombre: 'Llamarada (Mago)', precio: 625000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 63 a 73 de Daño Magico al Objetivo' },
-        { nombre: 'Rafaga Ardiente (Bardo/Clerigo)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
-        { nombre: 'Rafaga Ardiente (Asesino/Paladin)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
-        { nombre: 'Apocalipsis (Bardo/Clerigo) NIVEL 30', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 97 a 102 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo Clase Bardo' },
-        { nombre: 'Apocalipsis (Druida)', precio: 1250000, skills: 100, mana: 1350, stamina: 150, descripcion: 'Inflinge entre 98 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Rafaga Ardiente (Druida)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 94 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Rafaga Ardiente (Bardo/Clerigo)', precio: 1000000, skills: 98, mana: 1100, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Rafaga Ardiente (Asesino/Paladin)', precio: 1000000, skills: 98, mana: 1100, stamina: 125, descripcion: 'Inflinge entre 93 a 98 de Daño Magico al Objetivo' },
+        { nombre: 'Apocalipsis (Bardo/Clerigo) NIVEL 30', precio: 1250000, skills: 100, mana: 1300, stamina: 150, descripcion: 'Inflinge entre 97 a 102 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo Clase Bardo' },
+        { nombre: 'Apocalipsis (Druida)', precio: 1250000, skills: 100, mana: 1300, stamina: 150, descripcion: 'Inflinge entre 98 a 103 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
+        { nombre: 'Rafaga Ardiente (Druida)', precio: 1000000, skills: 98, mana: 1100, stamina: 125, descripcion: 'Inflinge entre 94 a 98 de Daño Magico al Objetivo' },
         { nombre: 'Tormenta de Fuego', precio: 12500, skills: 75, mana: 150, stamina: 29, descripcion: 'Inflinge entre 37 a 47 de Daño Magico al Objetivo' },
         { nombre: 'Mimetismo SOLO DRUIDA', precio: 400000, skills: 75, mana: 800, stamina: 44, descripcion: 'Copia temporalmente la apariencia del Objetivo' },
         { nombre: 'Provocar Hambre', precio: 100, skills: 5, mana: 20, stamina: 2, descripcion: 'Provoca la perdida de Hambre entre 20 a 50 puntos' },
@@ -1383,7 +1384,7 @@ export const wikiSections = [
         { nombre: 'Resurrección Divina (Clerigo)', precio: 625000, skills: 99, mana: 1000, stamina: 400, descripcion: 'Resucita al Objetivo y lo Cura por 100 puntos de vida, además le deja el hambre y la sed en 20 puntos, solo funciona en Usuarios. CD de 10 segundos' },
         { nombre: 'Invisibilidad (Bardo/Clerigo/Druida)', precio: 100000, skills: 87, mana: 500, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
         { nombre: 'Curar Heridas Mortales (Clerigo)', precio: 50000, skills: 80, mana: 200, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 70' },
-        { nombre: 'Llamarada', precio: 575000, skills: 98, mana: 750, stamina: 100, descripcion: 'Inflinge entre 70 a 80 de Daño Magico al Objetivo' },
+        { nombre: 'Llamarada', precio: 575000, skills: 98, mana: 700, stamina: 100, descripcion: 'Inflinge entre 70 a 80 de Daño Magico al Objetivo' },
         { nombre: 'Sombra de la Muerte (Mago) NIVEL 40', precio: 2500000, skills: 99, mana: 2800, stamina: 250, descripcion: 'Inflinge entre 115 a 120 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
         { nombre: 'Rafaga Ardiente (Mago)', precio: 1000000, skills: 98, mana: 1150, stamina: 125, descripcion: 'Inflinge entre 83 a 88 de Daño Magico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Vara de Fresno, Baston Nudoso, Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
         { nombre: 'Ceguera (Mago) NIVEL 40', precio: 1500000, skills: 100, mana: 2500, stamina: 300, descripcion: 'Embrujo que quita la vision al Usuario. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago o Baculo Luminozo' },
@@ -2164,6 +2165,80 @@ export const wikiSections = [
           name: 'Constitución',
           description: 'Los puntos de vida de un personaje dependen directamente de su constitución y clase. Un valor más elevado en este atributo aumenta los puntos de vida iniciales y ganados por nivel de un personaje. Sin duda es un valor importante para todos los personajes.'
         }
+      ]
+    }
+  },
+  {
+    id: 'cofres',
+    title: 'Cofres',
+    icon: cofreicono,
+    content: {
+      description1: 'Los Cofres pueden contener objetos, dependiendo de que tipo de Cofre sean, estos se pueden obtener de diferentes formas:',
+      description2: '. Cofres de Pesca: Se consiguen pescando en zona insegura utilizando una red de pesca y una Galera.',
+      description3: '. Cofres de Castillos: Se consiguen al asesinar a los reyes de los castillos de clanes.',
+      description4: '. Cofres de Quest: Se consiguen como recompensas al realizar ciertas quests.',
+      description5: '. Cofres Faccionarios: Se consiguen en el Artesano de Ullathorpe, intercambiando las medallas de facción.',
+      description6: '. Cofres de Recursos: Se consiguen en el Artesano de Ullahorpe, intercambiando gemas de puntos de usuario.',
+      description7: '. Cofres de Cypher: Se consiguen en el Artesano de Ullathorpe, intercambiando otros cofres y oro.',
+      description8: 'Al abrir los cofres existe la posibilidad de conseguir hasta 3 de los objetos del cofre como tambien la posibilidad de que el cofre no de ningún objeto, así que suerte guerrero',
+      cofres: [
+        { nombre: 'Cofre de Pesca Verde', probabilidad: '1,2%', objetos: '2.000 Pescados - 1.000 Pez Dorado - 500 Merluza - 250 Pez Espada - 1.000 Monedas de Oro - 2 Gema Verde (5 puntos de usuario) - 2 Gema Naranja (3 puntos de usuario) - 2 Gema Azul (1 puntos de usuario).' },
+        { nombre: 'Cofre de Pesca Celeste', probabilidad: '0,9%', objetos: '6.000 Pescados - 5.000 Pez Dorado - 3.000 Merluza - 2.000 Pez Espada - 5.000 Monedas de Oro - 1 Cofre de Pesca Verde - 3 Gema Verde (5 puntos de usuario) - 3 Gema Naranja (3 puntos de usuario) - 3 Gema Azul (1 puntos de usuario).' },
+        { nombre: 'Cofre de Pesca Violeta', probabilidad: '0,6%', objetos: '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 10.000 Monedas de Oro - 20 Poción Roja - 5 Gema Verde (5 puntos de usuario) - 5 Gema Naranja (3 puntos de usuario) - 5 Gema Azul (1 puntos de usuario).' },
+        { nombre: 'Cofre de Pesca de Oro', probabilidad: '0,3%', objetos: '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 1 Cofre de Pesca Violeta - 1 Red de Pesca - 400 Pociones de Rojas - 7 Gema Verde (5 puntos de usuario) - 7 Gema Naranja (3 puntos de usuario) - 7 Gema Azul (1 puntos de usuario).' },
+        { nombre: 'Cofre de Copas', probabilidad: '-', objetos: '1 Trofeo de Oro - 1 Trofeo de Plata - 1 Trofeo de Bronce - 1 Medalla de Oro - 1 Medalla de Plata.' },
+        { nombre: 'Cofre de Quest I', probabilidad: '-', objetos: '5 Escudos de Tortuga - 1 Túnica Azul [DefCorp] - 5 Vestimentas Comunes - 5 Vestimenta Común (E/G) - 1 Túnica Verde Combinada (E/G-M) [DefMag] - 10 Poción Amarilla (Druida) - 50 Poción Roja (Druida) - 2 Bastón Nudoso - 1 Daga +2 - 1 Hacha Dos Filos - 1 Hacha Larga de Guerra - 1 Katana - 1 Arco de Oro - 1 Nucleo de Plasma - 1 Celeridad - 2 Tunica de Mago - 1 Escudo Imperial - 1 Casco de Plata - 3 Sombrero de Aprendiz.' },
+        { nombre: 'Cofre de Quest II', probabilidad: '-', objetos: '1 Puñal - 1 Cimitarra - 1 Hacha de Bárbaro - 1 Cota de Mallas [DefMag] - 1 Cota de Mallas (G/E) [DefMag] - 1 Laúd Mágico - 1 Báculo Engarzado - 1 Arco de Perla Azul - 1 Flauta Mágica - 1 Túnica Roja [DefCorp] - 1 Túnica Negra (E/G) [DefCorp] - 1 Armadura de Placas Completas - 1 Armadura de Placas Completas (E/G) - 1 Armadura de Placas Completas +1 - Armadura de Placas Completas +1 (E/G) - 1 Rompe Cascos - 1 Casco Miliciano.' },
+        { nombre: 'Cofre de Quest III', probabilidad: '-', objetos: '1 Rompe Cascos Superior - 1 Armadura Escarlata [DefCorp] - 1 Armadura De Placas De Gala Dorada [DefCorp] - 1 Daga Gris - 1 Corona - 2 Espadas de Plata - 1 Túnica Tamuzz [DefMag] - 1 Túnica Gaia [DefMag] - 1 Sombrero de Mago - 1 Poción Anti Parálisis (Druida) - 200 Poción Azul (Druida) - 200 Poción Roja (Druida) - 50 Poción Verde (Druida) - 50 Poción Amarilla (Druida) - 200 Flechas +3 - 1 Laúd Élfico - 1 Flauta Élfica - 1 Ballesta - 1 Escudo de Plata - 1 Escudo Oscuro - 1 Escudo Rustico - 1 Casco de Caballero - 1 Casco Incompleto.' },
+        { nombre: 'Cofre de Entrenamiento I', probabilidad: '-', objetos: '500 Pociones Rojas - 1000 Pociones Azules - 50 Pociones Verdes - 50 Pociones Verdes.' },
+        { nombre: 'Cofre de Entrenamiento II', probabilidad: '-', objetos: '1000 Pociones Rojas - 2000 Pociones Azules - 100 Pociones Verdes - 100 Pociones Verdes.' },
+        { nombre: 'Cofre de Entrenamiento III', probabilidad: '-', objetos: '2000 Pociones Rojas - 5000 Pociones Azules - 200 Pociones Verdes - 200 Pociones Verdes.' },
+        { nombre: 'Cofre materiales I', probabilidad: '-', objetos: '500 Lingotes de Hierro - 250 Lingotes de Plata - 75 Lingotes de Oro - 2000 Raíz - 300 Ovillo de Oveja- 200 Ovillo de Cabra - 50 Ovillo de Llama - 5000 Leña - 2500 Leña Elfica.' },
+        { nombre: 'Cofre materiales II', probabilidad: '-', objetos: '1000 Lingotes de Hierro - 500 Lingotes de Plata - 150 Lingotes de Oro - 4000 Raíz - 600 Ovillo de Oveja- 400 Ovillo de Cabra - 100 Ovillo de Llama - 10000 Leña - 5000 Leña Elfica.' },
+        { nombre: 'Cofre materiales III', probabilidad: '-', objetos: '2000 Lingotes de Hierro - 1000 Lingotes de Plata - 300 Lingotes de Oro - 8000 Raíz - 1200 Ovillo de Oveja- 800 Ovillo de Cabra - 200 Ovillo de Llama - 10000 Leña - 7000 Leña Elfica.' },
+        { nombre: 'Cofre Winterfell I', probabilidad: '-', objetos: '1 Tunica Invernal - 1 Tunica Invernal (Mujer) - 1 Tunica Invernal (E/G)' },
+        { nombre: 'Cofre Winterfell II', probabilidad: '-', objetos: '8 Piedra Lobo Polar - 3 Piedra Golem Junior de Hielo - 2 Piedra Rey Golem de Polo - 10 Piedra Pinguino - 5 Piedra Oso Polar - 4 Piedra Beholder Polar - 4 Piedra HOmbre de las Nieves - 4 Piedra Gorila Polar.' },
+        { nombre: 'Cofre de Runas Inferiores', probabilidad: '-', objetos: '1 Runa de Tierra (Inferior) - 1 Runa de Agua (Inferior) - 1 Runa de Viento (Inferior) - 1 Runa de Fuego (Inferior).' },
+        { nombre: 'Cofre de Dragon BD', probabilidad: '-', objetos: '1 Espada Mata Dragones' },
+        { nombre: 'Cofre de Dragon MD', probabilidad: '-', objetos: '1 Baculo Mata Dragones' },
+        { nombre: 'Cofre de Equipo Bardo I', probabilidad: '-', objetos: '10 Daga +3 - 10 Escudo Imperial - 10 Cotas de mallas - 10 Cotas de mallas (E/G) - 10 Casco de Hierro.' },
+        { nombre: 'Cofre de Equipo Bardo II', probabilidad: '-', objetos: '5 Túnica de Tamuzz[DefMag] - 5 Túnica Roja[E/G][DefMag] - 5 Túnica de Tamuzz[DefCorp] - 5 Túnica Roja[E/G][DefCorp] - 5 Puñal - 5 Cimitarra - 5 Laúd Magico - 5 Escudo Imperial.' },
+        { nombre: 'Cofre de Equipo Bardo III', probabilidad: '-', objetos: '2 Corona - 2 Daga Gris - 2 Escudo Rustico - 2 Sable de Pirata - 2 Túnica Malefica[DefCorp] - 2 Túnica Malefica[DefMag] - 2 Túnica Malefica(G/E)[DefCorp] - 2 Túnica Malefica(G/E)[DefMag] - 2 Laud Elfico.' },
+        { nombre: 'Cofre de Equipo Mago I', probabilidad: '-', objetos: '10 Sombrero de Mago - 10 Baston Nudoso - 10 Túnica de Monje - 10 Túnica de Monje(E/G).' },
+        { nombre: 'Cofre de Equipo Mago II', probabilidad: '-', objetos: '5 Túnica de Tamuzz[DefMag] - 5 Túnica Roja[E/G][DefMag] - 5 Túnica de Tamuzz[DefCorp] - 5 Túnica Roja[E/G][DefCorp] - 5 Baculo Engarzado - 5 Sombrero de Mago.' },
+        { nombre: 'Cofre de Equipo Mago III', probabilidad: '-', objetos: '2 Corona - 2 Vara de Mago - 2 Túnica Malefica[DefCorp] - 2 Túnica Malefica[DefMag] - 2 Túnica Malefica(G/E)[DefCorp] - 2 Túnica Malefica(G/E)[DefMag].' },
+        { nombre: 'Cofre de Equipo Druida I', probabilidad: '-', objetos: '10 Daga +3 - 10 Escudo de Hierro - 10 Cota de Mallas - 10 Cota de Mallas(E/G) - 10 Casco de Hierro.' },
+        { nombre: 'Cofre de Equipo Druida II', probabilidad: '-', objetos: '5 Túnica de Tamuzz[DefMag] - 5 Túnica Roja[E/G][DefMag] - 5 Túnica de Tamuzz[DefCorp] - 5 Túnica Roja[E/G][DefCorp] - 5 Daga +3 - 5 Flauta Magica - 5 Escudo de Hierro - 5 Casco de Hierro.' },
+        { nombre: 'Cofre de Equipo Druida III', probabilidad: '-', objetos: '2 Corona - 2 Túnica Malefica[DefCorp] - 2 Túnica Malefica[DefMag] - 2 Túnica Malefica(G/E)[DefCorp] - 2 Túnica Malefica(G/E)[DefMag] - 2 Puñal - 2 Rodela de Madera Reforzada - 2 Flauta Elfica.' },
+        { nombre: 'Cofre de Equipo Paladin I', probabilidad: '-', objetos: '10 Hacha Dos Filos - 10 Escudo Imperial - 10 Casco de Hierro Completo - 10 Armadura de Placas Completas - 10 Armaduras de Placas Completas (E/G).' },
+        { nombre: 'Cofre de Equipo Paladin II', probabilidad: '-', objetos: '5 Escudo de Plata - 5 Casco de Gran Maestre Oscuro - 5 Espada de Plata - 5 Armadura de Epsilon [DefCorp] - 5 Armadura de Epsilon [DefMag] - 5 Armadura de Epsilon [DefCorp](E/G) - 5 Armadura de Epsilon [DefMag](E/G).' },
+        { nombre: 'Cofre de Equipo Paladin III', probabilidad: '-', objetos: '2 Casco Maestre Dorado - 2 Excalibur II - 2 Armadura de Omega [DefMag] - 2 Armadura de Omega [DefCorp] - 2 Armadura de Omega [DefMag](E/G) - 2 Armadura de Omega [DefCorp](E/G) - 2 Escudo de Caballero.' },
+        { nombre: 'Cofre de Equipo Cazador I', probabilidad: '-', objetos: '10 Arco Compuesto - 2000 Flecha - 10 Casco de Hierro Completo - 10 Armadura de Placas Completas - 10 Armaduras de Placas Completas (E/G).' },
+        { nombre: 'Cofre de Equipo Cazador II', probabilidad: '-', objetos: '5 Arco de Perla Azul - 2000 Flecha +2 - 5 Casco de Gran Maestre - 5 Armadura de Epsilon [DefCorp] - 5 Armadura de Epsilon [DefMag] - 5 Armadura de Epsilon [DefCorp](E/G) - 5 Armadura de Epsilon [DefMag](E/G).' },
+        { nombre: 'Cofre de Equipo Cazador III', probabilidad: '-', objetos: '2 Ballesta - 2 Armadura de Omega [DefCorp] - 2 Armadura de Omega [DefMag] - 2 Armadura de Omega [DefCorp](E/G) - 2 Armadura de Omega [DefMag](E/G) - 2 Casco Maestre Dorado - 2 Escudo de Caballero - 2000 Flecha +3.' },
+        { nombre: 'Cofre de Equipo Guerrero I', probabilidad: '-', objetos: '10 Hacha Dos Filos - 10 Escudo Imperial - 10 Casco de Hierro Completo - 10 Armadura de Placas Completas - 10 Armaduras de Placas Completas (E/G).' },
+        { nombre: 'Cofre de Equipo Guerrero II', probabilidad: '-', objetos: '5 Maza Oscura - 5 Casco de Gran Maestre - 5 Armadura de Epsilon [DefCorp] - 5 Armadura de Epsilon [DefMag] - 5 Armadura de Epsilon [DefCorp](E/G) - 5 Armadura de Epsilon [DefMag](E/G).' },
+        { nombre: 'Cofre de Equipo Guerrero III', probabilidad: '-', objetos: '2 Espada AO - 2 Casco Maestre Dorado - 2 Escudo de Caballero - 2 Armadura Omega [DefCorp] - 2 Armadura de Omega [DefMag] - 2 Armadura de Omega [DefCorp] - 2 Armadura de Omega [DefMag] - 2 Armadura de Omega [DefCorp](E/G) - 2 Armadura de Omega [DefMag](E/G).' },
+        { nombre: 'Cofre de Equipo Asesino I', probabilidad: '-', objetos: '10 Daga +3 - 10 Escudo Imperial - 10 Casco de Hierro Completo - 10 Armadura de las Sombras - 10 Armaduras de las Sombras (E/G).' },
+        { nombre: 'Cofre de Equipo Asesino II', probabilidad: '-', objetos: '5 Daga Dhanab - 5 Escudo de Tres Puntas - 5 Casco de Caballero - 5 Cotas de Mallas [DefMag] - 5 Cotas de Mallas [DefMag] (E/G).' },
+        { nombre: 'Cofre de Equipo Asesino III', probabilidad: '-', objetos: '2 Daga de la Oscuridad - 2 Escudo Oscuro - 2 Casco de Guerrero Completo - 2 Armadura de Caballero [DefMag] - 2 Armadura de Caballero [DefCorp] - 2 Armadura de Caballero [DefMag](E/G) - 2 Armadura de Caballero [DefCorp](E/G).' },
+        { nombre: 'Cofre de Equipo Ladron I', probabilidad: '-', objetos: '10 Guante de Hurto - 2000 Cuchillas - 10 Cotas de Malla - 10 Cotas de Malla (E/G) - 10 Escudo de Hierro.' },
+        { nombre: 'Cofre de Equipo Ladron II', probabilidad: '-', objetos: '10 Guante de Hurto - 3000 Cuchillas - 10 Cotas de Malla - 10 Cotas de Malla (E/G) - 10 Casco de Hierro Completo.' },
+        { nombre: 'Cofre de Equipo Ladron III', probabilidad: '-', objetos: '10 Guante de Hurto - 4000 Cuchillas - 10 Cotas de Malla - 10 Cotas de Malla (E/G) - 2 Casco de Plata.' },
+        { nombre: 'Cofre de Equipo Clerigo I', probabilidad: '-', objetos: '10 Hacha Dos Filos - 10 Escudo Imperial - 10 Casco de Hierro Completo - 10 Armadura de Placas Completas - 10 Armaduras de Placas Completas (E/G).' },
+        { nombre: 'Cofre de Equipo Clerigo II', probabilidad: '-', objetos: '5 Rompe Cascos - 5 Escudo de Plata - 5 Casco Oscuro - 5 Armadura de Placas Completas +2 - 5 Armadura de Placas Completas +2 (E/G).' },
+        { nombre: 'Cofre de Equipo Clerigo III', probabilidad: '-', objetos: '2 Armadura de Caballero [DefMag] - 2 Armadura de Caballero [DefCorp] - 2 Armadura de Caballero [DefMag](E/G) - 2 Armadura de Caballero [DefCorp](E/G) - 2 Rompe Cascos Superior - 2 Escudo de Gran Imperio +1 - 2 Casco de Guerrero Completo.' },
+        { nombre: 'Cofre de Equipo Bardo I', probabilidad: '-', objetos: '10 Daga +3 - 10 Escudo Imperial - 10 Cotas de mallas - 10 Cotas de mallas (E/G) - 10 Casco de Hierro.' },
+        { nombre: 'Cofre de Equipo Bardo II', probabilidad: '-', objetos: '5 Túnica de Tamuzz[DefMag] - 5 Túnica Roja[E/G][DefMag] - 5 Túnica de Tamuzz[DefCorp] - 5 Túnica Roja[E/G][DefCorp] - 5 Puñal - 5 Cimitarra - 5 Laúd Magico - 5 Escudo Imperial.' },
+        { nombre: 'Cofre de Equipo Bardo III', probabilidad: '-', objetos: '2 Corona - 2 Daga Gris - 2 Escudo Rustico - 2 Sable de Pirata - 2 Túnica Malefica[DefCorp] - 2 Túnica Malefica[DefMag] - 2 Túnica Malefica(G/E)[DefCorp] - 2 Túnica Malefica(G/E)[DefMag] - 2 Laud Elfico.' },
+        { nombre: 'Cofre Real', probabilidad: '-', objetos: '300 Poción Azul (Druida) - 300 Poción Roja (Druida) - 100 Poción Verde (Druida) - 100 Poción Amarilla (Druida) - 1 Espada de Plata - 1 Bastón Nudoso - 1 Cimitarra - 5 5 Gema Verde (5 puntos de usuario) - 1 Medalla de la Armada Real.' },
+        { nombre: 'Cofre Caos', probabilidad: '-', objetos: '300 Poción Azul (Druida) - 300 Poción Roja (Druida) - 100 Poción Verde (Druida) - 100 Poción Amarilla (Druida) - 1 Espada de Plata - 1 Bastón Nudoso - 1 Cimitarra - 5 5 Gema Verde (5 puntos de usuario) - 1 Medalla de las Fuerzas del Caos.' },
+        { nombre: 'Cofre Castillo Sur', probabilidad: '33%', objetos: '1 Vestimentas de Rey (E/G) - 1 Espada Argentum - 1 Corona - 1 Escudo de Caballero - 1 Gema Roja - 1 Gema Celeste - 10 Gema Verde (5 puntos de usuario) - 10 Gema Naranja (3 puntos de usuario).' },
+        { nombre: 'Cofre Castillo Norte', probabilidad: '33%', objetos: '1 Vestimenta de Rey - 1 Rompe Casco Superior - 1 Corona - 1 Escudo del Gran Imperio +1 - 1 Gema Violeta - 1 Gema Azul - 10 Gema Verde (5 puntos de usuario) - 10 Gema Naranja (3 puntos de usuario).' },
+        { nombre: 'Cofre Castillo Este', probabilidad: '33%', objetos: '1 Vestimenta de Rey - 1 Escudo Oscuro - 1 Corona - 1 Daga Dhanab - 1 Gema Verde - 10 Gema Verde (5 puntos de usuario) - 10 Gema Naranja (3 puntos de usuario) - 10 Gema Azul (1 puntos de usuario).' },
+        { nombre: 'Cofre Castillo Oeste', probabilidad: '33%', objetos: '1 Vestimentas de Rey (E/G) - 1 Báculo Engarzado - 1 Corona - 1 Gema Lila - 1 Sombreros de Mago - 10 Gema Verde (5 puntos de usuario) - 10 Gema Naranja (3 puntos de usuario) - 10 Gema Azul (1 puntos de usuario).' },
+        { nombre: 'Cofre de Artesano Powa', probabilidad: '-', objetos: '200 Lingotes de Hierro - 100 Lingotes de Plata - 50 Lingotes de Oro - 200 Ovillo de Oveja - 150 Ovillo de Cabra - 100 Ovillo de Llama - 1.000 Leña Elfica - 5.000 Raíz - 1 Daga Envenenada - 1 Espada Mata Dragones.' },
+        { nombre: 'Gran cofre de Cypher', probabilidad: '-', objetos: '1 Espada Mata Dragones - 1 Gema de Cristal Sagrada - 1 Daga Envenenada - 1 sScroll EXP (60 Minutos) - 1 Scroll ORO (60 Minutos) - 5 Gema De Clan - 1 Espiritu Cementerio - 1 Espiritu Dungeon Castillo - 5 Poción Anti Parálisis (Druida) - 1 Gema Verde - 1 Gema lila - 1 Gema Celeste - 1 Gema Roja - 1 Gema Azul - 1 Gema Violeta.' }
       ]
     }
   },

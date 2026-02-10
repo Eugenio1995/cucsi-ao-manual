@@ -374,6 +374,11 @@
   margin-bottom: 2rem;
 }
 
+.section-description-types {
+  font-size: 1.1rem; 
+  color: var(--text-secondary);  
+}
+
 .content-text {
   font-size: 1rem;
   line-height: 1.8;
