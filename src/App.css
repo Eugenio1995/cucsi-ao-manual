@@ -245,7 +245,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  cursor: pointer;
+ 
   text-align: left;
   width: 100%;
 }
@@ -529,7 +529,7 @@
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  cursor: pointer;
+ 
 }
 
 .race-card:hover {
@@ -624,7 +624,7 @@
   padding: 0;
   text-align: center;
   transition: all 0.3s ease;
-  cursor: pointer;
+ 
   overflow: hidden;
   min-height: 140px;
   display: flex;
@@ -690,7 +690,7 @@
   border: 2px solid var(--border-color);
   border-radius: 6px;
   font-weight: 600;
-  cursor: pointer;
+ 
   transition: all 0.3s ease;
   margin-bottom: 2rem;
 }
@@ -842,7 +842,7 @@
   background: none;
   border: none;
   color: var(--text-secondary);
-  cursor: pointer;
+ 
   padding: 0.25rem;
   border-radius: 4px;
   transition: all 0.2s ease;
@@ -881,7 +881,7 @@
 }
 
 .sortable-header {
-  cursor: pointer;
+ 
   user-select: none;
   position: relative;
 }
@@ -924,7 +924,7 @@
   color: var(--text-primary);
   font-size: 0.8rem;
   font-weight: 600;
-  cursor: pointer;
+ 
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -1038,7 +1038,7 @@
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
-  cursor: pointer;
+ 
   position: relative;
   overflow: hidden;
 }
@@ -1122,7 +1122,7 @@
   border: 2px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
-  cursor: pointer;
+ 
   transition: all 0.3s ease;
 }
 
@@ -1235,7 +1235,7 @@
 .creature-link {
   color: var(--accent-gold);
   font-weight: 700;
-  cursor: pointer;
+ 
   text-decoration: underline;
   transition: all 0.2s ease;
 }
@@ -1411,7 +1411,7 @@
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.9rem;
-    cursor: pointer;
+   
   }
 
   .content-container-with-sidebar {
@@ -1699,7 +1699,7 @@
   border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 0.35rem 0.75rem;
-  cursor: pointer;
+ 
   color: var(--text-secondary);
   font-size: 0.85rem;
   transition: all 0.2s ease;
@@ -2005,7 +2005,7 @@
   background: var(--parchment-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  cursor: pointer;
+ 
   transition: all 0.2s ease;
   text-align: left;
   width: 100%;
@@ -2523,7 +2523,7 @@
   padding: 0;
   text-align: center;
   transition: all 0.3s ease;
-  cursor: pointer;
+ 
   overflow: hidden;
   min-height: 160px;
   display: flex;
@@ -2915,7 +2915,7 @@
   background: var(--parchment-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  cursor: pointer;
+ 
   transition: all 0.2s ease;
   text-align: left;
   color: var(--text-primary);

@@ -1967,7 +1967,12 @@ export const WikiContent = () => {
                   }}
                   className={`sidebar-item ${activeSection === section.id ? 'active' : ''}`}
                 >
-                  {getIcon(section.icon)}
+                  {/* {getIcon(section.icon)} */}
+                  <img
+                    src={section.icon}
+                    alt={section.title}
+                    style={{maxWidth: "40px"}}
+                  />
                   <span className="sidebar-item-text">{section.title}</span>
                 </button>
               ))}

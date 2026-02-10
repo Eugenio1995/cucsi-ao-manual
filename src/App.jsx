@@ -5,6 +5,7 @@ import { WikiHeader } from "./components/WikiHeader";
 import { WikiHero } from "./components/WikiHero";
 import { WikiContent } from "./components/WikiContent";
 import { WikiFooter } from "./components/WikiFooter";
+import cursor5 from './assets/cursor5.png';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -30,7 +31,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ cursor: `url(${cursor5}), auto` }}>
       <WikiHeader darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <WikiHero />
       <WikiContent />

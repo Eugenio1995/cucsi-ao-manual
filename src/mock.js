@@ -12,12 +12,23 @@ import alquimia from './assets/alquimia.png';
 import esquila from './assets/esquila.png';
 import hilado from './assets/hilado.png';
 import recursos from './assets/recursos.png';
+import hechizosicono from './assets/hechizosicono.png';
+import clasesicono from './assets/clasesicono.png';
+import itemicono from './assets/itemicono.png';
+import mapaicono from './assets/mapaicono.png';
+import criaturasicono from './assets/criaturasicono.png';
+import partyicono from './assets/partyicono.png';
+import questicono from './assets/questicono.png';
+import domaricono from './assets/domaricono.png';
+import clanesicono from './assets/clanesicono.png';
+import bienvenidaicono from './assets/bienvenidaicono.png';
+
 
 export const wikiSections = [
   {
     id: 'bienvenida',
     title: 'Bienvenida',
-    icon: 'scroll',
+    icon: bienvenidaicono,
     content: {
       greeting: 'Wiki Cucsi Ao',
       message: '"Hola viajero, mi nombre es Cypher y soy el creador, amo y señor de estas tierras. Bienvenido a este placentero viaje, aquí encontrarás toda la información que necesites para ser el mejor guerrero. Prometo hacer lo posible para que te diviertas y no te sientas solo. Ahora, acepta este ropaje, estas bebidas y manzanas y atrévete a conocer mi mundo, las tierras de CucsiAO…"',
@@ -25,29 +36,11 @@ export const wikiSections = [
       roleInfo: 'La base del rol en Cucsi, se encuentra en los clanes y los castillos. En el mapa se encuentran cuatro Castillos con sus respectivos reyes, los cuales tendrán que ser conquistados por clanes, obteniendo como premio "PUNTOS" que aportaran para un Ranking que será visible cuando el usuario lo desee y que será explicado a la brevedad.',
       mapInfo: 'El mapa del mundo de Cucsi, fue basado en el mapa oficial de Argentum Online, respetando las principales ciudades, como "Ullatorphe", "Nix", "Banderbill", entre otras, y usando los dungeons originales con pequeñas modificaciones, tales como "Marabel", "Verill", "Dragon", etc. Fue agregado también el tan usado "Barco", cuya idea original fue obtenida de Cucsifae AO'
     }
-  },
-  /* {
-    id: 'cuenta',
-    title: 'Crear Cuenta, Habilitar Cuenta y Sistema de Referidos',
-    icon: 'user-plus',
-    content: {
-      description: 'Información sobre cómo crear tu cuenta, habilitarla y beneficiarte del sistema de referidos.',
-      placeholder: 'Contenido detallado sobre el proceso de creación de cuenta vendrá aquí...'
-    }
-  },
-  {
-    id: 'crear-personaje',
-    title: 'Crear Personaje',
-    icon: 'user-plus',
-    content: {
-      description: 'Proceso de creación de tu personaje en CucsiAO.',
-      text: 'Para crear personajes debemos haber iniciado sesión con nuestra Cuenta y seleccionar la opción "Crear". Podremos crear hasta ocho personajes en una misma Cuenta. Es aconsejable leer Información de personajes para entender respecto a sus características antes de la creación del mismo. Esto permitirá comenzar con la mayor ventaja posible, además las características elegidas no podrán cambiarse una vez terminada la creación del personaje.'
-    }
-  }, */
+  }, 
   {
     id: 'razas',
     title: 'Razas',
-    icon: 'users',
+    icon: carpinteria,
     content: {
       description: 'En estos tiempos de la edad media, hasta el momento se conocen 6 diferentes razas que habitan las tierras de CucsiAO.',
       races: [
@@ -90,7 +83,7 @@ export const wikiSections = [
   {
     id: 'clases',
     title: 'Clases',
-    icon: 'shield',
+    icon: clasesicono,
     content: {
       description: 'Al iniciar tu aventura elegirás que clase quieres ser, esto definirá tus características.',
       text: 'Al iniciar tu aventura eligiras que clase quieres ser, esto definirá tu características tales como el daño físico que infligirás, tu mana, tu vida, tu evasión, tu chance de acierto, tu equipamiento, entre otras cosas. Cada clase posee características propias de si mismo, y se diferencian siempre las unas de las otras.',
@@ -326,7 +319,7 @@ export const wikiSections = [
   {
     id: 'trabajo',
     title: 'Trabajo',
-    icon: 'briefcase',
+    icon: carpinteria,
     content: {
       description: 'En las tierras de CucsiAO, el trabajo es un medio muy importante para el progreso de tu personaje o de un clan en sí. Ahora vas a poder realizar todos los trabajos con tu personaje, dejó de existir la clase trabajador. Los recursos son agotables.',
       intro: 'Estas son los diferentes trabajos que tu personaje podrá realizar:',
@@ -902,7 +895,7 @@ export const wikiSections = [
   {
     id: 'mapa',
     title: 'Mapa',
-    icon: 'map',
+    icon: mapaicono,
     content: {
       description: 'Explora el vasto mundo de CucsiAO y sus territorios.',
       mapImagePlaceholder: true,
@@ -1012,7 +1005,7 @@ export const wikiSections = [
   {
     id: 'party',
     title: 'Party',
-    icon: 'users',
+    icon: partyicono,
     content: {
       description: 'En CucsiAO, se llama "Party" a un grupo de viajeros que se juntan para entrenar y mejorar sus habilidades juntos.',
       intro: 'Un personaje podrá crear una de estas e invitar a sus amigos. La experiencia ganada se repartirá equitativamente entre todos los miembros.',
@@ -1070,7 +1063,7 @@ export const wikiSections = [
   {
     id: 'criaturas',
     title: 'Criaturas',
-    icon: 'bug',
+    icon: criaturasicono,
     content: {
       description: 'Bestiario completo de las criaturas de CucsiAO.',
       creatures: [
@@ -1172,7 +1165,7 @@ export const wikiSections = [
   {
     id: 'quests',
     title: 'Quests & Modo Historia',
-    icon: 'book-open',
+    icon: questicono,
     content: {
       description: '¡Nuestro sistema de entrenamiento! Que tal forastero, si llegaste a este parte es porque necesitas entrenar. Al nacer en las tierras del Cucsi tendrás un teleport, en tu ciudad de origen, por el cual podrás ingresar al Dungeon Newbie (D-NW).',
       intro: 'El nivel Máximo informado indica que hasta ese nivel inclusive podremos pedir la misión para realizarla. Los Puntos de Usuario sirven para subir el Nivel de Clan, items de Torneo o para uno de los requisitos de la Nobleza.',
@@ -1296,7 +1289,7 @@ export const wikiSections = [
   {
     id: 'domar',
     title: 'Domar Animales',
-    icon: 'paw-print',
+    icon: domaricono,
     content: {
       description: 'La doma de criaturas puede ser utilizada por cualquier clase o raza, la misma consiste en domesticar animales salvajes para hacerlos mascotas.',
       intro: 'Estas bestias una vez domadas son fieles compañeras de aventuras ya que los defenderán en caso de que alguien o algo los ataque. Para domar a una criatura simplemente presionen la tecla "D" + click (por defecto) sobre la criatura para intentar domarla. Hay criaturas que se dejan domar fácilmente y otras que no.',
@@ -1346,7 +1339,7 @@ export const wikiSections = [
   {
     id: 'hechizos',
     title: 'Hechizos',
-    icon: 'sparkles',
+    icon: hechizosicono,
     content: {
       description: 'Compendio de todos los hechizos disponibles en CucsiAO. Cada hechizo tiene requisitos de skills, costos de maná y stamina.',
       spells: [
@@ -1414,7 +1407,7 @@ export const wikiSections = [
   {
     id: 'items',
     title: 'Items',
-    icon: 'package',
+    icon: itemicono,
     content: {
       description: 'Catálogo completo de items, armas y armaduras de CucsiAO.',
       categories: [
@@ -2062,7 +2055,7 @@ export const wikiSections = [
   {
     id: 'clanes',
     title: 'Clanes',
-    icon: 'flag',
+    icon: clanesicono,
     content: {
       description: 'En las tierras de CucsiAO, los clanes juegan un rol muy importante.',
       intro: 'El objetivo de los mismos, es fomentar el juego en equipo y la confianza entre los diferentes personajes y amigos, así como también generar un sentido de pertenencia a un grupo con un objetivo común.',
@@ -2145,7 +2138,7 @@ export const wikiSections = [
   {
     id: 'atributos',
     title: 'Atributos',
-    icon: 'trending-up',
+    icon: botanica,
     content: {
       description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
       intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
