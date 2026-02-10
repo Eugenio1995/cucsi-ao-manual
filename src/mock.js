@@ -22,6 +22,7 @@ import questicono from './assets/questicono.png';
 import domaricono from './assets/domaricono.png';
 import clanesicono from './assets/clanesicono.png';
 import bienvenidaicono from './assets/bienvenidaicono.png';
+import razasicono from './assets/razasicono.png';
 
 
 export const wikiSections = [
@@ -40,7 +41,7 @@ export const wikiSections = [
   {
     id: 'razas',
     title: 'Razas',
-    icon: carpinteria,
+    icon: razasicono,
     content: {
       description: 'En estos tiempos de la edad media, hasta el momento se conocen 6 diferentes razas que habitan las tierras de CucsiAO.',
       races: [
