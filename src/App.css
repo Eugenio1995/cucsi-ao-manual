@@ -245,7 +245,7 @@
   font-weight: 600;
   font-size: 0.95rem;
   transition: all 0.3s ease;
- 
+
   text-align: left;
   width: 100%;
 }
@@ -375,8 +375,8 @@
 }
 
 .section-description-types {
-  font-size: 1.1rem; 
-  color: var(--text-secondary);  
+  font-size: 1.1rem;
+  color: var(--text-secondary);
 }
 
 .content-text {
@@ -534,7 +534,7 @@
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
- 
+
 }
 
 .race-card:hover {
@@ -629,7 +629,7 @@
   padding: 0;
   text-align: center;
   transition: all 0.3s ease;
- 
+
   overflow: hidden;
   min-height: 140px;
   display: flex;
@@ -695,7 +695,7 @@
   border: 2px solid var(--border-color);
   border-radius: 6px;
   font-weight: 600;
- 
+
   transition: all 0.3s ease;
   margin-bottom: 2rem;
 }
@@ -847,7 +847,7 @@
   background: none;
   border: none;
   color: var(--text-secondary);
- 
+
   padding: 0.25rem;
   border-radius: 4px;
   transition: all 0.2s ease;
@@ -886,7 +886,7 @@
 }
 
 .sortable-header {
- 
+
   user-select: none;
   position: relative;
 }
@@ -929,7 +929,7 @@
   color: var(--text-primary);
   font-size: 0.8rem;
   font-weight: 600;
- 
+
   transition: all 0.2s ease;
   white-space: nowrap;
 }
@@ -1043,7 +1043,7 @@
   padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
- 
+
   position: relative;
   overflow: hidden;
 }
@@ -1127,7 +1127,7 @@
   border: 2px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
- 
+
   transition: all 0.3s ease;
 }
 
@@ -1240,7 +1240,7 @@
 .creature-link {
   color: var(--accent-gold);
   font-weight: 700;
- 
+
   text-decoration: underline;
   transition: all 0.2s ease;
 }
@@ -1416,7 +1416,7 @@
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.9rem;
-   
+
   }
 
   .content-container-with-sidebar {
@@ -1704,7 +1704,7 @@
   border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 0.35rem 0.75rem;
- 
+
   color: var(--text-secondary);
   font-size: 0.85rem;
   transition: all 0.2s ease;
@@ -2010,7 +2010,7 @@
   background: var(--parchment-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
- 
+
   transition: all 0.2s ease;
   text-align: left;
   width: 100%;
@@ -2528,7 +2528,7 @@
   padding: 0;
   text-align: center;
   transition: all 0.3s ease;
- 
+
   overflow: hidden;
   min-height: 160px;
   display: flex;
@@ -2920,7 +2920,7 @@
   background: var(--parchment-bg);
   border: 1px solid var(--border-color);
   border-radius: 6px;
- 
+
   transition: all 0.2s ease;
   text-align: left;
   color: var(--text-primary);
@@ -3209,5 +3209,333 @@
   .trabajo-name {
     font-size: 0.85rem;
     padding: 0.4rem 0.75rem;
+  }
+}
+
+.cucsi-welcome-box {
+  background: linear-gradient(135deg, var(--parchment-light) 0%, var(--parchment-bg) 100%);
+  border: 3px solid var(--accent-gold);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cucsi-welcome-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--accent-gold);
+  margin: 0 0 1rem 0;
+}
+
+.cucsi-welcome-title svg {
+  color: var(--accent-gold);
+}
+
+.cucsi-welcome-desc {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+}
+
+.cucsi-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(201, 169, 97, 0.15);
+  border: 1px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.cucsi-disclaimer svg {
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  margin-top: 2px;
+}
+
+.cucsi-disclaimer p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cucsi-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid #dc2626;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+.cucsi-warning svg {
+  flex-shrink: 0;
+  color: #dc2626;
+  margin-top: 2px;
+}
+
+.cucsi-warning p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* How To Section */
+.cucsi-howto-section {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.cucsi-section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--accent-brown);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.cucsi-intro {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.cucsi-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cucsi-step {
+  background: var(--parchment-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.cucsi-step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cucsi-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brown) 100%);
+  color: var(--parchment-light);
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cucsi-step-desc {
+  margin: 0;
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding-top: 0.25rem;
+}
+
+.cucsi-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--parchment-dark);
+  border-radius: 6px;
+  padding: 1.5rem;
+  color: var(--text-secondary);
+  font-style: italic;
+
+}
+
+.cucsi-image-placeholder img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cucsi-image-placeholder svg {
+  color: var(--accent-gold);
+  opacity: 0.6;
+}
+
+.cucsi-important-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, var(--accent-brown) 0%, var(--accent-gold) 100%);
+  color: var(--parchment-light);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+.cucsi-important-note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cucsi-important-note p {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Items Section */
+.cucsi-items-section {
+  margin-bottom: 2rem;
+}
+
+.cucsi-items-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.cucsi-items-table th,
+.cucsi-items-table td {
+  border-right: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+}
+
+.cucsi-items-table th:last-child,
+.cucsi-items-table td:last-child {
+  border-right: none;
+}
+
+.cucsi-item-name {
+  font-weight: 700;
+  color: var(--accent-brown);
+  white-space: nowrap;
+}
+
+.cucsi-item-price {
+  text-align: center;
+  font-weight: bold;
+  color: var(--accent-gold);
+  background: var(--parchment-dark);
+  white-space: nowrap;
+}
+
+.cucsi-item-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.cucsi-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cucsi-note-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--parchment-light);
+  border-radius: 6px;
+  border-left: 3px solid var(--accent-gold);
+}
+
+.cucsi-note-item svg {
+  flex-shrink: 0;
+  color: var(--accent-gold);
+  margin-top: 2px;
+}
+
+.cucsi-note-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Final Important Section */
+.cucsi-final-important {
+  background: var(--parchment-light);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border-left: 5px solid var(--accent-gold);
+}
+
+.cucsi-important-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  color: var(--accent-brown);
+  margin: 0 0 1rem 0;
+}
+
+.cucsi-important-title svg {
+  color: var(--accent-gold);
+}
+
+.cucsi-important-list {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.cucsi-important-list li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.cucsi-important-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive for Cucsi Puntos */
+@media (max-width: 768px) {
+  .cucsi-welcome-title {
+    font-size: 1.4rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cucsi-step-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .cucsi-items-table th,
+  .cucsi-items-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .cucsi-disclaimer,
+  .cucsi-warning {
+    flex-direction: column;
   }
 }

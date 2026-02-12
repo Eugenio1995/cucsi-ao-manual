@@ -596,6 +596,111 @@ export const WikiContent = () => {
       );
     }
 
+    // Render Cucsi Puntos
+    if (section.id === 'cucsi-puntos') {
+      return (
+        <div className="section-content">
+          {/* Welcome Section */}
+          <div className="cucsi-welcome-box">
+            <h2 className="cucsi-welcome-title">
+              <Icons.Coins size={28} />
+              {section.content.welcome.title}
+            </h2>
+            <p className="cucsi-welcome-desc">{section.content.welcome.description}</p>
+            <div className="cucsi-disclaimer">
+              <Icons.Heart size={18} />
+              <p>{section.content.welcome.disclaimer}</p>
+            </div>
+            <div className="cucsi-warning">
+              <Icons.AlertTriangle size={18} />
+              <p>{section.content.welcome.warning}</p>
+            </div>
+          </div>
+
+          {/* How To Get Points */}
+          <div className="cucsi-howto-section">
+            <h2 className="cucsi-section-title">{section.content.howTo.title}</h2>
+            <p className="cucsi-intro">{section.content.howTo.intro}</p>
+
+            <div className="cucsi-steps">
+              {section.content.howTo.steps.map((step, idx) => (
+                <div key={idx} className="cucsi-step">
+                  <div className="cucsi-step-header">
+                    <span className="cucsi-step-number">{step.number}</span>
+                    <p className="cucsi-step-desc">{step.description}</p>
+                  </div>
+                  {step.hasImage && (
+                    <div className="cucsi-image-placeholder">                      
+                      <img
+                        src={step.img}
+                        alt={step.number}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="cucsi-important-note">
+              <Icons.AlertCircle size={20} />
+              <p>{section.content.howTo.importantNote}</p>
+            </div>
+          </div>
+
+          {/* Items Table */}
+          <div className="cucsi-items-section">
+            <h2 className="cucsi-section-title">{section.content.items.title}</h2>
+            <p className="cucsi-intro">{section.content.items.intro}</p>
+
+            <div className="table-container">
+              <div className="table-scroll">
+                <table className="wiki-table cucsi-items-table">
+                  <thead>
+                    <tr>
+                      <th>Item</th>
+                      <th>Precio</th>
+                      <th>Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.content.items.table.map((row, idx) => (
+                      <tr key={idx}>
+                        <td className="cucsi-item-name">{row.item}</td>
+                        <td className="cucsi-item-price">{row.precio} CP</td>
+                        <td className="cucsi-item-desc">{row.descripcion}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="cucsi-notes">
+              {section.content.items.notes.map((note, idx) => (
+                <div key={idx} className="cucsi-note-item">
+                  <Icons.Info size={16} />
+                  <p>{note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Important Section */}
+          <div className="cucsi-final-important">
+            <h3 className="cucsi-important-title">
+              <Icons.AlertTriangle size={22} />
+              {section.content.important.title}
+            </h3>
+            <ul className="cucsi-important-list">
+              {section.content.important.notes.map((note, idx) => (
+                <li key={idx}>{note}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      );
+    }
+
     // Render Criaturas (Bestiary)
     if (section.id === 'criaturas') {
       const filteredCreatures = getFilteredAndSortedCreatures(section.content.creatures);
@@ -1172,11 +1277,11 @@ export const WikiContent = () => {
                     </th>
                     <th>
                       Objetos
-                    </th>                   
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {section.content.cofres.map((cofre, idx) => {                    
+                  {section.content.cofres.map((cofre, idx) => {
                     return (
                       <tr key={idx}>
                         <td className="spell-name">{cofre.nombre}</td>

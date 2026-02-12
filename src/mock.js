@@ -24,6 +24,14 @@ import clanesicono from './assets/clanesicono.png';
 import bienvenidaicono from './assets/bienvenidaicono.png';
 import razasicono from './assets/razasicono.png';
 import cofreicono from './assets/cofreicono.png';
+import cucsipts1 from './assets/cucsipts1.png';
+import cucsipts2 from './assets/cucsipts2.png';
+import cucsipts3 from './assets/cucsipts3.png';
+import cucsipts4 from './assets/cucsipts4.png';
+import cucsipts5 from './assets/cucsipts5.png';
+import cucsipts6 from './assets/cucsipts6.png';
+import cucsipts7 from './assets/cucsipts7.png';
+import cucsiPuntos from './assets/cucsiPuntos.png';
 
 
 export const wikiSections = [
@@ -319,750 +327,6 @@ export const wikiSections = [
     }
   },
   {
-    id: 'trabajo',
-    title: 'Trabajo',
-    icon: carpinteria,
-    content: {
-      description: 'En las tierras de CucsiAO, el trabajo es un medio muy importante para el progreso de tu personaje o de un clan en sí. Ahora vas a poder realizar todos los trabajos con tu personaje, dejó de existir la clase trabajador. Los recursos son agotables.',
-      intro: 'Estas son los diferentes trabajos que tu personaje podrá realizar:',
-      importantNote: {
-        title: 'Importante',
-        items: [
-          'Cualquier Personaje de Nivel 1 a 12 extraerán entre 1 a 5 recursos de cualquier tipo. (Leña, Minerales, Peces, Lanas, Raíces).',
-          'Ahora pueden trabajar en zona segura y van a extraer 1 a 5 recursos.',
-          'Los Personajes de Nivel 13 o superior extraerán más recursos.'
-        ]
-      },
-      trabajos: [
-        {
-          id: 'pesca',
-          nombre: 'Pesca',
-          icon: redpesca,
-          descripcion: 'El oficio de la pesca consiste en la obtención de peces. Para esto el personaje debe tener seleccionada y equipada una caña de pescar o una red de pesca (ésta última es solo equipable por el trabajador), luego buscar agua ya sea un lago, río, etc. y presionar la tecla U (por defecto o doble click sobre la herramienta) y hacer click sobre el agua.',
-          descripcion2: 'El Trabajador con el oficio en Pescar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
-          bonificacion: {
-            title: 'Bonificación',
-            items: [
-              'Con Red de Pesca en Zona Insegura extraemos más recursos por nivel.',
-              'Utilizando la embarcación Galera y Red de Pesca en Zona Insegura, tendremos la posibilidad de obtener Cofres de Pesca.'
-            ]
-          },
-          itemsTable: {
-            title: 'Items de Pesca',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Caña de Pescar', 'Item necesario para la extración de peces, se vende en el NPC "Vendedor"'],
-              ['Red de Pesca', 'Item necesario para la extración de variedad de peces, se vende en el NPC "Vendedor" (SE CAE)']
-            ]
-          },
-          resourcesTable: {
-            title: 'Tipos de Peces y Precios',
-            headers: ['Nombre', 'Precio'],
-            rows: [
-              ['Pez Dorado', '6 monedas de oro. Requiere red de pesca'],
-              ['Pez Espada', '5 monedas de oro. Requiere red de pesca'],
-              ['Merluza', '4 monedas de oro. Requiere red de pesca'],
-              ['Pescado', '2 monedas de oro']
-            ]
-          },
-          cofresNote: 'IMPORTANTE: Al abrir los cofres existe la posibilidad de conseguir hasta 3 de los objetos del cofre como también la posibilidad de que el cofre no de ningún objeto.',
-          cofresTable: {
-            title: 'Tipos de Cofres',
-            headers: ['Nombre del cofre', 'Prob. de conseguirlo', 'Objetos'],
-            rows: [
-              ['Cofre de Pesca Verde', '1,2%', '2.000 Pescados - 1.000 Pez Dorado - 500 Merluza - 250 Pez Espada - 1.000 Monedas de Oro - 2 Gema Verde (5 puntos de usuario) - 2 Gema Naranja (3 puntos de usuario) - 2 Gema Azul (1 puntos de usuario).'],
-              ['Cofre de Pesca Celeste', '0,9%', '6.000 Pescados - 5.000 Pez Dorado - 3.000 Merluza - 2.000 Pez Espada - 5.000 Monedas de Oro - 1 Cofre de Pesca Verde - 3 Gema Verde (5 puntos de usuario) - 3 Gema Naranja (3 puntos de usuario) - 3 Gema Azul (1 puntos de usuario).'],
-              ['Cofre de Pesca Violeta', '0,6%', '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 10.000 Monedas de Oro - 20 Poción Roja - 5 Gema Verde (5 puntos de usuario) - 5 Gema Naranja (3 puntos de usuario) - 5 Gema Azul (1 puntos de usuario).'],
-              ['Cofre de Pesca de Oro', '0,3%', '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 1 Cofre de Pesca Violeta - 1 Red de Pesca - 400 Pociones de Rojas - 7 Gema Verde (5 puntos de usuario) - 7 Gema Naranja (3 puntos de usuario) - 7 Gema Azul (1 puntos de usuario).']
-            ]
-          },
-          extraccion: {
-            title: 'Extracción de Peces',
-            intro: 'A la hora de Pescar con nuestro trabajador lo podremos realizar en Zona Segura o en Zona Insegura. El beneficio de pescas en Zona Insegura es que recibiremos una bonificación de extracción de una mayor cantidad de recursos pero SOLO será con nuestra Red de Pesca. Para poder utilizar la Red de Pesca deberemos de estar embarcados y el tipo de embarque es indistinto ya sea Barca, Galera o Galeón dado a que la bonificación solo se aplica para la zona segura o insegura. Con Caña de Pescar extraeremos la misma cantidad de recursos estando en tierra o navegando.',
-            calculoTitle: 'Cálculo de Extracción',
-            calculoIntro: 'Para saber cuantos peces recojeremos con nuestro trabajador influirán los siguientes factores:',
-            zonas: [
-              {
-                nombre: 'Zona Segura',
-                items: [
-                  'Caña de Pesca: extraemos SIEMPRE entre 1 a 5 peces sin importar nuestro nivel.',
-                  'Red de Pesca: extraemos SIEMPRE entre 1 a 10 peces sin importar nuestro nivel.'
-                ]
-              },
-              {
-                nombre: 'Zona Insegura',
-                items: [
-                  'Caña de Pesca: (Mínimo: TuNivel -10 / Máximo: TuNivel -7). Osea si somos Nivel 20 extraemos entre 10 y 13 peces.',
-                  'Red de Pesca: (Mínimo: TuNivel -10 / Máximo: TuNivel -5). Osea si somos Nivel 20 extraemos entre 10 y 15 peces.'
-                ]
-              }
-            ],
-            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
-          },
-          importantNotes: [
-            'Los PECES SE CAEN si morimos en AGUA.',
-            'La RED DE PESCA se cae como cualquier otro item de trabajador, también en agua.'
-          ],
-          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
-        },
-        {
-          id: 'tala',
-          nombre: 'Tala',
-          icon: tala,
-          descripcion: 'El oficio de la tala consiste en la obtención de leños, una vez que tengas un hacha de leñador deberás equiparla con la tecla equipar (E), luego buscar un árbol, presionar la tecla Usar (U), se te activa el macro automático del servidor) y hacer click sobre el árbol. Los trabajadores pueden extraer o construir de a uno o más recursos/objetos a la vez, dependiendo de su nivel. Mientras más nivel sea, más recursos obtendrá por vez y más objetos podrá construir por vez (ver Extracción).',
-          descripcion2: 'El Trabajador con el oficio en Talar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez. Las leñas sirven para que puedas construir items de Carpintería.',
-          itemsTable: {
-            title: 'Items de Tala',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Hacha de Leñador', 'Item necesario para extraer materiales de los árboles, se vende en el NPC "Vendedor"'],
-              ['Hacha de Leña Élfica', 'Item necesario para extraer materiales de los árboles élficos, se vende en el NPC "Vendedor"'],
-              ['Leña', 'Recurso extraído desde un Árbol'],
-              ['Leña Élfica', 'Recurso extraído desde un Árbol Élfico']
-            ]
-          },
-          extraccion: {
-            title: 'Extracción de Leña',
-            intro: 'Con nuestro trabajador y su herramienta de trabajo Hacha de Leñador o Hacha de Leña Élfica, dependiendo del tipo de recurso que deseamos extraer, nos dirigiremos a zona insegura para empezar nuestra tala.',
-            calculoTitle: 'Cálculo de Extracción',
-            formulas: [
-              'Nivel 1 a 12: extraemos entre 2 a 5 de Leña sin importar tu nivel.',
-              'Nivel 13 o Más: extraemos (Mínimo: TuNivel -10 / Máximo: TuNivel -5). Osea si somos Nivel 20 extraemos entre 10 y 15 Leña.'
-            ],
-            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
-          },
-          importantNotes: [
-            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
-            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
-          ],
-          locationInfo: [
-            'La Leña podremos extraerla de cualquier árbol de las tierras.',
-            'En cambio para poder extraer Leña Élfica deberemos de dirigirnos al Bosque Élfico situado al Sureste de la ciudad de Nix ubicado en el Mapa 145, ya que es el único lugar de las tierras donde podremos hacernos de ella pero para llegar a dicho lugar deberemos de navegar.'
-          ],
-          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
-        },
-        {
-          id: 'carpinteria',
-          nombre: 'Carpintería',
-          icon: carpinteria,
-          descripcion: 'El oficio de la carpintería sirve para construir objetos a base de leña. Una vez que tengas un serrucho deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en carpintería.',
-          descripcion2: 'El Trabajador con el oficio en Carpintería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
-          itemsTable: {
-            title: 'Items de Carpintería',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Serrucho', 'Item necesario para la construcción con madera, se vende en el NPC "Vendedor"'],
-              ['Leña', 'Recurso extraído desde un Árbol para la elaboración de objetos'],
-              ['Leña Élfica', 'Recurso extraído desde un Árbol Élfico para la elaboración de objetos']
-            ]
-          },
-          creacion: {
-            title: 'Creación',
-            steps: [
-              'Utilizando el Serrucho abrimos el menú de creación.',
-              'Seleccionamos el objeto a construir junto con su cantidad.'
-            ]
-          },
-          craftingTable: {
-            title: 'Lista de Objetos de Creación',
-            headers: ['Item', 'Leña', 'Leña Élfica', 'Skills', 'Defensa', 'Daño'],
-            rows: [
-              ['Cuchara', '3', '-', '5', '', ''],
-              ['Caña de Pescar', '70', '-', '12', '', ''],
-              ['Arco Simple', '42', '-', '20', '', ''],
-              ['Flecha', '1', '-', '20', '', ''],
-              ['Barca (Navegas 5% más rápido)', '10.000', '-', '80 / (60 trabajadores) / (40 piratas)', '5/10', '5/10'],
-              ['Flecha +1', '3', '-', '40', '', ''],
-              ['Galera (Navegas 10% más rápido)', '45.000', '25.000', '90 / (68 trabajadores) / (45 piratas)', '10/15', '7/15'],
-              ['Flecha +2', '5', '-', '60', '', ''],
-              ['Tambor', '800', '-', '75', '', ''],
-              ['Flauta', '800', '-', '75', '', ''],
-              ['Arco De Oro', '1.500', '-', '80', '-', '5/9'],
-              ['Bastón Nudoso', '2.500', '-', '80', '', ''],
-              ['Arco de Perla Azul', '3.500', '-', '90', '-', '8/10'],
-              ['Flecha +3', '7', '-', '90', '', ''],
-              ['Flauta Mágica', '3.000', '-', '100', '', ''],
-              ['Laúd Mágico', '3.300', '-', '100', '', ''],
-              ['Ballesta', '10.000', '1.000', '100', '-', '7/12'],
-              ['Báculo Engarzado', '8.000', '-', '100', '', ''],
-              ['Flauta Élfico', '-', '3.650', '100', '', ''],
-              ['Laúd Élfico', '-', '3.650', '100', '', ''],
-              ['Galeón (Navegas 15% más rápido)', '90.000', '50.000', '100 / (75 trabajadores) / (50 pirata)', '15/20', '10/17']
-            ]
-          },
-          desmantelacion: {
-            title: 'Desmantelación de Objetos de Carpintería',
-            descripcion: 'El oficio desmantelar consiste en la recuperación de piezas para poder a reutilizar la madera, una vez que tengas una cierta cantidad de objetos a desmantelar deberás buscar un serrucho ubicado en la casa del carpintero de cada ciudad, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre el serrucho. La desmantelación depende de la clase y los puntos ya que los objetos a desmantelar son aquellos creados mediante la Carpintería. Que requieran al menos 50 skills, se podrán desmantelar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
-            note: 'IMPORTANTE: SOLO podremos fundir los objetos del siguiente listado cuales SKILLS en CARPINTERIA deberán de ser 50 o superiores:',
-            table: {
-              headers: ['Item', 'Leña', 'Leña Élfica', 'Skills'],
-              rows: [
-                ['Galera (Navegas 10% más rápido)', '45.000', '25.000', '90 / (68 trabajadores) / (45 piratas)'],
-                ['Flecha +2', '5', '-', '60'],
-                ['Tambor', '800', '-', '75'],
-                ['Flauta', '800', '-', '75'],
-                ['Arco De Oro', '1.500', '-', '80'],
-                ['Bastón Nudoso', '2.500', '-', '80'],
-                ['Arco de Perla Azul', '3.500', '-', '90'],
-                ['Flecha +3', '7', '-', '90'],
-                ['Flauta Mágica', '3.000', '-', '100'],
-                ['Laúd Mágico', '3.000', '-', '100'],
-                ['Ballesta', '6.000', '3.000', '100'],
-                ['Báculo Engarzado', '4.500', '-', '100'],
-                ['Flauta Élfico', '-', '3.650', '100'],
-                ['Laúd Élfico', '-', '3.650', '100'],
-                ['Galeón (Navegas 15% más rápido)', '90.000', '50.000', '100 / (75 trabajadores) / (50 pirata)']
-              ]
-            }
-          }
-        },
-        {
-          id: 'botanica',
-          nombre: 'Botánica',
-          icon: botanica,
-          descripcion: 'La botánica es el trabajo dedicado a la extracción de los recursos de raíces de los árboles para luego poder elaborar complejas pociones de un grado superior a las que podremos encontrar en el comerciante con el arte de la Alquimia.',
-          descripcion2: 'La extracción de raíces es un arte pura y exclusivamente de la clase DRUIDA mientras que con el resto de las clases sólo podrá obtener una a la vez.',
-          bonificacion: 'BONIFICACIÓN: A partir de Nivel 45 empezaremos a extraer más recursos por nivel.',
-          itemsTable: {
-            title: 'Items de Botánica',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Tijeras', 'Item necesario para la creación de pociones, se vende en el NPC "Vendedor"'],
-              ['Raíz', 'Recurso extraído desde un Árbol']
-            ]
-          },
-          castilloNote: 'También si tienes un Clan nivel 3, puedes trabajar en las catacumbas de los castillos.',
-          extraccion: {
-            title: 'Extracción de Raíces',
-            intro: 'Con nuestro Druida y su herramienta de trabajo Tijeras nos dirigiremos a zona insegura para empezar nuestra recolección:',
-            calculoTitle: 'Cálculo de Extracción',
-            formulas: [
-              'Nivel 1 a 44: extraemos entre 2 a 4 Raíces sin importar tu nivel.',
-              'Nivel 45 o Más: extraemos (Mínimo: TuNivel -42 / Máximo: TuNivel -38). Osea si somos Nivel 45 extraemos entre 3 y 7 Raíces.'
-            ],
-            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.',
-            importantNote: 'IMPORTANTE: Mientras más nivel tenga nuestro Druida más recursos extraerá.'
-          }
-        },
-        {
-          id: 'alquimia',
-          nombre: 'Alquimia',
-          icon: alquimia,
-          descripcion: 'El Alquimia es el Arte de las viejas brujas la cual sirve para la creación de poderosas pociones a base de raíces. Una vez que tengas una Olla deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Alquimia.',
-          descripcion2: 'El Druida con el oficio en Alquimia es quién podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
-          itemsTable: {
-            title: 'Items de Alquimia',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Olla', 'Item necesario para la construcción con raíces, se vende en el NPC "Vendedor"'],
-              ['Raíz', 'Recurso extraído desde un Árbol para elaboración de pociones']
-            ]
-          },
-          creacion: {
-            title: 'Creación',
-            steps: [
-              'Utilizando la Olla abrimos el menú de creación.',
-              'Seleccionamos el objeto a construir junto con su cantidad.'
-            ]
-          },
-          craftingTable: {
-            title: 'Lista de Objetos de Creación',
-            headers: ['Item', 'Estado', 'Bonificación', 'Raíces', 'Skills'],
-            rows: [
-              ['Poción Violeta (Druida)', 'Cura el veneno', '-', '10', '10'],
-              ['Poción Roja', 'Recupera Vida', '28-30', '14', '10'],
-              ['Poción de Energía', 'Recupera energía', '25-50', '50', '30'],
-              ['Poción de Energía (Druida)', 'Recupera más energía', '50-100', '100', '30'],
-              ['Poción Azul (Druida)', 'Recupera más mana', '100-150', '200', '50'],
-              ['Poción Azul', 'Recupera mana', '50-75', '14', '60'],
-              ['Poción Amarilla', 'Aumenta la agilidad', '4-6', '14', '60'],
-              ['Poción Verde', 'Aumenta la fuerza', '4-6', '14', '60'],
-              ['Poción Roja (Druida)', 'Recupera más vida', '38-38', '100', '60'],
-              ['Poción Amarilla (Druida)', 'Aumenta más la agilidad', '8-10', '250', '70'],
-              ['Poción Verde (Druida)', 'Aumenta más la fuerza', '8-10', '300', '80'],
-              ['Poción Anti Ceguera', 'Devuelve la visión', '-', '2.000', '100'],
-              ['Poción Anti Estupidez', 'Vuelve a la normalidad al personaje', '-', '2.000', '100'],
-              ['Poción Anti Parálisis', 'Remueve la parálisis', '-', '4.000', '100']
-            ]
-          }
-        },
-        {
-          id: 'mineria',
-          nombre: 'Minería',
-          icon: mineria,
-          descripcion: 'La minería es una de las profesiones mejor pagas de Argentum Online debido a su alto riesgo. La extracción de minerales implica salir de la ciudad y entrar a una peligrosa mina en busca de yacimientos y hasta poderosos Dungeons. Estos deben ser trabajados con un piquete de minero, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el yacimiento.',
-          descripcion2: 'Con la minería obtendremos la extracción de minerales de hierro, plata y oro materia prima para la fundición de Lingotes y con ellos crear poderosos objetos con un Herrero. El Trabajador con el oficio de Minería puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
-          itemsTable: {
-            title: 'Items de Minería',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Piquete de Minero', 'Item necesario para extraer materiales de los yacimientos, se vende en el NPC "Vendedor"'],
-              ['Mineral de Hierro', 'Recurso extraído desde un Yacimiento de Hierro'],
-              ['Mineral de Plata', 'Recurso extraído desde un Yacimiento de Plata'],
-              ['Mineral de Oro', 'Recurso extraído desde un Yacimiento de Oro']
-            ]
-          },
-          extraccion: {
-            title: 'Extracción de Minerales',
-            intro: 'Con nuestro Trabajador y su herramienta de trabajo Piquete de Minero nos dirigiremos a zona insegura para empezar nuestra extracción de minerales las cuales se hallan en lo profundo de las catacumbas o dungeons.',
-            calculoTitle: 'Cálculo de Extracción',
-            formulas: [
-              'Nivel 1 a 12: extraemos entre 5 a 10 Minerales sin importar tu nivel.',
-              'Nivel 13 o Más: extraemos (Mínimo: TuNivel-10 / Máximo: TuNivel-5). Osea si somos Nivel 20 extraemos entre 10 y 15 Minerales.'
-            ],
-            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
-          },
-          importantNotes: [
-            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
-            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
-          ],
-          locationInfo: [
-            'Las minas de hierro se encuentran cerca de la ciudad Blillinton.',
-            'Las minas de plata se encuentran cerca de la ciudad Dahl.',
-            'Las minas de Oro, se encuentran dentro del Dungeon Veril, donde tendrás que ser muy cuidadoso ya que es el dungeon más transcurrido de las tierras.'
-          ],
-          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
-        },
-        {
-          id: 'lingotes',
-          nombre: 'Creación de Lingotes',
-          icon: lingotes,
-          descripcion: 'La habilidad del Trabajador con el oficio en Minería es quién posee la habilidad de fundir los minerales extraídos de los yacimientos para poder convertirlos en Lingotes los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Herrero. Para poder fundir los materiales nos acercaremos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta la Fragua y, seleccionando de nuestro inventario los minerales, presionar tecla Usar (U o doble click) y clickear sobre la fragua.',
-          descripcion2: 'La fundición la podremos realizar con nuestro Trabajador con el oficio en Minería ya que es él quién podrá fundir todos los tipos de materiales como el Hierro, la Plata o el Oro. El resto de las clases sólo podrá fundir minerales de hierro.',
-          itemsTable: {
-            title: 'Items para la Fundición',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Fragua', 'Lugar donde podremos fundir nuestros minerales.'],
-              ['Mineral de Hierro', 'Recurso extraído desde un Yacimiento de Hierro'],
-              ['Mineral de Plata', 'Recurso extraído desde un Yacimiento de Plata'],
-              ['Mineral de Oro', 'Recurso extraído desde un Yacimiento de Oro']
-            ]
-          },
-          fundicion: {
-            title: 'Fundición de Minerales',
-            intro: 'Con nuestro Trabajador nos acercaremos hasta la casa del Herrero para fundir los minerales en la fragua:',
-            requisitos: [
-              'Necesitaremos 25 skills en Minería para fundir Minerales de Hierro con un Trabajador y 75 skills para el resto de las clases.',
-              'Necesitaremos 50 skills en Minería para fundir Minerales de Plata.',
-              'Necesitaremos 100 skills en Minería para fundir Minerales de Oro.'
-            ]
-          },
-          conversionTable: {
-            title: 'Cantidad de Minerales por Lingote',
-            headers: ['Minerales', 'Cantidad', 'Lingote'],
-            rows: [
-              ['Mineral de Hierro', '70', '5 Lingote de Hierro'],
-              ['Mineral de Plata', '100', '5 Lingote de Plata'],
-              ['Mineral de Oro', '175', '5 Lingote de Oro']
-            ]
-          }
-        },
-        {
-          id: 'herreria',
-          nombre: 'Herrería',
-          icon: herreria,
-          descripcion: 'El oficio de la Herrería sirve para la construcción de poderosas Armas, Armaduras, Cascos, Escudos e Items Mágico a base de Lingotes de Hierro, Plata y Oro. Una vez que tengas un Martillo de Herrero y nuestros Lingotes deberemos de dirigirnos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Yunque y, equipando nuestro Martillo de Herrero con la tecla (E), presionaremos la tecla Usar (U o doble click) sobre el Yunque y se nos abrirá el menú de creación.',
-          descripcion2: 'El Trabajador con el oficio en Herrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
-          itemsTable: {
-            title: 'Items de Herrería',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Martillo de Herrero', 'Item necesario para la creación con Lingotes, se vende en el NPC "Vendedor".'],
-              ['Yunque', 'Lugar donde podremos crear nuestros objetos o fundirlos.'],
-              ['Lingote de Hierro', 'Recurso fundido de los Minerales de Hierro'],
-              ['Lingote de Plata', 'Recurso fundido de los Minerales de Plata'],
-              ['Lingote de Oro', 'Recurso fundido de los Minerales de Oro']
-            ]
-          },
-          creacion: {
-            title: 'Creación',
-            steps: [
-              'Utilizando el Martillo de Herrero y haciendo click en el Yunque abrimos el menú de creación.',
-              'Podremos seleccionar Armas o Armaduras (Armaduras/Cascos y Escudos).',
-              'Seleccionamos el objeto a construir junto con su cantidad.'
-            ]
-          },
-          /* links: {
-            title: 'Lista de Objetos de Creación',
-            intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
-            items: [
-              { text: '1 - Armaduras Altos (Hombre/Mujer)', target: 'items', subsection: '1.1' },
-              { text: '2 - Armaduras Bajos (Enano/Gnomo)', target: 'items', subsection: '1.1' },
-              { text: '3 - Armas', target: 'items', subsection: '2.1' },
-              { text: '4 - Escudos y Cascos', target: 'items', subsection: '3.1' }
-            ]
-          }, */
-          fundicion: {
-            title: 'Fundir Objetos de Herrería',
-            descripcion: 'El oficio de la fundición consiste en la fundición de minerales para convertirlos en lingotes (útiles para crear armas, armaduras, etc., en la herrería), una vez que tengas una cierta cantidad de objetos a fundir deberás buscar una fragua, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre la fragua. La fundición depende de la clase y los puntos ya que los objetos a fundir son aquellos creados mediante la Herrería. Que requieran al menos 50 skills, se podrán desmantelar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
-            note: 'IMPORTANTE: SOLO podremos fundir los objetos del siguiente listado cuales SKILLS en HERRERÍA deberán de ser 50 o superiores.'
-          }
-        },
-        {
-          id: 'esquila',
-          nombre: 'Esquila',
-          icon: esquila,
-          descripcion: 'Cypher vio que los lobos y osos que el tanto quería, estaban siendo masacrados solo por sus pieles y decidió prohibir la caza indiscriminada. Por esto, todos los sastres entraron en huelga, y por muchos días la gente anduvo desnuda en señal de protesta. En consecuencia, el Dios Cypher autorizó la esquila de animales y trajo unos pastores especializados en el tema, que llegaron desde lejos con sus tijeras y algunas simpáticas criaturas, así y de pronto, los sastres aprendieron a esquilar y a hilar la lana obtenida, y con esta pudieron crear las ropas que tan bien vestían.',
-          descripcion2: 'Estos Trabajadores con unas Tijeras de Esquilar, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el animal. Con la Esquila obtendremos la extracción de Lanas de Oveja, Cabra y Llama materia prima la cual Hilaremos y con los ovillos creados podremos realizar poderosas Vestimentas y Túnicas con un Sastre. El Trabajador con el oficio en Esquilar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
-          itemsTable: {
-            title: 'Items de Esquila',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Tijeras de Esquila', 'Item necesario para extraer Lana de los animales, se vende en el NPC "Vendedor"'],
-              ['Lana de Oveja', 'Recurso extraído de una Oveja'],
-              ['Lana de Cabra', 'Recurso extraído de una Cabra'],
-              ['Lana de Llama', 'Recurso extraído de una Llama']
-            ]
-          },
-          extraccion: {
-            title: 'Extracción de Lanas',
-            intro: 'Con nuestro Trabajador y su herramienta de trabajo Tijeras de Esquilar nos dirigiremos a zona insegura para empezar nuestra extracción de lanas:',
-            calculoTitle: 'Cálculo de Extracción',
-            formulas: [
-              'Nivel 1 a 12: extraemos entre 5 a 10 Lanas sin importar tu nivel.',
-              'Nivel 13 o Más: extraemos (Mínimo: TuNivel-10 / Máximo: TuNivel-5). Osea si somos Nivel 20 extraemos entre 10 y 15 Lanas.'
-            ],
-            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
-          },
-          importantNotes: [
-            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
-            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
-          ],
-          locationInfo: [
-            'Las Ovejas se encuentran ubicadas en el Mapa 29.',
-            'Las Cabras se encuentran ubicadas en el Mapa 4.',
-            'Las Llamas se encuentran ubicadas en el Mapa 23.'
-          ],
-          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
-        },
-        {
-          id: 'hilado',
-          nombre: 'Hilado',
-          icon: hilado,
-          descripcion: 'La habilidad del Trabajador con el oficio en Esquilación es quién posee la habilidad de hilar las lanas extraídas de los animales para poder convertirlos en Ovillos los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Sastre. Para poder hilar las lanas en ovillos nos acercaremos hasta la casa del comerciante Sastre los cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Telar y, seleccionando de nuestro inventario las lanas, presionar tecla Usar (U o doble click) y clickear sobre el telar.',
-          descripcion2: 'La Hilación la podremos realizar con nuestro Trabajador con el oficio en Esquilación ya que es él quién podrá hilar todos los tipos de Lanas como Oveja, Cabra y Llama. El resto de las clases sólo podrá hilar Lanas de Oveja.',
-          itemsTable: {
-            title: 'Items para Hilar',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Telar', 'Lugar donde podremos hilar nuestras lanas'],
-              ['Lana de Oveja', 'Recurso extraído de una Oveja'],
-              ['Lana de Cabra', 'Recurso extraído de una Cabra'],
-              ['Lana de Llama', 'Recurso extraído de una Llama']
-            ]
-          },
-          hilado: {
-            title: 'Convirtiendo en Ovillos',
-            intro: 'Con nuestro Trabajador nos acercaremos hasta la casa del Sastre para hilar con el telar:',
-            requisitos: [
-              'Necesitaremos 25 skills en Esquilación para hilar Ovillos de Oveja con un Trabajador y 75 skills para el resto de las clases.',
-              'Necesitaremos 50 skills en Esquilación para hilar Ovillos de Cabra.',
-              'Necesitaremos 100 skills en Esquilación para hilar Ovillos de Llama.'
-            ]
-          },
-          conversionTable: {
-            title: 'Cantidad de Lanas por Ovillo',
-            headers: ['Lanas', 'Cantidad', 'Ovillos'],
-            rows: [
-              ['Lana de Oveja', '70', '5 Ovillo de Oveja'],
-              ['Lana de Cabra', '100', '5 Ovillo de Cabra'],
-              ['Lana de Llama', '175', '5 Ovillo de Llama']
-            ]
-          }
-        },
-        {
-          id: 'sastreria',
-          nombre: 'Sastrería',
-          icon: sastreria,
-          descripcion: 'El oficio de la Sastrería sirve para construir Vestimentas y Túnicas a base de Ovillos. Una vez que tengas un Costurero deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Sastrería.',
-          descripcion2: 'El Trabajador con el oficio en Sastrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
-          itemsTable: {
-            title: 'Items de Sastrería',
-            headers: ['Item', 'Descripción'],
-            rows: [
-              ['Costurero', 'Item necesario para la creación con Ovillos, se vende en el NPC "Vendedor".'],
-              ['Ovillo de Oveja', 'Recurso hilado de Lana de Oveja'],
-              ['Ovillo de Cabra', 'Recurso hilado de Lana de Cabra'],
-              ['Ovillo de Llama', 'Recurso hilado de Lana de Llama']
-            ]
-          },
-          creacion: {
-            title: 'Creación',
-            steps: [
-              'Utilizando nuestro Costurero abrimos el menú de creación.',
-              'Seleccionamos el objeto a construir junto con su cantidad.'
-            ]
-          },
-          /*  links: {
-             title: 'Lista de Objetos de Creación',
-             intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
-             items: [
-               { text: '1 - Items de Sastre (Vestimentas y Túnicas)', target: 'items', subsection: '4.1' }
-             ]
-           }, */
-          deshilachado: {
-            title: 'Deshilachado de Objetos de Sastrería',
-            descripcion: 'El oficio deshilachar consiste en la recuperación de ovillos de prendas que no utilizaremos o para poder crear unas mejores, una vez que tengas una cierta cantidad de objetos a deshilachar deberás buscar un telar ubicado en la casa del sastre de cada ciudad, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre el telar. La deshilachación depende de la clase y los puntos ya que los objetos a deshilachar son aquellos creados mediante la Sastrería. Que requieran al menos 50 skills, se podrán deshilachar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
-            note: 'IMPORTANTE: SOLO podremos deshilachar los objetos del siguiente listado cuales SKILLS en SASTRERÍA deberán de ser 50 o superiores:',
-            table: {
-              headers: ['Item', 'Defensa Corporal', 'Defensa Mágica', 'Clases Permitidas', 'Ovillos Oveja', 'Ovillos Cabra', 'Ovillos Llama', 'Skills'],
-              rows: [
-                ['Túnica Tamuzz [DefCorp]', '11/13', '0/0', 'Mago/Bardo/Druida', '350', '150', '-', '50'],
-                ['Túnica Roja (E/G) [DefCorp]', '11/13', '0/0', 'Mago/Bardo/Druida', '350', '150', '-', '50'],
-                ['Túnica Legendaria [DefCorp]', '10/15', '0/0', 'Mago/Bardo/Druida', '400', '200', '-', '50'],
-                ['Túnica Infernal [DefCorp]', '10/18', '0/0', 'Mago/Bardo/Druida', '400', '250', '-', '60'],
-                ['Túnica Infernal (G/E) [DefCorp]', '10/18', '0/0', 'Mago/Bardo/Druida', '400', '250', '-', '60'],
-                ['Túnica Gaia [DefCorp]', '13/14', '0/0', 'Mago/Bardo/Druida', '600', '450', '-', '75'],
-                ['Túnica Negra (E/G) [DefMag]', '1/1', '6/12', 'Mago/Bardo/Druida', '450', '250', '30', '75'],
-                ['Vestido de Bruja (M)', '14/16', '0/0', 'Mago/Bardo/Druida', '700', '500', '-', '80'],
-                ['Túnica de Druida [DefCorp]', '14/16', '0/0', 'Mago/Bardo/Druida', '700', '500', '-', '80'],
-                ['Túnica Roja (E/G) [DefMag]', '1/2', '10/18', 'Mago/Bardo/Druida', '800', '300', '50', '80'],
-                ['Túnica Tamuzz [DefMag]', '1/2', '10/18', 'Mago/Bardo/Druida', '800', '300', '50', '80'],
-                ['Túnica de Druida [DefMag]', '1/11', '4/17', 'Mago/Bardo/Druida', '700', '500', '60', '85'],
-                ['Túnica Maléfica [DefCorp]', '15/16', '0/0', 'Mago/Bardo/Druida', '900', '750', '-', '90'],
-                ['Túnica Maléfica (G/E) [DefCorp]', '15/16', '0/0', 'Mago/Bardo/Druida', '900', '750', '-', '90'],
-                ['Túnica Gaia [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
-                ['Túnica Marrón Combinada (E/G) [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
-                ['Túnica Verde Combinada (E/G-M) [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
-                ['Túnica Maléfica [DefMag]', '3/3', '20/25', 'Mago/Bardo/Druida', '1300', '700', '100', '100'],
-                ['Túnica Maléfica (G/E) [DefMag]', '3/3', '20/25', 'Mago/Bardo/Druida', '1300', '700', '100', '100'],
-                ['Vestimenta de la Oscuridad (1)', '1/1', '0/0', 'Guerrero/Cazador', '300', '200', '100', '100'],
-                ['Vestimenta de la Oscuridad (G/E) (1)', '1/1', '0/0', 'Guerrero/Cazador', '300', '200', '100', '100'],
-                ['Túnica Invernal', '10/10', '0/0', 'Todas las clases altas de hombres', '200', '50', '0', '100'],
-                ['Túnica Invernal (Mujer)', '10/10', '0/0', 'Todas las clases altas de mujer', '200', '50', '0', '100'],
-                ['Túnica Invernal (E/G)', '10/10', '0/0', 'Todas las clases enano o gnomo', '200', '50', '0', '100']
-              ]
-            }
-          }
-        },
-        {
-          id: 'reutilizacion',
-          nombre: 'Reutilización de Recursos',
-          icon: recursos,
-          descripcion: 'La reutilización de recursos consiste en recuperar materiales de objetos que ya no utilizamos. Esto incluye Fundir objetos de Herrería, Desmantelar objetos de Carpintería, y Deshilachar objetos de Sastrería.',
-          descripcion2: 'Cada proceso permite recuperar entre el 45% y 75% de los materiales originales, dependiendo del azar. Solo se pueden reutilizar objetos que requieran al menos 50 skills para su creación.',
-          sections: [
-            {
-              title: 'Fundir (Herrería)',
-              descripcion: 'Busca una fragua, selecciona el objeto, presiona U y clickea sobre la fragua.',
-              requirement: 'Requiere 50+ skills en Herrería.'
-            },
-            {
-              title: 'Desmantelar (Carpintería)',
-              descripcion: 'Busca un serrucho en la casa del carpintero, selecciona el objeto, presiona U y clickea sobre el serrucho.',
-              requirement: 'Requiere 50+ skills en Carpintería.'
-            },
-            {
-              title: 'Deshilachar (Sastrería)',
-              descripcion: 'Busca un telar en la casa del sastre, selecciona el objeto, presiona U y clickea sobre el telar.',
-              requirement: 'Requiere 50+ skills en Sastrería.'
-            }
-          ]
-        },
-        /* {
-          id: 'compra',
-          nombre: 'Compra de Recursos',
-          icon: 'shopping-cart',
-          descripcion: 'La compra de recursos es una alternativa para aquellos que no desean extraer los materiales por sí mismos. Puedes adquirir diversos recursos directamente de otros jugadores o NPCs comerciantes.',
-          descripcion2: 'Los precios varían según la oferta y demanda del servidor. Es una buena opción si necesitas grandes cantidades de materiales rápidamente para craftear objetos.',
-          tips: [
-            'Revisa el comercio global para encontrar las mejores ofertas.',
-            'Los precios suelen ser más bajos cuando hay muchos jugadores trabajando.',
-            'Considera comprar en grandes cantidades para obtener mejores precios.',
-            'Algunos NPCs venden recursos básicos a precios fijos.'
-          ]
-        } */
-      ]
-    }
-  },
-  /* {
-    id: 'entrenamiento',
-    title: 'Guía de Entrenamiento',
-    icon: 'target',
-    content: {
-      description: 'Métodos y estrategias para entrenar a tu personaje eficientemente.',
-      placeholder: 'Guías de entrenamiento por nivel y clase...'
-    }
-  },
-  {
-    id: 'experiencia',
-    title: 'EXP. x Nivel y Skills Naturales',
-    icon: 'trending-up',
-    content: {
-      description: 'Tablas de experiencia requerida y skills naturales por nivel.',
-      placeholder: 'Tablas de progresión y habilidades naturales...'
-    }
-  }, */
-  {
-    id: 'mapa',
-    title: 'Mapa',
-    icon: mapaicono,
-    content: {
-      description: 'Explora el vasto mundo de CucsiAO y sus territorios.',
-      mapImagePlaceholder: true,
-      sections: [
-        {
-          title: 'Ciudades',
-          icon: 'building',
-          locations: [
-            { mapa: 1, nombre: 'Ullathorpe', nivel: null },
-            { mapa: 13, nombre: 'Nix', nivel: null },
-            { mapa: 30, nombre: 'Banderbill', nivel: null },
-            { mapa: 54, nombre: 'Lindos', nivel: null },
-            { mapa: 58, nombre: 'Nueva Esperanza', nivel: null },
-            { mapa: 35, nombre: 'Arghal', nivel: null },
-            { mapa: 22, nombre: 'Terminus', nivel: null },
-            { mapa: 10, nombre: 'Tyrann', nivel: null },
-            { mapa: 15, nombre: 'Noxon', nivel: null },
-            { mapa: 96, nombre: 'Dhall', nivel: null },
-            { mapa: 95, nombre: 'Blillinton', nivel: null },
-            { mapa: 97, nombre: 'Kodell', nivel: null }
-          ]
-        },
-        {
-          title: 'Dungeons',
-          icon: 'skull',
-          locations: [
-            { mapa: 79, nombre: 'Cementerio: Mausoleo', nivel: 15 },
-            { mapa: 28, nombre: 'Dungeon Marabel', nivel: 20 },
-            { mapa: 62, nombre: 'Dungeon Castillo', nivel: 25 },
-            { mapa: 66, nombre: 'Dungeon Inframundo', nivel: 30, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
-            { mapa: 103, nombre: 'Dungeon Agua', nivel: 30 },
-            { mapa: 39, nombre: 'Dungeon Verill', nivel: 30 },
-            { mapa: 47, nombre: 'Dungeon Dragón', nivel: 40 }
-          ]
-        },
-        {
-          title: 'Catacumbas',
-          icon: 'door-open',
-          locations: [
-            { mapa: '1 y 34', nombre: 'Entrada a Catacumbas Ullathorpe & Nix', nivel: null },
-            { mapa: '21, 42, 45, 50, 56, 59', nombre: 'Entrada a Catacumbas del Inframundo', nivel: null, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
-            { mapa: '29, 32 y 66', nombre: 'Entrada a Ciudad Canal del Inframundo', nivel: null }
-          ]
-        },
-        {
-          title: 'Polo',
-          icon: 'snowflake',
-          locations: [
-            { mapa: 78, nombre: 'Polo', nivel: 25 },
-            { mapa: 138, nombre: 'Laberinto Congelado', nivel: 30 }
-          ]
-        },
-        {
-          title: 'Minas de Yacimientos',
-          icon: 'pickaxe',
-          locations: [
-            { mapa: 9, nombre: 'Minas de Hierro', nivel: null },
-            { mapa: 39, nombre: 'Minas de Plata', nivel: null },
-            { mapa: 75, nombre: 'Minas de Oro', nivel: 30 }
-          ]
-        },
-        {
-          title: 'Esquila de Lanas',
-          icon: 'scissors',
-          locations: [
-            { mapa: 29, nombre: 'Ovejas', nivel: null },
-            { mapa: 4, nombre: 'Cabras', nivel: null },
-            { mapa: 23, nombre: 'Llamas', nivel: null, nota: 'Necesitarás navegar para acceder a ellas' }
-          ]
-        },
-        {
-          title: 'Lugares Secundarios',
-          icon: 'compass',
-          locations: [
-            { mapa: 33, nombre: 'Barco Pirata', nivel: 30 },
-            { mapa: 49, nombre: 'Barco Abandonado', nivel: 30 },
-            { mapa: 79, nombre: 'Cementerio', nivel: null },
-            { mapa: 59, nombre: 'Sur Nueva Esperanza', nivel: 20 },
-            { mapa: 89, nombre: 'Dungeon Dragón Escondido', nivel: 20 },
-            { mapa: 145, nombre: 'Bosque Élfico Saqueado', nivel: 20 },
-            { mapa: 150, nombre: 'Pirámide Abandonada', nivel: null }
-          ]
-        },
-        {
-          title: 'Castillos y Fortaleza',
-          icon: 'castle',
-          locations: [
-            { mapa: 110, nombre: 'Castillo Norte', nivel: null },
-            { mapa: 80, nombre: 'Castillo Oeste', nivel: null },
-            { mapa: 100, nombre: 'Castillo Este', nivel: null },
-            { mapa: 90, nombre: 'Castillo Sur', nivel: null },
-            { mapa: 131, nombre: 'Minas de Castillo', nivel: null },
-            { mapa: 118, nombre: 'Fortaleza', nivel: null },
-            { mapa: 132, nombre: 'Minas de Fortaleza', nivel: null }
-          ]
-        },
-        {
-          title: 'Otros Lugares',
-          icon: 'landmark',
-          locations: [
-            { mapa: 148, nombre: 'Museo', nivel: null }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    id: 'party',
-    title: 'Party',
-    icon: partyicono,
-    content: {
-      description: 'En CucsiAO, se llama "Party" a un grupo de viajeros que se juntan para entrenar y mejorar sus habilidades juntos.',
-      intro: 'Un personaje podrá crear una de estas e invitar a sus amigos. La experiencia ganada se repartirá equitativamente entre todos los miembros.',
-      howTo: {
-        title: 'Cómo crear una Party',
-        steps: [
-          'Para crear una party deberás tipear el comando /CREARPARTY',
-          'Una vez que la hayas creado, el personaje que desee ingresar deberá hacer click en tu personaje y tipear el comando /PARTY para solicitar el ingreso',
-          'Para aceptarlo deberás tipear /ACCEPTPARTY Nombre'
-        ]
-      },
-      requisitos: {
-        title: 'Requisitos',
-        description: 'Para crear una party, necesitas que tu atributo carisma multiplicado por tus skills en liderazgo den un número mayor o igual a 100.',
-        examples: [
-          'Si tu carisma es 20, necesitarás 5 skills en liderazgo',
-          'Si tu carisma es 15, necesitarás 7 skills en liderazgo'
-        ],
-        note: 'Para ver más sobre esto tienes toda la información en Atributos.'
-      },
-      consideraciones: {
-        title: 'Consideraciones',
-        items: [
-          'Puedes crear una party en cualquier nivel',
-          'Los miembros de la party no pueden tener una diferencia de nivel de más de 7',
-          'La experiencia se reparte instantáneamente hasta una distancia de 20 tiles (una pantalla)',
-          'El oro ganado también se reparte equitativamente al morir la criatura',
-          'Si están realizando QUEST solo el personaje que mate a la criatura, se lo sumará a la quest que esté realizando'
-        ]
-      },
-      bonus: {
-        title: 'Bonus por Miembros',
-        description: 'Si tu party posee cierta cantidad de miembros, la experiencia ganada se verá multiplicada de la siguiente manera:',
-        table: [
-          { miembros: 1, multiplicador: '1.00', bonificacion: 'Experiencia normal' },
-          { miembros: 2, multiplicador: '1.03', bonificacion: '3% BONIFICACIÓN' },
-          { miembros: 3, multiplicador: '1.05', bonificacion: '5% BONIFICACIÓN' },
-          { miembros: 4, multiplicador: '1.10', bonificacion: '10% BONIFICACIÓN' },
-          { miembros: 5, multiplicador: '1.15', bonificacion: '15% BONIFICACIÓN' }
-        ],
-        note: 'Dicho esto, si tu party posee 5 miembros, la experiencia total será incrementada un 30%.'
-      },
-      comandos: {
-        title: 'Comandos de Party',
-        list: [
-          { comando: '/PMSG', descripcion: 'Mensaje privado entre miembros de la party' },
-          { comando: '/ONLINEPARTY', descripcion: 'Aparece quienes integran la party, experiencia lograda por cada miembro y el total de exp acumulada' },
-          { comando: '/SALIRPARTY', descripcion: 'Abandona la party' },
-          { comando: '/PARTYLIDER Nombre', descripcion: 'Pasa el liderazgo a otro personaje que esté dentro de la party' },
-          { comando: '/ECHARPARTY Nombre', descripcion: 'Echa un personaje de la party' }
-        ]
-      }
-    }
-  },
-  {
     id: 'criaturas',
     title: 'Criaturas',
     icon: criaturasicono,
@@ -1161,180 +425,6 @@ export const wikiSections = [
         { name: 'Lord Belithuz', vida: 17345, danoFisico: '250/350', defensa: '40', defMagica: '40', podAtaque: 230, evasion: 175, magia: 'Imparalizable - Maldecir, Sombra de la Muerte', exp: 80000, oro: 500, drop: '5% - Armadura de Dragón (Hombre) [DefCorp], 5% - Armadura de Dragón (Mujer) [DefCorp], 5% - Armadura de Dragón (G/E) [DefCorp], 5% - Daga De la Oscuridad, 5% - Maza Oscura, 5% - Martillo Sagrado, 5% - Espada Argentum, 5% - Excalibur II, 5% - Casco de Guerrero Completo, 5% - Casco MAESTRE Dorado, 5% - Casco Oscuro, 5% - Escudo de Tres Puntas, 5% - Escudo del Gran Imperio +1, 5% - Escudo de Caballero, 5% - Casco de Caballero, 7% - Casco Incompleto, 5% - Corona, 5% - Vara de Mago, 5% - Laúd Élfico, 5% - Flauta Élfica, 5% - Sable de Pirata', ubicacion: '-' },
         { name: 'Gran Dragón Negro', vida: 25000, danoFisico: '130/210', defensa: '25', defMagica: '25', podAtaque: 150, evasion: 150, magia: 'Imparalizable - Llamarada, Apocalipsis', exp: 100000, oro: 3000, drop: '5% - Armadura de Dragón (Hombre) [DefCorp], 5% - Armadura de Dragón (Mujer) [DefCorp], 5% - Armadura de Dragón (G/E) [DefCorp], 5% -Daga Dhanab, 7% - Rompe Cascos, 5% - Rompe Cascos Superior, 5% - Escudo del Gran Imperio, 5% - Escudo Oscuro, 5% - Casco de Caballero, 7% - Casco Incompleto', ubicacion: '-' },
         { name: 'Gran Dragón Plateado', vida: 25000, danoFisico: '200/250', defensa: '30', defMagica: '30', podAtaque: 200, evasion: 180, magia: 'Imparalizable - Rafaga Ardiente, Apocalipsis', exp: 100000, oro: 3000, drop: '5% - Armadura de Dragón (Hombre) [DefCorp], 5% - Armadura de Dragón (Mujer) [DefCorp], 5% - Armadura de Dragón (G/E) [DefCorp], 5% -Ballesta, 7% - Flecha +3 (1.000), 5% - Escudo Rustico, 5% - Rodela de Madera Reforzada, 5% - Casco del Gran Maestre, 5% - Casco de Gran Maestre Oscuro, 5% - Daga Dhanab, 7% - Rompe Cascos, 5% - Rompe Cascos Superior, 5% - Escudo del Gran Imperio, 5% - Escudo Oscuro, 5% - Casco de Caballero, 7% - Casco Incompleto', ubicacion: '-' }
-      ]
-    }
-  },
-  {
-    id: 'quests',
-    title: 'Quests & Modo Historia',
-    icon: questicono,
-    content: {
-      description: '¡Nuestro sistema de entrenamiento! Que tal forastero, si llegaste a este parte es porque necesitas entrenar. Al nacer en las tierras del Cucsi tendrás un teleport, en tu ciudad de origen, por el cual podrás ingresar al Dungeon Newbie (D-NW).',
-      intro: 'El nivel Máximo informado indica que hasta ese nivel inclusive podremos pedir la misión para realizarla. Los Puntos de Usuario sirven para subir el Nivel de Clan, items de Torneo o para uno de los requisitos de la Nobleza.',
-      categories: [
-        {
-          id: 'newbie',
-          name: 'Quest Newbie Dungeon',
-          icon: '🗡️',
-          description: 'Quests para niveles 1-13',
-          quests: [
-            {
-              npc: 'Randall',
-              repetible: false,
-              ubicacion: 'Newbie Dungeon | Mapa:19 X:72 Y:80',
-              nombre: 'Obteniendo Equipo Guerrero',
-              nivelMin: 1,
-              nivelMax: 13,
-              necesidad: 'Matar 5 Gallo Salvaje, 5 Serpiente y 5 Lobo.',
-              criaturas: ['Gallo Salvaje', 'Serpiente', 'Lobo'],
-              recompensa: '460 de experiencia, 40 monedas de oro y Equipo de Entrenamiento para Paladín, Clérigo, Asesino, Bandido, Ladrón, Cazador y Guerrero.'
-            },
-            {
-              npc: 'Agnes',
-              repetible: false,
-              ubicacion: 'Newbie Dungeon | Mapa:79 X:81 Y:77',
-              nombre: 'Obteniendo Equipo Mágico',
-              nivelMin: 1,
-              nivelMax: 13,
-              necesidad: 'Matar 5 Gallo Salvaje, 5 Serpiente y 5 Lobo.',
-              criaturas: ['Gallo Salvaje', 'Serpiente', 'Lobo'],
-              recompensa: '460 de experiencia, 40 monedas de oro y Equipo de Entrenamiento para Mago, Druida y Bardo.'
-            }
-          ]
-        },
-        {
-          id: 'historia',
-          name: 'Quest 13 - 54',
-          icon: '📖',
-          description: 'Quest Modo Historia - Misiones 1-42',
-          quests: [
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 1/42', nivelMin: 13, nivelMax: 54, necesidad: 'Matar 20 Esqueleto.', criaturas: ['Esqueleto'], recompensa: '700 de experiencia, 400 monedas de oro y Mascota de Entrenamiento.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 2/42', nivelMin: 14, nivelMax: 54, necesidad: 'Matar 15 Lobo.', criaturas: ['Lobo'], recompensa: '1.125 de experiencia, 525 monedas de oro y Hechizos de Entrenamiento para clases mágicas y equipo de entrenamiento para no mágicas.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 3/42', nivelMin: 15, nivelMax: 54, necesidad: 'Matar 10 Zombie.', criaturas: ['Zombie'], recompensa: '1.500 de experiencia, 450 monedas de oro y 1 Cofre de Entrenamiento I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 4/42', nivelMin: 16, nivelMax: 54, necesidad: 'Matar 15 Tortuga Gigante.', criaturas: ['Tortuga Gigante'], recompensa: '3.780 de experiencia, 1.125 monedas de oro y 1 Cofre de Quest I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 5/42', nivelMin: 17, nivelMax: 54, necesidad: 'Matar 8 Oso Pardo.', criaturas: ['Oso Pardo'], recompensa: '5.000 de experiencia, 700 monedas de oro y 1 Cofre de Quest I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 6/42', nivelMin: 18, nivelMax: 54, necesidad: 'Matar 20 Orco.', criaturas: ['Orco'], recompensa: '7.000 de experiencia, 1.200 monedas de oro y 1 Cofre de Quest I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 7/42', nivelMin: 19, nivelMax: 54, necesidad: 'Matar 8 Araña Gigante.', criaturas: ['Araña Gigante'], recompensa: '10.000 de experiencia, 1.000 monedas de oro y 1 Cofre de Entrenamiento II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 8/42', nivelMin: 20, nivelMax: 54, necesidad: 'Matar 8 Asesino.', criaturas: ['Asesino'], recompensa: '11.600 de experiencia, 1.100 monedas de oro y 1 Cofre de Quest I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 9/42', nivelMin: 21, nivelMax: 54, necesidad: 'Matar 6 Ogro.', criaturas: ['Ogro'], recompensa: '13.686 de experiencia, 2.160 monedas de oro y 1 Cofre de Materiales I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 10/42', nivelMin: 22, nivelMax: 54, necesidad: 'Matar 10 Beholder.', criaturas: ['Beholder'], recompensa: '17.500 de experiencia, 3.250 monedas de oro y 1 Cofre de Materiales I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 11/42', nivelMin: 23, nivelMax: 54, necesidad: 'Matar 10 Orco Brujo.', criaturas: ['Orco Brujo'], recompensa: '19.500 de experiencia, 4.000 monedas de oro y 1 Cofre de Quest I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 12/42', nivelMin: 24, nivelMax: 54, necesidad: 'Matar 10 Liche.', criaturas: ['Liche'], recompensa: '18.800 de experiencia, 3.200 monedas de oro y 1 Barca.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 13/42', nivelMin: 25, nivelMax: 54, necesidad: 'Matar 10 Lord Orco.', criaturas: ['Lord Orco'], recompensa: '16.000 de experiencia, 3.000 monedas de oro y 1 Relampago para mágicos y Conjuro del estupor para no mágicas.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 14/42', nivelMin: 26, nivelMax: 54, necesidad: 'Matar 10 Mago Malvado.', criaturas: ['Mago Malvado'], recompensa: '15.000 de experiencia, 3.500 monedas de oro y 1 Cofre de Clase I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 15/42', nivelMin: 27, nivelMax: 54, necesidad: 'Matar 5 Liche Infernal.', criaturas: ['Liche Infernal'], recompensa: '31.750 de experiencia, 2.500 monedas de oro y 1 Cofre de Quest II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 16/42', nivelMin: 28, nivelMax: 54, necesidad: 'Matar 5 Demonio.', criaturas: ['Demonio'], recompensa: '57.500 de experiencia, 5.000 monedas de oro y 1 Cofre de Materiales II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 17/42', nivelMin: 29, nivelMax: 54, necesidad: 'Matar 2 Golem de Piedra.', criaturas: ['Golem de Piedra'], recompensa: '50.000 de experiencia, 1.500 monedas de oro y 1 Cofre Winterfell I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 18/42', nivelMin: 30, nivelMax: 54, necesidad: 'Matar 15 Leviatan.', criaturas: ['Leviatan'], recompensa: '65.000 de experiencia, 13.125 monedas de oro y 1 Scroll exp (30 min).' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 19/42', nivelMin: 31, nivelMax: 54, necesidad: 'Matar 20 Dinosaurio.', criaturas: ['Dinosaurio'], recompensa: '75.000 de experiencia, 8.000 monedas de oro y 1 Cofre de Entrenamiento III.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 20/42', nivelMin: 32, nivelMax: 54, necesidad: 'Matar 10 Pirata.', criaturas: ['Pirata'], recompensa: '85.000 de experiencia, 10.000 monedas de oro y 1 Cofre de Entrenamiento II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 21/42', nivelMin: 33, nivelMax: 54, necesidad: 'Matar 10 Capitán Pirata.', criaturas: ['Capitán Pirata'], recompensa: '95.000 de experiencia, 12.000 monedas de oro y 1 Cofre de Quest II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 22/42', nivelMin: 34, nivelMax: 54, necesidad: 'Matar 15 Arquero del Castillo.', criaturas: ['Arquero del Castillo'], recompensa: '105.000 de experiencia, 12.375 monedas de oro y 1 Cofre de Clase I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 23/42', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 15 Plebello del Castillo.', criaturas: ['Plebello del Castillo'], recompensa: '111.250 de experiencia, 14.625 monedas de oro y 1 Cofre de Quest II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 24/42', nivelMin: 36, nivelMax: 54, necesidad: 'Matar 10 Mago del Castillo.', criaturas: ['Mago del Castillo'], recompensa: '127.500 de experiencia, 18.750 monedas de oro y 1 Cofre de Materiales II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 25/42', nivelMin: 37, nivelMax: 54, necesidad: 'Matar 10 Guerrero Armado del Castillo.', criaturas: ['Guerrero Armado del Castillo'], recompensa: '135.000 de experiencia, 10.500 monedas de oro y 1 Cofre de Quest II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 26/42', nivelMin: 38, nivelMax: 54, necesidad: 'Matar 10 Archimago del Castillo.', criaturas: ['Archimago del Castillo'], recompensa: '240.000 de experiencia, 10.000 monedas de oro y 1 Cofre de Materiales II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 27/42', nivelMin: 39, nivelMax: 54, necesidad: 'Matar 10 Paladin del Castillo.', criaturas: ['Paladin del Castillo'], recompensa: '280.000 de experiencia, 12.375 monedas de oro y 1 Scroll exp (30 min).' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 28/42', nivelMin: 40, nivelMax: 54, necesidad: 'Matar 5 Arcangel Armado del Castillo.', criaturas: ['Arcangel Armado del Castillo'], recompensa: '280.000 de experiencia, 14.625 monedas de oro y 1 Cofre de Quest II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 29/42', nivelMin: 41, nivelMax: 54, necesidad: 'Matar 2 Rey Golem de Polo.', criaturas: ['Rey Golem de Polo'], recompensa: '25.000 de experiencia, 22.500 monedas de oro y 1 Cofre de Materiales II.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 30/42', nivelMin: 42, nivelMax: 54, necesidad: 'Matar 2 Golem Junior de Hielo.', criaturas: ['Golem Junior de Hielo'], recompensa: '30.000 de experiencia, 22.500 monedas de oro y 1 Cofre Winterfell I.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 31/42', nivelMin: 43, nivelMax: 54, necesidad: 'Matar 10 Sirena.', criaturas: ['Sirena'], recompensa: '500.000 de experiencia, 1.500 monedas de oro y 1 Cofre de Runas Inferiores.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 32/42', nivelMin: 44, nivelMax: 54, necesidad: 'Matar 1 Galeón Pirata.', criaturas: ['Galeón Pirata'], recompensa: '640.000 de experiencia, 8.000 monedas de oro y 1 Cofre de Runas Inferiores.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 33/42', nivelMin: 45, nivelMax: 54, necesidad: 'Matar 10 Galeón Fantasmal.', criaturas: ['Galeón Fantasmal'], recompensa: '700.000 de experiencia, 2.500 monedas de oro y 1 Cofre de Materiales III.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 34/42', nivelMin: 46, nivelMax: 54, necesidad: 'Matar 10 Leviatan II.', criaturas: ['Leviatan II'], recompensa: '880.000 de experiencia, 1.875 monedas de oro y 1 Scroll exp (30 min).' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 37/42', nivelMin: 47, nivelMax: 54, necesidad: 'Matar 10 Kraken.', criaturas: ['Kraken'], recompensa: '1.060.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Quest III.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 38/42', nivelMin: 48, nivelMax: 54, necesidad: 'Matar 5 Golem Dorado.', criaturas: ['Golem Dorado'], recompensa: '1.260.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Materiales III.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 39/42', nivelMin: 49, nivelMax: 54, necesidad: 'Matar 3 Golem Alado.', criaturas: ['Golem Alado'], recompensa: '1.500.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Clase III.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 40/42', nivelMin: 50, nivelMax: 54, necesidad: 'Matar 35 Medusa.', criaturas: ['Medusa'], recompensa: '2.000.000 de experiencia, 1.875 monedas de oro y 1 Cofre de Dragón.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 41/42', nivelMin: 51, nivelMax: 54, necesidad: 'Matar 10 Gran Dragón Rojo.', criaturas: ['Gran Dragón Rojo'], recompensa: '2.800.000 de experiencia, 19.000 monedas de oro y 1 Cofre de Quest III.' },
-            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 42/42', nivelMin: 52, nivelMax: 54, necesidad: 'Matar 15 Gran Dragon Rojo, 15 Dragon Rojo, 15 Golem Alado y 15 Medusa.', criaturas: ['Gran Dragon Rojo', 'Dragon Rojo', 'Golem Alado', 'Medusa'], recompensa: '6.800.000 de experiencia, 28.500 monedas de oro, 1 Scroll exp (30 min), y 1 Cofre de Clase III.' }
-          ]
-        },
-        {
-          id: 'repetibles',
-          name: 'Quest Repetibles',
-          icon: '🔄',
-          description: 'Quests que puedes repetir múltiples veces',
-          quests: [
-            { npc: 'Gael', repetible: true, ubicacion: 'Dungeon Marabel | Mapa:69 X:51 Y:87', nombre: 'Identificando a los Revoltosos', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 10 Orco Brujo, 10 Lord Orco, 10 Mago Malvado, 1 Demonio.', criaturas: ['Orco Brujo', 'Lord Orco', 'Mago Malvado', 'Demonio'], recompensa: '62.000 de experiencia, 4.360 monedas de oro, 10 puntos de usuario, 100 Pociones rojas, 60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
-            { npc: 'Dylan', repetible: true, ubicacion: 'Castillo de Lindos | Mapa:62 X:40 Y:51', nombre: 'Rebeldes en el Castillo', nivelMin: 30, nivelMax: 45, necesidad: 'Matar 5 Arquero del Castillo, 5 Plebello del Castillo, 5 Mago del Castillo, 5 Guerrero Armado del Castillo, 5 Archimago del Castillo, 5 Paladin del Castillo, 1 Arcangel Armado del Castillo.', criaturas: ['Arquero del Castillo', 'Plebello del Castillo', 'Mago del Castillo', 'Guerrero Armado del Castillo', 'Archimago del Castillo', 'Paladin del Castillo', 'Arcangel Armado del Castillo'], recompensa: '133.275 de experiencia, 7.341 monedas de oro, 10 puntos de usuario, 100 Pociones rojas, 60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
-            { npc: 'Lotaria', repetible: true, ubicacion: 'Nueva Esperanza | Mapa:59 X:34 Y:15', nombre: 'Reclutando a Guerreros II', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 10 Liche Infernal, 10 Leviatan.', criaturas: ['Liche Infernal', 'Leviatan'], recompensa: '154.500 de experiencia, 6.500 monedas de oro, 10 puntos de usuario, 50 Pociones rojas,30 Pociones azules, 10 Pociones amarillas, 5 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
-            { npc: 'Jurian', repetible: true, ubicacion: 'Dungeon Barco Pirata | Mapa:33 X:48 Y:74', nombre: 'Lo\' Pirata VO\'', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 15 Pirata, 10 Capitán Pirata.', criaturas: ['Pirata', 'Capitán Pirata'], recompensa: '88.975 de experiencia, 2.350 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
-            { npc: 'Law', repetible: true, ubicacion: 'Dungeon Barco Dinosaurio | Mapa:49 X:34 Y:16', nombre: 'La Prehistoria', nivelMin: 30, nivelMax: 40, necesidad: 'Matar 25 Dinosaurio.', criaturas: ['Dinosaurio'], recompensa: '116.125 de experiencia, 3.100 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
-            { npc: 'Jehanne', repetible: true, ubicacion: 'Ciudad de Lindos | Mapa:54 X:68 Y:41', nombre: 'Protege a Lindos', nivelMin: 30, nivelMax: 45, necesidad: 'Matar 15 Leviatan.', criaturas: ['Leviatan'], recompensa: '136.500 de experiencia, 5.250 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
-            { npc: 'Nahia', repetible: true, ubicacion: 'Entrada Inframundo | Mapa:66 X:48 Y:34', nombre: 'Welcome To Pain ZONE', nivelMin: 35, nivelMax: 45, necesidad: 'Matar 15 Serpiente de Anthares, 5 Leviatan, 5 Medusa, 5 Demonio, 2 Golem Dorado y 2 Golem Alado.', criaturas: ['Serpiente de Anthares', 'Leviatan', 'Medusa', 'Demonio', 'Golem Dorado', 'Golem Alado'], recompensa: '255.575 de experiencia, 5.850 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
-            { npc: 'Milo', repetible: true, ubicacion: 'Entrada Dungeon Marabel | Mapa:28 X:42 Y:48', nombre: 'Venganza', nivelMin: 35, nivelMax: 45, necesidad: 'Matar 10 Demonio, 5 Golem de Piedra.', criaturas: ['Demonio', 'Golem de Piedra'], recompensa: '240.000 de experiencia, 5.500 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas.' },
-            { npc: 'Alonso', repetible: true, ubicacion: 'Adentro del Dungeon Veril | Mapa:71 X:38 Y:27', nombre: 'Medukila', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 30 Medusa.', criaturas: ['Medusa'], recompensa: '345.000 de experiencia, 9.000 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
-            { npc: 'Braulio', repetible: true, ubicacion: 'Adentro del Dungeon Veril | Mapa:72 X:48 Y:41', nombre: 'Duro como Ferrocarril', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 5 Golem de Piedra, 5 Golem Dorado y 5 Golem Alado.', criaturas: ['Golem de Piedra', 'Golem Dorado', 'Golem Alado'], recompensa: '450.000 de experiencia, 4.500 monedas de oro y 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
-            { npc: 'Rick', repetible: true, ubicacion: 'Entrada Dungeon Dragon | Mapa:72 X:48 Y:41', nombre: 'Ala de Pollo', nivelMin: 43, nivelMax: 45, necesidad: 'Matar 15 Gran Dragon Rojo.', criaturas: ['Gran Dragon Rojo'], recompensa: '750.000 de experiencia, 7.500 monedas de oro y 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas.' },
-            { npc: 'Zdenko', repetible: true, ubicacion: 'Polo | Mapa:78 X:62 Y:22', nombre: 'Caza Golemica', nivelMin: 27, nivelMax: 54, necesidad: 'Matar 10 Golem Junior de Hielo y 5 Rey Golem de Polo.', criaturas: ['Golem Junior de Hielo', 'Rey Golem de Polo'], recompensa: '13.000 de experiencia, 25.625 monedas de oro, 10 puntos de usuario y una provisión de pociones y Piedra Caza Golemica (se vende por oro).' },
-            { npc: 'Emma', repetible: true, ubicacion: 'Laberinto Congelado Mapa:138 X:77 Y:86 | Entrada Mapa 78', nombre: 'Guardianes del Laberinto', nivelMin: 33, nivelMax: 54, necesidad: 'Matar 10 Hombre de las Nieves, 10 Beholder Polar y 10 Gorila Polar.', criaturas: ['Hombre de las Nieves', 'Beholder Polar', 'Gorila Polar'], recompensa: '7.500 de experiencia, 30.000 monedas de oro, 10 puntos de usuario, una gran provisión de pociones y Piedra Guardianes del Laberinto (se vende por oro).' },
-            { npc: 'Dorotyh', repetible: true, ubicacion: 'Dungeon Agua Mapa:135 X:47 Y:20 | Entrada Mapa 103', nombre: 'Derrotando a las Criaturas Míticas', nivelMin: 35, nivelMax: 50, necesidad: 'Matar 10 Kraken y 10 Leviatan II.', criaturas: ['Kraken', 'Leviatan II'], recompensa: '250.000 de experiencia, 8.200 monedas de oro y 10 puntos de usuario, 500 Pociones rojas, 250 Pociones azules, 60 Pociones amarillas, 40 pociones verdes, 5 jugo de frutas, 5 chuletas y Cofre de Quest III.' },
-            { npc: 'Eleuterio', repetible: true, ubicacion: 'Dungeon Agua Mapa:135 X:48 Y:83 | Entrada Mapa 103', nombre: 'Barckiller', nivelMin: 35, nivelMax: 50, necesidad: 'Matar 10 Galeón Pirata y 10 Galeón Fantasmal.', criaturas: ['Galeón Pirata', 'Galeón Fantasmal'], recompensa: '140.000 de experiencia, 6.860 monedas de oro y 10 puntos de usuario, 500 Pociones rojas, 250 Pociones azules, 60 Pociones amarillas, 40 pociones verdes, 5 jugo de frutas, 5 chuletas y Cofre de Quest II.' }
-          ]
-        },
-        {
-          id: 'recursos',
-          name: 'Quest de Recursos',
-          icon: '⛏️',
-          description: 'Quests relacionadas con recursos y materiales',
-          quests: [
-            { npc: 'Brigham', repetible: true, ubicacion: 'Ciudad de Blillinton | Mapa:95 X:47 Y:52', nombre: 'Mercado Negro de Minerales I', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Minerales de Hierro.', criaturas: [], recompensa: 'Te entregara 714 Lingotes de Hierro (Brinda 5% extra de lingotes ya fraguados).' },
-            { npc: 'Brishen', repetible: true, ubicacion: 'Ciudad de Dahl | Mapa:96 X:52 Y:28', nombre: 'Mercado Negro de Minerales II', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Minerales de Plata.', criaturas: [], recompensa: 'Te entregara 504 Lingotes de Plata (Brinda 5% extra de lingotes ya fraguados).' },
-            { npc: 'Alodia', repetible: true, ubicacion: 'Ciudad de Banderbill | Mapa:30 X:35 Y:46', nombre: 'Mercado Negro de Lanas I', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Lana de Oveja.', criaturas: [], recompensa: 'Te entregara 714 Ovillos de Oveja (Brinda 5% extra de ovillos ya trabajados).' },
-            { npc: 'Ilduara', repetible: true, ubicacion: 'Ciudad de Nexon | Mapa:15 X:54 Y:50', nombre: 'Mercado Negro de Lanas II', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Lana de Cabra.', criaturas: [], recompensa: 'Te entregara 504 Ovillos de Cabra (Brinda 5% extra de ovillos ya trabajados).' }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    id: 'domar',
-    title: 'Domar Animales',
-    icon: domaricono,
-    content: {
-      description: 'La doma de criaturas puede ser utilizada por cualquier clase o raza, la misma consiste en domesticar animales salvajes para hacerlos mascotas.',
-      intro: 'Estas bestias una vez domadas son fieles compañeras de aventuras ya que los defenderán en caso de que alguien o algo los ataque. Para domar a una criatura simplemente presionen la tecla "D" + click (por defecto) sobre la criatura para intentar domarla. Hay criaturas que se dejan domar fácilmente y otras que no.',
-      druidInfo: 'Existe una clase en CucsiAO con la habilidad superiora de poder comunicarse con los animales y convencerlos para pedir por su ayuda, amistad o compañía en nuestro recorrido por el mundo. Esta clase es el Druida.',
-      commands: {
-        title: 'Comandos para Mascotas',
-        description: 'Nuestras mascotas obedecerán órdenes para lo cuál pueden clickearlas y utilizar los siguientes comandos:',
-        list: [
-          { command: '/QUIETO', description: 'La mascota se quedará en el lugar' },
-          { command: '/ACOMPAÑAR', description: 'La mascota continuará siguiéndote' },
-          { command: '/LIBERAR', description: 'Deja libre a tu mascota (también doble click sobre ella)' }
-        ]
-      },
-      carismaInfo: 'La Carisma es fundamental para la hora de Domar junto con los skilles en "Domar animales" serás capaz de domar todo tipos de criaturas las cuales te ayudaran en tu recorrido.',
-      powerSection: {
-        title: 'Poder de Domación',
-        description: 'Para poder determinar cuanto poder de domación posee el usuario deberemos de calcularlo de la siguiente manera:',
-        formula: 'Poder = Skilles en Domar Animales × Atributos en Carisma',
-        examples: [
-          { skills: 60, carisma: 22, result: 1320, text: 'Si nuestro personaje tiene 60 skilles en Domar Animales y el atributo de Carisma en 22, su poder será de 1.320 (60×22=1.320)' },
-          { skills: 100, carisma: 19, result: 1900, text: 'Si nuestro personaje tiene 100 skilles en Domar Animales y el atributo de Carisma en 19, su poder será de 1.900 (100×19=1.900)' }
-        ],
-        chance: 'Si el poder de domación es mayor al necesario para poder poseer a la criatura tendrás un 20% de chances de domarla por cada intento.',
-        druidBonus: 'La particularidad de la clase Druida es que si utiliza el objeto Flauta Mágica tendrá 20% extra de chances para domar a la criatura y su poder máximo de domación es de 2.200 o 2.640 con Flauta (con 22 en carisma).'
-      },
-      creaturesSection: {
-        title: 'Criaturas Domables',
-        description: 'A continuación te dejamos la lista de las criaturas que podrás domar, ordenadas por el poder de doma necesario para hacerlo'
-      },
-      creatures: [
-        { name: 'Rata salvaje', poderDoma: 200, vida: 15, danoFisico: '2/4', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 20, magia: '-' },
-        { name: 'Serpiente', poderDoma: 250, vida: 22, danoFisico: '1/1', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 0, magia: '-' },
-        { name: 'Goblin', poderDoma: 400, vida: 110, danoFisico: '2/12', defensa: 15, defMagica: '-', podAtaque: 60, evasion: 40, magia: '-' },
-        { name: 'Lobo', poderDoma: 800, vida: 75, danoFisico: '1/18', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 25, magia: '-' },
-        { name: 'Orco', poderDoma: 1000, vida: 350, danoFisico: '5/35', defensa: 10, defMagica: '-', podAtaque: 60, evasion: 45, magia: '-' },
-        { name: 'Tortuga', poderDoma: 1250, vida: 315, danoFisico: '35/55', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 45, magia: '-' },
-        { name: 'Oso Pardo', poderDoma: 400, vida: 625, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
-        { name: 'Lobo Polar', poderDoma: 1500, vida: 2600, danoFisico: '60/80', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 35, magia: '-' },
-        { name: 'Oso polar', poderDoma: 1750, vida: 1700, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
-        { name: 'Araña Gigante', poderDoma: 1900, vida: 1100, danoFisico: '30/90', defensa: '-', defMagica: '-', podAtaque: 80, evasion: 60, magia: '-' },
-        { name: 'Ogro', poderDoma: 2250, vida: 1800, danoFisico: '55/140', defensa: 10, defMagica: 10, podAtaque: 100, evasion: 60, magia: '-' },
-        { name: 'Lord Orco', poderDoma: 2500, vida: 1500, danoFisico: '110/170', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: '-' },
-        { name: 'Orco Brujo', poderDoma: 2500, vida: 1500, danoFisico: '70/115', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: 'Lanza Núcleo Plasma' }
       ]
     }
   },
@@ -2055,6 +1145,865 @@ export const wikiSections = [
     }
   },
   {
+    id: 'quests',
+    title: 'Quests & Modo Historia',
+    icon: questicono,
+    content: {
+      description: '¡Nuestro sistema de entrenamiento! Que tal forastero, si llegaste a este parte es porque necesitas entrenar. Al nacer en las tierras del Cucsi tendrás un teleport, en tu ciudad de origen, por el cual podrás ingresar al Dungeon Newbie (D-NW).',
+      intro: 'El nivel Máximo informado indica que hasta ese nivel inclusive podremos pedir la misión para realizarla. Los Puntos de Usuario sirven para subir el Nivel de Clan, items de Torneo o para uno de los requisitos de la Nobleza.',
+      categories: [
+        {
+          id: 'newbie',
+          name: 'Quest Newbie Dungeon',
+          icon: '🗡️',
+          description: 'Quests para niveles 1-13',
+          quests: [
+            {
+              npc: 'Randall',
+              repetible: false,
+              ubicacion: 'Newbie Dungeon | Mapa:19 X:72 Y:80',
+              nombre: 'Obteniendo Equipo Guerrero',
+              nivelMin: 1,
+              nivelMax: 13,
+              necesidad: 'Matar 5 Gallo Salvaje, 5 Serpiente y 5 Lobo.',
+              criaturas: ['Gallo Salvaje', 'Serpiente', 'Lobo'],
+              recompensa: '460 de experiencia, 40 monedas de oro y Equipo de Entrenamiento para Paladín, Clérigo, Asesino, Bandido, Ladrón, Cazador y Guerrero.'
+            },
+            {
+              npc: 'Agnes',
+              repetible: false,
+              ubicacion: 'Newbie Dungeon | Mapa:79 X:81 Y:77',
+              nombre: 'Obteniendo Equipo Mágico',
+              nivelMin: 1,
+              nivelMax: 13,
+              necesidad: 'Matar 5 Gallo Salvaje, 5 Serpiente y 5 Lobo.',
+              criaturas: ['Gallo Salvaje', 'Serpiente', 'Lobo'],
+              recompensa: '460 de experiencia, 40 monedas de oro y Equipo de Entrenamiento para Mago, Druida y Bardo.'
+            }
+          ]
+        },
+        {
+          id: 'historia',
+          name: 'Quest 13 - 54',
+          icon: '📖',
+          description: 'Quest Modo Historia - Misiones 1-42',
+          quests: [
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 1/42', nivelMin: 13, nivelMax: 54, necesidad: 'Matar 20 Esqueleto.', criaturas: ['Esqueleto'], recompensa: '700 de experiencia, 400 monedas de oro y Mascota de Entrenamiento.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 2/42', nivelMin: 14, nivelMax: 54, necesidad: 'Matar 15 Lobo.', criaturas: ['Lobo'], recompensa: '1.125 de experiencia, 525 monedas de oro y Hechizos de Entrenamiento para clases mágicas y equipo de entrenamiento para no mágicas.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 3/42', nivelMin: 15, nivelMax: 54, necesidad: 'Matar 10 Zombie.', criaturas: ['Zombie'], recompensa: '1.500 de experiencia, 450 monedas de oro y 1 Cofre de Entrenamiento I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 4/42', nivelMin: 16, nivelMax: 54, necesidad: 'Matar 15 Tortuga Gigante.', criaturas: ['Tortuga Gigante'], recompensa: '3.780 de experiencia, 1.125 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 5/42', nivelMin: 17, nivelMax: 54, necesidad: 'Matar 8 Oso Pardo.', criaturas: ['Oso Pardo'], recompensa: '5.000 de experiencia, 700 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 6/42', nivelMin: 18, nivelMax: 54, necesidad: 'Matar 20 Orco.', criaturas: ['Orco'], recompensa: '7.000 de experiencia, 1.200 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 7/42', nivelMin: 19, nivelMax: 54, necesidad: 'Matar 8 Araña Gigante.', criaturas: ['Araña Gigante'], recompensa: '10.000 de experiencia, 1.000 monedas de oro y 1 Cofre de Entrenamiento II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 8/42', nivelMin: 20, nivelMax: 54, necesidad: 'Matar 8 Asesino.', criaturas: ['Asesino'], recompensa: '11.600 de experiencia, 1.100 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 9/42', nivelMin: 21, nivelMax: 54, necesidad: 'Matar 6 Ogro.', criaturas: ['Ogro'], recompensa: '13.686 de experiencia, 2.160 monedas de oro y 1 Cofre de Materiales I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 10/42', nivelMin: 22, nivelMax: 54, necesidad: 'Matar 10 Beholder.', criaturas: ['Beholder'], recompensa: '17.500 de experiencia, 3.250 monedas de oro y 1 Cofre de Materiales I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 11/42', nivelMin: 23, nivelMax: 54, necesidad: 'Matar 10 Orco Brujo.', criaturas: ['Orco Brujo'], recompensa: '19.500 de experiencia, 4.000 monedas de oro y 1 Cofre de Quest I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 12/42', nivelMin: 24, nivelMax: 54, necesidad: 'Matar 10 Liche.', criaturas: ['Liche'], recompensa: '18.800 de experiencia, 3.200 monedas de oro y 1 Barca.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 13/42', nivelMin: 25, nivelMax: 54, necesidad: 'Matar 10 Lord Orco.', criaturas: ['Lord Orco'], recompensa: '16.000 de experiencia, 3.000 monedas de oro y 1 Relampago para mágicos y Conjuro del estupor para no mágicas.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 14/42', nivelMin: 26, nivelMax: 54, necesidad: 'Matar 10 Mago Malvado.', criaturas: ['Mago Malvado'], recompensa: '15.000 de experiencia, 3.500 monedas de oro y 1 Cofre de Clase I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 15/42', nivelMin: 27, nivelMax: 54, necesidad: 'Matar 5 Liche Infernal.', criaturas: ['Liche Infernal'], recompensa: '31.750 de experiencia, 2.500 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 16/42', nivelMin: 28, nivelMax: 54, necesidad: 'Matar 5 Demonio.', criaturas: ['Demonio'], recompensa: '57.500 de experiencia, 5.000 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 17/42', nivelMin: 29, nivelMax: 54, necesidad: 'Matar 2 Golem de Piedra.', criaturas: ['Golem de Piedra'], recompensa: '50.000 de experiencia, 1.500 monedas de oro y 1 Cofre Winterfell I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 18/42', nivelMin: 30, nivelMax: 54, necesidad: 'Matar 15 Leviatan.', criaturas: ['Leviatan'], recompensa: '65.000 de experiencia, 13.125 monedas de oro y 1 Scroll exp (30 min).' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 19/42', nivelMin: 31, nivelMax: 54, necesidad: 'Matar 20 Dinosaurio.', criaturas: ['Dinosaurio'], recompensa: '75.000 de experiencia, 8.000 monedas de oro y 1 Cofre de Entrenamiento III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 20/42', nivelMin: 32, nivelMax: 54, necesidad: 'Matar 10 Pirata.', criaturas: ['Pirata'], recompensa: '85.000 de experiencia, 10.000 monedas de oro y 1 Cofre de Entrenamiento II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 21/42', nivelMin: 33, nivelMax: 54, necesidad: 'Matar 10 Capitán Pirata.', criaturas: ['Capitán Pirata'], recompensa: '95.000 de experiencia, 12.000 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 22/42', nivelMin: 34, nivelMax: 54, necesidad: 'Matar 15 Arquero del Castillo.', criaturas: ['Arquero del Castillo'], recompensa: '105.000 de experiencia, 12.375 monedas de oro y 1 Cofre de Clase I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 23/42', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 15 Plebello del Castillo.', criaturas: ['Plebello del Castillo'], recompensa: '111.250 de experiencia, 14.625 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 24/42', nivelMin: 36, nivelMax: 54, necesidad: 'Matar 10 Mago del Castillo.', criaturas: ['Mago del Castillo'], recompensa: '127.500 de experiencia, 18.750 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 25/42', nivelMin: 37, nivelMax: 54, necesidad: 'Matar 10 Guerrero Armado del Castillo.', criaturas: ['Guerrero Armado del Castillo'], recompensa: '135.000 de experiencia, 10.500 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 26/42', nivelMin: 38, nivelMax: 54, necesidad: 'Matar 10 Archimago del Castillo.', criaturas: ['Archimago del Castillo'], recompensa: '240.000 de experiencia, 10.000 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 27/42', nivelMin: 39, nivelMax: 54, necesidad: 'Matar 10 Paladin del Castillo.', criaturas: ['Paladin del Castillo'], recompensa: '280.000 de experiencia, 12.375 monedas de oro y 1 Scroll exp (30 min).' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 28/42', nivelMin: 40, nivelMax: 54, necesidad: 'Matar 5 Arcangel Armado del Castillo.', criaturas: ['Arcangel Armado del Castillo'], recompensa: '280.000 de experiencia, 14.625 monedas de oro y 1 Cofre de Quest II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 29/42', nivelMin: 41, nivelMax: 54, necesidad: 'Matar 2 Rey Golem de Polo.', criaturas: ['Rey Golem de Polo'], recompensa: '25.000 de experiencia, 22.500 monedas de oro y 1 Cofre de Materiales II.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 30/42', nivelMin: 42, nivelMax: 54, necesidad: 'Matar 2 Golem Junior de Hielo.', criaturas: ['Golem Junior de Hielo'], recompensa: '30.000 de experiencia, 22.500 monedas de oro y 1 Cofre Winterfell I.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 31/42', nivelMin: 43, nivelMax: 54, necesidad: 'Matar 10 Sirena.', criaturas: ['Sirena'], recompensa: '500.000 de experiencia, 1.500 monedas de oro y 1 Cofre de Runas Inferiores.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 32/42', nivelMin: 44, nivelMax: 54, necesidad: 'Matar 1 Galeón Pirata.', criaturas: ['Galeón Pirata'], recompensa: '640.000 de experiencia, 8.000 monedas de oro y 1 Cofre de Runas Inferiores.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 33/42', nivelMin: 45, nivelMax: 54, necesidad: 'Matar 10 Galeón Fantasmal.', criaturas: ['Galeón Fantasmal'], recompensa: '700.000 de experiencia, 2.500 monedas de oro y 1 Cofre de Materiales III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 34/42', nivelMin: 46, nivelMax: 54, necesidad: 'Matar 10 Leviatan II.', criaturas: ['Leviatan II'], recompensa: '880.000 de experiencia, 1.875 monedas de oro y 1 Scroll exp (30 min).' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 37/42', nivelMin: 47, nivelMax: 54, necesidad: 'Matar 10 Kraken.', criaturas: ['Kraken'], recompensa: '1.060.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Quest III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 38/42', nivelMin: 48, nivelMax: 54, necesidad: 'Matar 5 Golem Dorado.', criaturas: ['Golem Dorado'], recompensa: '1.260.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Materiales III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 39/42', nivelMin: 49, nivelMax: 54, necesidad: 'Matar 3 Golem Alado.', criaturas: ['Golem Alado'], recompensa: '1.500.000 de experiencia, 1.250 monedas de oro y 1 Cofre de Clase III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 40/42', nivelMin: 50, nivelMax: 54, necesidad: 'Matar 35 Medusa.', criaturas: ['Medusa'], recompensa: '2.000.000 de experiencia, 1.875 monedas de oro y 1 Cofre de Dragón.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 41/42', nivelMin: 51, nivelMax: 54, necesidad: 'Matar 10 Gran Dragón Rojo.', criaturas: ['Gran Dragón Rojo'], recompensa: '2.800.000 de experiencia, 19.000 monedas de oro y 1 Cofre de Quest III.' },
+            { npc: 'Manrique', repetible: false, ubicacion: 'Todas las ciudades', nombre: 'Modo historia - Misión 42/42', nivelMin: 52, nivelMax: 54, necesidad: 'Matar 15 Gran Dragon Rojo, 15 Dragon Rojo, 15 Golem Alado y 15 Medusa.', criaturas: ['Gran Dragon Rojo', 'Dragon Rojo', 'Golem Alado', 'Medusa'], recompensa: '6.800.000 de experiencia, 28.500 monedas de oro, 1 Scroll exp (30 min), y 1 Cofre de Clase III.' }
+          ]
+        },
+        {
+          id: 'repetibles',
+          name: 'Quest Repetibles',
+          icon: '🔄',
+          description: 'Quests que puedes repetir múltiples veces',
+          quests: [
+            { npc: 'Gael', repetible: true, ubicacion: 'Dungeon Marabel | Mapa:69 X:51 Y:87', nombre: 'Identificando a los Revoltosos', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 10 Orco Brujo, 10 Lord Orco, 10 Mago Malvado, 1 Demonio.', criaturas: ['Orco Brujo', 'Lord Orco', 'Mago Malvado', 'Demonio'], recompensa: '62.000 de experiencia, 4.360 monedas de oro, 10 puntos de usuario, 100 Pociones rojas, 60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Dylan', repetible: true, ubicacion: 'Castillo de Lindos | Mapa:62 X:40 Y:51', nombre: 'Rebeldes en el Castillo', nivelMin: 30, nivelMax: 45, necesidad: 'Matar 5 Arquero del Castillo, 5 Plebello del Castillo, 5 Mago del Castillo, 5 Guerrero Armado del Castillo, 5 Archimago del Castillo, 5 Paladin del Castillo, 1 Arcangel Armado del Castillo.', criaturas: ['Arquero del Castillo', 'Plebello del Castillo', 'Mago del Castillo', 'Guerrero Armado del Castillo', 'Archimago del Castillo', 'Paladin del Castillo', 'Arcangel Armado del Castillo'], recompensa: '133.275 de experiencia, 7.341 monedas de oro, 10 puntos de usuario, 100 Pociones rojas, 60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Lotaria', repetible: true, ubicacion: 'Nueva Esperanza | Mapa:59 X:34 Y:15', nombre: 'Reclutando a Guerreros II', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 10 Liche Infernal, 10 Leviatan.', criaturas: ['Liche Infernal', 'Leviatan'], recompensa: '154.500 de experiencia, 6.500 monedas de oro, 10 puntos de usuario, 50 Pociones rojas,30 Pociones azules, 10 Pociones amarillas, 5 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Jurian', repetible: true, ubicacion: 'Dungeon Barco Pirata | Mapa:33 X:48 Y:74', nombre: 'Lo\' Pirata VO\'', nivelMin: 25, nivelMax: 40, necesidad: 'Matar 15 Pirata, 10 Capitán Pirata.', criaturas: ['Pirata', 'Capitán Pirata'], recompensa: '88.975 de experiencia, 2.350 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Law', repetible: true, ubicacion: 'Dungeon Barco Dinosaurio | Mapa:49 X:34 Y:16', nombre: 'La Prehistoria', nivelMin: 30, nivelMax: 40, necesidad: 'Matar 25 Dinosaurio.', criaturas: ['Dinosaurio'], recompensa: '116.125 de experiencia, 3.100 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Jehanne', repetible: true, ubicacion: 'Ciudad de Lindos | Mapa:54 X:68 Y:41', nombre: 'Protege a Lindos', nivelMin: 30, nivelMax: 45, necesidad: 'Matar 15 Leviatan.', criaturas: ['Leviatan'], recompensa: '136.500 de experiencia, 5.250 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas y 5 chuletas.' },
+            { npc: 'Nahia', repetible: true, ubicacion: 'Entrada Inframundo | Mapa:66 X:48 Y:34', nombre: 'Welcome To Pain ZONE', nivelMin: 35, nivelMax: 45, necesidad: 'Matar 15 Serpiente de Anthares, 5 Leviatan, 5 Medusa, 5 Demonio, 2 Golem Dorado y 2 Golem Alado.', criaturas: ['Serpiente de Anthares', 'Leviatan', 'Medusa', 'Demonio', 'Golem Dorado', 'Golem Alado'], recompensa: '255.575 de experiencia, 5.850 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
+            { npc: 'Milo', repetible: true, ubicacion: 'Entrada Dungeon Marabel | Mapa:28 X:42 Y:48', nombre: 'Venganza', nivelMin: 35, nivelMax: 45, necesidad: 'Matar 10 Demonio, 5 Golem de Piedra.', criaturas: ['Demonio', 'Golem de Piedra'], recompensa: '240.000 de experiencia, 5.500 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas.' },
+            { npc: 'Alonso', repetible: true, ubicacion: 'Adentro del Dungeon Veril | Mapa:71 X:38 Y:27', nombre: 'Medukila', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 30 Medusa.', criaturas: ['Medusa'], recompensa: '345.000 de experiencia, 9.000 monedas de oro, 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
+            { npc: 'Braulio', repetible: true, ubicacion: 'Adentro del Dungeon Veril | Mapa:72 X:48 Y:41', nombre: 'Duro como Ferrocarril', nivelMin: 35, nivelMax: 54, necesidad: 'Matar 5 Golem de Piedra, 5 Golem Dorado y 5 Golem Alado.', criaturas: ['Golem de Piedra', 'Golem Dorado', 'Golem Alado'], recompensa: '450.000 de experiencia, 4.500 monedas de oro y 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas y 1 Cofre Quest III.' },
+            { npc: 'Rick', repetible: true, ubicacion: 'Entrada Dungeon Dragon | Mapa:72 X:48 Y:41', nombre: 'Ala de Pollo', nivelMin: 43, nivelMax: 45, necesidad: 'Matar 15 Gran Dragon Rojo.', criaturas: ['Gran Dragon Rojo'], recompensa: '750.000 de experiencia, 7.500 monedas de oro y 10 puntos de usuario, 100 Pociones rojas,60 Pociones azules, 20 Pociones amarillas, 10 pociones verdes, 5 jugo de frutas, 5 chuletas.' },
+            { npc: 'Zdenko', repetible: true, ubicacion: 'Polo | Mapa:78 X:62 Y:22', nombre: 'Caza Golemica', nivelMin: 27, nivelMax: 54, necesidad: 'Matar 10 Golem Junior de Hielo y 5 Rey Golem de Polo.', criaturas: ['Golem Junior de Hielo', 'Rey Golem de Polo'], recompensa: '13.000 de experiencia, 25.625 monedas de oro, 10 puntos de usuario y una provisión de pociones y Piedra Caza Golemica (se vende por oro).' },
+            { npc: 'Emma', repetible: true, ubicacion: 'Laberinto Congelado Mapa:138 X:77 Y:86 | Entrada Mapa 78', nombre: 'Guardianes del Laberinto', nivelMin: 33, nivelMax: 54, necesidad: 'Matar 10 Hombre de las Nieves, 10 Beholder Polar y 10 Gorila Polar.', criaturas: ['Hombre de las Nieves', 'Beholder Polar', 'Gorila Polar'], recompensa: '7.500 de experiencia, 30.000 monedas de oro, 10 puntos de usuario, una gran provisión de pociones y Piedra Guardianes del Laberinto (se vende por oro).' },
+            { npc: 'Dorotyh', repetible: true, ubicacion: 'Dungeon Agua Mapa:135 X:47 Y:20 | Entrada Mapa 103', nombre: 'Derrotando a las Criaturas Míticas', nivelMin: 35, nivelMax: 50, necesidad: 'Matar 10 Kraken y 10 Leviatan II.', criaturas: ['Kraken', 'Leviatan II'], recompensa: '250.000 de experiencia, 8.200 monedas de oro y 10 puntos de usuario, 500 Pociones rojas, 250 Pociones azules, 60 Pociones amarillas, 40 pociones verdes, 5 jugo de frutas, 5 chuletas y Cofre de Quest III.' },
+            { npc: 'Eleuterio', repetible: true, ubicacion: 'Dungeon Agua Mapa:135 X:48 Y:83 | Entrada Mapa 103', nombre: 'Barckiller', nivelMin: 35, nivelMax: 50, necesidad: 'Matar 10 Galeón Pirata y 10 Galeón Fantasmal.', criaturas: ['Galeón Pirata', 'Galeón Fantasmal'], recompensa: '140.000 de experiencia, 6.860 monedas de oro y 10 puntos de usuario, 500 Pociones rojas, 250 Pociones azules, 60 Pociones amarillas, 40 pociones verdes, 5 jugo de frutas, 5 chuletas y Cofre de Quest II.' }
+          ]
+        },
+        {
+          id: 'recursos',
+          name: 'Quest de Recursos',
+          icon: '⛏️',
+          description: 'Quests relacionadas con recursos y materiales',
+          quests: [
+            { npc: 'Brigham', repetible: true, ubicacion: 'Ciudad de Blillinton | Mapa:95 X:47 Y:52', nombre: 'Mercado Negro de Minerales I', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Minerales de Hierro.', criaturas: [], recompensa: 'Te entregara 714 Lingotes de Hierro (Brinda 5% extra de lingotes ya fraguados).' },
+            { npc: 'Brishen', repetible: true, ubicacion: 'Ciudad de Dahl | Mapa:96 X:52 Y:28', nombre: 'Mercado Negro de Minerales II', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Minerales de Plata.', criaturas: [], recompensa: 'Te entregara 504 Lingotes de Plata (Brinda 5% extra de lingotes ya fraguados).' },
+            { npc: 'Alodia', repetible: true, ubicacion: 'Ciudad de Banderbill | Mapa:30 X:35 Y:46', nombre: 'Mercado Negro de Lanas I', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Lana de Oveja.', criaturas: [], recompensa: 'Te entregara 714 Ovillos de Oveja (Brinda 5% extra de ovillos ya trabajados).' },
+            { npc: 'Ilduara', repetible: true, ubicacion: 'Ciudad de Nexon | Mapa:15 X:54 Y:50', nombre: 'Mercado Negro de Lanas II', nivelMin: 30, nivelMax: 54, necesidad: 'Llevarle 10.000 Lana de Cabra.', criaturas: [], recompensa: 'Te entregara 504 Ovillos de Cabra (Brinda 5% extra de ovillos ya trabajados).' }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    id: 'trabajo',
+    title: 'Trabajo',
+    icon: carpinteria,
+    content: {
+      description: 'En las tierras de CucsiAO, el trabajo es un medio muy importante para el progreso de tu personaje o de un clan en sí. Ahora vas a poder realizar todos los trabajos con tu personaje, dejó de existir la clase trabajador. Los recursos son agotables.',
+      intro: 'Estas son los diferentes trabajos que tu personaje podrá realizar:',
+      importantNote: {
+        title: 'Importante',
+        items: [
+          'Cualquier Personaje de Nivel 1 a 12 extraerán entre 1 a 5 recursos de cualquier tipo. (Leña, Minerales, Peces, Lanas, Raíces).',
+          'Ahora pueden trabajar en zona segura y van a extraer 1 a 5 recursos.',
+          'Los Personajes de Nivel 13 o superior extraerán más recursos.'
+        ]
+      },
+      trabajos: [
+        {
+          id: 'pesca',
+          nombre: 'Pesca',
+          icon: redpesca,
+          descripcion: 'El oficio de la pesca consiste en la obtención de peces. Para esto el personaje debe tener seleccionada y equipada una caña de pescar o una red de pesca (ésta última es solo equipable por el trabajador), luego buscar agua ya sea un lago, río, etc. y presionar la tecla U (por defecto o doble click sobre la herramienta) y hacer click sobre el agua.',
+          descripcion2: 'El Trabajador con el oficio en Pescar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
+          bonificacion: {
+            title: 'Bonificación',
+            items: [
+              'Con Red de Pesca en Zona Insegura extraemos más recursos por nivel.',
+              'Utilizando la embarcación Galera y Red de Pesca en Zona Insegura, tendremos la posibilidad de obtener Cofres de Pesca.'
+            ]
+          },
+          itemsTable: {
+            title: 'Items de Pesca',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Caña de Pescar', 'Item necesario para la extración de peces, se vende en el NPC "Vendedor"'],
+              ['Red de Pesca', 'Item necesario para la extración de variedad de peces, se vende en el NPC "Vendedor" (SE CAE)']
+            ]
+          },
+          resourcesTable: {
+            title: 'Tipos de Peces y Precios',
+            headers: ['Nombre', 'Precio'],
+            rows: [
+              ['Pez Dorado', '6 monedas de oro. Requiere red de pesca'],
+              ['Pez Espada', '5 monedas de oro. Requiere red de pesca'],
+              ['Merluza', '4 monedas de oro. Requiere red de pesca'],
+              ['Pescado', '2 monedas de oro']
+            ]
+          },
+          cofresNote: 'IMPORTANTE: Al abrir los cofres existe la posibilidad de conseguir hasta 3 de los objetos del cofre como también la posibilidad de que el cofre no de ningún objeto.',
+          cofresTable: {
+            title: 'Tipos de Cofres',
+            headers: ['Nombre del cofre', 'Prob. de conseguirlo', 'Objetos'],
+            rows: [
+              ['Cofre de Pesca Verde', '1,2%', '2.000 Pescados - 1.000 Pez Dorado - 500 Merluza - 250 Pez Espada - 1.000 Monedas de Oro - 2 Gema Verde (5 puntos de usuario) - 2 Gema Naranja (3 puntos de usuario) - 2 Gema Azul (1 puntos de usuario).'],
+              ['Cofre de Pesca Celeste', '0,9%', '6.000 Pescados - 5.000 Pez Dorado - 3.000 Merluza - 2.000 Pez Espada - 5.000 Monedas de Oro - 1 Cofre de Pesca Verde - 3 Gema Verde (5 puntos de usuario) - 3 Gema Naranja (3 puntos de usuario) - 3 Gema Azul (1 puntos de usuario).'],
+              ['Cofre de Pesca Violeta', '0,6%', '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 10.000 Monedas de Oro - 20 Poción Roja - 5 Gema Verde (5 puntos de usuario) - 5 Gema Naranja (3 puntos de usuario) - 5 Gema Azul (1 puntos de usuario).'],
+              ['Cofre de Pesca de Oro', '0,3%', '1 Cofre de Pesca Verde - 1 Cofre de Pesca Celeste - 1 Cofre de Pesca Violeta - 1 Red de Pesca - 400 Pociones de Rojas - 7 Gema Verde (5 puntos de usuario) - 7 Gema Naranja (3 puntos de usuario) - 7 Gema Azul (1 puntos de usuario).']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Peces',
+            intro: 'A la hora de Pescar con nuestro trabajador lo podremos realizar en Zona Segura o en Zona Insegura. El beneficio de pescas en Zona Insegura es que recibiremos una bonificación de extracción de una mayor cantidad de recursos pero SOLO será con nuestra Red de Pesca. Para poder utilizar la Red de Pesca deberemos de estar embarcados y el tipo de embarque es indistinto ya sea Barca, Galera o Galeón dado a que la bonificación solo se aplica para la zona segura o insegura. Con Caña de Pescar extraeremos la misma cantidad de recursos estando en tierra o navegando.',
+            calculoTitle: 'Cálculo de Extracción',
+            calculoIntro: 'Para saber cuantos peces recojeremos con nuestro trabajador influirán los siguientes factores:',
+            zonas: [
+              {
+                nombre: 'Zona Segura',
+                items: [
+                  'Caña de Pesca: extraemos SIEMPRE entre 1 a 5 peces sin importar nuestro nivel.',
+                  'Red de Pesca: extraemos SIEMPRE entre 1 a 10 peces sin importar nuestro nivel.'
+                ]
+              },
+              {
+                nombre: 'Zona Insegura',
+                items: [
+                  'Caña de Pesca: (Mínimo: TuNivel -10 / Máximo: TuNivel -7). Osea si somos Nivel 20 extraemos entre 10 y 13 peces.',
+                  'Red de Pesca: (Mínimo: TuNivel -10 / Máximo: TuNivel -5). Osea si somos Nivel 20 extraemos entre 10 y 15 peces.'
+                ]
+              }
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Los PECES SE CAEN si morimos en AGUA.',
+            'La RED DE PESCA se cae como cualquier otro item de trabajador, también en agua.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'mapa',
+          title: 'Mapa',
+          icon: mapaicono,
+          content: {
+            description: 'Explora el vasto mundo de CucsiAO y sus territorios.',
+            mapImagePlaceholder: true,
+            sections: [
+              {
+                title: 'Ciudades',
+                icon: 'building',
+                locations: [
+                  { mapa: 1, nombre: 'Ullathorpe', nivel: null },
+                  { mapa: 13, nombre: 'Nix', nivel: null },
+                  { mapa: 30, nombre: 'Banderbill', nivel: null },
+                  { mapa: 54, nombre: 'Lindos', nivel: null },
+                  { mapa: 58, nombre: 'Nueva Esperanza', nivel: null },
+                  { mapa: 35, nombre: 'Arghal', nivel: null },
+                  { mapa: 22, nombre: 'Terminus', nivel: null },
+                  { mapa: 10, nombre: 'Tyrann', nivel: null },
+                  { mapa: 15, nombre: 'Noxon', nivel: null },
+                  { mapa: 96, nombre: 'Dhall', nivel: null },
+                  { mapa: 95, nombre: 'Blillinton', nivel: null },
+                  { mapa: 97, nombre: 'Kodell', nivel: null }
+                ]
+              },
+              {
+                title: 'Dungeons',
+                icon: 'skull',
+                locations: [
+                  { mapa: 79, nombre: 'Cementerio: Mausoleo', nivel: 15 },
+                  { mapa: 28, nombre: 'Dungeon Marabel', nivel: 20 },
+                  { mapa: 62, nombre: 'Dungeon Castillo', nivel: 25 },
+                  { mapa: 66, nombre: 'Dungeon Inframundo', nivel: 30, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
+                  { mapa: 103, nombre: 'Dungeon Agua', nivel: 30 },
+                  { mapa: 39, nombre: 'Dungeon Verill', nivel: 30 },
+                  { mapa: 47, nombre: 'Dungeon Dragón', nivel: 40 }
+                ]
+              },
+              {
+                title: 'Catacumbas',
+                icon: 'door-open',
+                locations: [
+                  { mapa: '1 y 34', nombre: 'Entrada a Catacumbas Ullathorpe & Nix', nivel: null },
+                  { mapa: '21, 42, 45, 50, 56, 59', nombre: 'Entrada a Catacumbas del Inframundo', nivel: null, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
+                  { mapa: '29, 32 y 66', nombre: 'Entrada a Ciudad Canal del Inframundo', nivel: null }
+                ]
+              },
+              {
+                title: 'Polo',
+                icon: 'snowflake',
+                locations: [
+                  { mapa: 78, nombre: 'Polo', nivel: 25 },
+                  { mapa: 138, nombre: 'Laberinto Congelado', nivel: 30 }
+                ]
+              },
+              {
+                title: 'Minas de Yacimientos',
+                icon: 'pickaxe',
+                locations: [
+                  { mapa: 9, nombre: 'Minas de Hierro', nivel: null },
+                  { mapa: 39, nombre: 'Minas de Plata', nivel: null },
+                  { mapa: 75, nombre: 'Minas de Oro', nivel: 30 }
+                ]
+              },
+              {
+                title: 'Esquila de Lanas',
+                icon: 'scissors',
+                locations: [
+                  { mapa: 29, nombre: 'Ovejas', nivel: null },
+                  { mapa: 4, nombre: 'Cabras', nivel: null },
+                  { mapa: 23, nombre: 'Llamas', nivel: null, nota: 'Necesitarás navegar para acceder a ellas' }
+                ]
+              },
+              {
+                title: 'Lugares Secundarios',
+                icon: 'compass',
+                locations: [
+                  { mapa: 33, nombre: 'Barco Pirata', nivel: 30 },
+                  { mapa: 49, nombre: 'Barco Abandonado', nivel: 30 },
+                  { mapa: 79, nombre: 'Cementerio', nivel: null },
+                  { mapa: 59, nombre: 'Sur Nueva Esperanza', nivel: 20 },
+                  { mapa: 89, nombre: 'Dungeon Dragón Escondido', nivel: 20 },
+                  { mapa: 145, nombre: 'Bosque Élfico Saqueado', nivel: 20 },
+                  { mapa: 150, nombre: 'Pirámide Abandonada', nivel: null }
+                ]
+              },
+              {
+                title: 'Castillos y Fortaleza',
+                icon: 'castle',
+                locations: [
+                  { mapa: 110, nombre: 'Castillo Norte', nivel: null },
+                  { mapa: 80, nombre: 'Castillo Oeste', nivel: null },
+                  { mapa: 100, nombre: 'Castillo Este', nivel: null },
+                  { mapa: 90, nombre: 'Castillo Sur', nivel: null },
+                  { mapa: 131, nombre: 'Minas de Castillo', nivel: null },
+                  { mapa: 118, nombre: 'Fortaleza', nivel: null },
+                  { mapa: 132, nombre: 'Minas de Fortaleza', nivel: null }
+                ]
+              },
+              {
+                title: 'Otros Lugares',
+                icon: 'landmark',
+                locations: [
+                  { mapa: 148, nombre: 'Museo', nivel: null }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          id: 'tala',
+          nombre: 'Tala',
+          icon: tala,
+          descripcion: 'El oficio de la tala consiste en la obtención de leños, una vez que tengas un hacha de leñador deberás equiparla con la tecla equipar (E), luego buscar un árbol, presionar la tecla Usar (U), se te activa el macro automático del servidor) y hacer click sobre el árbol. Los trabajadores pueden extraer o construir de a uno o más recursos/objetos a la vez, dependiendo de su nivel. Mientras más nivel sea, más recursos obtendrá por vez y más objetos podrá construir por vez (ver Extracción).',
+          descripcion2: 'El Trabajador con el oficio en Talar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez. Las leñas sirven para que puedas construir items de Carpintería.',
+          itemsTable: {
+            title: 'Items de Tala',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Hacha de Leñador', 'Item necesario para extraer materiales de los árboles, se vende en el NPC "Vendedor"'],
+              ['Hacha de Leña Élfica', 'Item necesario para extraer materiales de los árboles élficos, se vende en el NPC "Vendedor"'],
+              ['Leña', 'Recurso extraído desde un Árbol'],
+              ['Leña Élfica', 'Recurso extraído desde un Árbol Élfico']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Leña',
+            intro: 'Con nuestro trabajador y su herramienta de trabajo Hacha de Leñador o Hacha de Leña Élfica, dependiendo del tipo de recurso que deseamos extraer, nos dirigiremos a zona insegura para empezar nuestra tala.',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 12: extraemos entre 2 a 5 de Leña sin importar tu nivel.',
+              'Nivel 13 o Más: extraemos (Mínimo: TuNivel -10 / Máximo: TuNivel -5). Osea si somos Nivel 20 extraemos entre 10 y 15 Leña.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
+            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
+          ],
+          locationInfo: [
+            'La Leña podremos extraerla de cualquier árbol de las tierras.',
+            'En cambio para poder extraer Leña Élfica deberemos de dirigirnos al Bosque Élfico situado al Sureste de la ciudad de Nix ubicado en el Mapa 145, ya que es el único lugar de las tierras donde podremos hacernos de ella pero para llegar a dicho lugar deberemos de navegar.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'carpinteria',
+          nombre: 'Carpintería',
+          icon: carpinteria,
+          descripcion: 'El oficio de la carpintería sirve para construir objetos a base de leña. Una vez que tengas un serrucho deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en carpintería.',
+          descripcion2: 'El Trabajador con el oficio en Carpintería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Carpintería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Serrucho', 'Item necesario para la construcción con madera, se vende en el NPC "Vendedor"'],
+              ['Leña', 'Recurso extraído desde un Árbol para la elaboración de objetos'],
+              ['Leña Élfica', 'Recurso extraído desde un Árbol Élfico para la elaboración de objetos']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando el Serrucho abrimos el menú de creación.',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+          craftingTable: {
+            title: 'Lista de Objetos de Creación',
+            headers: ['Item', 'Leña', 'Leña Élfica', 'Skills', 'Defensa', 'Daño'],
+            rows: [
+              ['Cuchara', '3', '-', '5', '', ''],
+              ['Caña de Pescar', '70', '-', '12', '', ''],
+              ['Arco Simple', '42', '-', '20', '', ''],
+              ['Flecha', '1', '-', '20', '', ''],
+              ['Barca (Navegas 5% más rápido)', '10.000', '-', '80 / (60 trabajadores) / (40 piratas)', '5/10', '5/10'],
+              ['Flecha +1', '3', '-', '40', '', ''],
+              ['Galera (Navegas 10% más rápido)', '45.000', '25.000', '90 / (68 trabajadores) / (45 piratas)', '10/15', '7/15'],
+              ['Flecha +2', '5', '-', '60', '', ''],
+              ['Tambor', '800', '-', '75', '', ''],
+              ['Flauta', '800', '-', '75', '', ''],
+              ['Arco De Oro', '1.500', '-', '80', '-', '5/9'],
+              ['Bastón Nudoso', '2.500', '-', '80', '', ''],
+              ['Arco de Perla Azul', '3.500', '-', '90', '-', '8/10'],
+              ['Flecha +3', '7', '-', '90', '', ''],
+              ['Flauta Mágica', '3.000', '-', '100', '', ''],
+              ['Laúd Mágico', '3.300', '-', '100', '', ''],
+              ['Ballesta', '10.000', '1.000', '100', '-', '7/12'],
+              ['Báculo Engarzado', '8.000', '-', '100', '', ''],
+              ['Flauta Élfico', '-', '3.650', '100', '', ''],
+              ['Laúd Élfico', '-', '3.650', '100', '', ''],
+              ['Galeón (Navegas 15% más rápido)', '90.000', '50.000', '100 / (75 trabajadores) / (50 pirata)', '15/20', '10/17']
+            ]
+          },
+          desmantelacion: {
+            title: 'Desmantelación de Objetos de Carpintería',
+            descripcion: 'El oficio desmantelar consiste en la recuperación de piezas para poder a reutilizar la madera, una vez que tengas una cierta cantidad de objetos a desmantelar deberás buscar un serrucho ubicado en la casa del carpintero de cada ciudad, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre el serrucho. La desmantelación depende de la clase y los puntos ya que los objetos a desmantelar son aquellos creados mediante la Carpintería. Que requieran al menos 50 skills, se podrán desmantelar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
+            note: 'IMPORTANTE: SOLO podremos fundir los objetos del siguiente listado cuales SKILLS en CARPINTERIA deberán de ser 50 o superiores:',
+            table: {
+              headers: ['Item', 'Leña', 'Leña Élfica', 'Skills'],
+              rows: [
+                ['Galera (Navegas 10% más rápido)', '45.000', '25.000', '90 / (68 trabajadores) / (45 piratas)'],
+                ['Flecha +2', '5', '-', '60'],
+                ['Tambor', '800', '-', '75'],
+                ['Flauta', '800', '-', '75'],
+                ['Arco De Oro', '1.500', '-', '80'],
+                ['Bastón Nudoso', '2.500', '-', '80'],
+                ['Arco de Perla Azul', '3.500', '-', '90'],
+                ['Flecha +3', '7', '-', '90'],
+                ['Flauta Mágica', '3.000', '-', '100'],
+                ['Laúd Mágico', '3.000', '-', '100'],
+                ['Ballesta', '6.000', '3.000', '100'],
+                ['Báculo Engarzado', '4.500', '-', '100'],
+                ['Flauta Élfico', '-', '3.650', '100'],
+                ['Laúd Élfico', '-', '3.650', '100'],
+                ['Galeón (Navegas 15% más rápido)', '90.000', '50.000', '100 / (75 trabajadores) / (50 pirata)']
+              ]
+            }
+          }
+        },
+        {
+          id: 'botanica',
+          nombre: 'Botánica',
+          icon: botanica,
+          descripcion: 'La botánica es el trabajo dedicado a la extracción de los recursos de raíces de los árboles para luego poder elaborar complejas pociones de un grado superior a las que podremos encontrar en el comerciante con el arte de la Alquimia.',
+          descripcion2: 'La extracción de raíces es un arte pura y exclusivamente de la clase DRUIDA mientras que con el resto de las clases sólo podrá obtener una a la vez.',
+          bonificacion: 'BONIFICACIÓN: A partir de Nivel 45 empezaremos a extraer más recursos por nivel.',
+          itemsTable: {
+            title: 'Items de Botánica',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Tijeras', 'Item necesario para la creación de pociones, se vende en el NPC "Vendedor"'],
+              ['Raíz', 'Recurso extraído desde un Árbol']
+            ]
+          },
+          castilloNote: 'También si tienes un Clan nivel 3, puedes trabajar en las catacumbas de los castillos.',
+          extraccion: {
+            title: 'Extracción de Raíces',
+            intro: 'Con nuestro Druida y su herramienta de trabajo Tijeras nos dirigiremos a zona insegura para empezar nuestra recolección:',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 44: extraemos entre 2 a 4 Raíces sin importar tu nivel.',
+              'Nivel 45 o Más: extraemos (Mínimo: TuNivel -42 / Máximo: TuNivel -38). Osea si somos Nivel 45 extraemos entre 3 y 7 Raíces.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.',
+            importantNote: 'IMPORTANTE: Mientras más nivel tenga nuestro Druida más recursos extraerá.'
+          }
+        },
+        {
+          id: 'alquimia',
+          nombre: 'Alquimia',
+          icon: alquimia,
+          descripcion: 'El Alquimia es el Arte de las viejas brujas la cual sirve para la creación de poderosas pociones a base de raíces. Una vez que tengas una Olla deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Alquimia.',
+          descripcion2: 'El Druida con el oficio en Alquimia es quién podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Alquimia',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Olla', 'Item necesario para la construcción con raíces, se vende en el NPC "Vendedor"'],
+              ['Raíz', 'Recurso extraído desde un Árbol para elaboración de pociones']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando la Olla abrimos el menú de creación.',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+          craftingTable: {
+            title: 'Lista de Objetos de Creación',
+            headers: ['Item', 'Estado', 'Bonificación', 'Raíces', 'Skills'],
+            rows: [
+              ['Poción Violeta (Druida)', 'Cura el veneno', '-', '10', '10'],
+              ['Poción Roja', 'Recupera Vida', '28-30', '14', '10'],
+              ['Poción de Energía', 'Recupera energía', '25-50', '50', '30'],
+              ['Poción de Energía (Druida)', 'Recupera más energía', '50-100', '100', '30'],
+              ['Poción Azul (Druida)', 'Recupera más mana', '100-150', '200', '50'],
+              ['Poción Azul', 'Recupera mana', '50-75', '14', '60'],
+              ['Poción Amarilla', 'Aumenta la agilidad', '4-6', '14', '60'],
+              ['Poción Verde', 'Aumenta la fuerza', '4-6', '14', '60'],
+              ['Poción Roja (Druida)', 'Recupera más vida', '38-38', '100', '60'],
+              ['Poción Amarilla (Druida)', 'Aumenta más la agilidad', '8-10', '250', '70'],
+              ['Poción Verde (Druida)', 'Aumenta más la fuerza', '8-10', '300', '80'],
+              ['Poción Anti Ceguera', 'Devuelve la visión', '-', '2.000', '100'],
+              ['Poción Anti Estupidez', 'Vuelve a la normalidad al personaje', '-', '2.000', '100'],
+              ['Poción Anti Parálisis', 'Remueve la parálisis', '-', '4.000', '100']
+            ]
+          }
+        },
+        {
+          id: 'mineria',
+          nombre: 'Minería',
+          icon: mineria,
+          descripcion: 'La minería es una de las profesiones mejor pagas de Argentum Online debido a su alto riesgo. La extracción de minerales implica salir de la ciudad y entrar a una peligrosa mina en busca de yacimientos y hasta poderosos Dungeons. Estos deben ser trabajados con un piquete de minero, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el yacimiento.',
+          descripcion2: 'Con la minería obtendremos la extracción de minerales de hierro, plata y oro materia prima para la fundición de Lingotes y con ellos crear poderosos objetos con un Herrero. El Trabajador con el oficio de Minería puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
+          itemsTable: {
+            title: 'Items de Minería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Piquete de Minero', 'Item necesario para extraer materiales de los yacimientos, se vende en el NPC "Vendedor"'],
+              ['Mineral de Hierro', 'Recurso extraído desde un Yacimiento de Hierro'],
+              ['Mineral de Plata', 'Recurso extraído desde un Yacimiento de Plata'],
+              ['Mineral de Oro', 'Recurso extraído desde un Yacimiento de Oro']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Minerales',
+            intro: 'Con nuestro Trabajador y su herramienta de trabajo Piquete de Minero nos dirigiremos a zona insegura para empezar nuestra extracción de minerales las cuales se hallan en lo profundo de las catacumbas o dungeons.',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 12: extraemos entre 5 a 10 Minerales sin importar tu nivel.',
+              'Nivel 13 o Más: extraemos (Mínimo: TuNivel-10 / Máximo: TuNivel-5). Osea si somos Nivel 20 extraemos entre 10 y 15 Minerales.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
+            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
+          ],
+          locationInfo: [
+            'Las minas de hierro se encuentran cerca de la ciudad Blillinton.',
+            'Las minas de plata se encuentran cerca de la ciudad Dahl.',
+            'Las minas de Oro, se encuentran dentro del Dungeon Veril, donde tendrás que ser muy cuidadoso ya que es el dungeon más transcurrido de las tierras.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'lingotes',
+          nombre: 'Creación de Lingotes',
+          icon: lingotes,
+          descripcion: 'La habilidad del Trabajador con el oficio en Minería es quién posee la habilidad de fundir los minerales extraídos de los yacimientos para poder convertirlos en Lingotes los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Herrero. Para poder fundir los materiales nos acercaremos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta la Fragua y, seleccionando de nuestro inventario los minerales, presionar tecla Usar (U o doble click) y clickear sobre la fragua.',
+          descripcion2: 'La fundición la podremos realizar con nuestro Trabajador con el oficio en Minería ya que es él quién podrá fundir todos los tipos de materiales como el Hierro, la Plata o el Oro. El resto de las clases sólo podrá fundir minerales de hierro.',
+          itemsTable: {
+            title: 'Items para la Fundición',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Fragua', 'Lugar donde podremos fundir nuestros minerales.'],
+              ['Mineral de Hierro', 'Recurso extraído desde un Yacimiento de Hierro'],
+              ['Mineral de Plata', 'Recurso extraído desde un Yacimiento de Plata'],
+              ['Mineral de Oro', 'Recurso extraído desde un Yacimiento de Oro']
+            ]
+          },
+          fundicion: {
+            title: 'Fundición de Minerales',
+            intro: 'Con nuestro Trabajador nos acercaremos hasta la casa del Herrero para fundir los minerales en la fragua:',
+            requisitos: [
+              'Necesitaremos 25 skills en Minería para fundir Minerales de Hierro con un Trabajador y 75 skills para el resto de las clases.',
+              'Necesitaremos 50 skills en Minería para fundir Minerales de Plata.',
+              'Necesitaremos 100 skills en Minería para fundir Minerales de Oro.'
+            ]
+          },
+          conversionTable: {
+            title: 'Cantidad de Minerales por Lingote',
+            headers: ['Minerales', 'Cantidad', 'Lingote'],
+            rows: [
+              ['Mineral de Hierro', '70', '5 Lingote de Hierro'],
+              ['Mineral de Plata', '100', '5 Lingote de Plata'],
+              ['Mineral de Oro', '175', '5 Lingote de Oro']
+            ]
+          }
+        },
+        {
+          id: 'herreria',
+          nombre: 'Herrería',
+          icon: herreria,
+          descripcion: 'El oficio de la Herrería sirve para la construcción de poderosas Armas, Armaduras, Cascos, Escudos e Items Mágico a base de Lingotes de Hierro, Plata y Oro. Una vez que tengas un Martillo de Herrero y nuestros Lingotes deberemos de dirigirnos hasta la casa del comerciante Herrero las cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Yunque y, equipando nuestro Martillo de Herrero con la tecla (E), presionaremos la tecla Usar (U o doble click) sobre el Yunque y se nos abrirá el menú de creación.',
+          descripcion2: 'El Trabajador con el oficio en Herrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Herrería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Martillo de Herrero', 'Item necesario para la creación con Lingotes, se vende en el NPC "Vendedor".'],
+              ['Yunque', 'Lugar donde podremos crear nuestros objetos o fundirlos.'],
+              ['Lingote de Hierro', 'Recurso fundido de los Minerales de Hierro'],
+              ['Lingote de Plata', 'Recurso fundido de los Minerales de Plata'],
+              ['Lingote de Oro', 'Recurso fundido de los Minerales de Oro']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando el Martillo de Herrero y haciendo click en el Yunque abrimos el menú de creación.',
+              'Podremos seleccionar Armas o Armaduras (Armaduras/Cascos y Escudos).',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+          /* links: {
+            title: 'Lista de Objetos de Creación',
+            intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
+            items: [
+              { text: '1 - Armaduras Altos (Hombre/Mujer)', target: 'items', subsection: '1.1' },
+              { text: '2 - Armaduras Bajos (Enano/Gnomo)', target: 'items', subsection: '1.1' },
+              { text: '3 - Armas', target: 'items', subsection: '2.1' },
+              { text: '4 - Escudos y Cascos', target: 'items', subsection: '3.1' }
+            ]
+          }, */
+          fundicion: {
+            title: 'Fundir Objetos de Herrería',
+            descripcion: 'El oficio de la fundición consiste en la fundición de minerales para convertirlos en lingotes (útiles para crear armas, armaduras, etc., en la herrería), una vez que tengas una cierta cantidad de objetos a fundir deberás buscar una fragua, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre la fragua. La fundición depende de la clase y los puntos ya que los objetos a fundir son aquellos creados mediante la Herrería. Que requieran al menos 50 skills, se podrán desmantelar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
+            note: 'IMPORTANTE: SOLO podremos fundir los objetos del siguiente listado cuales SKILLS en HERRERÍA deberán de ser 50 o superiores.'
+          }
+        },
+        {
+          id: 'esquila',
+          nombre: 'Esquila',
+          icon: esquila,
+          descripcion: 'Cypher vio que los lobos y osos que el tanto quería, estaban siendo masacrados solo por sus pieles y decidió prohibir la caza indiscriminada. Por esto, todos los sastres entraron en huelga, y por muchos días la gente anduvo desnuda en señal de protesta. En consecuencia, el Dios Cypher autorizó la esquila de animales y trajo unos pastores especializados en el tema, que llegaron desde lejos con sus tijeras y algunas simpáticas criaturas, así y de pronto, los sastres aprendieron a esquilar y a hilar la lana obtenida, y con esta pudieron crear las ropas que tan bien vestían.',
+          descripcion2: 'Estos Trabajadores con unas Tijeras de Esquilar, deberás equiparlo con la tecla equipar (E), presionar la tecla Usar (U o doble click) y clickear sobre el animal. Con la Esquila obtendremos la extracción de Lanas de Oveja, Cabra y Llama materia prima la cual Hilaremos y con los ovillos creados podremos realizar poderosas Vestimentas y Túnicas con un Sastre. El Trabajador con el oficio en Esquilar puede extraer mas de un recurso a la vez dependiendo del nivel que sea, mientras que el resto de las clases sólo podrá obtener uno a la vez.',
+          itemsTable: {
+            title: 'Items de Esquila',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Tijeras de Esquila', 'Item necesario para extraer Lana de los animales, se vende en el NPC "Vendedor"'],
+              ['Lana de Oveja', 'Recurso extraído de una Oveja'],
+              ['Lana de Cabra', 'Recurso extraído de una Cabra'],
+              ['Lana de Llama', 'Recurso extraído de una Llama']
+            ]
+          },
+          extraccion: {
+            title: 'Extracción de Lanas',
+            intro: 'Con nuestro Trabajador y su herramienta de trabajo Tijeras de Esquilar nos dirigiremos a zona insegura para empezar nuestra extracción de lanas:',
+            calculoTitle: 'Cálculo de Extracción',
+            formulas: [
+              'Nivel 1 a 12: extraemos entre 5 a 10 Lanas sin importar tu nivel.',
+              'Nivel 13 o Más: extraemos (Mínimo: TuNivel-10 / Máximo: TuNivel-5). Osea si somos Nivel 20 extraemos entre 10 y 15 Lanas.'
+            ],
+            rateNote: 'El cálculo expresado está realizado sobre el multiplicador x1 por lo cual para saber realmente cuanto extraeremos, utilizando la formula informada, deberemos de multiplicar el resultado por el rate de Extracción.'
+          },
+          importantNotes: [
+            'Mientras más nivel tenga nuestro trabajador más recursos extraerá.',
+            'Un Trabajador podrá navegar a partir de Nivel 13 y tener 60 skills en navegación para usar la Barca, 68 skills en navegación para usar la Galera, 75 skills para usar el Galeón.'
+          ],
+          locationInfo: [
+            'Las Ovejas se encuentran ubicadas en el Mapa 29.',
+            'Las Cabras se encuentran ubicadas en el Mapa 4.',
+            'Las Llamas se encuentran ubicadas en el Mapa 23.'
+          ],
+          trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
+        },
+        {
+          id: 'hilado',
+          nombre: 'Hilado',
+          icon: hilado,
+          descripcion: 'La habilidad del Trabajador con el oficio en Esquilación es quién posee la habilidad de hilar las lanas extraídas de los animales para poder convertirlos en Ovillos los cuales son un recurso muy bien pago dado a que con ellos podremos forjar poderosos objetos con nuestro Sastre. Para poder hilar las lanas en ovillos nos acercaremos hasta la casa del comerciante Sastre los cuales están ubicadas en todas las ciudades de las Tierras. Nos acercaremos hasta el Telar y, seleccionando de nuestro inventario las lanas, presionar tecla Usar (U o doble click) y clickear sobre el telar.',
+          descripcion2: 'La Hilación la podremos realizar con nuestro Trabajador con el oficio en Esquilación ya que es él quién podrá hilar todos los tipos de Lanas como Oveja, Cabra y Llama. El resto de las clases sólo podrá hilar Lanas de Oveja.',
+          itemsTable: {
+            title: 'Items para Hilar',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Telar', 'Lugar donde podremos hilar nuestras lanas'],
+              ['Lana de Oveja', 'Recurso extraído de una Oveja'],
+              ['Lana de Cabra', 'Recurso extraído de una Cabra'],
+              ['Lana de Llama', 'Recurso extraído de una Llama']
+            ]
+          },
+          hilado: {
+            title: 'Convirtiendo en Ovillos',
+            intro: 'Con nuestro Trabajador nos acercaremos hasta la casa del Sastre para hilar con el telar:',
+            requisitos: [
+              'Necesitaremos 25 skills en Esquilación para hilar Ovillos de Oveja con un Trabajador y 75 skills para el resto de las clases.',
+              'Necesitaremos 50 skills en Esquilación para hilar Ovillos de Cabra.',
+              'Necesitaremos 100 skills en Esquilación para hilar Ovillos de Llama.'
+            ]
+          },
+          conversionTable: {
+            title: 'Cantidad de Lanas por Ovillo',
+            headers: ['Lanas', 'Cantidad', 'Ovillos'],
+            rows: [
+              ['Lana de Oveja', '70', '5 Ovillo de Oveja'],
+              ['Lana de Cabra', '100', '5 Ovillo de Cabra'],
+              ['Lana de Llama', '175', '5 Ovillo de Llama']
+            ]
+          }
+        },
+        {
+          id: 'sastreria',
+          nombre: 'Sastrería',
+          icon: sastreria,
+          descripcion: 'El oficio de la Sastrería sirve para construir Vestimentas y Túnicas a base de Ovillos. Una vez que tengas un Costurero deberás equiparlo con la tecla Equipar (E) y luego presionar tecla Usar (U o doble click). De esta forma se abrirá una ventana que mostrará el listado de objetos que el personaje podrá construir según la clase y puntos de habilidad en Sastrería.',
+          descripcion2: 'El Trabajador con el oficio en Sastrería podrá crear una gran variedad de objetos (todos los del listado) mientras que el resto de las clases sólo podrá crear una menor cantidad (limitados).',
+          itemsTable: {
+            title: 'Items de Sastrería',
+            headers: ['Item', 'Descripción'],
+            rows: [
+              ['Costurero', 'Item necesario para la creación con Ovillos, se vende en el NPC "Vendedor".'],
+              ['Ovillo de Oveja', 'Recurso hilado de Lana de Oveja'],
+              ['Ovillo de Cabra', 'Recurso hilado de Lana de Cabra'],
+              ['Ovillo de Llama', 'Recurso hilado de Lana de Llama']
+            ]
+          },
+          creacion: {
+            title: 'Creación',
+            steps: [
+              'Utilizando nuestro Costurero abrimos el menú de creación.',
+              'Seleccionamos el objeto a construir junto con su cantidad.'
+            ]
+          },
+          /*  links: {
+             title: 'Lista de Objetos de Creación',
+             intro: 'Para ver la lista completa de items que se pueden crear, visita la sección de Items:',
+             items: [
+               { text: '1 - Items de Sastre (Vestimentas y Túnicas)', target: 'items', subsection: '4.1' }
+             ]
+           }, */
+          deshilachado: {
+            title: 'Deshilachado de Objetos de Sastrería',
+            descripcion: 'El oficio deshilachar consiste en la recuperación de ovillos de prendas que no utilizaremos o para poder crear unas mejores, una vez que tengas una cierta cantidad de objetos a deshilachar deberás buscar un telar ubicado en la casa del sastre de cada ciudad, seleccionar el objeto, presionar tecla Usar (U o doble click) y clickear sobre el telar. La deshilachación depende de la clase y los puntos ya que los objetos a deshilachar son aquellos creados mediante la Sastrería. Que requieran al menos 50 skills, se podrán deshilachar para obtener un porcentaje de los materiales utilizados para crearlos, la cantidad dependerá del azar y podrá ser entre 45% y 75% de los materiales utilizados en su construcción.',
+            note: 'IMPORTANTE: SOLO podremos deshilachar los objetos del siguiente listado cuales SKILLS en SASTRERÍA deberán de ser 50 o superiores:',
+            table: {
+              headers: ['Item', 'Defensa Corporal', 'Defensa Mágica', 'Clases Permitidas', 'Ovillos Oveja', 'Ovillos Cabra', 'Ovillos Llama', 'Skills'],
+              rows: [
+                ['Túnica Tamuzz [DefCorp]', '11/13', '0/0', 'Mago/Bardo/Druida', '350', '150', '-', '50'],
+                ['Túnica Roja (E/G) [DefCorp]', '11/13', '0/0', 'Mago/Bardo/Druida', '350', '150', '-', '50'],
+                ['Túnica Legendaria [DefCorp]', '10/15', '0/0', 'Mago/Bardo/Druida', '400', '200', '-', '50'],
+                ['Túnica Infernal [DefCorp]', '10/18', '0/0', 'Mago/Bardo/Druida', '400', '250', '-', '60'],
+                ['Túnica Infernal (G/E) [DefCorp]', '10/18', '0/0', 'Mago/Bardo/Druida', '400', '250', '-', '60'],
+                ['Túnica Gaia [DefCorp]', '13/14', '0/0', 'Mago/Bardo/Druida', '600', '450', '-', '75'],
+                ['Túnica Negra (E/G) [DefMag]', '1/1', '6/12', 'Mago/Bardo/Druida', '450', '250', '30', '75'],
+                ['Vestido de Bruja (M)', '14/16', '0/0', 'Mago/Bardo/Druida', '700', '500', '-', '80'],
+                ['Túnica de Druida [DefCorp]', '14/16', '0/0', 'Mago/Bardo/Druida', '700', '500', '-', '80'],
+                ['Túnica Roja (E/G) [DefMag]', '1/2', '10/18', 'Mago/Bardo/Druida', '800', '300', '50', '80'],
+                ['Túnica Tamuzz [DefMag]', '1/2', '10/18', 'Mago/Bardo/Druida', '800', '300', '50', '80'],
+                ['Túnica de Druida [DefMag]', '1/11', '4/17', 'Mago/Bardo/Druida', '700', '500', '60', '85'],
+                ['Túnica Maléfica [DefCorp]', '15/16', '0/0', 'Mago/Bardo/Druida', '900', '750', '-', '90'],
+                ['Túnica Maléfica (G/E) [DefCorp]', '15/16', '0/0', 'Mago/Bardo/Druida', '900', '750', '-', '90'],
+                ['Túnica Gaia [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
+                ['Túnica Marrón Combinada (E/G) [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
+                ['Túnica Verde Combinada (E/G-M) [DefMag]', '2/3', '15/20', 'Mago/Bardo/Druida', '950', '600', '70', '95'],
+                ['Túnica Maléfica [DefMag]', '3/3', '20/25', 'Mago/Bardo/Druida', '1300', '700', '100', '100'],
+                ['Túnica Maléfica (G/E) [DefMag]', '3/3', '20/25', 'Mago/Bardo/Druida', '1300', '700', '100', '100'],
+                ['Vestimenta de la Oscuridad (1)', '1/1', '0/0', 'Guerrero/Cazador', '300', '200', '100', '100'],
+                ['Vestimenta de la Oscuridad (G/E) (1)', '1/1', '0/0', 'Guerrero/Cazador', '300', '200', '100', '100'],
+                ['Túnica Invernal', '10/10', '0/0', 'Todas las clases altas de hombres', '200', '50', '0', '100'],
+                ['Túnica Invernal (Mujer)', '10/10', '0/0', 'Todas las clases altas de mujer', '200', '50', '0', '100'],
+                ['Túnica Invernal (E/G)', '10/10', '0/0', 'Todas las clases enano o gnomo', '200', '50', '0', '100']
+              ]
+            }
+          }
+        },
+        {
+          id: 'reutilizacion',
+          nombre: 'Reutilización de Recursos',
+          icon: recursos,
+          descripcion: 'La reutilización de recursos consiste en recuperar materiales de objetos que ya no utilizamos. Esto incluye Fundir objetos de Herrería, Desmantelar objetos de Carpintería, y Deshilachar objetos de Sastrería.',
+          descripcion2: 'Cada proceso permite recuperar entre el 45% y 75% de los materiales originales, dependiendo del azar. Solo se pueden reutilizar objetos que requieran al menos 50 skills para su creación.',
+          sections: [
+            {
+              title: 'Fundir (Herrería)',
+              descripcion: 'Busca una fragua, selecciona el objeto, presiona U y clickea sobre la fragua.',
+              requirement: 'Requiere 50+ skills en Herrería.'
+            },
+            {
+              title: 'Desmantelar (Carpintería)',
+              descripcion: 'Busca un serrucho en la casa del carpintero, selecciona el objeto, presiona U y clickea sobre el serrucho.',
+              requirement: 'Requiere 50+ skills en Carpintería.'
+            },
+            {
+              title: 'Deshilachar (Sastrería)',
+              descripcion: 'Busca un telar en la casa del sastre, selecciona el objeto, presiona U y clickea sobre el telar.',
+              requirement: 'Requiere 50+ skills en Sastrería.'
+            }
+          ]
+        },
+        /* {
+          id: 'compra',
+          nombre: 'Compra de Recursos',
+          icon: 'shopping-cart',
+          descripcion: 'La compra de recursos es una alternativa para aquellos que no desean extraer los materiales por sí mismos. Puedes adquirir diversos recursos directamente de otros jugadores o NPCs comerciantes.',
+          descripcion2: 'Los precios varían según la oferta y demanda del servidor. Es una buena opción si necesitas grandes cantidades de materiales rápidamente para craftear objetos.',
+          tips: [
+            'Revisa el comercio global para encontrar las mejores ofertas.',
+            'Los precios suelen ser más bajos cuando hay muchos jugadores trabajando.',
+            'Considera comprar en grandes cantidades para obtener mejores precios.',
+            'Algunos NPCs venden recursos básicos a precios fijos.'
+          ]
+        } */
+      ]
+    }
+  },
+  {
+    id: 'party',
+    title: 'Party',
+    icon: partyicono,
+    content: {
+      description: 'En CucsiAO, se llama "Party" a un grupo de viajeros que se juntan para entrenar y mejorar sus habilidades juntos.',
+      intro: 'Un personaje podrá crear una de estas e invitar a sus amigos. La experiencia ganada se repartirá equitativamente entre todos los miembros.',
+      howTo: {
+        title: 'Cómo crear una Party',
+        steps: [
+          'Para crear una party deberás tipear el comando /CREARPARTY',
+          'Una vez que la hayas creado, el personaje que desee ingresar deberá hacer click en tu personaje y tipear el comando /PARTY para solicitar el ingreso',
+          'Para aceptarlo deberás tipear /ACCEPTPARTY Nombre'
+        ]
+      },
+      requisitos: {
+        title: 'Requisitos',
+        description: 'Para crear una party, necesitas que tu atributo carisma multiplicado por tus skills en liderazgo den un número mayor o igual a 100.',
+        examples: [
+          'Si tu carisma es 20, necesitarás 5 skills en liderazgo',
+          'Si tu carisma es 15, necesitarás 7 skills en liderazgo'
+        ],
+        note: 'Para ver más sobre esto tienes toda la información en Atributos.'
+      },
+      consideraciones: {
+        title: 'Consideraciones',
+        items: [
+          'Puedes crear una party en cualquier nivel',
+          'Los miembros de la party no pueden tener una diferencia de nivel de más de 7',
+          'La experiencia se reparte instantáneamente hasta una distancia de 20 tiles (una pantalla)',
+          'El oro ganado también se reparte equitativamente al morir la criatura',
+          'Si están realizando QUEST solo el personaje que mate a la criatura, se lo sumará a la quest que esté realizando'
+        ]
+      },
+      bonus: {
+        title: 'Bonus por Miembros',
+        description: 'Si tu party posee cierta cantidad de miembros, la experiencia ganada se verá multiplicada de la siguiente manera:',
+        table: [
+          { miembros: 1, multiplicador: '1.00', bonificacion: 'Experiencia normal' },
+          { miembros: 2, multiplicador: '1.03', bonificacion: '3% BONIFICACIÓN' },
+          { miembros: 3, multiplicador: '1.05', bonificacion: '5% BONIFICACIÓN' },
+          { miembros: 4, multiplicador: '1.10', bonificacion: '10% BONIFICACIÓN' },
+          { miembros: 5, multiplicador: '1.15', bonificacion: '15% BONIFICACIÓN' }
+        ],
+        note: 'Dicho esto, si tu party posee 5 miembros, la experiencia total será incrementada un 30%.'
+      },
+      comandos: {
+        title: 'Comandos de Party',
+        list: [
+          { comando: '/PMSG', descripcion: 'Mensaje privado entre miembros de la party' },
+          { comando: '/ONLINEPARTY', descripcion: 'Aparece quienes integran la party, experiencia lograda por cada miembro y el total de exp acumulada' },
+          { comando: '/SALIRPARTY', descripcion: 'Abandona la party' },
+          { comando: '/PARTYLIDER Nombre', descripcion: 'Pasa el liderazgo a otro personaje que esté dentro de la party' },
+          { comando: '/ECHARPARTY Nombre', descripcion: 'Echa un personaje de la party' }
+        ]
+      }
+    }
+  },
+  /* {
+    id: 'experiencia',
+    title: 'EXP. x Nivel y Skills Naturales',
+    icon: 'trending-up',
+    content: {
+      description: 'Tablas de experiencia requerida y skills naturales por nivel.',
+      placeholder: 'Tablas de progresión y habilidades naturales...'
+    }
+  }, */  
+  {
     id: 'clanes',
     title: 'Clanes',
     icon: clanesicono,
@@ -2138,37 +2087,6 @@ export const wikiSections = [
     }
   },
   {
-    id: 'atributos',
-    title: 'Atributos',
-    icon: botanica,
-    content: {
-      description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
-      intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
-      attributes: [
-        {
-          name: 'Fuerza',
-          description: 'La fuerza de un personaje influye en el daño que es capaz de infligir con sus ataques físicos. Cuanta más fuerza tenga un personaje, mayor será el daño causado con armas cuerpo a cuerpo, a distancia o sin armas por lo que es un atributo de suma importancia para las clases que combatan con esta modalidad. Este atributo puede incrementarse temporalmente, al igual que la agilidad.'
-        },
-        {
-          name: 'Agilidad',
-          description: 'La agilidad es el atributo que afecta a la capacidad evasiva y la puntería de un personaje. En un atributo ofensivamente útil para las clases de combate físico y defensivamente favorable para todos los personajes. Este atributo puede incrementarse temporalmente, al igual que la fuerza.'
-        },
-        {
-          name: 'Inteligencia',
-          description: 'La inteligencia afecta en forma directa la cantidad de maná que ganará un personaje al subir de nivel, dependiendo también de la clase. Es un atributo muy importante para todas las clases que necesiten utilizar hechizos, marcando muchas veces el límite en la capacidad mágica de un personaje.'
-        },
-        {
-          name: 'Carisma',
-          description: 'El carisma afecta las capacidades de un personaje para la creación de una party así como su facilidad para la doma de criaturas. Cuanto mayor sea el valor de este atributo, más poderosas serán las criaturas que podrá domar un personaje.'
-        },
-        {
-          name: 'Constitución',
-          description: 'Los puntos de vida de un personaje dependen directamente de su constitución y clase. Un valor más elevado en este atributo aumenta los puntos de vida iniciales y ganados por nivel de un personaje. Sin duda es un valor importante para todos los personajes.'
-        }
-      ]
-    }
-  },
-  {
     id: 'cofres',
     title: 'Cofres',
     icon: cofreicono,
@@ -2239,6 +2157,187 @@ export const wikiSections = [
         { nombre: 'Cofre Castillo Oeste', probabilidad: '33%', objetos: '1 Vestimentas de Rey (E/G) - 1 Báculo Engarzado - 1 Corona - 1 Gema Lila - 1 Sombreros de Mago - 10 Gema Verde (5 puntos de usuario) - 10 Gema Naranja (3 puntos de usuario) - 10 Gema Azul (1 puntos de usuario).' },
         { nombre: 'Cofre de Artesano Powa', probabilidad: '-', objetos: '200 Lingotes de Hierro - 100 Lingotes de Plata - 50 Lingotes de Oro - 200 Ovillo de Oveja - 150 Ovillo de Cabra - 100 Ovillo de Llama - 1.000 Leña Elfica - 5.000 Raíz - 1 Daga Envenenada - 1 Espada Mata Dragones.' },
         { nombre: 'Gran cofre de Cypher', probabilidad: '-', objetos: '1 Espada Mata Dragones - 1 Gema de Cristal Sagrada - 1 Daga Envenenada - 1 sScroll EXP (60 Minutos) - 1 Scroll ORO (60 Minutos) - 5 Gema De Clan - 1 Espiritu Cementerio - 1 Espiritu Dungeon Castillo - 5 Poción Anti Parálisis (Druida) - 1 Gema Verde - 1 Gema lila - 1 Gema Celeste - 1 Gema Roja - 1 Gema Azul - 1 Gema Violeta.' }
+      ]
+    }
+  },
+  {
+    id: 'cucsi-puntos',
+    title: 'Cucsi Puntos',
+    icon: cucsiPuntos,
+    content: {
+      welcome: {
+        title: 'Bienvenidos al Sistema de Cucsi Puntos',
+        description: 'Cucsi Puntos es la moneda que el Dios Cypher eligió para comunicarse con el mundo de los vivos y con ellos podrás adquirir items exclusivos.',
+        disclaimer: 'Te recordamos que CucsiAO es un juego sin fin alguno de lucro, y que el dinero recaudado será utilizado pura y exclusivamente para la mejora de los servicios brindados, y no para beneficio personal de ninguna de las personas pertenecientes al staff.',
+        warning: 'La única manera de obtener Cucsi Puntos es por este medio, no aceptes ningún mensaje de nadie ofreciéndotelos (no son transferibles) ni tampoco intentes convencer a nadie del staff para que te los entregue por otros medios ya que eso es ilegal.'
+      },
+      howTo: {
+        title: 'Cucsi Puntos',
+        intro: 'Para poder adquirir los Cucsi Puntos tendrás que seguir los siguientes pasos:',
+        steps: [
+          {
+            number: 1,
+            description: 'Acceder a nuestro sitio oficial http://www.cucsi-ao.com.ar/',
+          },
+          {
+            number: 2,
+            description: 'Deberemos de dirigirnos al panel de control de usuario:',
+            hasImage: true,
+            img: cucsipts1
+          },
+          {
+            number: 3,
+            description: 'Deberemos de ingresar a nuestra cuenta de usuario:',
+            hasImage: true,
+            img: cucsipts2
+          },
+          {
+            number: 4,
+            description: 'Presionar el botón donde dice "Adquirir Cucsi Puntos":',
+            hasImage: true,
+            img: cucsipts3
+          },
+          {
+            number: 5,
+            description: 'Seleccionar la cantidad de puntos deseada a comprar:',
+            hasImage: true,
+            img: cucsipts4
+          },
+          {
+            number: 6,
+            description: 'Realizar el pago a través de Mercado Pago (Tarjeta de Crédito, Débito, Rapipago o Pago Fácil)',
+            hasImage: true,
+            img: cucsipts5
+          },
+          {
+            number: 7,
+            description: 'Deberán de informar el nombre del pj y cantidad de puntos comprados.',
+            hasImage: true,
+            img: cucsipts6
+          },
+          {
+            number: 8,
+            description: 'Los Cucsi Puntos aparecerán informados en tu cuenta a través del panel de control de usuario:',
+            hasImage: true,
+            img: cucsipts7
+          }
+        ],
+        importantNote: 'IMPORTANTE: Toda donación es verificada por lo que brindar datos erróneos a propósito conlleva la pena de 60 minutos de cárcel hasta ban de la cuenta.'
+      },
+      items: {
+        title: 'Items por Cucsi Puntos',
+        intro: 'A continuación detallamos los items exclusivos de este sistema:',
+        table: [
+          { item: 'VIP', precio: 3, descripcion: 'La subscripción VIP dura 30 días, las criaturas te darán un 5% más de EXP, el /hogar 50% más rápido y accederás a la sala de TPs en LVL 40.' },
+          { item: 'Carrito de carga (10%)', precio: 4, descripcion: 'Los trabajadores no newbies que posean este item, solo perderán un 10% de recursos que tienen en su inventario al morir. No se cae ni se roba.' },
+          { item: 'Carrito de carga (30%)', precio: 3, descripcion: 'Los trabajadores no newbies que posean este item, solo perderán un 30% de recursos que tienen en su inventario al morir. No se cae ni se roba.' },
+          { item: 'Carrito de carga (50%)', precio: 2, descripcion: 'Los trabajadores no newbies que posean este item, solo perderán un 50% de recursos que tienen en su inventario al morir. No se cae ni se roba.' },
+          { item: 'Carrito de carga (70%)', precio: 1, descripcion: 'Los trabajadores no newbies que posean este item, solo perderán un 70% de recursos que tienen en su inventario al morir. No se cae ni se roba.' },
+          { item: 'Scroll de oro de 1 hora', precio: 2, descripcion: 'Durante 1 hora, las criaturas te darán un 50% más de oro. No podrás hacer party. Se gastan por el tiempo logueado del personaje.' },
+          { item: 'Scroll de experiencia de 1 hora', precio: 1, descripcion: 'Durante 1 hora, las criaturas te darán un 25% más de experiencia. No podrás hacer party. Se gastan por tiempo atacando a npcs.' },
+          { item: 'Cofre Bronce', precio: 4, descripcion: 'Obtendrás: 2-Scroll Exp 30m, 2-Scroll Oro 30m y Carrito(No dropea el 70%).' },
+          { item: 'Cofre Plata', precio: 6, descripcion: 'Obtendrás: 3-Scroll Exp 30m, 3-Scroll Oro 30m y Carrito(No dropea el 50%).' },
+          { item: 'Cofre Oro', precio: 8, descripcion: 'Obtendrás: 4-Scroll Exp 30m, 4-Scroll Oro 30m y Carrito(No dropea el 30%).' },
+          { item: 'Cofre Diamante', precio: 12, descripcion: 'Obtendrás: 6-Scroll Exp 30m, 6-Scroll Oro 30m y Carrito(No dropea el 10%).' },
+          { item: 'Cambio de nick', precio: 5, descripcion: 'Podrás cambiar el nombre de tu personaje siempre y cuando el nuevo nombre no exista.' },
+          { item: 'Transferir personaje', precio: 5, descripcion: 'Podrás transferir tu personaje a otra cuenta.' },
+          { item: 'Reset Skills', precio: 2, descripcion: 'Podrás resetear todos los skills del personaje.' }
+        ],
+        notes: [
+          'Carrito de carga: con este item, solo perderás de tu inventario los recursos en los que poseas 10 unidades o más, y solo perderás el 10%. Por ejemplo, si en tu inventario tienes 500 chalas. Al morir solo perderás 50 chalas.',
+          'Solo podrás usar 1 (un) Scroll a la vez, ya sea de oro o experiencia. No podrás combinar scrolls.',
+          'Los canjes los puedes realizar dentro del juego, utilizando Menu > Canjes dentro de Opciones.'
+        ]
+      },
+      important: {
+        title: 'IMPORTANTE',
+        notes: [
+          'Te recordamos que dependiendo de la metodología de pago que utilicemos, tarjeta de crédito/débito/rapipago/pagofacil, pueden tardar un cierto tiempo en ser procesados y aceptados.',
+          'El proceso de acreditación de Cucsi Puntos en la cuenta no es automático y se requiere que un administrador realice la entrega de los Cucsi Puntos.',
+          'Una vez que tu pago sea finalizado, serás redirigido a una página para dejar los datos de tu personaje, y luego de eso un administrador recibirá tu solicitud y la validará. Si todo sale bien, tu personaje tendrá los puntos en menos de 24hs (luego de recibido el pago).',
+          'Aclaración: la adquisición de Cucsi Puntos no establece ningún tipo de contrato ni relación entre el usuario y el staff. El staff no se responsabiliza por el mal uso de estos puntos, y no se aceptan devoluciones ni cambios. El realizar una compra no garantiza ningún tipo de privilegio ni mejora en cuanto a la relación usuario/administrador del juego. Tampoco otorga inmunidad ante posibles penas ni garantías de que el servidor permanezca estable o funcional luego de una compra.'
+        ]
+      }
+    }
+  },
+  {
+    id: 'domar',
+    title: 'Domar Animales',
+    icon: domaricono,
+    content: {
+      description: 'La doma de criaturas puede ser utilizada por cualquier clase o raza, la misma consiste en domesticar animales salvajes para hacerlos mascotas.',
+      intro: 'Estas bestias una vez domadas son fieles compañeras de aventuras ya que los defenderán en caso de que alguien o algo los ataque. Para domar a una criatura simplemente presionen la tecla "D" + click (por defecto) sobre la criatura para intentar domarla. Hay criaturas que se dejan domar fácilmente y otras que no.',
+      druidInfo: 'Existe una clase en CucsiAO con la habilidad superiora de poder comunicarse con los animales y convencerlos para pedir por su ayuda, amistad o compañía en nuestro recorrido por el mundo. Esta clase es el Druida.',
+      commands: {
+        title: 'Comandos para Mascotas',
+        description: 'Nuestras mascotas obedecerán órdenes para lo cuál pueden clickearlas y utilizar los siguientes comandos:',
+        list: [
+          { command: '/QUIETO', description: 'La mascota se quedará en el lugar' },
+          { command: '/ACOMPAÑAR', description: 'La mascota continuará siguiéndote' },
+          { command: '/LIBERAR', description: 'Deja libre a tu mascota (también doble click sobre ella)' }
+        ]
+      },
+      carismaInfo: 'La Carisma es fundamental para la hora de Domar junto con los skilles en "Domar animales" serás capaz de domar todo tipos de criaturas las cuales te ayudaran en tu recorrido.',
+      powerSection: {
+        title: 'Poder de Domación',
+        description: 'Para poder determinar cuanto poder de domación posee el usuario deberemos de calcularlo de la siguiente manera:',
+        formula: 'Poder = Skilles en Domar Animales × Atributos en Carisma',
+        examples: [
+          { skills: 60, carisma: 22, result: 1320, text: 'Si nuestro personaje tiene 60 skilles en Domar Animales y el atributo de Carisma en 22, su poder será de 1.320 (60×22=1.320)' },
+          { skills: 100, carisma: 19, result: 1900, text: 'Si nuestro personaje tiene 100 skilles en Domar Animales y el atributo de Carisma en 19, su poder será de 1.900 (100×19=1.900)' }
+        ],
+        chance: 'Si el poder de domación es mayor al necesario para poder poseer a la criatura tendrás un 20% de chances de domarla por cada intento.',
+        druidBonus: 'La particularidad de la clase Druida es que si utiliza el objeto Flauta Mágica tendrá 20% extra de chances para domar a la criatura y su poder máximo de domación es de 2.200 o 2.640 con Flauta (con 22 en carisma).'
+      },
+      creaturesSection: {
+        title: 'Criaturas Domables',
+        description: 'A continuación te dejamos la lista de las criaturas que podrás domar, ordenadas por el poder de doma necesario para hacerlo'
+      },
+      creatures: [
+        { name: 'Rata salvaje', poderDoma: 200, vida: 15, danoFisico: '2/4', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 20, magia: '-' },
+        { name: 'Serpiente', poderDoma: 250, vida: 22, danoFisico: '1/1', defensa: '-', defMagica: '-', podAtaque: 10, evasion: 0, magia: '-' },
+        { name: 'Goblin', poderDoma: 400, vida: 110, danoFisico: '2/12', defensa: 15, defMagica: '-', podAtaque: 60, evasion: 40, magia: '-' },
+        { name: 'Lobo', poderDoma: 800, vida: 75, danoFisico: '1/18', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 25, magia: '-' },
+        { name: 'Orco', poderDoma: 1000, vida: 350, danoFisico: '5/35', defensa: 10, defMagica: '-', podAtaque: 60, evasion: 45, magia: '-' },
+        { name: 'Tortuga', poderDoma: 1250, vida: 315, danoFisico: '35/55', defensa: '-', defMagica: '-', podAtaque: 100, evasion: 45, magia: '-' },
+        { name: 'Oso Pardo', poderDoma: 400, vida: 625, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
+        { name: 'Lobo Polar', poderDoma: 1500, vida: 2600, danoFisico: '60/80', defensa: 8, defMagica: '-', podAtaque: 80, evasion: 35, magia: '-' },
+        { name: 'Oso polar', poderDoma: 1750, vida: 1700, danoFisico: '65/100', defensa: '-', defMagica: '-', podAtaque: 120, evasion: 65, magia: '-' },
+        { name: 'Araña Gigante', poderDoma: 1900, vida: 1100, danoFisico: '30/90', defensa: '-', defMagica: '-', podAtaque: 80, evasion: 60, magia: '-' },
+        { name: 'Ogro', poderDoma: 2250, vida: 1800, danoFisico: '55/140', defensa: 10, defMagica: 10, podAtaque: 100, evasion: 60, magia: '-' },
+        { name: 'Lord Orco', poderDoma: 2500, vida: 1500, danoFisico: '110/170', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: '-' },
+        { name: 'Orco Brujo', poderDoma: 2500, vida: 1500, danoFisico: '70/115', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: 'Lanza Núcleo Plasma' }
+      ]
+    }
+  },
+  {
+    id: 'atributos',
+    title: 'Atributos',
+    icon: botanica,
+    content: {
+      description: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego.',
+      intro: 'Los atributos son características de los personajes que afectan sus aptitudes para diversas acciones dentro del juego, como por ejemplo: su capacidad para lanzar hechizos, su vida, su destreza en combate físico, etc. Durante la creación de un personaje, el usuario "tirará los dados de su destino" que determinarán los valores para cada atributo (entre 19 y 20) y a su vez estos se verán afectados por la raza del personaje elegida. Los atributos de un personaje pueden conocerse al emplear el comando /est o bien con el botón de estadísticas.',
+      attributes: [
+        {
+          name: 'Fuerza',
+          description: 'La fuerza de un personaje influye en el daño que es capaz de infligir con sus ataques físicos. Cuanta más fuerza tenga un personaje, mayor será el daño causado con armas cuerpo a cuerpo, a distancia o sin armas por lo que es un atributo de suma importancia para las clases que combatan con esta modalidad. Este atributo puede incrementarse temporalmente, al igual que la agilidad.'
+        },
+        {
+          name: 'Agilidad',
+          description: 'La agilidad es el atributo que afecta a la capacidad evasiva y la puntería de un personaje. En un atributo ofensivamente útil para las clases de combate físico y defensivamente favorable para todos los personajes. Este atributo puede incrementarse temporalmente, al igual que la fuerza.'
+        },
+        {
+          name: 'Inteligencia',
+          description: 'La inteligencia afecta en forma directa la cantidad de maná que ganará un personaje al subir de nivel, dependiendo también de la clase. Es un atributo muy importante para todas las clases que necesiten utilizar hechizos, marcando muchas veces el límite en la capacidad mágica de un personaje.'
+        },
+        {
+          name: 'Carisma',
+          description: 'El carisma afecta las capacidades de un personaje para la creación de una party así como su facilidad para la doma de criaturas. Cuanto mayor sea el valor de este atributo, más poderosas serán las criaturas que podrá domar un personaje.'
+        },
+        {
+          name: 'Constitución',
+          description: 'Los puntos de vida de un personaje dependen directamente de su constitución y clase. Un valor más elevado en este atributo aumenta los puntos de vida iniciales y ganados por nivel de un personaje. Sin duda es un valor importante para todos los personajes.'
+        }
       ]
     }
   },
