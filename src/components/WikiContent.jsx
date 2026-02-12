@@ -956,6 +956,8 @@ export const WikiContent = () => {
                   <div className="quest-card-body">
                     <p><strong>NPC:</strong> {quest.npc}</p>
                     <p><strong>Nivel:</strong> {quest.nivelMin} - {quest.nivelMax}</p>
+                    <p><strong>Requisitos:</strong> {renderNecesidadWithLinks(quest.necesidad, quest.criaturas)}</p>
+                    <p><strong>Recompensa:</strong> {quest.recompensa}</p>
                     <p className="quest-card-location">{quest.ubicacion}</p>
                   </div>
                 </div>
