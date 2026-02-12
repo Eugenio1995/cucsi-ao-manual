@@ -2228,7 +2228,8 @@ export const wikiSections = [
         title: 'Items por Cucsi Puntos',
         intro: 'A continuación detallamos los items exclusivos de este sistema:',
         table: [
-          { item: 'VIP', precio: 3, descripcion: 'La subscripción VIP dura 30 días, las criaturas te darán un 5% más de EXP, el /hogar 50% más rápido y accederás a la sala de TPs en LVL 40.' },
+          { item: 'VIP (30 días)', precio: 5, descripcion: 'La subscripción VIP dura 30 días, las criaturas te darán un 5% más de EXP, el /hogar 50% más rápido y accederás a la sala de TPs en LVL 35. Además, al golpear a los npcs aumetan tus puntos de agilidad y fuerza.' },
+          { item: 'VIP (15 días)', precio: 3, descripcion: 'La subscripción VIP dura 15 días, las criaturas te darán un 5% más de EXP, el /hogar 50% más rápido y accederás a la sala de TPs en LVL 35. Además, al golpear a los npcs aumetan tus puntos de agilidad y fuerza.' },
           { item: 'Carrito de carga (10%)', precio: 4, descripcion: 'Los trabajadores no newbies que posean este item, solo perderán un 10% de recursos que tienen en su inventario al morir. No se cae ni se roba.' },
           { item: 'Carrito de carga (30%)', precio: 3, descripcion: 'Los trabajadores no newbies que posean este item, solo perderán un 30% de recursos que tienen en su inventario al morir. No se cae ni se roba.' },
           { item: 'Carrito de carga (50%)', precio: 2, descripcion: 'Los trabajadores no newbies que posean este item, solo perderán un 50% de recursos que tienen en su inventario al morir. No se cae ni se roba.' },
