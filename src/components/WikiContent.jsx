@@ -527,10 +527,10 @@ export const WikiContent = () => {
                 </tbody>
               </table>
             </div>
-            <div className="party-bonus-note">
+            {/* <div className="party-bonus-note">
               <Icons.Zap size={18} />
               <p>{section.content.bonus.note}</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Comandos */}
