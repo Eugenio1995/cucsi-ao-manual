@@ -446,7 +446,7 @@ export const wikiSections = [
         { nombre: 'Paralizar', precio: 50000, skills: 60, mana: 400, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
         { nombre: 'Paralizar (A/BAND/P)', precio: 50000, skills: 60, mana: 300, stamina: 65, descripcion: 'Paraliza al Objetivo por unos segundos' },
         { nombre: 'Remover Paralisis', precio: 5000, skills: 45, mana: 300, stamina: 60, descripcion: 'Remueve la Paralisis al Objetivo' },
-        { nombre: 'Resucitar (Mago/Druida/Bardo) NIVEL 40', precio: 625000, skills: 100, mana: 1700, stamina: 450, descripcion: 'Resucita al Objetivo, Solo funciona en Usuarios. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Flauta Mágica, Flauta Elfica, Laud Magico o Laud Elfico. CD de 20 segundos' },
+        { nombre: 'Resucitar (Mago/Druida/Bardo) NIVEL 30', precio: 625000, skills: 100, mana: 1400, stamina: 450, descripcion: 'Resucita al Objetivo, Solo funciona en Usuarios. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Flauta Mágica, Flauta Elfica, Laud Magico o Laud Elfico. CD de 20 segundos' },
         { nombre: 'Curacion Divina (Clerigo)', precio: 275000, skills: 80, mana: 500, stamina: 650, descripcion: 'Restaura la Salud del Objetivo entre 90 y 180' },
         { nombre: 'Curar Heridas Mortales (Paladin)', precio: 50000, skills: 100, mana: 300, stamina: 100, descripcion: 'Restaura la Salud del Objetivo entre 50 y 75' },
         { nombre: 'Invisibilidad (Mago)', precio: 100000, skills: 87, mana: 600, stamina: 75, descripcion: 'Vuelve invisible al Objetivo, solo funciona en Usuarios' },
@@ -483,7 +483,7 @@ export const wikiSections = [
         { nombre: 'Descarga Electrica', precio: 175000, skills: 75, mana: 400, stamina: 85, descripcion: 'Inflinge entre 55 a 65 de Daño Magico al Objetivo' },
         { nombre: 'Elemental de Fuego (Mago/Bardo/Clerigo)', precio: 450000, skills: 100, mana: 1000, stamina: 145, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Baculo Engarzado, Vara de Mago, Baculo Luminozo, Laud Magico o Laud Elfico Solo las Clases Mago y Bardo' },
         { nombre: 'Elemental de Fuego (Druida)', precio: 450000, skills: 100, mana: 750, stamina: 105, descripcion: 'Invoca un Elemental de Fuego que acudira en tu ayuda, Lanza Tormenta de Fuego a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Elemental de Agua (Mago/Bardo/Clerigo)', precio: 200000, skills: 100, mana: 1000, stamina: 130, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
+        { nombre: 'Elemental de Agua (Mago/Bardo/Clerigo)', precio: 200000, skills: 100, mana: 850, stamina: 130, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
         { nombre: 'Elemental de Agua (Druida)', precio: 200000, skills: 100, mana: 750, stamina: 90, descripcion: 'Invoca un Elemental de Agua que acudira en tu ayuda' },
         { nombre: 'Elemental de Tierra (Bardo/Clerigo)', precio: 300000, skills: 90, mana: 1000, stamina: 131, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laud Magico o Laud Elfico Solo la Clase Bardo' },
         { nombre: 'Elemental de Tierra (Druida)', precio: 300000, skills: 97, mana: 750, stamina: 120, descripcion: 'Invoca un Elemental de Tierra que acudira en tu ayuda, Lanza Paralizar a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
@@ -492,7 +492,7 @@ export const wikiSections = [
         { nombre: 'Explosion Faustica (Bardo)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 110 a 115 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laúd Mágico o Laúd Élfico' },
         { nombre: 'Explosión Fáustica (Druida)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 103 a 107 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Élfica' },
         { nombre: 'Implorar Ayuda (Druida)', precio: 600000, skills: 100, mana: 1500, stamina: 150, descripcion: 'Invoca un Fuego Fatuo que acudirá en tu ayuda, Lanza Paralizar y Descarga Eléctrica a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Invocar Tigre (Asesino/Paladin)', precio: 125000, skills: 100, mana: 600, stamina: 50, descripcion: 'Invoca 3 Tigres que acudirá en tu ayuda.' }
+        { nombre: 'Invocar Tigre (Asesino/Paladin)', precio: 125000, skills: 100, mana: 250, stamina: 50, descripcion: 'Invoca 3 Tigres que acudirá en tu ayuda.' }
       ]
     }
   },
