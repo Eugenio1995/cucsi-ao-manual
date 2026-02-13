@@ -6,7 +6,6 @@ import { Menu, X } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import { wikiSections } from '../mock';
 import mapa from '../assets/mapa.jpg';
-import ae4 from '../assets/ae4.png';
 
 
 export const WikiContent = () => {

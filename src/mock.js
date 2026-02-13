@@ -1321,6 +1321,116 @@ export const wikiSections = [
     }
   },
   {
+    id: 'mapa',
+    title: 'Mapa',
+    icon: mapaicono,
+    content: {
+      description: 'Explora el vasto mundo de CucsiAO y sus territorios.',
+      mapImagePlaceholder: true,
+      sections: [
+        {
+          title: 'Ciudades',
+          icon: 'building',
+          locations: [
+            { mapa: 1, nombre: 'Ullathorpe', nivel: null },
+            { mapa: 13, nombre: 'Nix', nivel: null },
+            { mapa: 30, nombre: 'Banderbill', nivel: null },
+            { mapa: 54, nombre: 'Lindos', nivel: null },
+            { mapa: 58, nombre: 'Nueva Esperanza', nivel: null },
+            { mapa: 35, nombre: 'Arghal', nivel: null },
+            { mapa: 22, nombre: 'Terminus', nivel: null },
+            { mapa: 10, nombre: 'Tyrann', nivel: null },
+            { mapa: 15, nombre: 'Noxon', nivel: null },
+            { mapa: 96, nombre: 'Dhall', nivel: null },
+            { mapa: 95, nombre: 'Blillinton', nivel: null },
+            { mapa: 97, nombre: 'Kodell', nivel: null }
+          ]
+        },
+        {
+          title: 'Dungeons',
+          icon: 'skull',
+          locations: [
+            { mapa: 79, nombre: 'Cementerio: Mausoleo', nivel: 15 },
+            { mapa: 28, nombre: 'Dungeon Marabel', nivel: 20 },
+            { mapa: 62, nombre: 'Dungeon Castillo', nivel: 25 },
+            { mapa: 66, nombre: 'Dungeon Inframundo', nivel: 30, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
+            { mapa: 103, nombre: 'Dungeon Agua', nivel: 30 },
+            { mapa: 39, nombre: 'Dungeon Verill', nivel: 30 },
+            { mapa: 47, nombre: 'Dungeon Dragón', nivel: 40 }
+          ]
+        },
+        {
+          title: 'Catacumbas',
+          icon: 'door-open',
+          locations: [
+            { mapa: '1 y 34', nombre: 'Entrada a Catacumbas Ullathorpe & Nix', nivel: null },
+            { mapa: '21, 42, 45, 50, 56, 59', nombre: 'Entrada a Catacumbas del Inframundo', nivel: null, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
+            { mapa: '29, 32 y 66', nombre: 'Entrada a Ciudad Canal del Inframundo', nivel: null }
+          ]
+        },
+        {
+          title: 'Polo',
+          icon: 'snowflake',
+          locations: [
+            { mapa: 78, nombre: 'Polo', nivel: 25 },
+            { mapa: 138, nombre: 'Laberinto Congelado', nivel: 30 }
+          ]
+        },
+        {
+          title: 'Minas de Yacimientos',
+          icon: 'pickaxe',
+          locations: [
+            { mapa: 9, nombre: 'Minas de Hierro', nivel: null },
+            { mapa: 39, nombre: 'Minas de Plata', nivel: null },
+            { mapa: 75, nombre: 'Minas de Oro', nivel: 30 }
+          ]
+        },
+        {
+          title: 'Esquila de Lanas',
+          icon: 'scissors',
+          locations: [
+            { mapa: 29, nombre: 'Ovejas', nivel: null },
+            { mapa: 4, nombre: 'Cabras', nivel: null },
+            { mapa: 23, nombre: 'Llamas', nivel: null, nota: 'Necesitarás navegar para acceder a ellas' }
+          ]
+        },
+        {
+          title: 'Lugares Secundarios',
+          icon: 'compass',
+          locations: [
+            { mapa: 33, nombre: 'Barco Pirata', nivel: 30 },
+            { mapa: 49, nombre: 'Barco Abandonado', nivel: 30 },
+            { mapa: 79, nombre: 'Cementerio', nivel: null },
+            { mapa: 59, nombre: 'Sur Nueva Esperanza', nivel: 20 },
+            { mapa: 89, nombre: 'Dungeon Dragón Escondido', nivel: 20 },
+            { mapa: 145, nombre: 'Bosque Élfico Saqueado', nivel: 20 },
+            { mapa: 150, nombre: 'Pirámide Abandonada', nivel: null }
+          ]
+        },
+        {
+          title: 'Castillos y Fortaleza',
+          icon: 'castle',
+          locations: [
+            { mapa: 110, nombre: 'Castillo Norte', nivel: null },
+            { mapa: 80, nombre: 'Castillo Oeste', nivel: null },
+            { mapa: 100, nombre: 'Castillo Este', nivel: null },
+            { mapa: 90, nombre: 'Castillo Sur', nivel: null },
+            { mapa: 131, nombre: 'Minas de Castillo', nivel: null },
+            { mapa: 118, nombre: 'Fortaleza', nivel: null },
+            { mapa: 132, nombre: 'Minas de Fortaleza', nivel: null }
+          ]
+        },
+        {
+          title: 'Otros Lugares',
+          icon: 'landmark',
+          locations: [
+            { mapa: 148, nombre: 'Museo', nivel: null }
+          ]
+        }
+      ]
+    }
+  },
+  {
     id: 'trabajo',
     title: 'Trabajo',
     icon: carpinteria,
@@ -1406,116 +1516,6 @@ export const wikiSections = [
             'La RED DE PESCA se cae como cualquier otro item de trabajador, también en agua.'
           ],
           trabajoCastillo: 'La extracción de este recurso solo es posible siempre y cuando nuestro Clan sea Nivel 3 ya que nos permitirá realizar trabajos en las Catacumbas de los Castillos. Caso contrario de que no poseamos el nivel de clan no se nos permitirá trabajar. Las catacumbas se encuentran ubicadas en los Castillos Norte, Sur, Este y Oeste y no es necesario tenerlos conquistados para ingresar a las catacumbas.'
-        },
-        {
-          id: 'mapa',
-          title: 'Mapa',
-          icon: mapaicono,
-          content: {
-            description: 'Explora el vasto mundo de CucsiAO y sus territorios.',
-            mapImagePlaceholder: true,
-            sections: [
-              {
-                title: 'Ciudades',
-                icon: 'building',
-                locations: [
-                  { mapa: 1, nombre: 'Ullathorpe', nivel: null },
-                  { mapa: 13, nombre: 'Nix', nivel: null },
-                  { mapa: 30, nombre: 'Banderbill', nivel: null },
-                  { mapa: 54, nombre: 'Lindos', nivel: null },
-                  { mapa: 58, nombre: 'Nueva Esperanza', nivel: null },
-                  { mapa: 35, nombre: 'Arghal', nivel: null },
-                  { mapa: 22, nombre: 'Terminus', nivel: null },
-                  { mapa: 10, nombre: 'Tyrann', nivel: null },
-                  { mapa: 15, nombre: 'Noxon', nivel: null },
-                  { mapa: 96, nombre: 'Dhall', nivel: null },
-                  { mapa: 95, nombre: 'Blillinton', nivel: null },
-                  { mapa: 97, nombre: 'Kodell', nivel: null }
-                ]
-              },
-              {
-                title: 'Dungeons',
-                icon: 'skull',
-                locations: [
-                  { mapa: 79, nombre: 'Cementerio: Mausoleo', nivel: 15 },
-                  { mapa: 28, nombre: 'Dungeon Marabel', nivel: 20 },
-                  { mapa: 62, nombre: 'Dungeon Castillo', nivel: 25 },
-                  { mapa: 66, nombre: 'Dungeon Inframundo', nivel: 30, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
-                  { mapa: 103, nombre: 'Dungeon Agua', nivel: 30 },
-                  { mapa: 39, nombre: 'Dungeon Verill', nivel: 30 },
-                  { mapa: 47, nombre: 'Dungeon Dragón', nivel: 40 }
-                ]
-              },
-              {
-                title: 'Catacumbas',
-                icon: 'door-open',
-                locations: [
-                  { mapa: '1 y 34', nombre: 'Entrada a Catacumbas Ullathorpe & Nix', nivel: null },
-                  { mapa: '21, 42, 45, 50, 56, 59', nombre: 'Entrada a Catacumbas del Inframundo', nivel: null, nota: 'Magia Prohibida: No se permite lanzar hechizos' },
-                  { mapa: '29, 32 y 66', nombre: 'Entrada a Ciudad Canal del Inframundo', nivel: null }
-                ]
-              },
-              {
-                title: 'Polo',
-                icon: 'snowflake',
-                locations: [
-                  { mapa: 78, nombre: 'Polo', nivel: 25 },
-                  { mapa: 138, nombre: 'Laberinto Congelado', nivel: 30 }
-                ]
-              },
-              {
-                title: 'Minas de Yacimientos',
-                icon: 'pickaxe',
-                locations: [
-                  { mapa: 9, nombre: 'Minas de Hierro', nivel: null },
-                  { mapa: 39, nombre: 'Minas de Plata', nivel: null },
-                  { mapa: 75, nombre: 'Minas de Oro', nivel: 30 }
-                ]
-              },
-              {
-                title: 'Esquila de Lanas',
-                icon: 'scissors',
-                locations: [
-                  { mapa: 29, nombre: 'Ovejas', nivel: null },
-                  { mapa: 4, nombre: 'Cabras', nivel: null },
-                  { mapa: 23, nombre: 'Llamas', nivel: null, nota: 'Necesitarás navegar para acceder a ellas' }
-                ]
-              },
-              {
-                title: 'Lugares Secundarios',
-                icon: 'compass',
-                locations: [
-                  { mapa: 33, nombre: 'Barco Pirata', nivel: 30 },
-                  { mapa: 49, nombre: 'Barco Abandonado', nivel: 30 },
-                  { mapa: 79, nombre: 'Cementerio', nivel: null },
-                  { mapa: 59, nombre: 'Sur Nueva Esperanza', nivel: 20 },
-                  { mapa: 89, nombre: 'Dungeon Dragón Escondido', nivel: 20 },
-                  { mapa: 145, nombre: 'Bosque Élfico Saqueado', nivel: 20 },
-                  { mapa: 150, nombre: 'Pirámide Abandonada', nivel: null }
-                ]
-              },
-              {
-                title: 'Castillos y Fortaleza',
-                icon: 'castle',
-                locations: [
-                  { mapa: 110, nombre: 'Castillo Norte', nivel: null },
-                  { mapa: 80, nombre: 'Castillo Oeste', nivel: null },
-                  { mapa: 100, nombre: 'Castillo Este', nivel: null },
-                  { mapa: 90, nombre: 'Castillo Sur', nivel: null },
-                  { mapa: 131, nombre: 'Minas de Castillo', nivel: null },
-                  { mapa: 118, nombre: 'Fortaleza', nivel: null },
-                  { mapa: 132, nombre: 'Minas de Fortaleza', nivel: null }
-                ]
-              },
-              {
-                title: 'Otros Lugares',
-                icon: 'landmark',
-                locations: [
-                  { mapa: 148, nombre: 'Museo', nivel: null }
-                ]
-              }
-            ]
-          }
         },
         {
           id: 'tala',
