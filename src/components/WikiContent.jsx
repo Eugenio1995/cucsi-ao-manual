@@ -6,6 +6,8 @@ import { Menu, X } from 'lucide-react';
 import * as Icons from 'lucide-react';
 import { wikiSections } from '../mock';
 import mapa from '../assets/mapa.jpg';
+import ae4 from '../assets/ae4.png';
+
 
 export const WikiContent = () => {
   const [activeSection, setActiveSection] = useState('bienvenida');
@@ -630,7 +632,7 @@ export const WikiContent = () => {
                     <p className="cucsi-step-desc">{step.description}</p>
                   </div>
                   {step.hasImage && (
-                    <div className="cucsi-image-placeholder">                      
+                    <div className="cucsi-image-placeholder">
                       <img
                         src={step.img}
                         alt={step.number}
@@ -1569,7 +1571,206 @@ export const WikiContent = () => {
           </div>
         </div>
       );
-    }
+    };
+
+    // Render facciones
+    if (section.id === 'facciones') {
+      return (
+        <div className="section-content">
+          <p className="section-description">{section.content.description}</p>
+
+          <div className="content-text">
+            <p>{section.content.intro}</p>
+          </div>
+
+          <h3 className="subsection-title">Armada Real</h3>
+
+          <div className="party-section-card">
+            <h3 className="party-section-title">
+              {section.content.consideraciones.title}
+            </h3>
+            <ul className="party-considerations">
+              {section.content.consideraciones.items.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="content-text">
+            <p>{section.content.instruccionesArmada}</p>
+          </div>
+
+          {/* Tipos de Clan Table */}
+          <div className="table-container">
+            <h3 className="table-title">{section.content.lugarArmada.title}</h3>
+            <div className="table-scroll">
+              <table className="wiki-table clan-types-table">
+                <thead>
+                  <tr>
+                    <th>Raza</th>
+                    <th>Lugar donde se Enlista</th>
+                    <th>Mapa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.content.lugarArmada.rows.map((row, idx) => (
+                    <tr key={idx}>
+                      <td >{row.raza}</td>
+                      <td>{row.lugar}</td>
+                      <td>{row.mapa}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Niveles de Clan */}
+          <div className="clan-levels-section">
+            <h3 className="table-title">{section.content.nivelesClan.title}</h3>
+
+            <div className="clan-levels-grid">
+              {section.content.nivelesClan.levels.map((level, idx) => (
+                <div key={idx} className="clan-level-card">
+                  <div className="facciones-jerarquia-header">
+                    <span>{level.nivel}</span>
+                    <span className="facciones-requisitos-kills">
+                      {level.id === 1 && '🗡️ 0'}
+                      {level.id === 2 && '🗡️ 15'}
+                      {level.id === 3 && '🗡️ 35'}
+                      {level.id === 4 && '🗡️ 60'}
+                      {level.id === 5 && '🗡️ 90'}
+                      {level.id === 7 && '🗡️ 125'}
+                      {level.id === 8 && '🗡️ 165'}
+                      {level.id === 6 && '🗡️ 210'}
+                      {level.id === 9 && '🗡️ 260'}
+                      {level.id === 10 && '🗡️ 320'}
+                      {level.id === 11 && '🗡️ 390'}
+                    </span>
+                  </div>
+
+                  <div className="clan-level-requisitos">
+                    <h4>Nivel requerido : {level.nivelRequerido}</h4>                    
+                    <h4>Recompensas:</h4>
+                    <p>{level.recompensas}</p>
+                  </div>
+
+                  <div className="facciones-armaduras-text">
+                    <h4 style={{ marginBottom: "4px" }}>Túnicas Mago, Bardo, Druida</h4>
+                    <h4 style={{ marginTop: 0, color: "grey", fontSize: "14px" }}>{level.defensasMago}</h4>
+                    <img src={level.img1} alt="" />
+                    <img src={level.img2} alt="" />
+
+                    <h4 style={{ marginBottom: "4px" }}>Armaduras Asesino, Cazador, Clérigo</h4>
+                    <h4 style={{ marginTop: 0, color: "grey", fontSize: "14px" }}>{level.defensasClero}</h4>
+                    <img src={level.img3} alt="" />
+                    <img src={level.img4} alt="" />
+
+                    <h4 style={{ marginBottom: "4px" }}>Armaduras Paladin, Guerrero</h4>
+                    <h4 style={{ marginTop: 0, color: "grey", fontSize: "14px" }}>{level.defensasPaladin}</h4>
+                    <img src={level.img5} alt="" />
+                    <img src={level.img6} alt="" />
+                  </div>
+
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <h3 className="subsection-title">Fuerzas del Caos</h3>
+
+          <div className="party-section-card">
+            <h3 className="party-section-title">
+              {section.content.consideraciones.titleCaos}
+            </h3>
+            <ul className="party-considerations">
+              {section.content.consideraciones.itemsCaos.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="content-text">
+            <p>{section.content.instruccionesArmada}</p>
+          </div>
+
+          <div className="table-container">
+            <h3 className="table-title">{section.content.lugarCaos.title}</h3>
+            <div className="table-scroll">
+              <table className="wiki-table clan-types-table">
+                <thead>
+                  <tr>
+                    <th>Raza</th>
+                    <th>Lugar donde se Enlista</th>
+                    <th>Mapa</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {section.content.lugarCaos.rows.map((row, idx) => (
+                    <tr key={idx}>
+                      <td >{row.raza}</td>
+                      <td>{row.lugar}</td>
+                      <td>{row.mapa}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="clan-levels-section">
+            <h3 className="table-title">{section.content.nivelesClan.title}</h3>
+
+            <div className="clan-levels-grid">
+              {section.content.nivelesClan.levelsCaos.map((level, idx) => (
+                <div key={idx} className="clan-level-card">
+                  <div className="facciones-jerarquia-header-caos">
+                    <span>{level.nivel}</span>
+                    <span className="facciones-requisitos-kills-caos">
+                      {level.id === 1 && '🗡️ 0'}
+                      {level.id === 2 && '🗡️ 15'}
+                      {level.id === 3 && '🗡️ 35'}
+                      {level.id === 4 && '🗡️ 60'}
+                      {level.id === 5 && '🗡️ 90'}
+                      {level.id === 7 && '🗡️ 125'}
+                      {level.id === 8 && '🗡️ 165'}
+                      {level.id === 6 && '🗡️ 210'}
+                      {level.id === 9 && '🗡️ 260'}
+                      {level.id === 10 && '🗡️ 320'}
+                      {level.id === 11 && '🗡️ 390'}
+                    </span>
+                  </div>
+
+                  <div className="clan-level-requisitos">
+                    <h4>Recompensas:</h4>
+                    <p>{level.recompensas}</p>
+                  </div>
+
+                  <div className="facciones-armaduras-text">
+                    <h4 style={{ marginBottom: "4px" }}>Túnicas Mago, Bardo, Druida</h4>
+                    <h4 style={{ marginTop: 0, color: "grey", fontSize: "14px" }}>{level.defensasMago}</h4>
+                    <img src={level.img1} alt="" />
+                    <img src={level.img2} alt="" />
+
+                    <h4 style={{ marginBottom: "4px" }}>Armaduras Asesino, Cazador, Clérigo</h4>
+                    <h4 style={{ marginTop: 0, color: "grey", fontSize: "14px" }}>{level.defensasClero}</h4>
+                    <img src={level.img3} alt="" />
+                    <img src={level.img4} alt="" />
+
+                    <h4 style={{ marginBottom: "4px" }}>Armaduras Paladin, Guerrero</h4>
+                    <h4 style={{ marginTop: 0, color: "grey", fontSize: "14px" }}>{level.defensasPaladin}</h4>
+                    <img src={level.img5} alt="" />
+                    <img src={level.img6} alt="" />
+                  </div>
+
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      );
+    };
 
     // Render Trabajo
     if (section.id === 'trabajo') {

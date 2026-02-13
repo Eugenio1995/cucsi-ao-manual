@@ -32,6 +32,58 @@ import cucsipts5 from './assets/cucsipts5.png';
 import cucsipts6 from './assets/cucsipts6.png';
 import cucsipts7 from './assets/cucsipts7.png';
 import cucsiPuntos from './assets/cucsiPuntos.png';
+import mago1 from './assets/mago1.png';
+import magog1 from './assets/magog1.png';
+import pala1 from './assets/pala1.png';
+import palag1 from './assets/palag1.png';
+import clero1 from './assets/clero1.png';
+import clerog1 from './assets/clerog1.png';
+import mago2 from './assets/mago2.png';
+import magog2 from './assets/magog2.png';
+import pala2 from './assets/pala2.png';
+import pala2g from './assets/pala2g.png';
+import clero2 from './assets/clero2.png';
+import clero2g from './assets/clero2g.png';
+import mago3 from './assets/mago3.png';
+import magog3 from './assets/magog3.png';
+import pala3 from './assets/pala3.png';
+import palag3 from './assets/palag3.png';
+import clero3 from './assets/clero3.png';
+import clero3g from './assets/clero3g.png';
+import mago4 from './assets/mago4.png';
+import magog4 from './assets/magog4.png';
+import pala4 from './assets/pala4.png';
+import palag4 from './assets/palag4.png';
+import clero4 from './assets/clero4.png';
+import clerog4 from './assets/clerog4.png';
+import magocaos1 from './assets/magocaos1.png';
+import magocaos2 from './assets/magocaos2.png';
+import magocaos3 from './assets/magocaos3.png';
+import magocaos4 from './assets/magocaos4.png';
+import magocaosg1 from './assets/magocaosg1.png';
+import magocaosg2 from './assets/magocaosg2.png';
+import magocaosg3 from './assets/magocaosg3.png';
+import magocaosg4 from './assets/magocaosg4.png';
+import palacaos1 from './assets/palacaos1.png';
+import palacaos2 from './assets/palacaos1.png';
+import palacaos3 from './assets/palacaos1.png';
+import palacaos4 from './assets/palacaos1.png';
+import palacaosg1 from './assets/palacaosg1.png';
+import palacaosg2 from './assets/palacaosg2.png';
+import palacaosg3 from './assets/palacaosg3.png';
+import palacaosg4 from './assets/palacaosg4.png';
+import clerocaos1 from './assets/clerocaos1.png';
+import clerocaos2 from './assets/clerocaos2.png';
+import clerocaos3 from './assets/clerocaos3.png';
+import clerocaos4 from './assets/clerocaos4.png';
+import clerocaosg1 from './assets/clerocaosg1.png';
+import clerocaosg2 from './assets/clerocaosg2.png';
+import clerocaosg3 from './assets/clerocaosg3.png';
+import clerocaosg4 from './assets/clerocaosg4.png';
+import faccionesicono from './assets/faccionesicono.png';
+
+
+
 
 
 export const wikiSections = [
@@ -2002,7 +2054,7 @@ export const wikiSections = [
       description: 'Tablas de experiencia requerida y skills naturales por nivel.',
       placeholder: 'Tablas de progresión y habilidades naturales...'
     }
-  }, */  
+  }, */
   {
     id: 'clanes',
     title: 'Clanes',
@@ -2309,6 +2361,394 @@ export const wikiSections = [
         { name: 'Lord Orco', poderDoma: 2500, vida: 1500, danoFisico: '110/170', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: '-' },
         { name: 'Orco Brujo', poderDoma: 2500, vida: 1500, danoFisico: '70/115', defensa: 10, defMagica: 10, podAtaque: 120, evasion: 100, magia: 'Lanza Núcleo Plasma' }
       ]
+    }
+  },
+  {
+    id: 'facciones',
+    title: 'Facciones',
+    icon: faccionesicono,
+    content: {
+      description: 'En las Tierras de CucsiAO están gobernadas por dos facciones, que pelean constantemente por conseguir el control de un mismo territorio.',
+      intro: 'Cada uno de estas tiene sus propias reglas, que deberías aprender antes que elijas enlistarte en alguna de ellas.',
+      instruccionesArmada: 'Una vez cumplidos los requisitos para enlistarte, deberás dirigirte hacia tu ciudad de natal de nacimiento, hacer click sobre el Rey y luego tipear /enlistar, para así ingresar a la facción y recibir una recompensa. Pero ésto no termina acá, ya que cada ciertos requisitos cumplidos podrás recibir una nueva recompensa y un nuevo rango de jerarquía, para ello deberás ingresar el comando /recompensa sobre el Rey. La única excepción es la clase Trabajador, que solo obtiene el primer rango de la facción y no consigue otras recompensas.',
+      consideraciones: {
+        title: 'Para poder unirte a la Armada Real deberás de cumplir con los siguientes requisitos:',
+        titleCaos: 'Para poder unirte a la Fuerzas del Caos deberas de cumplir con los siguientes requisitos:',
+        items: [
+          'Ser Nivel 25.',
+          'Haber matado 0 Criminales.',
+          'No haber matado ningún Ciudadano (Los Newbies no cuentan).',
+          'Las Clases Pirata, Ladrón, Bandido, Trabajador no poseen Armadura Faccionaria.'
+        ],
+        itemsCaos: [
+          'Ser Nivel 25.',
+          'Haber matado 0 Ciudadanos.',
+          'No haber pertenecido a la Armada Real.',
+          'Las Clases Pirata, Ladron, Bandido, Trabajador no poseen Armadura Faccionaria.',
+        ]
+      },
+      lugarArmada: {
+        title: 'Según tu raza, deberás enlistarte en las siguientes ciudades:',
+        headers: ['Raza', 'Lugar donde se Enlista', 'Mapa'],
+        rows: [
+          { raza: 'Humano', lugar: 'Banderbill', mapa: '30' },
+          { raza: 'Gnomo', lugar: 'Nueva esperanza', mapa: '58' },
+          { raza: 'Elfo', lugar: 'Nix', mapa: '13' },
+          { raza: 'Elfo Oscuro', lugar: 'Terminus', mapa: '22' },
+          { raza: 'Enano', lugar: 'Dahl', mapa: '96' },
+          { raza: 'Orco', lugar: 'Nexon', mapa: '15' },
+        ]
+      },
+      lugarCaos: {
+        title: 'Según tu raza, deberás enlistarte en las siguientes ciudades:',
+        headers: ['Raza', 'Lugar donde se Enlista', 'Mapa'],
+        rows: [
+          { raza: 'Humano', lugar: 'Arghal', mapa: '35' },
+          { raza: 'Gnomo', lugar: 'Lindos', mapa: '54' },
+          { raza: 'Elfo', lugar: 'Ullathorpe', mapa: '1' },
+          { raza: 'Elfo Oscuro', lugar: 'Kodell', mapa: '97' },
+          { raza: 'Enano', lugar: 'Billbotton', mapa: '95' },
+          { raza: 'Orco', lugar: 'Tyrann', mapa: '10' },
+        ]
+      },
+      nivelesClanIntro: 'Además, existe un sistema de Niveles de clan, en el que aumentar uno de ellos dependerá del esfuerzo colectivo de todos los miembros, y cada nivel dará una ventaja significativa respecto al anterior que hará que todos luchen para lograrlo. A continuación detallamos los diferentes niveles que existen y las ventajas de cada uno:',
+      nivelesClan: {
+        title: 'Jerarquías',
+        levels: [
+          {
+            id: 1,
+            nivel: "1° Aprendiz Real",
+            nivelRequerido: "25",
+            recompensas: 'Vestimenta de 1era Jerarquía, 20.000 puntos de Experiencia y Meditación faccionaria',
+            img1: mago1,
+            img2: magog1,
+            img3: clero1,
+            img4: clerog1,
+            img5: pala1,
+            img6: palag1,
+            defensasMago: 'Def. Corp: 5/8 Def. Mag: 0/0',
+            defensasClero: 'Def. Corp: 6/9 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 6/9 Def. Mag: 0/0'
+          },
+          {
+            id: 2,
+            nivel: "2° Iniciado",
+            nivelRequerido: "25",
+            recompensas: '40.000 puntos de Experiencia',
+            img1: mago1,
+            img2: magog1,
+            img3: clero1,
+            img4: clerog1,
+            img5: pala1,
+            img6: palag1,
+            defensasMago: 'Def. Corp: 5/8 Def. Mag: 0/0',
+            defensasClero: 'Def. Corp: 6/9 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 6/9 Def. Mag: 0/0'
+          },
+          {
+            id: 3,
+            nivel: "3° Escudero",
+            nivelRequerido: "25",
+            recompensas: '80.000 puntos de Experiencia',
+            img1: mago1,
+            img2: magog1,
+            img3: clero1,
+            img4: clerog1,
+            img5: pala1,
+            img6: palag1,
+            defensasMago: 'Def. Corp: 5/8 Def. Mag: 0/0',
+            defensasClero: 'Def. Corp: 6/9 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 6/9 Def. Mag: 0/0'
+          },
+          {
+            id: 4,
+            nivel: "4° Soldado Real",
+            nivelRequerido: "30",
+            recompensas: 'Vestimenta de 2da Jerarquía, 100.000 puntos de Experiencia y Meditación faccionaria',
+            img1: mago2,
+            img2: magog2,
+            img3: clero2,
+            img4: clero2g,
+            img5: pala2,
+            img6: pala2g,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 5,
+            nivel: "5° Teniente Real",
+            nivelRequerido: "30",
+            recompensas: '120.000 puntos de Experiencia',
+            img1: mago2,
+            img2: magog2,
+            img3: clero2,
+            img4: clero2g,
+            img5: pala2,
+            img6: pala2g,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 6,
+            nivel: "6° General Real",
+            nivelRequerido: "30",
+            recompensas: '160.000 puntos de Experiencia',
+            img1: mago2,
+            img2: magog2,
+            img3: clero2,
+            img4: clero2g,
+            img5: pala2,
+            img6: pala2g,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 7,
+            nivel: "7° Guardian Del Bien",
+            nivelRequerido: "30",
+            recompensas: '200.000 puntos de Experiencia',
+            img1: mago2,
+            img2: magog2,
+            img3: clero2,
+            img4: clero2g,
+            img5: pala2,
+            img6: pala2g,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 8,
+            nivel: "8° Proctetor del Bien",
+            nivelRequerido: "35",
+            recompensas: 'Vestimenta de 3era Jerarquía, 240.000 puntos de Experiencia y Meditación faccionaria',
+            img1: mago3,
+            img2: magog3,
+            img3: clero3,
+            img4: clero3g,
+            img5: pala3,
+            img6: palag3,
+            defensasMago: 'Def. Corp: 12/15 Def. Mag: 5/7',
+            defensasClero: 'Def. Corp: 13/17 Def. Mag: 2/5',
+            defensasPaladin: 'Def. Corp: 14/18 Def. Mag: 1/2'
+          },
+          {
+            id: 9,
+            nivel: "9° Caballero Real",
+            nivelRequerido: "35",
+            recompensas: '280.000 puntos de Experiencia',
+            img1: mago3,
+            img2: magog3,
+            img3: clero3,
+            img4: clero3g,
+            img5: pala3,
+            img6: palag3,
+            defensasMago: 'Def. Corp: 12/15 Def. Mag: 5/7',
+            defensasClero: 'Def. Corp: 13/17 Def. Mag: 2/5',
+            defensasPaladin: 'Def. Corp: 14/18 Def. Mag: 1/2'
+          },
+          {
+            id: 10,
+            nivel: "10° Elite Real",
+            nivelRequerido: "35",
+            recompensas: '320.000 puntos de Experiencia',
+            img1: mago3,
+            img2: magog3,
+            img3: clero3,
+            img4: clero3g,
+            img5: pala3,
+            img6: palag3,
+            defensasMago: 'Def. Corp: 12/15 Def. Mag: 5/7',
+            defensasClero: 'Def. Corp: 13/17 Def. Mag: 2/5',
+            defensasPaladin: 'Def. Corp: 14/18 Def. Mag: 1/2'
+          },
+          {
+            id: 11,
+            nivel: "11° Elite Real",
+            nivelRequerido: "40",
+            recompensas: 'Vestimenta de 4ta Jerarquía, 400.000 puntos de Experiencia y Meditación faccionaria',
+            img1: mago4,
+            img2: magog4,
+            img3: clero4,
+            img4: clerog4,
+            img5: pala4,
+            img6: palag4,
+            defensasMago: 'Def. Corp: 15/19 Def. Mag: 7/12',
+            defensasClero: 'Def. Corp: 17/21 Def. Mag: 5/8',
+            defensasPaladin: 'Def. Corp: 20/24 Def. Mag: 3/5'
+          },
+        ],
+        levelsCaos: [
+          {
+            id: 1,
+            nivel: "1° Esclavo de las Sombras",
+            nivelRequerido: "25",
+            recompensas: 'Vestimenta de 1era Jerarquía, 20.000 puntos de Experiencia y Meditación faccionaria',
+            img1: magocaos1,
+            img2: magocaosg1,
+            img3: clerocaos1,
+            img4: clerocaosg1,
+            img5: palacaos1,
+            img6: palacaosg1,
+            defensasMago: 'Def. Corp: 5/8 Def. Mag: 0/0',
+            defensasClero: 'Def. Corp: 6/9 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 6/9 Def. Mag: 0/0'
+          },
+          {
+            id: 2,
+            nivel: "2° Guerrero del Caos",
+            nivelRequerido: "25",
+            recompensas: '40.000 puntos de Experiencia',
+            img1: magocaos1,
+            img2: magocaosg1,
+            img3: clerocaos1,
+            img4: clerocaosg1,
+            img5: palacaos1,
+            img6: palacaosg1,
+            defensasMago: 'Def. Corp: 5/8 Def. Mag: 0/0',
+            defensasClero: 'Def. Corp: 6/9 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 6/9 Def. Mag: 0/0'
+          },
+          {
+            id: 3,
+            nivel: "3° Teniente del Caos",
+            nivelRequerido: "25",
+            recompensas: '80.000 puntos de Experiencia',
+            img1: magocaos1,
+            img2: magocaosg1,
+            img3: clerocaos1,
+            img4: clerocaosg1,
+            img5: palacaos1,
+            img6: palacaosg1,
+            defensasMago: 'Def. Corp: 5/8 Def. Mag: 0/0',
+            defensasClero: 'Def. Corp: 6/9 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 6/9 Def. Mag: 0/0'
+          },
+          {
+            id: 4,
+            nivel: "4° Comandante del Caos",
+            nivelRequerido: "30",
+            recompensas: 'Vestimenta de 2da Jerarquía, 100.000 puntos de Experiencia y Meditación faccionaria',
+            img1: magocaos2,
+            img2: magocaosg2,
+            img3: clerocaos2,
+            img4: clerocaosg2,
+            img5: palacaos2,
+            img6: palacaosg2,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 5,
+            nivel: "5° General del Caos",
+            nivelRequerido: "30",
+            recompensas: '120.000 puntos de Experiencia',
+            img1: magocaos2,
+            img2: magocaosg2,
+            img3: clerocaos2,
+            img4: clerocaosg2,
+            img5: palacaos2,
+            img6: palacaosg2,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 6,
+            nivel: "6° Elite del Caos",
+            nivelRequerido: "30",
+            recompensas: '160.000 puntos de Experiencia',
+            img1: magocaos3,
+            img2: magocaosg3,
+            img3: clerocaos3,
+            img4: clerocaosg3,
+            img5: palacaos3,
+            img6: palacaosg3,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 7,
+            nivel: "7° Asolador de las Sombras",
+            nivelRequerido: "30",
+            recompensas: '200.000 puntos de Experiencia',
+            img1: magocaos2,
+            img2: magocaosg2,
+            img3: clerocaos2,
+            img4: clerocaosg2,
+            img5: palacaos2,
+            img6: palacaosg2,
+            defensasMago: 'Def. Corp: 8/12 Def. Mag: 2/5',
+            defensasClero: 'Def. Corp: 9/14 Def. Mag: 0/0',
+            defensasPaladin: 'Def. Corp: 9/14 Def. Mag: 0/0'
+          },
+          {
+            id: 8,
+            nivel: "8° Caballero Oscuro",
+            nivelRequerido: "35",
+            recompensas: 'Vestimenta de 3era Jerarquía, 240.000 puntos de Experiencia y Meditación faccionaria',
+            img1: magocaos3,
+            img2: magocaosg3,
+            img3: clerocaos3,
+            img4: clerocaosg3,
+            img5: palacaos3,
+            img6: palacaosg3,
+            defensasMago: 'Def. Corp: 12/15 Def. Mag: 5/7',
+            defensasClero: 'Def. Corp: 13/17 Def. Mag: 2/5',
+            defensasPaladin: 'Def. Corp: 14/18 Def. Mag: 1/2'
+          },
+          {
+            id: 9,
+            nivel: "9° Asesino del Caos",
+            nivelRequerido: "35",
+            recompensas: '280.000 puntos de Experiencia',
+            img1: magocaos3,
+            img2: magocaosg3,
+            img3: clerocaos3,
+            img4: clerocaosg3,
+            img5: palacaos3,
+            img6: palacaosg3,
+            defensasMago: 'Def. Corp: 12/15 Def. Mag: 5/7',
+            defensasClero: 'Def. Corp: 13/17 Def. Mag: 2/5',
+            defensasPaladin: 'Def. Corp: 14/18 Def. Mag: 1/2'
+          },
+          {
+            id: 10,
+            nivel: "10° Adorador del Demonio",
+            nivelRequerido: "35",
+            recompensas: '320.000 puntos de Experiencia',
+            img1: magocaos3,
+            img2: magocaosg3,
+            img3: clerocaos3,
+            img4: clerocaosg3,
+            img5: palacaos3,
+            img6: palacaosg3,
+            defensasMago: 'Def. Corp: 12/15 Def. Mag: 5/7',
+            defensasClero: 'Def. Corp: 13/17 Def. Mag: 2/5',
+            defensasPaladin: 'Def. Corp: 14/18 Def. Mag: 1/2'
+          },
+          {
+            id: 11,
+            nivel: "11° Adorador del Demonio",
+            nivelRequerido: "40",
+            recompensas: 'Vestimenta de 4ta Jerarquía, 400.000 puntos de Experiencia y Meditación faccionaria',
+            img1: magocaos4,
+            img2: magocaosg4,
+            img3: clerocaos4,
+            img4: clerocaosg4,
+            img5: palacaos4,
+            img6: palacaosg4,
+            defensasMago: 'Def. Corp: 15/19 Def. Mag: 7/12',
+            defensasClero: 'Def. Corp: 17/21 Def. Mag: 5/8',
+            defensasPaladin: 'Def. Corp: 20/24 Def. Mag: 3/5'
+          },
+        ],
+      },
     }
   },
   {

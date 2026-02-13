@@ -1863,6 +1863,24 @@
   align-items: center;
 }
 
+.facciones-jerarquia-header {
+  background: linear-gradient(135deg, #0001ffb3 0%, #000000 100%);
+  color: var(--parchment-light);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.facciones-jerarquia-header-caos {
+  background: linear-gradient(135deg, #ff0000 0%, #000000 100%);
+  color: var(--parchment-light);
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .clan-level-number {
   font-family: 'Cinzel', serif;
   font-size: 1.25rem;
@@ -1871,6 +1889,20 @@
 
 .clan-level-members {
   background: rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.facciones-requisitos-kills {
+  background: #ff00009e;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.facciones-requisitos-kills-caos {
+  background: #0600ffa3;
   padding: 0.35rem 0.75rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -1897,6 +1929,11 @@
 
 .clan-level-ventajas {
   padding: 1rem 1.25rem;
+}
+
+.facciones-armaduras-text {
+  padding: 1rem 1.25rem;
+  text-align: center;
 }
 
 .clan-level-ventajas h4 {
