@@ -90,10 +90,6 @@ import Druid from './assets/Druid.jpg';
 import Paladi from './assets/Paladi.jpg';
 import Guerrer from './assets/Guerrer.jpg';
 
-
-
-
-
 export const wikiSections = [
   {
     id: 'bienvenida',

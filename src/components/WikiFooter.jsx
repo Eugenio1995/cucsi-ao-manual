@@ -20,7 +20,7 @@ export const WikiFooter = () => {
         <div className="footer-section">
           <h3 className="footer-title">CucsiAO</h3>
           <p className="footer-description">
-            Servidor de Argentum Online con temática de fantasía medieval épica.
+            Argentum Online.
             Únete a la aventura en las tierras de Cypher.
           </p>
         </div>
@@ -46,7 +46,7 @@ export const WikiFooter = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>© 2025 CucsiAO. Todos los derechos reservados.</p>
+        <p>© 2026 CucsiAO. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

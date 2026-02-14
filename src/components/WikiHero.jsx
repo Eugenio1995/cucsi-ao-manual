@@ -9,7 +9,7 @@ export const WikiHero = () => {
         <Scroll className="hero-icon" size={80} />
         <h1 className="hero-title">Wiki CucsiAO</h1>
         <p className="hero-subtitle">
-          Guía completa del mundo medieval épico de CucsiAO
+          Guía completa de CucsiAO
         </p>
         <div className="hero-scroll-indicator">
           <span>Explora el manual</span>
