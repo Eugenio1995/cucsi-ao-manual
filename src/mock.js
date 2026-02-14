@@ -81,6 +81,14 @@ import clerocaosg2 from './assets/clerocaosg2.png';
 import clerocaosg3 from './assets/clerocaosg3.png';
 import clerocaosg4 from './assets/clerocaosg4.png';
 import faccionesicono from './assets/faccionesicono.png';
+import Mag from './assets/Mag.jpg';
+import Asesin from './assets/Asesin.jpg';
+import Bard from './assets/Bard.jpg';
+import Cazador from './assets/Cazador.jpg';
+import Clerig from './assets/Clerig.jpg';
+import Druid from './assets/Druid.jpg';
+import Paladi from './assets/Paladi.jpg';
+import Guerrer from './assets/Guerrer.jpg';
 
 
 
@@ -152,7 +160,7 @@ export const wikiSections = [
       classes: [
         {
           name: 'Asesino',
-          image: 'https://manual.alkononline.com.ar/images/c/c5/Asesin.jpg',
+          image: Asesin,
           description: 'Las clase asesino son capaces de encontrar el punto débil a todos sus oponentes convirtiéndose en la clase más habilidosa al momento de apuñalar a sus enemigos. Sus golpes pueden parecer débiles pero cuidado, pueden derribar a los más resistentes y derrotar adversarios de un solo golpe.\n\nEsta clase posee una excelente preparación para el combate físico resultando en una gran evasión y muy buen manejo de armas cuerpo a cuerpo. Puede utilizar conjuros mágicos como complemento a sus tácticas ofensivas y defensivas con precaución de su limitada cantidad de maná.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -178,7 +186,7 @@ export const wikiSections = [
         },
         {
           name: 'Bardo',
-          image: 'https://manual.alkononline.com.ar/images/e/ee/Bard.jpg',
+          image: Bard,
           description: 'Los Bardos son capaces de desconcertar al oponente con sus melodías induciéndolos a lanzar una ofensiva imprecisa, facilitándole la predicción del mismo y esquivarlos sin dificultad, por eso es la clase con mas evasión. Sus místicos instrumentos le otorgan gran concentración permitiéndole lanzar hechizos mas precisos, provocando gran daño mágico. Tienen un leve entrenamiento en combate físico, concediéndole el uso de algunas armas, escudos y cascos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -197,7 +205,7 @@ export const wikiSections = [
         },
         {
           name: 'Cazador',
-          image: 'https://manual.alkononline.com.ar/images/b/b6/Cazador.jpg',
+          image: Cazador,
           description: 'Nacidos en los bosques, los cazadores son expertos únicos en el combate a distancia, con una fuerza y puntería digna de envidiar. Gracias a su gran entrenamiento en el arte de la guerra, tienen buenas propiedades a la hora de ocultarse entre las sombras y poseen una moderada evasión. Esta clase no utiliza mana ni hechizos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -216,7 +224,7 @@ export const wikiSections = [
         },
         {
           name: 'Clérigo',
-          image: 'https://manual.alkononline.com.ar/images/a/a2/Clerig.jpg',
+          image: Clerig,
           description: 'Gracias a su inspiradora fe, sea a un Dios malévolo o benévolo, el Clérigo puede combinar ataques de daño decente con hechizos de una variedad y poder mágico muy interesantes. Tal vez sea una de las Clases más versátiles del todo el juego, donde la destreza será necesaria para hacer relucir sus atributos. Ésta particularidad los convierte en una clase elegida por cualquier raza aunque tienden a abundar humanos y elfos oscuros cuyas habilidades innatas se encuentran en sintonía con el modo de combate de los clérigos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -235,7 +243,7 @@ export const wikiSections = [
         },
         {
           name: 'Druida',
-          image: 'https://manual.alkononline.com.ar/images/f/f0/Druid.jpg',
+          image: Druid,
           description: 'Los druidas son seres sumamente sabios, poseen una gran conexión con la naturaleza permitiéndole invocar criaturas que acudan en su ayuda. Gracias a su gran conocimiento son expertos en el uso de hechizos con un buen poder y resistencia mágica, aunque se ha visto a algunos con un arma en su mano. Son tambien expertos en la doma de criaturas.\n\nBonidifación Ahorro de Mana: Utilizando el ítem Flauta Élfica el cual le concederá una reducción del 20% para los hechizos invocación.\n\nBonidifación Domar Animales: Utilizando el ítem Flauta Mágica tendrás 20% más de poder de domación.\n\nHabilidad Única: Extracción de raíces para la creación de pociones.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -264,7 +272,7 @@ export const wikiSections = [
         },
         {
           name: 'Guerrero',
-          image: 'https://manual.alkononline.com.ar/images/0/01/Guerrer.jpg',
+          image: Guerrer,
           description: 'Los guerreros son expertos únicos en el combate cuerpo a cuerpo y a distancia, con una fuerza extraordinaria capaces de derribar a sus enemigos con pocos golpes. Su gran fuerza le permite cargar con pesadas armaduras y junto a su destacada vitalidad, ser una de las clases mas resistentes. Gracias a su gran entrenamiento en el arte de la guerra, también son hábiles arqueros, causan un gran daño a distancia y también pueden apuñalar. Esta clase no utiliza mana ni hechizos.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -306,7 +314,7 @@ export const wikiSections = [
             },
             {
               title: 'Ocultarse',
-              description: 'El Ladrón podrá ocultarse y caminar entre las sombras sin ser visto. Este efecto es cancelado si el personaje ataca cuerpo a cuerpo (con o sin arma) o habla. La chance de éxito dependerá de los puntos de habilidad que tengas en ocultar.'
+              description: 'El Ladrón podrá ocultarse con 100 skilles en ocultar y caminar entre las sombras sin ser visto. Este efecto es cancelado si el personaje ataca cuerpo a cuerpo (con o sin arma) o habla. La chance de éxito dependerá de los puntos de habilidad que tengas en ocultar.'
             },
             {
               title: 'Combate Sin Armas',
@@ -320,7 +328,7 @@ export const wikiSections = [
         },
         {
           name: 'Mago',
-          image: 'https://manual.alkononline.com.ar/images/e/e5/Mag.jpg',
+          image: Mag,
           description: 'Los magos son poderosos seres con un gran conocimiento en la hechicería. Su inteligencia única y característica les permite usar poderosos conjuros e invocar viles criaturas para acudir en su ayuda. Este atributo les permite lanzar el doble o incluso el triple de hechizo que el resto de las clases con un poder mágico tan devastador que excede con creces la capacidad de cualquiera. Así mismo son seres débiles al enfrentamiento cuerpo a cuerpo y torpes en el uso de armas, por lo que su posicionamiento en combate será exclusivamente el uso de hechizos evitando el enfrentamiento frontal.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
@@ -339,7 +347,7 @@ export const wikiSections = [
         },
         {
           name: 'Paladín',
-          image: 'https://manual.alkononline.com.ar/images/f/f6/Paladi.jpg',
+          image: Paladi,
           description: 'Los paladines poseen un amplio conocimiento en el combate, pueden utilizar una gran variedad de armas, armaduras, cascos y escudos. Su medida inteligencia es suficiente para aprender una gran mayoría de hechizos tanto ofensivos como defensivos, dándole al paladín una combinación entre golpes y hechizo. Está abocado al combate físico cuerpo a cuerpo, es una clase resistente, puede soportar gran cantidad de golpes pudiendo hacerle frente a cualquier amenaza.',
           modifiers: {
             headers: ['Cuerpo a cuerpo', '', 'Proyectiles', '', 'Sin armas', '', 'Defensa', '', ''],
