@@ -548,7 +548,8 @@ export const wikiSections = [
         { nombre: 'Explosion Faustica (Bardo)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 110 a 115 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Laúd Mágico o Laúd Élfico' },
         { nombre: 'Explosión Fáustica (Druida)', precio: 2000000, skills: 99, mana: 1700, stamina: 175, descripcion: 'Inflinge entre 103 a 107 de Daño Mágico al Objetivo. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Élfica' },
         { nombre: 'Implorar Ayuda (Druida)', precio: 600000, skills: 100, mana: 1500, stamina: 150, descripcion: 'Invoca un Fuego Fatuo que acudirá en tu ayuda, Lanza Paralizar y Descarga Eléctrica a los Usuarios Objetivos. Para poder lanzar esta magia necesitas tener equipado alguno de los siguientes objetos: Flauta Mágica o Flauta Elfica' },
-        { nombre: 'Invocar Tigre (Asesino/Paladin)', precio: 125000, skills: 100, mana: 250, stamina: 50, descripcion: 'Invoca 3 Tigres que acudirá en tu ayuda.' }
+        { nombre: 'Invocar Tigre (Asesino/Paladin)', precio: 200000, skills: 100, mana: 350, stamina: 50, descripcion: 'Invoca 3 Tigres que acudirá en tu ayuda.' },
+        { nombre: 'Invocar Jabalíes (G/K/L)', precio: "-", skills: "-", mana: "-", stamina: "-", descripcion: 'Invoca Jabalíes que acudirán en tu ayuda. Requiere nivel 30' },
       ]
     }
   },
